@@ -48,28 +48,28 @@ npm run testToFile
 
 ## Open Issues
 
-- [*] render `doc.name`
-- [*] render `doc.deprecated`
-- [*] render `doc.docstrings`
-- [*] render _value_ `doc.items`
-  - [*] render name / id
-  - [*] render docstrings
-  - [*] render depecated
-  - [*] render signature
+- [x] render `doc.name`
+- [x] render `doc.deprecated`
+- [x] render `doc.docstrings`
+- [x] render _value_ `doc.items`
+  - [x] render name / id
+  - [x] render docstrings
+  - [x] render depecated
+  - [x] render signature
 - [ ] render _type_ `doc.items`
-  - [*] render name / id
-  - [*] render deprecated
-  - [*] render docstrings
-  - [*] render signature
+  - [x] render name / id
+  - [x] render deprecated
+  - [x] render docstrings
+  - [x] render signature
   - [ ] render detail
-- [*] render _module_ `doc.items`
-  - [*] render name / id
-  - [*] render deprecated
-  - [*] render docstrings
-  - [*] render items
-- [*] render _module alias_ `doc.items`
-  - [*] render name / id
-  - [*] render docstrings
-  - [*] render items
+- [] render _module_ `doc.items`
+  - [x] render name / id
+  - [x] render deprecated
+  - [x] render docstrings
+  - [x] render items
+- [x] render _module alias_ `doc.items`
+  - [x] render name / id
+  - [x] render docstrings
+  - [x] render items
 - [ ] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
 - [ ] meaningfull overall structure of md
