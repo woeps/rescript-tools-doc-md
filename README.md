@@ -62,7 +62,7 @@ npm run testToFile
   - [x] render docstrings
   - [x] render signature
   - [ ] render detail
-- [] render _module_ `doc.items`
+- [x] render _module_ `doc.items`
   - [x] render name / id
   - [x] render deprecated
   - [x] render docstrings
