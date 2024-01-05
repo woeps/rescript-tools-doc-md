@@ -20,6 +20,13 @@ _Note: 2. may be the beginning for a general purpose rescript (code) generator l
 
 This project builds heavily upon [`@rescript/tools`](https://github.com/rescript-lang/rescript-vscode/tree/master/tools).
 
+## Example
+
+To see how it works, take a look at the `test` directory.
+Based on [`@rescript/core: src/RescriptCore.res`](https://github.com/rescript-association/rescript-core/blob/main/src/RescriptCore.res), [`npm run makeTestJson`](https://github.com/woeps/rescript-tools-doc-md/blob/7c66aa9dd34fe5d7f3b48ee823f57d8fca6cd171/package.json#L8) is used to generate `test/CoreDoc.json` using `rescript-tools`.
+
+The result of applying this lib can be seen in [`test/result.md`](https://github.com/woeps/rescript-tools-doc-md/blob/7c66aa9dd34fe5d7f3b48ee823f57d8fca6cd171/test/result.md)
+
 ## Installation
 
 ```sh
@@ -32,7 +39,7 @@ npm install
 - Clean: `npm run clean`
 - Build & watch: `npm run dev`
 
-## Run
+## Test
 
 Print test md to stdout:
 
