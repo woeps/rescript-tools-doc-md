@@ -1,0 +1,24 @@
+{
+  "name": "rescript-tools-doc-md",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "rescript",
+    "clean": "rescript clean",
+    "dev": "rescript build -w",
+    "makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
+    "test": "node ./test/Test.res.js",
+    "testToFile": "npm run test > ./test/result.md"
+  },
+  "keywords": [
+    "rescript"
+  ],
+  "author": "Christoph Porod-Wanasek",
+  "license": "MIT",
+  "dependencies": {
+    "@rescript/core": "^0.6.0",
+    "rescript": "^11.0.0-rc.8"
+  },
+  "devDependencies": {
+    "@rescript/tools": "^0.3.0"
+  }
+}
