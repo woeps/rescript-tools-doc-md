@@ -1,1 +1,1 @@
-let toMd: RescriptTools.Docgen.doc => Markdown.t
+let render: RescriptTools.Docgen.doc => Markdown.t
