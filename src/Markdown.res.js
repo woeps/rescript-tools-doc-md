@@ -3,7 +3,7 @@
 
 var Belt_Option = require("rescript/lib/js/belt_Option.js");
 
-function cmb(a, b) {
+function append(a, b) {
   if (a === "") {
     return b;
   } else if (b === "") {
@@ -13,9 +13,9 @@ function cmb(a, b) {
   }
 }
 
-function cmbO(a, b) {
+function appendO(a, b) {
   return Belt_Option.mapWithDefault(b, a, (function (b) {
-                return cmb(a, b);
+                return append(a, b);
               }));
 }
 
@@ -65,16 +65,51 @@ function h6(txt) {
   return p("###### " + txt);
 }
 
-exports.cmb = cmb;
-exports.cmbO = cmbO;
+function heading(level) {
+  switch (level) {
+    case 0 :
+        return p;
+    case 1 :
+        return h1;
+    case 2 :
+        return h2;
+    case 3 :
+        return h3;
+    case 4 :
+        return h4;
+    case 5 :
+        return h5;
+    case 6 :
+        return h6;
+    default:
+      return function (txt) {
+        return p(bold(txt));
+      };
+  }
+}
+
+function headingLevel(txt) {
+  var level = 0;
+  var $$break = false;
+  while(level <= txt.length && !$$break) {
+    if (txt.charAt(level) === "#") {
+      level = level + 1 | 0;
+    } else {
+      $$break = true;
+    }
+  };
+  return level;
+}
+
+var mdHeadingLevel = headingLevel;
+
+exports.append = append;
+exports.appendO = appendO;
 exports.empty = empty;
 exports.line = line;
-exports.h1 = h1;
-exports.h2 = h2;
-exports.h3 = h3;
-exports.h4 = h4;
-exports.h5 = h5;
-exports.h6 = h6;
+exports.heading = heading;
+exports.headingLevel = headingLevel;
+exports.mdHeadingLevel = mdHeadingLevel;
 exports.bold = bold;
 exports.p = p;
 exports.quote = quote;

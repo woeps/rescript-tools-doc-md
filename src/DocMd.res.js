@@ -5,22 +5,9 @@ var Markdown = require("./Markdown.res.js");
 var Core__Array = require("@rescript/core/src/Core__Array.res.js");
 var Core__Option = require("@rescript/core/src/Core__Option.res.js");
 
-function title(txt, levelOpt) {
-  var level = levelOpt !== undefined ? levelOpt : 0;
-  switch (level) {
-    case 0 :
-        return Markdown.h1(txt);
-    case 1 :
-        return Markdown.h2(txt);
-    case 2 :
-        return Markdown.h3(txt);
-    case 3 :
-        return Markdown.h4(txt);
-    case 4 :
-        return Markdown.h5(txt);
-    default:
-      return Markdown.h6(txt);
-  }
+function title(txt, templates, levelOpt) {
+  var level = levelOpt !== undefined ? levelOpt : 1;
+  return templates.heading(level)(txt);
 }
 
 function renderId(stripRootOpt, txt) {
@@ -32,51 +19,77 @@ function renderId(stripRootOpt, txt) {
   }
 }
 
-function deprecationWarning(md, deprecated) {
-  return Markdown.cmb(md, Core__Option.mapOr(deprecated, Markdown.empty(), (function (deprecated) {
-                    return Markdown.line(Markdown.line(Markdown.bold("DEPRECATED: " + deprecated)));
+function deprecationWarning(md, templates, deprecated) {
+  return templates.append(md, Core__Option.mapOr(deprecated, templates.empty(), (function (deprecated) {
+                    return templates.line(templates.line(templates.bold("DEPRECATED: " + deprecated)));
                   })));
 }
 
-function moduleDocs(md, docs) {
-  return Markdown.cmb(md, Core__Array.reduce(docs, Markdown.empty(), (function (md, txt) {
-                    return Markdown.cmb(md, Markdown.p(txt));
+function corretDocStringHeadingLevel(levelOpt, txt) {
+  var level = levelOpt !== undefined ? levelOpt : 0;
+  return txt.split("\n").map(function (line) {
+                var trimmedLine = line.trimStart();
+                var headingLevel = Markdown.headingLevel(trimmedLine);
+                var diff = (level - headingLevel | 0) + 1 | 0;
+                var missingLevels = headingLevel <= 0 || diff < 0 ? 0 : diff;
+                return "#".repeat(missingLevels) + trimmedLine;
+              }).join("\n");
+}
+
+function moduleDocs(md, templates, levelOpt, docs) {
+  var level = levelOpt !== undefined ? levelOpt : 0;
+  return templates.append(md, Core__Array.reduce(docs, templates.empty(), (function (md, txt) {
+                    return templates.append(md, templates.p(corretDocStringHeadingLevel(level, txt)));
                   })));
 }
 
-function renderItem(param, name, level, docstrings, deprecated, param$1, signature, _unit) {
-  return moduleDocs(Markdown.cmbO(deprecationWarning(title(name, level), deprecated), Core__Option.map(signature, (function (s) {
-                        return Markdown.quote(s);
-                      }))), docstrings);
+function renderItem(templates, param, name, level, docstrings, deprecated, param$1, signature, _unit) {
+  return moduleDocs(templates.appendO(deprecationWarning(title(name, templates, level), templates, deprecated), Core__Option.map(signature, (function (s) {
+                        return templates.quote(s);
+                      }))), templates, level, docstrings);
 }
 
-function itemDoc(item) {
+function itemDoc(item, templates) {
   switch (item.kind) {
     case "value" :
         var id = item.id;
-        return renderItem(id, "let " + renderId(undefined, id), 2, item.docstrings, item.deprecated, undefined, item.signature, undefined);
+        return renderItem(templates, id, "let " + renderId(undefined, id), 3, item.docstrings, item.deprecated, undefined, item.signature, undefined);
     case "type" :
         var id$1 = item.id;
-        return renderItem(id$1, "type " + renderId(undefined, id$1), 2, item.docstrings, item.deprecated, item.detail, item.signature, undefined);
+        return renderItem(templates, id$1, "type " + renderId(undefined, id$1), 3, item.docstrings, item.deprecated, item.detail, item.signature, undefined);
     case "module" :
         var id$2 = item.id;
-        return itemDocs(renderItem(id$2, "module " + renderId(undefined, id$2), 1, item.docstrings, item.deprecated, undefined, undefined, undefined), item.items);
+        return itemDocs(renderItem(templates, id$2, "module " + renderId(undefined, id$2), 2, item.docstrings, item.deprecated, undefined, undefined, undefined), templates, item.items);
     case "moduleAlias" :
         var id$3 = item.id;
-        return itemDocs(renderItem(id$3, "module " + renderId(undefined, id$3) + " \`alias\`", 1, item.docstrings, undefined, undefined, undefined, undefined), item.items);
+        return itemDocs(renderItem(templates, id$3, "module " + renderId(undefined, id$3) + " \`alias\`", 2, item.docstrings, undefined, undefined, undefined, undefined), templates, item.items);
     
   }
 }
 
-function itemDocs(md, items) {
-  return Markdown.cmb(md, Core__Array.reduce(items, Markdown.empty(), (function (md, item) {
-                    return Markdown.cmb(md, itemDoc(item));
+function itemDocs(md, templates, items) {
+  return templates.append(md, Core__Array.reduce(items, templates.empty(), (function (md, item) {
+                    return templates.append(md, itemDoc(item, templates));
                   })));
 }
 
-function toMd(param) {
-  return itemDocs(moduleDocs(deprecationWarning(title(param.name, undefined), param.deprecated), param.docstrings), param.items);
+function render(param, templates) {
+  return itemDocs(moduleDocs(deprecationWarning(title(param.name, templates, undefined), templates, param.deprecated), templates, undefined, param.docstrings), templates, param.items);
 }
 
-exports.toMd = toMd;
+function renderMd(doc) {
+  return render(doc, {
+              empty: Markdown.empty,
+              append: Markdown.append,
+              appendO: Markdown.appendO,
+              heading: Markdown.heading,
+              line: Markdown.line,
+              p: Markdown.p,
+              bold: Markdown.bold,
+              quote: Markdown.quote
+            });
+}
+
+exports.render = render;
+exports.renderMd = renderMd;
 /* No side effect */

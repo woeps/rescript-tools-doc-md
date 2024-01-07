@@ -78,5 +78,6 @@ npm run testToFile
   - [x] render name / id
   - [x] render docstrings
   - [x] render items
-- [ ] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
+- [x] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
 - [ ] meaningfull overall structure of md
+- [ ] generalize render format: support arbitary output format (e.g. html, markdown)

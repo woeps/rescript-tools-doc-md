@@ -3,13 +3,13 @@ type t = string
 external make: string => t = "%identity"
 external toString: t => string = "%identity"
 
-let cmb = (a, b) =>
+let append = (a, b) =>
   switch (a, b) {
   | ("", b) => b
   | (a, "") => a
   | _ => a ++ b
   }
-let cmbO = (a, b) => b->Belt.Option.mapWithDefault(a, b => cmb(a, b))
+let appendO = (a, b) => b->Belt.Option.mapWithDefault(a, b => append(a, b))
 
 let empty = () => ""
 
@@ -26,3 +26,30 @@ let h3 = txt => `### ${txt}`->p
 let h4 = txt => `#### ${txt}`->p
 let h5 = txt => `##### ${txt}`->p
 let h6 = txt => `###### ${txt}`->p
+let heading = level => {
+  switch level {
+  | 0 => p
+  | 1 => h1
+  | 2 => h2
+  | 3 => h3
+  | 4 => h4
+  | 5 => h5
+  | 6 => h6
+  | _ => txt => txt->bold->p
+  }
+}
+
+let headingLevel = (txt: string) => {
+  let level = ref(0)
+  let break = ref(false)
+  while level.contents <= txt->String.length && !break.contents {
+    if txt->String.charAt(level.contents) == "#" {
+      level := level.contents + 1
+    } else {
+      break := true
+    }
+  }
+  level.contents
+}
+
+let mdHeadingLevel = headingLevel

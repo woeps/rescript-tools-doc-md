@@ -20,11 +20,11 @@ See [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) 
 
 See [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Log to the console after 2 seconds (2000 milliseconds).
 let timeoutId = setTimeout(() => {
-  Console.log("This prints in 2 seconds.")
+Console.log("This prints in 2 seconds.")
 }, 2000)
 ```
 
@@ -38,11 +38,11 @@ The same as `setTimeout`, but allows you to pass a `float` instead of an `int` f
 
 See [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Log to the console after 2 seconds (2000 milliseconds).
 let timeoutId = setTimeoutFloat(() => {
-  Console.log("This prints in 2 seconds.")
+Console.log("This prints in 2 seconds.")
 }, 2000.)
 ```
 
@@ -54,10 +54,10 @@ let timeoutId = setTimeoutFloat(() => {
 
 See [`clearTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let timeoutId = setTimeout(() => {
-  Console.log("This prints in 2 seconds.")
+Console.log("This prints in 2 seconds.")
 }, 2000)
 
 // Clearing the timeout right away, before 2 seconds has passed, means that the above callback logging to the console will never run.
@@ -80,11 +80,11 @@ See [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval
 
 See [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Log to the console ever 2 seconds (2000 milliseconds).
 let intervalId = setInterval(() => {
-  Console.log("This prints every 2 seconds.")
+Console.log("This prints every 2 seconds.")
 }, 2000)
 ```
 
@@ -98,11 +98,11 @@ The same as `setInterval`, but allows you to pass a `float` instead of an `int` 
 
 See [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Log to the console ever 2 seconds (2000 milliseconds).
 let intervalId = setIntervalFloat(() => {
-  Console.log("This prints every 2 seconds.")
+Console.log("This prints every 2 seconds.")
 }, 2000.)
 ```
 
@@ -114,15 +114,15 @@ let intervalId = setIntervalFloat(() => {
 
 See [`clearInterval`](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let intervalId = setInterval(() => {
-  Console.log("This prints in 2 seconds.")
+Console.log("This prints in 2 seconds.")
 }, 2000)
 
 // Stop the interval after 10 seconds
 let timeoutId = setTimeout(() => {
-  clearInterval(intervalId)
+clearInterval(intervalId)
 }, 10000)
 ```
 
@@ -137,7 +137,7 @@ If you're looking to encode just parts of a URI, like a query parameter, prefer 
 
 See [`encodeURI`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(encodeURI("https://rescript-lang.org?array=[someValue]"))
 // Logs "https://rescript-lang.org?array=%5BsomeValue%5D" to the console.
@@ -154,7 +154,7 @@ If you're looking to decode just parts of a URI, like a query parameter, prefer 
 
 See [`decodeURI`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(decodeURI("https://rescript-lang.org?array=%5BsomeValue%5D"))
 // Logs "https://rescript-lang.org?array=[someValue]" to the console.
@@ -168,7 +168,7 @@ Encodes a string so it can be used as part of a URI.
 
 See [`encodeURIComponent`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(encodeURIComponent("array=[someValue]"))
 // Logs "array%3D%5BsomeValue%5D" to the console.
@@ -182,7 +182,7 @@ Decodes a previously URI encoded string back to its original form.
 
 See [`decodeURIComponent`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(decodeURIComponent("array%3D%5BsomeValue%5D"))
 // Logs "array=[someValue]" to the console.
@@ -204,11 +204,11 @@ Console.log(decodeURIComponent("array%3D%5BsomeValue%5D"))
 
 `make(~length, init)`
 
-  Creates an array of length `length` initialized with the value of `init`.
+Creates an array of length `length` initialized with the value of `init`.
 
-  ```res example
-  Array.make(~length=3, #apple) == [#apple, #apple, #apple]
-  ```
+```res example
+Array.make(~length=3, #apple) == [#apple, #apple, #apple]
+```
 
 ### let RescriptCore.Array.fromInitializer
 
@@ -216,11 +216,11 @@ Console.log(decodeURIComponent("array%3D%5BsomeValue%5D"))
 
 `fromInitializer(~length, f)`
 
-  Creates an array of length `length` initialized with the value returned from `f ` for each index.
+Creates an array of length `length` initialized with the value returned from `f ` for each index.
 
-  ```res example
-  Array.make(~length=3, i => i + 3) == [3, 4, 5]
-  ```
+```res example
+Array.make(~length=3, i => i + 3) == [3, 4, 5]
+```
 
 ### let RescriptCore.Array.equal
 
@@ -242,7 +242,7 @@ Console.log(decodeURIComponent("array%3D%5BsomeValue%5D"))
 
 See [`Array.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 
@@ -271,7 +271,7 @@ Beware this will *mutate* the array.
 
 See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
 myArray->Array.fillAll(9)
@@ -289,7 +289,7 @@ Beware this will *mutate* the array.
 
 See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
 myArray->Array.fillToEnd(9, ~start=1)
@@ -307,7 +307,7 @@ Beware this will *mutate* the array.
 
 See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
 myArray->Array.fill(9, ~start=1, ~end=2)
@@ -325,7 +325,7 @@ Beware this will *mutate* the array.
 
 See [`Array.pop`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 let lastItem = someArray->Array.pop // "hello"
@@ -343,7 +343,7 @@ Beware this will *mutate* the array.
 
 See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 someArray->Array.push("yay")
@@ -361,7 +361,7 @@ Beware this will *mutate* the array.
 
 See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 someArray->Array.pushMany(["yay", "wehoo"])
@@ -379,7 +379,7 @@ Beware this will *mutate* the array.
 
 See [`Array.reverse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 someArray->Array.reverse
@@ -397,7 +397,7 @@ Beware this will *mutate* the array.
 
 See [`Array.shift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 let lastItem = someArray->Array.shift // "hi"
@@ -413,7 +413,7 @@ Console.log(someArray) // ["hello"]. Notice first item is gone.
 
 See [`Array.toSorted`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = [3, 2, 1]
 let sorted = someArray->Array.toSorted(Int.compare)
@@ -432,7 +432,7 @@ Beware this will *mutate* the array.
 
 See [`Array.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = [3, 2, 1]
 someArray->Array.sort((a, b) => float(a - b))
@@ -462,7 +462,7 @@ Beware this will *mutate* the array.
 
 See [`Array.unshift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 someArray->Array.unshift("yay")
@@ -480,7 +480,7 @@ Beware this will *mutate* the array.
 
 See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 someArray->Array.unshiftMany(["yay", "wehoo"])
@@ -496,7 +496,7 @@ Console.log(someArray) // ["yay", "wehoo", "hi", "hello"]
 
 See [`Array.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array1 = ["hi", "hello"]
 let array2 = ["yay", "wehoo"]
@@ -514,7 +514,7 @@ Console.log(someArray) // ["hi", "hello", "yay", "wehoo"]
 
 See [`Array.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array1 = ["hi", "hello"]
 let array2 = ["yay"]
@@ -533,7 +533,7 @@ Console.log(someArray) // ["hi", "hello", "yay", "wehoo"]
 
 See [`Array.flat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log([[1], [2], [3, 4]]->Array.flat) // [1, 2, 3, 4]
 ```
@@ -546,7 +546,7 @@ Console.log([[1], [2], [3, 4]]->Array.flat) // [1, 2, 3, 4]
 
 See [`Array.includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log([1, 2]->Array.includes(1)) // true
 Console.log([1, 2]->Array.includes(3)) // false
@@ -563,7 +563,7 @@ Returns `-1` if the item doesn not exist. Check out `Array.indexOfOpt` for a ver
 
 See [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log([1, 2]->Array.indexOf(2)) // 1
 Console.log([1, 2]->Array.indexOf(3)) // -1
@@ -578,7 +578,7 @@ Console.log([{"language": "ReScript"}]->Array.indexOf({"language": "ReScript"}))
 
 See [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log([1, 2]->Array.indexOfOpt(2)) // Some(1)
 Console.log([1, 2]->Array.indexOfOpt(3)) // None
@@ -595,7 +595,7 @@ Console.log([{"language": "ReScript"}]->Array.indexOfOpt({"language": "ReScript"
 
 `joinWith(array, separator)` produces a string where all items of `array` are printed, separated by `separator`. Array items must be strings, to join number or other arrays, use `joinWithUnsafe`. Under the hood this will run JavaScript's `toString` on all the array items.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["One", "Two", "Three"]
 
@@ -608,7 +608,7 @@ Console.log(array->Array.joinWith(" -- ")) // One -- Two -- Three
 
 `joinWithUnsafe(array, separator)` produces a string where all items of `array` are printed, separated by `separator`. Under the hood this will run JavaScript's `toString` on all the array items.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3]
 
@@ -635,7 +635,7 @@ Console.log(array->Array.joinWithUnsafe(" -- ")) // 1 -- 2 -- 3
 
 See [`Array.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
 
@@ -650,7 +650,7 @@ Console.log(myArray->Array.slice(~start=1, ~end=3)) // [2, 3]
 
 See [`Array.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
 
@@ -663,7 +663,7 @@ Console.log(myArray->Array.sliceToEnd(~start=1)) // [2, 3, 4]
 
 `copy(array)` makes a copy of the array with the items in it, but does not make copies of the items themselves.
 
-## Examples
+#### Examples
 ```rescript
 let myArray = [1, 2, 3]
 let copyOfMyArray = myArray->Array.copy
@@ -680,7 +680,7 @@ Console.log(myArray === copyOfMyArray) // false
 
 See [`Array.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3, 4]
 
@@ -699,7 +699,7 @@ Console.log(array->Array.toString) // "1,2,3,4"
 
 See [`Array.every`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3, 4]
 
@@ -715,7 +715,7 @@ Console.log(array->Array.every(num => num === 1)) // false
 
 See [`Array.every`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3, 4]
 
@@ -731,7 +731,7 @@ Console.log(array->Array.everyWithIndex((num, index) => index < 2 && num >= 2)) 
 
 See [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3, 4]
 
@@ -746,7 +746,7 @@ Console.log(array->Array.filter(num => num > 2)) // [3, 4]
 
 See [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = [1, 2, 3, 4]
 
@@ -761,7 +761,7 @@ Console.log(array->Array.filterWithIndex((num, index) => index === 0 || num === 
 
 See [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | TypeScript | JavaScript
 
@@ -781,7 +781,7 @@ switch array->Array.find(item => item == ReScript) {
 
 See [`Array.find`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | TypeScript | JavaScript
 
@@ -803,7 +803,7 @@ Returns `-1` if the item does not exist. Consider using `Array.findIndexOpt` if 
 
 See [`Array.findIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | TypeScript | JavaScript
 
@@ -823,7 +823,7 @@ Returns `-1` if the item does not exist. Consider using `Array.findIndexOpt` if 
 
 See [`Array.findIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | TypeScript | JavaScript
 
@@ -841,12 +841,12 @@ Console.log(array->Array.findIndex((item, index) => index === 0 && item == TypeS
 
 See [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
 array->Array.forEach(item => {
-  Console.log(item)
+Console.log(item)
 })
 ```
 
@@ -858,12 +858,12 @@ array->Array.forEach(item => {
 
 See [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
 array->Array.forEachWithIndex((item, index) => {
-  Console.log("At item " ++ Int.toString(index) ++ ": " ++ item)
+Console.log("At item " ++ Int.toString(index) ++ ": " ++ item)
 })
 ```
 
@@ -875,7 +875,7 @@ array->Array.forEachWithIndex((item, index) => {
 
 See [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 let mappedArray = array->Array.map(greeting => greeting ++ " to you")
@@ -891,13 +891,13 @@ Console.log(mappedArray) // ["Hello to you", "Hi to you", "Good bye to you"]
 
 See [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 let mappedArray =
-  array->Array.mapWithIndex((greeting, index) =>
-    greeting ++ " at position " ++ Int.toString(index)
-  )
+array->Array.mapWithIndex((greeting, index) =>
+greeting ++ " at position " ++ Int.toString(index)
+)
 
 Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good bye at position 2"]
 ```
@@ -908,13 +908,13 @@ Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good by
 
 `reduce(xs, f, init)`
 
-  Applies `f` to each element of `xs` from beginning to end. Function `f` has two parameters: the item from the list and an “accumulator”; which starts with a value of `init`. `reduce` returns the final value of the accumulator.
+Applies `f` to each element of `xs` from beginning to end. Function `f` has two parameters: the item from the list and an “accumulator”; which starts with a value of `init`. `reduce` returns the final value of the accumulator.
 
-  ```res example
-  Array.reduce([2, 3, 4], (a, b) => a + b, 1) == 10
+```res example
+Array.reduce([2, 3, 4], (a, b) => a + b, 1) == 10
 
-  Array.reduce(["a", "b", "c", "d"], (a, b) => a ++ b, "") == "abcd"
-  ```
+Array.reduce(["a", "b", "c", "d"], (a, b) => a ++ b, "") == "abcd"
+```
 
 ### let RescriptCore.Array.reduceWithIndex
 
@@ -922,11 +922,11 @@ Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good by
 
 `reduceWithIndex(xs, f, init)`
 
-  Applies `f` to each element of `xs` from beginning to end. Function `f` has three parameters: the item from the array and an “accumulator”, which starts with a value of `init` and the index of each element. `reduceWithIndex` returns the final value of the accumulator.
+Applies `f` to each element of `xs` from beginning to end. Function `f` has three parameters: the item from the array and an “accumulator”, which starts with a value of `init` and the index of each element. `reduceWithIndex` returns the final value of the accumulator.
 
-  ```res example
-  Array.reduceWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16
-  ```
+```res example
+Array.reduceWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16
+```
 
 ### let RescriptCore.Array.reduceRight
 
@@ -934,11 +934,11 @@ Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good by
 
 `reduceRight(xs, f, init)`
 
-  Works like `Array.reduce`; except that function `f` is applied to each item of `xs` from the last back to the first.
+Works like `Array.reduce`; except that function `f` is applied to each item of `xs` from the last back to the first.
 
-  ```res example
-  Array.reduceRight(["a", "b", "c", "d"], (a, b) => a ++ b, "") == "dcba"
-  ```
+```res example
+Array.reduceRight(["a", "b", "c", "d"], (a, b) => a ++ b, "") == "dcba"
+```
 
 ### let RescriptCore.Array.reduceRightWithIndex
 
@@ -946,11 +946,11 @@ Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good by
 
 `reduceRightWithIndex(xs, f, init)`
 
-  Like `reduceRight`, but with an additional index argument on the callback function.
+Like `reduceRight`, but with an additional index argument on the callback function.
 
-  ```res example
-  Array.reduceRightWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16
-  ```
+```res example
+Array.reduceRightWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16
+```
 
 ### let RescriptCore.Array.some
 
@@ -960,7 +960,7 @@ Console.log(mappedArray) // ["Hello at position 0", "Hi at position 1", "Good by
 
 See [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
@@ -975,7 +975,7 @@ Console.log(array->Array.some(greeting => greeting === "Hello")) // true
 
 See [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
@@ -990,7 +990,7 @@ Console.log(array->Array.someWithIndex((greeting, index) => greeting === "Hello"
 
 Returns `None` if the index does not exist in the array. Equivalent to doing `array[index]` in JavaScript.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
@@ -1005,7 +1005,7 @@ array->Array.get(0) == Some("Hello") // true
 
 Beware this will *mutate* the array.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 array->Array.set(1, "Hello")
@@ -1033,11 +1033,11 @@ Console.log(array[1]) // "Hello"
 
 This is _unsafe_, meaning it will fail with an exception if `index` does not exist in `array`.
 
-## Exceptions
+#### Exceptions
 
 - `Not_found`: If the provided `index` does not exist in `array`.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
@@ -1053,7 +1053,7 @@ Console.log(array->Array.getUnsafe(3)) // Fails and raises exception
 
 Beware this will *mutate* the array, and is *unsafe*.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 array->Array.setUnsafe(1, "Hello")
@@ -1071,7 +1071,7 @@ Returns `None` if no item matches.
 
 See [`Array.findIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | TypeScript | JavaScript
 
@@ -1091,7 +1091,7 @@ switch array->Array.findIndexOpt(item => item == ReScript) {
 
 See [`Array.toReversed`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let someArray = ["hi", "hello"]
 let reversed = someArray->Array.toReversed
@@ -1108,17 +1108,17 @@ Console.log(someArray) // ["h1", "hello"]. Original unchanged
 
 Returns `None` if the index does not exist in the array. Equivalent to doing `array[index]` in JavaScript.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
 Console.log(
-  array->Array.filterMap(item =>
-    switch item {
-    | "Hello" => Some(item->String.length)
-    | _ => None
-    }
-  ),
+array->Array.filterMap(item =>
+switch item {
+| "Hello" => Some(item->String.length)
+| _ => None
+}
+),
 )
 // [5]
 ```
@@ -1129,12 +1129,12 @@ Console.log(
 
 `keepSome(arr)`
 
-  Returns a new array containing `value` for all elements that are `Some(value)`
-  and ignoring every value that is `None`
+Returns a new array containing `value` for all elements that are `Some(value)`
+and ignoring every value that is `None`
 
-  ```res example
-  Array.keepSome([Some(1), None, Some(3)]) == [1, 3]
-  ```
+```res example
+Array.keepSome([Some(1), None, Some(3)]) == [1, 3]
+```
 
 ### let RescriptCore.Array.toShuffled
 
@@ -1142,7 +1142,7 @@ Console.log(
 
 `toShuffled(array)` returns a new array with all items in `array` in a random order.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 let shuffledArray = array->Array.toShuffled
@@ -1158,7 +1158,7 @@ Console.log(shuffledArray)
 
 Beware this will *mutate* the array.
 
-## Examples
+#### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 array->Array.shuffle
@@ -1172,20 +1172,20 @@ Console.log(array)
 
 `flatMap(array, mapper)` returns a new array concatenating the arrays returned from running `mapper` on all items in `array`.
 
-## Examples
+#### Examples
 ```rescript
 type language = ReScript | TypeScript | JavaScript
 
 let array = [ReScript, TypeScript, JavaScript]
 
 Console.log(
-  array->Array.flatMap(item =>
-    switch item {
-    | ReScript => [1, 2, 3]
-    | TypeScript => [4, 5, 6]
-    | JavaScript => [7, 8, 9]
-    }
-  ),
+array->Array.flatMap(item =>
+switch item {
+| ReScript => [1, 2, 3]
+| TypeScript => [4, 5, 6]
+| JavaScript => [7, 8, 9]
+}
+),
 )
 // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
@@ -1196,12 +1196,12 @@ Console.log(
 
 `findMap(arr, f)`
 
-  Calls `f` for each element and returns the first value from `f` that is `Some(_)`.
-  Otherwise returns `None`
+Calls `f` for each element and returns the first value from `f` that is `Some(_)`.
+Otherwise returns `None`
 
-  ```res example
-  Array.findMap([1, 2, 3], n => mod(n, 2) ? Some(n - 2) : None) == 0
-  ```
+```res example
+Array.findMap([1, 2, 3], n => mod(n, 2) ? Some(n - 2) : None) == 0
+```
 
 ### let RescriptCore.Array.at
 
@@ -1209,17 +1209,17 @@ Console.log(
 
 `at(array, index)`
 
-  Get an element by its index. Negative indices count backwards from the last item.
+Get an element by its index. Negative indices count backwards from the last item.
 
-  ## Examples
-  ```rescript
-  ["a", "b", "c"]->Array.at(0) // Some("a")
-  ["a", "b", "c"]->Array.at(2) // Some("c")
-  ["a", "b", "c"]->Array.at(3) // None
-  ["a", "b", "c"]->Array.at(-1) // Some("c")
-  ["a", "b", "c"]->Array.at(-3) // Some("a")
-  ["a", "b", "c"]->Array.at(-4) // None
-  ```
+#### Examples
+```rescript
+["a", "b", "c"]->Array.at(0) // Some("a")
+["a", "b", "c"]->Array.at(2) // Some("c")
+["a", "b", "c"]->Array.at(3) // None
+["a", "b", "c"]->Array.at(-1) // Some("c")
+["a", "b", "c"]->Array.at(-3) // Some("a")
+["a", "b", "c"]->Array.at(-4) // None
+```
 
 ## module RescriptCore.Console `alias`
 
@@ -1232,7 +1232,7 @@ Console.log(
 See [`console.assert`](https://developer.mozilla.org/en-US/docs/Web/API/console/assert)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert_(false, "Hello World!")
@@ -1245,7 +1245,7 @@ Console.assert_(n == 42, "The answer")
 
 `assert2(v1, v2)`. Like `assert_`, but with two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert2(false, "Hello", "World")
@@ -1258,7 +1258,7 @@ Console.assert2(n == 42, [1, 2, 3], '4')
 
 `assert3(v1, v2, v3)`. Like `assert_`, but with three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert3(false, "Hello", "World", "ReScript")
@@ -1271,7 +1271,7 @@ Console.assert3(n == 42, "One", 2, #3)
 
 `assert4(v1, v2, v3, v4)`. Like `assert_`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert4(false, "Hello", "World", "ReScript", "!!!")
@@ -1284,7 +1284,7 @@ Console.assert4(m == 42, [1, 2], (3, 4), [#5, #6], #"polyvar")
 
 `assert5(v1, v2, v3, v4, v5)`. Like `assert_`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert5(false, "Hello", "World", "JS", '!', '!')
@@ -1297,7 +1297,7 @@ Console.assert5(n == 42, [1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScrip
 
 `assert6(v1, v2)`. Like `assert_`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assert6(false, "Hello", "World", "JS", '!', '!', '?')
@@ -1310,7 +1310,7 @@ Console.assert6(n == 42, [1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScrip
 
 `assertMany(assertion, arr)`. Like `assert_`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.assertMany(false, ["Hello", "World"])
@@ -1326,7 +1326,7 @@ Console.assertMany(n == 42, [1, 2, 3])
 See [`console.clear`](https://developer.mozilla.org/en-US/docs/Web/API/console/clear)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.clear()
@@ -1341,7 +1341,7 @@ Console.clear()
 See [`console.count`](https://developer.mozilla.org/en-US/docs/Web/API/console/count)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.count("rescript")
@@ -1356,7 +1356,7 @@ Console.count("rescript")
 See [`console.countReset`](https://developer.mozilla.org/en-US/docs/Web/API/console/countReset)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.countReset("rescript")
@@ -1371,7 +1371,7 @@ Console.countReset("rescript")
 See [`console.debug`](https://developer.mozilla.org/en-US/docs/Web/API/console/debug)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug("Hello")
@@ -1385,7 +1385,7 @@ Console.debug(obj)
 
 `debug2(v1, v2)`. Like `debug`, but with two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug2("Hello", "World")
@@ -1398,7 +1398,7 @@ Console.debug2([1, 2, 3], '4')
 
 `debug3(v1, v2, v3)`. Like `debug`, but with three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug3("Hello", "World", "ReScript")
@@ -1411,7 +1411,7 @@ Console.debug3("One", 2, #3)
 
 `debug4(v1, v2, v3, v4)`. Like `debug`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug4("Hello", "World", "ReScript", "!!!")
@@ -1424,7 +1424,7 @@ Console.debug4([1, 2], (3, 4), [#5, #6], #"polyvar")
 
 `debug5(v1, v2, v3, v4, v5)`. Like `debug`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug5("Hello", "World", "JS", '!', '!')
@@ -1437,7 +1437,7 @@ Console.debug5([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"})
 
 `debug6(v1, v2, v3, v4, v5, v6)`. Like `debug`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debug6("Hello", "World", "JS", '!', '!', '?')
@@ -1450,7 +1450,7 @@ Console.debug6([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"}, 42)
 
 `debugMany(arr)`. Like `debug`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.debugMany(["Hello", "World"])
@@ -1466,7 +1466,7 @@ Console.debugMany([1, 2, 3])
 See [`console.dir`](https://developer.mozilla.org/en-US/docs/Web/API/console/dir)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.dir({"language": "rescript", "version": 10.1.2})
@@ -1490,7 +1490,7 @@ on MDN.
 See [`console.error`](https://developer.mozilla.org/en-US/docs/Web/API/console/error)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error("error message")
@@ -1503,7 +1503,7 @@ Console.error(("error", "invalid value"))
 
 `error(v1, v2)`. Like `error`, but two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error2("Error", "here")
@@ -1516,7 +1516,7 @@ Console.error2(("log", "error"), "message")
 
 `error3(v1, v2, v3)`. Like `error`, but three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error3("Hello", "World", "!!!")
@@ -1529,7 +1529,7 @@ Console.error3(#first, #second, #third)
 
 `error4(v1, v2, v3, v4)`. Like `error`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error4("Hello", "World", "ReScript", '!')
@@ -1542,7 +1542,7 @@ Console.error4(#first, #second, #third, ("fourth"))
 
 `error5(v1, v2, v3, v4, v5)`. Like `error`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error5('e', 'r, 'r', 'o', 'r')
@@ -1555,7 +1555,7 @@ Console.error5(1, #second, #third, ("fourth"), 'c')
 
 `error6(v1, v2, v3, v4, v5, v6)`. Like `error`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.error6("Hello", "World", "from", "JS", "!!!", '!')
@@ -1571,7 +1571,7 @@ Console.error6([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"}, 42)
 See [`console.group`](https://developer.mozilla.org/en-US/docs/Web/API/console/group)
 on MDN.
 
-## Example
+#### Example
 
 ```rescript
 Console.group("first group")
@@ -1606,7 +1606,7 @@ on MDN.
 
 `errorMany(arr)`. Like `error`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.errorMany(["Hello", "World"])
@@ -1622,7 +1622,7 @@ Console.errorMany([1, 2, 3])
 See [`console.info`](https://developer.mozilla.org/en-US/docs/Web/API/console/info)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info("Information")
@@ -1635,7 +1635,7 @@ Console.info(("Hello", "JS"))
 
 `info2(v1, v2)`. Like `info`, but with two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info2("Info", "failed to download")
@@ -1648,7 +1648,7 @@ Console.info2(#info, {"name": "ReScript"})
 
 `info3(v1, v2, v3)`. Like `info`, but with three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info3("Hello", "World", "ReScript")
@@ -1661,7 +1661,7 @@ Console.info3([1, 2, 3], #4, #5)
 
 `info4(v1, v2, v3, v4)`. Like `info`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info4("Hello", "World", "ReScript", '!')
@@ -1674,7 +1674,7 @@ Console.info4([1, 2, 3], #4, #5, #lastinfo)
 
 `info5(v1, v2, v3, v4, v5)`. Like `info`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info5("Hello", "World", "from", "JS", "!!!")
@@ -1687,7 +1687,7 @@ Console.info5([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"})
 
 `info6(v1, v2, v3, v4, v5, v6)`. Like `info`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.info6("Hello", "World", "from", "JS", "!!!", '!')
@@ -1700,7 +1700,7 @@ Console.info6([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"}, 42)
 
 `infoMany(arr)`. Like `info`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.infoMany(["Hello", "World"])
@@ -1716,7 +1716,7 @@ Console.infoMany([1, 2, 3])
 See [`console.log`](https://developer.mozilla.org/en-US/docs/Web/API/console/log)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log("Hello")
@@ -1730,7 +1730,7 @@ Console.log(obj)
 
 `log2(v1, v2)`. Like `log`, but with two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log2("Hello", "World")
@@ -1743,7 +1743,7 @@ Console.log2([1, 2, 3], '4')
 
 `log3(v1, v2, v3)`. Like `log`, but with three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log3("Hello", "World", "ReScript")
@@ -1756,7 +1756,7 @@ Console.log3("One", 2, #3)
 
 `log4(v1, v2, v3, v4)`. Like `log`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log4("Hello", "World", "ReScript", "!!!")
@@ -1769,7 +1769,7 @@ Console.log4([1, 2], (3, 4), [#5, #6], #"polyvar")
 
 `log5(v1, v2, v3, v4, v5)`. Like `log`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log5("Hello", "World", "JS", '!', '!')
@@ -1782,7 +1782,7 @@ Console.log5([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"})
 
 `log6(v1, v2, v3, v4, v5, v6)`. Like `log`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.log6("Hello", "World", "JS", '!', '!', '?')
@@ -1795,7 +1795,7 @@ Console.log6([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"}, 42)
 
 `logMany(arr)`. Like `log`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.logMany(["Hello", "World"])
@@ -1811,7 +1811,7 @@ Console.logMany([1, 2, 3])
 See [`console.table`](https://developer.mozilla.org/en-US/docs/Web/API/console/table)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.table({"language": "rescript", "version": 10.1.2})
@@ -1828,13 +1828,13 @@ output time.
 See [`console.time`](https://developer.mozilla.org/en-US/docs/Web/API/console/time)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.time("for_time")
 for x in 3 downto 1 {
-  Console.log(x)
-  Console.timeLog("for_time")
+Console.log(x)
+Console.timeLog("for_time")
 }
 Console.timeEnd("for_time")
 ```
@@ -1848,13 +1848,13 @@ Console.timeEnd("for_time")
 See [`console.timeEnd`](https://developer.mozilla.org/en-US/docs/Web/API/console/timeEnd)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.time("for_time")
 for x in 3 downto 1 {
-  Console.log(x)
-  Console.timeLog("for_time")
+Console.log(x)
+Console.timeLog("for_time")
 }
 Console.timeEnd("for_time")
 ```
@@ -1868,13 +1868,13 @@ Console.timeEnd("for_time")
 See [`console.timeLog`](https://developer.mozilla.org/en-US/docs/Web/API/console/timeLog)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.time("for_time")
 for x in 3 downto 1 {
-  Console.log(x)
-  Console.timeLog("for_time")
+Console.log(x)
+Console.timeLog("for_time")
 }
 Console.timeEnd("for_time")
 ```
@@ -1888,11 +1888,11 @@ Console.timeEnd("for_time")
 See [`console.trace`](https://developer.mozilla.org/en-US/docs/Web/API/console/trace)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 let main = () => {
-  Console.trace()
+Console.trace()
 }
 main()
 // In the console, the following trace will be displayed:
@@ -1909,7 +1909,7 @@ main()
 See [`console.warn`](https://developer.mozilla.org/en-US/docs/Web/API/console/warn)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn("Warning")
@@ -1922,7 +1922,7 @@ Console.warn(("Warning", "invalid number"))
 
 `warn2(v1, v2)`. Like `warn`, but two arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn2("Hello", "World")
@@ -1935,7 +1935,7 @@ Console.warn2([1, 2, 3], 4)
 
 `warn3(v1, v2, v3)`. Like `warn`, but three arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn3("Hello", "World", "ReScript")
@@ -1948,7 +1948,7 @@ Console.warn3([1, 2, 3], #4, #5)
 
 `warn4(v1, v2, v3, v4)`. Like `warn`, but with four arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn4("Hello", "World", "ReScript", "!!!")
@@ -1961,7 +1961,7 @@ Console.warn4(#first, #second, #third, ("fourth"))
 
 `warn5(v1, v2, v3, v4, v5)`. Like `warn`, but with five arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn5("Hello", "World", "from", "JS", "!!!")
@@ -1974,7 +1974,7 @@ Console.warn5([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"})
 
 `warn6(v1, v2, v3, v4, v5, v6)`. Like `warn`, but with six arguments.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warn6("Hello", "World", "from", "JS", "!!!", '!')
@@ -1987,7 +1987,7 @@ Console.warn6([1, 2], (3, 4), [#5, #6], #"polyvar", {"name": "ReScript"}, 42)
 
 `warnMany(arr)`. Like `warn`, but variadic.
 
-## Examples
+#### Examples
 
 ```rescript
 Console.warnMany(["Hello", "World"])
@@ -2146,7 +2146,7 @@ See full spec at https://tc39.es/ecma402/#datetimeformat-objects
 
 Creates a date object with the current date time as value.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()
 ```
@@ -2163,7 +2163,7 @@ The string has to be in the ISO 8601 format YYYY-MM-DDTHH:mm:ss.sssZ (https://tc
 Invalid date time strings will create invalid dates.
 You can use the result like any valid date, but many functions like `toString` will return "Invalid Date" or functions like `Date.getTime` will return NaN.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023")
 // 2023-01-01T00:00:00.000Z
@@ -2190,7 +2190,7 @@ Date.fromString("")->getTime
 Creates a date object from the given time in milliseconds since / until UNIX epoch (January 1, 1970 00:00:00 UTC).
 Positive numbers create dates after epoch, negative numbers create dates before epoch.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromTime(0.0)
 // 1970-01-01T00:00:00.000Z
@@ -2211,7 +2211,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYM(~year=2023, ~month=0)
 // 2023-01-01T00:00:00.000Z
@@ -2239,7 +2239,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYMD(~year=2023, ~month=1, ~date=20)
 // 2023-02-20T00:00:00.000Z
@@ -2260,7 +2260,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=16)
 // 2023-02-20T16:00:00.000Z
@@ -2285,7 +2285,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40)
 // 2023-02-20T16:40:00.000Z
@@ -2310,7 +2310,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0)
 // 2023-02-20T16:40:00.000Z
@@ -2335,7 +2335,7 @@ Be aware of using a value for year < 100, because it behaves inconsistent (see h
 Months are 0-indexed (0 = January, 11 = December).
 Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-## Examples
+#### Examples
 ```rescript
 Date.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=0)
 // 2023-02-20T16:40:00.000Z
@@ -2358,129 +2358,129 @@ Date.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~se
 > let makeWithYM: (. ~year: int, ~month: int) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  Date.UTC.makeWithYM(~year=2023, ~month=0)
-  // 1672531200000
+#### Examples
+```rescript
+Date.UTC.makeWithYM(~year=2023, ~month=0)
+// 1672531200000
 
-  Date.UTC.makeWithYM(~year=2023, ~month=11)
-  // 1701388800000
+Date.UTC.makeWithYM(~year=2023, ~month=11)
+// 1701388800000
 
-  Date.UTC.makeWithYM(~year=2023, ~month=12)
-  // 1704067200000
+Date.UTC.makeWithYM(~year=2023, ~month=12)
+// 1704067200000
 
-  Date.UTC.makeWithYM(~year=2023, ~month=-1)
-  // 1669852800000
-  ```
+Date.UTC.makeWithYM(~year=2023, ~month=-1)
+// 1669852800000
+```
 
 ### let RescriptCore.Date.UTC.makeWithYMD
 
 > let makeWithYMD: (. ~year: int, ~month: int, ~date: int) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=20)
-  // 1676851200000
+#### Examples
+```rescript
+Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=20)
+// 1676851200000
 
-  Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=-1)
-  // 1675036800000
+Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=-1)
+// 1675036800000
 
-  Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=29)
-  // 1677628800000
-  ```
+Date.UTC.makeWithYMD(~year=2023, ~month=1, ~date=29)
+// 1677628800000
+```
 
 ### let RescriptCore.Date.UTC.makeWithYMDH
 
 > let makeWithYMDH: (.\n  ~year: int,\n  ~month: int,\n  ~date: int,\n  ~hours: int,\n) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=16)
-  // 1676908800000
+#### Examples
+```rescript
+Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=16)
+// 1676908800000
 
-  Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=24)
-  // 1676937600000
+Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=24)
+// 1676937600000
 
-  Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=-1)
-  // 1676847600000
-  ```
+Date.UTC.makeWithYMDH(~year=2023, ~month=1, ~date=20, ~hours=-1)
+// 1676847600000
+```
 
 ### let RescriptCore.Date.UTC.makeWithYMDHM
 
 > let makeWithYMDHM: (.\n  ~year: int,\n  ~month: int,\n  ~date: int,\n  ~hours: int,\n  ~minutes: int,\n) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40)
-  // 1676911200000
+#### Examples
+```rescript
+Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40)
+// 1676911200000
 
-  Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=60)
-  // 1676912400000
+Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=60)
+// 1676912400000
 
-  Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=-1)
-  // 1676908740000
-  ```
+Date.UTC.makeWithYMDHM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=-1)
+// 1676908740000
+```
 
 ### let RescriptCore.Date.UTC.makeWithYMDHMS
 
 > let makeWithYMDHMS: (.\n  ~year: int,\n  ~month: int,\n  ~date: int,\n  ~hours: int,\n  ~minutes: int,\n  ~seconds: int,\n) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0)
-  // 1676911200000
+#### Examples
+```rescript
+Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0)
+// 1676911200000
 
-  Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=60)
-  // 1676911260000
+Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=60)
+// 1676911260000
 
-  Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=-1)
-  // 1676911199000
-  ```
+Date.UTC.makeWithYMDHMS(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=-1)
+// 1676911199000
+```
 
 ### let RescriptCore.Date.UTC.makeWithYMDHMSM
 
 > let makeWithYMDHMSM: (.\n  ~year: int,\n  ~month: int,\n  ~date: int,\n  ~hours: int,\n  ~minutes: int,\n  ~seconds: int,\n  ~milliseconds: int,\n) => msSinceEpoch
 
 Returns the time, in milliseconds, since UNIX epoch (January 1, 1970 00:00:00 UTC).
-  Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
-  Months are 0-indexed (0 = January, 11 = December).
-  Values, which are out of range, will be carried over to the next bigger unit (s. example).
+Be aware of using a value for year < 100, because it behaves inconsistent (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#interpretation_of_two-digit_years).
+Months are 0-indexed (0 = January, 11 = December).
+Values, which are out of range, will be carried over to the next bigger unit (s. example).
 
-  ## Examples
-  ```rescript
-  ```
-  Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=0)->Console.log
-  // 1676911200000
+#### Examples
+```rescript
+```
+Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=0)->Console.log
+// 1676911200000
 
-  Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=1000)->Console.log
-  // 1676911201000
+Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=1000)->Console.log
+// 1676911201000
 
-  Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=-1)->Console.log
-  // 1676911199999
+Date.UTC.makeWithYMDHMSM(~year=2023, ~month=1, ~date=20, ~hours=16, ~minutes=40, ~seconds=0, ~milliseconds=-1)->Console.log
+// 1676911199999
 
 ### let RescriptCore.Date.now
 
@@ -2508,7 +2508,7 @@ Returns the time, in milliseconds, between UNIX epoch (January 1, 1970 00:00:00 
 Invalid dates will return NaN.
 Dates before epoch will return negative numbers.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20")->Date.getTime
 // 1676851200000
@@ -2523,7 +2523,7 @@ Date.fromString("2023-02-20")->Date.getTime
 Returns the time in minutes between the UTC time and the locale time.
 The timezone of the given date doesn't matter.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01")->Date.getTimezoneOffset
 // -60 with local time zone = Europe/Berlin
@@ -2540,7 +2540,7 @@ Date.fromString("2023-06-01")->Date.getTimezoneOffset
 
 Returns the year of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20")->Date.getFullYear
 // 2023
@@ -2554,7 +2554,7 @@ Date.fromString("2023-02-20")->Date.getFullYear
 
 Returns the month (0-indexed) of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01")->Date.getMonth
 // 0
@@ -2568,7 +2568,7 @@ Date.fromString("2023-01-01")->Date.getMonth
 
 Returns the date (day of month) of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getDate
 // 20
@@ -2582,7 +2582,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getDate
 
 Returns the hours of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getHours
 // 16
@@ -2596,7 +2596,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getHours
 
 Returns the minutes of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getMinutes
 // 40
@@ -2610,7 +2610,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getMinutes
 
 Returns the seconds of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getSeconds
 // 0
@@ -2624,7 +2624,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getSeconds
 
 Returns the milliseconds of a given date (according to local time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getMilliseconds
 // 0
@@ -2639,7 +2639,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getMilliseconds
 Returns the day of week of a given date (according to local time).
 0 = Sunday, 1 = Monday, ... 6 = Saturday
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.getDay
 // 1
@@ -2654,7 +2654,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.getDay
 Sets the year of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYear(2024)
 ```
@@ -2668,7 +2668,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYear(2024)
 Sets the year and month of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearM(~year=2024, ~month=0)
 ```
@@ -2682,7 +2682,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearM(~year=2024, ~month=
 Sets the year, month and date (day of month) of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearMD(~year=2024, ~month=0, ~date=1)
 ```
@@ -2696,7 +2696,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearMD(~year=2024, ~month
 Sets the month of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setMonth(0)
 ```
@@ -2710,7 +2710,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setMonth(0)
 Sets the date (day of month) of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setDate(1)
 ```
@@ -2724,7 +2724,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setDate(1)
 Sets the hours of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setHours(0)
 ```
@@ -2738,7 +2738,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setHours(0)
 Sets the hours and minutes of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursM(~hours=0, ~minutes=0)
 ```
@@ -2752,7 +2752,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursM(~hours=0, ~minutes=0)
 Sets the hours, minutes and seconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMS(~hours=0, ~minutes=0, ~seconds=0)
 ```
@@ -2766,7 +2766,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMS(~hours=0, ~minutes=0,
 Sets the hours, minutes, seconds and milliseconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
@@ -2780,7 +2780,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMSMs(~hours=0, ~minutes=
 Sets the minutes of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutes(0)
 ```
@@ -2794,7 +2794,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutes(0)
 Sets the minutes and seconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesS(~minutes=0, ~seconds=0)
 ```
@@ -2808,7 +2808,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesS(~minutes=0, ~seconds
 Sets the minutes, seconds and milliseconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
@@ -2822,7 +2822,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesSMs(~minutes=0, ~secon
 Sets the seconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setSeconds(0)
 ```
@@ -2836,7 +2836,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setSeconds(0)
 Sets the seconds and milliseconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setSecondsMs(~seconds=0, ~milliseconds=0)
 ```
@@ -2850,7 +2850,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setSecondsMs(~seconds=0, ~millis
 Sets the milliseconds of a date (according to local time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setMilliseconds(0)
 ```
@@ -2863,7 +2863,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setMilliseconds(0)
 
 Returns the year of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCFullYear
 // 2022
@@ -2877,7 +2877,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCFullYear
 
 Returns the month of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMonth
 // 11
@@ -2891,7 +2891,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMonth
 
 Returns the date (day of month) of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCDate
 // 31
@@ -2905,7 +2905,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCDate
 
 Returns the hours of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCHours
 // 23
@@ -2919,7 +2919,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCHours
 
 Returns the minutes of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMinutes
 // 0
@@ -2933,7 +2933,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMinutes
 
 Returns the seconds of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCSeconds
 // 0
@@ -2947,7 +2947,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCSeconds
 
 Returns the milliseconds of a given date (according to UTC time).
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMilliseconds
 // 0
@@ -2962,7 +2962,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCMilliseconds
 Returns the day (day of week) of a given date (according to UTC time).
 0 = Sunday, 1 = Monday, ... 6 = Saturday
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCDay
 // 6
@@ -2977,7 +2977,7 @@ Date.fromString("2023-01-01T00:00:00.00+01:00").getUTCDay
 Sets the year of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYear(2024)
 ```
@@ -2991,7 +2991,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYear(2024)
 Sets the year and month of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearM(~year=2024, ~month=0)
 ```
@@ -3005,7 +3005,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearM(~year=2024, ~mon
 Sets the year, month and date (day of month) of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearMD(~year=2024, ~month=0, ~date=1)
 ```
@@ -3019,7 +3019,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearMD(~year=2024, ~mo
 Sets the month of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMonth(0)
 ```
@@ -3033,7 +3033,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMonth(0)
 Sets the date (day of month) of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCDate(1)
 ```
@@ -3047,7 +3047,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCDate(1)
 Sets the hours of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHours(0)
 ```
@@ -3061,7 +3061,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHours(0)
 Sets the hours and minutes of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursM(~hours=0, ~minutes=0)
 ```
@@ -3075,7 +3075,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursM(~hours=0, ~minutes=
 Sets the hours, minutes and seconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMS(~hours=0, ~minutes=0, ~seconds=0)
 ```
@@ -3089,7 +3089,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMS(~hours=0, ~minutes
 Sets the hours, minutes, seconds and milliseconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
@@ -3103,7 +3103,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMSMs(~hours=0, ~minut
 Sets the minutes of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutes(0)
 ```
@@ -3117,7 +3117,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutes(0)
 Sets the minutes and seconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesS(~minutes=0, ~seconds=0)
 ```
@@ -3131,7 +3131,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesS(~minutes=0, ~seco
 Sets the minutes, seconds and milliseconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
@@ -3145,7 +3145,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesSMs(~minutes=0, ~se
 Sets the seconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSeconds(0)
 ```
@@ -3159,7 +3159,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSeconds(0)
 Sets the seconds and milliseconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSecondsMs(~seconds=0, ~milliseconds=0)
 ```
@@ -3173,7 +3173,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSecondsMs(~seconds=0, ~mil
 Sets the milliseconds of a date (according to UTC time).
 Beware this will *mutate* the date.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMilliseconds(0)
 ```
@@ -3187,7 +3187,7 @@ Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMilliseconds(0)
 Converts a JavaScript date to a standard date string. The date will be mapped to the current time zone.
 If you want to convert it to a localized string, use `Date.toLocaleDateString` instead.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toDateString->Console.log
 // Sun Jan 01 2023
@@ -3205,7 +3205,7 @@ Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toDateString->Console.log
 Converts a JavaScript date to a standard date time string. The date will be mapped to the current time zone.
 If you want to convert it to a localized string, use `Date.toLocaleString` instead.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toString->Console.log
 // Sun Jan 01 2023 00:00:00 GMT+0100 (Central European Standard Time)
@@ -3223,7 +3223,7 @@ Date.fromString("2023-06-01T00:00:00.00+01:00")->Date.toString->Console.log
 Converts a JavaScript date to a standard time string. The date will be mapped to the current time zone.
 If you want to convert it to a localized string, use `Date.toLocaleStimeString` instead.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toTimeString->Console.log
 // 00:00:00 GMT+0100 (Central European Standard Time)
@@ -3240,7 +3240,7 @@ Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toTimeString->Console.log
 
 Converts a JavaScript date to a localized date string. It will use the current locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleDateString->Console.log
 // 2/19/2023
@@ -3254,7 +3254,7 @@ Date.make()->Date.toLocaleDateString->Console.log
 
 Converts a JavaScript date to a localized date string. It will use the specified locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleDateStringWithLocale("en-US")->Console.log
 // 2/19/2023
@@ -3268,7 +3268,7 @@ Date.make()->Date.toLocaleDateStringWithLocale("en-US")->Console.log
 
 Converts a JavaScript date to a localized date string. It will use the specified locale and formatting options.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleDateStringWithLocaleAndOptions("en-US", { dateStyle: #long })->Console.log
 // February 19, 2023
@@ -3288,7 +3288,7 @@ Date.make()->Date.toLocaleDateStringWithLocaleAndOptions("de", { year: #numeric 
 
 Converts a JavaScript date to a localized date-time string. It will use the current locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleString->Console.log
 // 2/19/2023, 3:40:00 PM
@@ -3302,7 +3302,7 @@ Date.make()->Date.toLocaleString->Console.log
 
 Converts a JavaScript date to a localized date-time string. It will use the specified locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleStringWithLocale("en-US")->Console.log
 // 2/19/2023, 3:40:00 PM
@@ -3316,7 +3316,7 @@ Date.make()->Date.toLocaleStringWithLocale("en-US")->Console.log
 
 Converts a JavaScript date to a localized date-time string. It will use the specified locale and formatting options.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleStringWithLocaleAndOptions("en", { dateStyle: #short, timeStyle: #short })->Console.log
 // 2/19/23, 3:40 PM
@@ -3333,7 +3333,7 @@ Date.make()->Date.toLocaleStringWithLocaleAndOptions("en", { era: #long, year: #
 
 Converts a JavaScript date to a localized time string. It will use the current locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleTimeString->Console.log
 // 3:40:00 PM
@@ -3347,7 +3347,7 @@ Date.make()->Date.toLocaleTimeString->Console.log
 
 Converts a JavaScript date to a localized time string. It will use the specified locale.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleTimeStringWithLocale("en-US")->Console.log
 // 3:40:00 PM
@@ -3361,7 +3361,7 @@ Date.make()->Date.toLocaleTimeStringWithLocale("en-US")->Console.log
 
 Converts a JavaScript date to a localized time string. It will use the specified locale and formatting options.
 
-## Examples
+#### Examples
 ```rescript
 Date.make()->Date.toLocaleTimeStringWithLocaleAndOptions("en-US", { timeStyle: #long })->Console.log
 // 3:40:00 PM GMT+1
@@ -3378,7 +3378,7 @@ Date.make()->Date.toLocaleTimeStringWithLocaleAndOptions("de", { hour: #"2-digit
 
 Converts a JavaScript date to a ISO 8601 string (YYYY-MM-DDTHH:mm:ss.sssZ). The date will be mapped to the UTC time.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toISOString->Console.log
 // 2023-01-01T00:00:00.000Z
@@ -3395,7 +3395,7 @@ Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toISOString->Console.log
 
 Converts a JavaScript date to date time string. The date will be mapped to the UTC time.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toUTCString->Console.log
 // Sun, 01 Jan 2023 00:00:00 GMT
@@ -3414,7 +3414,7 @@ Converts a JavaScript date to a string.
 If the date is valid, the function will return the same result as `Date.toISOString`.
 Invalid dates will return `None`.
 
-## Examples
+#### Examples
 ```rescript
 Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toJSON
 // Some("2023-01-01T00:00:00.000Z")
@@ -3437,7 +3437,7 @@ Type representing a dictionary of value `'a`.
 
 Returns the value at the provided key, if it exists. Returns an option.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([("someKey", "someValue")])
 
@@ -3453,7 +3453,7 @@ switch dict->Dict.get("someKey") {
 
 `set(dictionary, key, value)` sets the value at the provided key to the provided value.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.make()
 
@@ -3466,7 +3466,7 @@ dict->Dict.set("someKey", "someValue")
 
 `delete(dictionary, key)` deletes the value at `key`, if it exists.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([("someKey", "someValue")])
 
@@ -3479,7 +3479,7 @@ dict->Dict.delete("someKey")
 
 `make()` creates a new, empty dictionary.
 
-## Examples
+#### Examples
 ```rescript
 let dict1: Dict.t<int> = Dict.make() // You can annotate the type of the values of your dict yourself if you want
 
@@ -3493,7 +3493,7 @@ dict2->Dict.set("someKey", 12)
 
 `fromArray(entries)` creates a new dictionary from the provided array of key/value pairs.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([("key1", "value1"), ("key2", "value2")])
 ```
@@ -3504,7 +3504,7 @@ let dict = Dict.fromArray([("key1", "value1"), ("key2", "value2")])
 
 `fromIterator(entries)` creates a new dictionary from the provided iterator of key/value pairs.
 
-## Examples
+#### Examples
 ```rescript
 // Pretend we have an iterator of the correct shape
 @val external someIterator: Iterator.t<(string, int)> = "someIterator"
@@ -3518,7 +3518,7 @@ let dict = Dict.fromIterator(someIterator) // Dict.t<int>
 
 `toArray(dictionary)` returns an array of all the key/value pairs of the dictionary.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.make()
 dict->Dict.set("someKey", 1)
@@ -3533,7 +3533,7 @@ Console.log(asArray) // Logs `[["someKey", 1], ["someKey2", 2]]` to the console
 
 `keysToArray(dictionary)` returns an array of all the keys of the dictionary.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.make()
 dict->Dict.set("someKey", 1)
@@ -3548,7 +3548,7 @@ Console.log(keys) // Logs `["someKey", "someKey2"]` to the console
 
 `valuesToArray(dictionary)` returns an array of all the values of the dictionary.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.make()
 dict->Dict.set("someKey", 1)
@@ -3565,7 +3565,7 @@ Console.log(values) // Logs `[1, 2]` to the console
 
 Beware this will *mutate* dictionary1. If you're looking for a way to copy a dictionary, check out `Dict.copy`.
 
-## Examples
+#### Examples
 ```rescript
 let dict1 = Dict.make()
 dict1->Dict.set("firstKey", 1)
@@ -3587,7 +3587,7 @@ Console.log(dict1->Dict.keysToArray) // Logs `["firstKey", "someKey", "someKey2"
 
 `copy(dictionary)` [shallowly copies](https://developer.mozilla.org/en-US/docs/Glossary/Shallow_copy) the provided dictionary to a new dictionary.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([("key1", "value1"), ("key2", "value2")])
 let dict2 = dict->Dict.copy
@@ -3614,7 +3614,7 @@ Represents a JavaScript exception.
 
 Turns an `Error.t` into an `exn`.
 
-## Examples
+#### Examples
 ```rescript
 let error = Error.make("Something went wrong.")
 
@@ -3629,7 +3629,7 @@ let asExn = error->Error.toException // `asExn` is now type `exn`
 
 See [`Error.prototype.stack`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Stack) on MDN.
 
-## Example
+#### Example
 ```rescript
 Console.log(someError->Error.stack) // Logs `stack` if it exists on `someError`
 ```
@@ -3642,7 +3642,7 @@ Console.log(someError->Error.stack) // Logs `stack` if it exists on `someError`
 
 See [`Error.prototype.message`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/message) on MDN.
 
-## Example
+#### Example
 ```rescript
 let error = Error.SyntaxError.make("Some message here")
 Console.log(error->Error.message) // Logs "Some message here" to the console
@@ -3656,7 +3656,7 @@ Console.log(error->Error.message) // Logs "Some message here" to the console
 
 See [`Error.prototype.name`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/name) on MDN.
 
-## Example
+#### Example
 ```rescript
 let error = Error.SyntaxError.make("Some message here")
 Console.log(error->Error.name) // Logs "SyntaxError" to the console
@@ -3678,7 +3678,7 @@ See [`Error.prototype.fileName`](https://developer.mozilla.org/en-US/docs/Web/Ja
 
 See [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/Error) on MDN.
 
-## Example
+#### Example
 ```rescript
 let error = Error.make("Some message here")
 Console.log(error->Error.message) // Logs "Some message here" to the console
@@ -3693,7 +3693,7 @@ Console.log(error->Error.name) // Logs "Error" to the console, because this is a
 
 Creates a new `EvalError` with the provided `message`.
 
-  See [`EvalError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError) on MDN.
+See [`EvalError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError) on MDN.
 
 ## module RescriptCore.Error.RangeError
 
@@ -3703,7 +3703,7 @@ Creates a new `EvalError` with the provided `message`.
 
 Creates a new `RangeError` with the provided `message`.
 
-  See [`RangeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError) on MDN.
+See [`RangeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError) on MDN.
 
 ## module RescriptCore.Error.ReferenceError
 
@@ -3713,7 +3713,7 @@ Creates a new `RangeError` with the provided `message`.
 
 Creates a new `ReferenceError` with the provided `message`.
 
-  See [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError) on MDN.
+See [`ReferenceError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError) on MDN.
 
 ## module RescriptCore.Error.SyntaxError
 
@@ -3723,7 +3723,7 @@ Creates a new `ReferenceError` with the provided `message`.
 
 Creates a new `SyntaxError` with the provided `message`.
 
-  See [`SyntaxError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError) on MDN.
+See [`SyntaxError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError) on MDN.
 
 ## module RescriptCore.Error.TypeError
 
@@ -3733,7 +3733,7 @@ Creates a new `SyntaxError` with the provided `message`.
 
 Creates a new `TypeError` with the provided `message`.
 
-  See [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) on MDN.
+See [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) on MDN.
 
 ## module RescriptCore.Error.URIError
 
@@ -3743,7 +3743,7 @@ Creates a new `TypeError` with the provided `message`.
 
 Creates a new `URIError` with the provided `message`.
 
-  See [`URIError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError) on MDN.
+See [`URIError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError) on MDN.
 
 ### let RescriptCore.Error.raise
 
@@ -3751,14 +3751,14 @@ Creates a new `URIError` with the provided `message`.
 
 Raises (throws in JavaScript language) the provided `Error.t`, which will stop execution.
 
-## Examples
+#### Examples
 ```rescript
 let error = Error.make("Everything is upside down.")
 
 if 5 > 10 {
-  error->Error.raise
+error->Error.raise
 } else {
-  Console.log("Phew, sanity still rules.")
+Console.log("Phew, sanity still rules.")
 }
 ```
 
@@ -3772,7 +3772,7 @@ A panic exception is a native JavaScript exception that is not intended to be ca
 handled. Compared to a ReScript exception this will give a better stack trace and
 debugging experience.
 
-## Examples
+#### Examples
 ```rescript
 Error.panic("Uh oh. This was unexpected!")
 ```
@@ -3786,78 +3786,78 @@ Error.panic("Uh oh. This was unexpected!")
 > let nan: float
 
 The special value "Not a Number"
-  See [`NaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) on MDN.
+See [`NaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.nan
-  ```
+```rescript
+Float.Constants.nan
+```
 
 ### let RescriptCore.Float.Constants.epsilon
 
 > let epsilon: float
 
 Represents the difference between 1 and the smallest floating point number greater than 1.
-  See [`Number.EPSILON`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON) on MDN.
+See [`Number.EPSILON`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/EPSILON) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.epsilon
-  ```
+```rescript
+Float.Constants.epsilon
+```
 
 ### let RescriptCore.Float.Constants.positiveInfinity
 
 > let positiveInfinity: float
 
 The positive Infinity value
-  See [`Number.POSITIVE_INFINITY`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY) on MDN.
+See [`Number.POSITIVE_INFINITY`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.positiveInfinity
-  ```
+```rescript
+Float.Constants.positiveInfinity
+```
 
 ### let RescriptCore.Float.Constants.negativeInfinity
 
 > let negativeInfinity: float
 
 The negative Infinity value
-  See [`Number.NEGATIVE_INFINITY`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY) on MDN.
+See [`Number.NEGATIVE_INFINITY`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NEGATIVE_INFINITY) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.negativeInfinity
-  ```
+```rescript
+Float.Constants.negativeInfinity
+```
 
 ### let RescriptCore.Float.Constants.minValue
 
 > let minValue: float
 
 The smallest positive numeric value representable in JavaScript.
-  See [`Number.MIN_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE) on MDN.
+See [`Number.MIN_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.minValue
-  ```
+```rescript
+Float.Constants.minValue
+```
 
 ### let RescriptCore.Float.Constants.maxValue
 
 > let maxValue: float
 
 The maximum positive numeric value representable in JavaScript.
-  See [`Number.MAX_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE) on MDN.
+See [`Number.MAX_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Float.Constants.minValue
-  ```
+```rescript
+Float.Constants.minValue
+```
 
 ### let RescriptCore.Float.equal
 
@@ -3874,7 +3874,7 @@ The maximum positive numeric value representable in JavaScript.
 `isNaN(v)` tests if the given `v` is `NaN`.
 See [`NaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.isNaN(3.0) // false
@@ -3888,7 +3888,7 @@ Float.isNaN(Float.Constants.nan) // true
 `isFinite(v)` tests if the given `v` is finite.
 See [`isFinite`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.isFinite(1.0) // true
@@ -3905,7 +3905,7 @@ Float.isFinite(Float.Constants.positiveInfinity) // false
 ensure it returns a valid float and not `NaN`.
 See [`parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.parseFloat("1.0") // 1.0
@@ -3923,7 +3923,7 @@ Float.parseFloat("error")->Float.isNaN // true
 `v` is ignored. Returns `NaN` if `v` can't be parsed.
 See [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.parseInt("1.0") // 1.0
@@ -3944,7 +3944,7 @@ Returns `NaN` if `v` can't be parsed and `radix` is smaller than 2 or bigger
 than 36.
 See [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.parseInt("10.0", ~radix=2) // 2.0
@@ -3961,7 +3961,7 @@ Float.parseInt("17", ~radix=40)->Float.isNaN // true
 notation.
 See [`Number.toExponential`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toExponential(1000.0) // "1e+3"
@@ -3977,14 +3977,14 @@ exponential notation. `digits` specifies how many digits should appear after
 the decimal point.
 See [`Number.toExponential`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toExponentialWithPrecision(77.0, ~digits=2) // "7.70e+1"
 Float.toExponentialWithPrecision(5678.0, ~digits=2) // "5.68e+3"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` less than 0 or greater than 10.
 
@@ -3996,7 +3996,7 @@ Float.toExponentialWithPrecision(5678.0, ~digits=2) // "5.68e+3"
 notation.
 See [`Number.toFixed`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toFixed(123456.0) // "123456.00"
@@ -4012,14 +4012,14 @@ value using fixed-point notation. `digits` specifies how many digits should
 appear after the decimal point.
 See [`Number.toFixed`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toFixed(300.0, ~digits=4) // "300.0000"
 Float.toFixed(300.0, ~digits=1) // "300.0"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` is less than 0 or larger than 100.
 
@@ -4032,7 +4032,7 @@ This function omits the argument that controls precision, so it behaves like
 `toString`. See `toPrecisionWithPrecision` to control precision.
 See [`Number.toPrecision`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toPrecision(100.0) // "100"
@@ -4047,14 +4047,14 @@ Float.toPrecision(1.0) // "1"
 precision. `digits` specifies the number of significant digits.
 See [`Number.toPrecision`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toPrecision(100.0, ~digits=2) // "1.0e+2"
 Float.toPrecision(1.0) // "1.0"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` is not between 1 and 100 (inclusive).
 Implementations are allowed to support larger and smaller values as well.
@@ -4067,7 +4067,7 @@ ECMA-262 only requires a precision of up to 21 significant digits.
 `toString(v)` return a `string` representing the given value.
 See [`Number.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toString(1000.0) // "1000"
@@ -4082,7 +4082,7 @@ Float.toString(-1000.0) // "-1000"
 `~radix` specifies the radix base to use for the formatted number.
 See [`Number.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toString(6.0, ~radix=2) // "110"
@@ -4090,7 +4090,7 @@ Float.toString(3735928559.0, ~radix=16) // "deadbeef"
 Float.toStringWithRadix(123456.0, ~radix=36) // "2n9c"
 ```
 
-## Exceptions
+#### Exceptions
 
 `RangeError`: if `radix` is less than 2 or greater than 36.
 
@@ -4102,7 +4102,7 @@ Float.toStringWithRadix(123456.0, ~radix=36) // "2n9c"
 given value.
 See [`Number.toLocaleString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 // If the application uses English as the default language
@@ -4118,7 +4118,7 @@ Int.toLocaleString(1000.0) // "1.000"
 
 `fromString(str)` return an `option<int>` representing the given value `str`.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.fromString("0") == Some(0.0)
@@ -4132,7 +4132,7 @@ Float.fromString("6") == Some(6.0)
 
 `toInt(v)` returns an int to given float `v`.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.toInt(2.0) == 2
@@ -4147,7 +4147,7 @@ Float.toInt(1.6) == 1
 
 `fromInt(v)` returns a float to given int `v`.
 
-## Examples
+#### Examples
 
 ```rescript
 Float.fromInt(2) == 2.0
@@ -4160,7 +4160,7 @@ Float.fromInt(1) == 1.0
 
 `mod(n1, n2)` calculates the modulo (remainder after division) of two floats.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.mod(7.0, 4.0) == 3
@@ -4174,7 +4174,7 @@ Int.mod(7.0, 4.0) == 3
 
 if `max` < `min` returns `min`.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.clamp(4.2) == 4.2
@@ -4192,28 +4192,28 @@ Int.clamp(4.2, ~min=4.3, ~max=4.1) == 4.3
 > let minValue: int
 
 The smallest positive number represented in JavaScript.
-  See [`Number.MIN_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE)
-  on MDN.
+See [`Number.MIN_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE)
+on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Console.log(Int.Constants.minValue)
-  ```
+```rescript
+Console.log(Int.Constants.minValue)
+```
 
 ### let RescriptCore.Int.Constants.maxValue
 
 > let maxValue: int
 
 The largest positive number represented in JavaScript.
-  See [`Number.MAX_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE)
-  on MDN.
+See [`Number.MAX_VALUE`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE)
+on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Console.log(Int.Constants.maxValue)
-  ```
+```rescript
+Console.log(Int.Constants.maxValue)
+```
 
 ### let RescriptCore.Int.equal
 
@@ -4232,7 +4232,7 @@ notation.
 See [`Number.toExponential`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toExponential(1000) // "1e+3"
@@ -4248,14 +4248,14 @@ exponential notation. `digits` specifies how many digits should appear after
 the decimal point. See [`Number.toExponential`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toExponentialWithPrecision(77, ~digits=2) // "7.70e+1"
 Int.toExponentialWithPrecision(5678, ~digits=2) // "5.68e+3"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` less than 0 or greater than 10.
 
@@ -4268,7 +4268,7 @@ notation. See [`Number.toFixed`](https://developer.mozilla.org/en-US/docs/Web/Ja
 on MDN.
 
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toFixed(123456) // "123456.00"
@@ -4284,14 +4284,14 @@ value using fixed-point notation. `digits` specifies how many digits should
 appear after the decimal point. See [`Number.toFixed`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toFixed(300, ~digits=4) // "300.0000"
 Int.toFixed(300, ~digits=1) // "300.0"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` is less than 0 or larger than 100.
 
@@ -4303,7 +4303,7 @@ Int.toFixed(300, ~digits=1) // "300.0"
 This function omits the argument that controls precision, so it behaves like
 `toString`. See `toPrecisionWithPrecision` to control precision. See [`Number.toPrecision`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toPrecision(100) // "100"
@@ -4317,14 +4317,14 @@ Int.toPrecision(1) // "1"
 `toPrecision(n, ~digits)` return a `string` representing the giver value with
 precision. `digits` specifies the number of significant digits. See [`Number.toPrecision`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toPrecision(100, ~digits=2) // "1.0e+2"
 Int.toPrecision(1) // "1.0"
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If `digits` is not between 1 and 100 (inclusive).
 Implementations are allowed to support larger and smaller values as well.
@@ -4338,7 +4338,7 @@ ECMA-262 only requires a precision of up to 21 significant digits.
 See [`Number.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toString(1000) // "1000"
@@ -4354,7 +4354,7 @@ Int.toString(-1000) // "-1000"
 See [`Number.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
 on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toString(6, ~radix=2) // "110"
@@ -4362,7 +4362,7 @@ Int.toString(3735928559, ~radix=16) // "deadbeef"
 Int.toStringWithRadix(123456, ~radix=36) // "2n9c"
 ```
 
-## Exceptions
+#### Exceptions
 
 `RangeError`: if `radix` is less than 2 or greater than 36.
 
@@ -4373,7 +4373,7 @@ Int.toStringWithRadix(123456, ~radix=36) // "2n9c"
 `toLocaleString(n)` return a `string` with language-sensitive representing the
 given value. See [`Number.toLocaleString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 // If the application uses English as the default language
@@ -4389,7 +4389,7 @@ Int.toLocaleString(1000) // "1.000"
 
 `toFloat(n)` return a `float` representing the given value.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.toFloat(100) == 100.0
@@ -4403,7 +4403,7 @@ Int.toFloat(2) == 2.0
 `fromFloat(n)` return an `int` representing the given value. The conversion is
 done by truncating the decimal part.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.fromFloat(2.0) == 2
@@ -4419,7 +4419,7 @@ Int.fromFloat(0.9999) == 0
 `fromString(~radix?, str)` return an `option<int>` representing the given value
 `str`. `~radix` specifies the radix base to use for the formatted number.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.fromString("0") == Some(0)
@@ -4433,7 +4433,7 @@ Int.fromString(~radix=2, "6") == None
 
 `mod(n1, n2)` calculates the modulo (remainder after division) of two integers.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.mod(7, 4) == 3
@@ -4453,7 +4453,7 @@ If `start > end` the sequence will be decreasing in steps of -1.
 This is equivalent to `rangeWithOptions` with `inclusive` set to `false` and
 `step` set to `1` if `start < end` and `-1` otherwise.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.range(3, 6) == [3, 4, 5]
@@ -4484,7 +4484,7 @@ infinite.
 If `inclusive` is set to `true`, the sequence will include `end` if `step` is
 set such that the sequence includes it.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.rangeWithOptions(3, 7, {step: 2}) == [3, 5]
@@ -4492,7 +4492,7 @@ Int.rangeWithOptions(3, 7, {step: 2, inclusive: true}) == [3, 5, 7]
 Int.rangeWithOptions(3, 6, {step: -2}) // RangeError
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises `RangeError` if `step == 0 && start != end`.
 
@@ -4504,7 +4504,7 @@ Int.rangeWithOptions(3, 6, {step: -2}) // RangeError
 
 if `max` < `min` returns `min`.
 
-## Examples
+#### Examples
 
 ```rescript
 Int.clamp(42) == 42
@@ -4628,105 +4628,105 @@ Int.clamp(42, ~min=50, ~max=40) == 50
 > let e: float
 
 `Math.Constants.e` returns Euler's number, ≈ 2.718281828459045.
-  See [`Math.E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/E) on MDN.
+See [`Math.E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/E) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.e
-  ```
+```rescript
+Math.Constants.e
+```
 
 ### let RescriptCore.Math.Constants.ln2
 
 > let ln2: float
 
 `Math.Constants.ln2` returns Natural logarithm of 2, ≈ 0.6931471805599453.
-  See [`Math.LN2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN2) on MDN.
+See [`Math.LN2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN2) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.LN2
-  ```
+```rescript
+Math.Constants.LN2
+```
 
 ### let RescriptCore.Math.Constants.ln10
 
 > let ln10: float
 
 `Math.Constants.ln10` returns Natural logarithm of 10, ≈ 2.302585092994046.
-  See [`Math.LN10`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN10) on MDN.
+See [`Math.LN10`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LN10) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.ln10
-  ```
+```rescript
+Math.Constants.ln10
+```
 
 ### let RescriptCore.Math.Constants.log2e
 
 > let log2e: float
 
 `Math.Constants.log2e` returns Base 2 logarithm of E, ≈ 1.4426950408889634.
-  See [`Math.LOG2E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG2E) on MDN.
+See [`Math.LOG2E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG2E) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.log2e
-  ```
+```rescript
+Math.Constants.log2e
+```
 
 ### let RescriptCore.Math.Constants.log10e
 
 > let log10e: float
 
 `Math.Constants.log10e` returns Base 10 logarithm of E, ≈ 0.4342944819032518.
-  See [`Math.LOG10E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG10E) on MDN.
+See [`Math.LOG10E`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/LOG10E) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.log10e
-  ```
+```rescript
+Math.Constants.log10e
+```
 
 ### let RescriptCore.Math.Constants.pi
 
 > let pi: float
 
 `Math.Constants.pi` returns Pi - ratio of the circumference to the diameter
-  of a circle, ≈ 3.141592653589793.
-  See [`Math.PI`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI) on MDN.
+of a circle, ≈ 3.141592653589793.
+See [`Math.PI`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.pi
-  ```
+```rescript
+Math.Constants.pi
+```
 
 ### let RescriptCore.Math.Constants.sqrt1_2
 
 > let sqrt1_2: float
 
 `Math.Constants.sqrt1_2` returns Square root of 1/2, ≈ 0.7071067811865476.
-  See [`Math.SQRT1_2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/SQRT1_2) on MDN.
+See [`Math.SQRT1_2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/SQRT1_2) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.sqrt1_2
-  ```
+```rescript
+Math.Constants.sqrt1_2
+```
 
 ### let RescriptCore.Math.Constants.sqrt2
 
 > let sqrt2: float
 
 `Math.Constants.e` returns Absolute value for integer argument.
-  See [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) on MDN.
+See [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Constants.sqrt2
-  ```
+```rescript
+Math.Constants.sqrt2
+```
 
 ## module RescriptCore.Math.Int
 
@@ -4735,172 +4735,172 @@ Int.clamp(42, ~min=50, ~max=40) == 50
 > let abs: (. int) => int
 
 `abs(v)` returns absolute value of `v`.
-  See [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) on MDN.
+See [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.abs(-2) // 2
-  Math.Int.abs(3) // 3
-  ```
+```rescript
+Math.Int.abs(-2) // 2
+Math.Int.abs(3) // 3
+```
 
 ### let RescriptCore.Math.Int.clz32
 
 > let clz32: (. int) => int
 
 `clz32(v)` returns the number of leading zero bits of the argument's 32 bit
-  int representation.
-  See [`Math.clz32`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32) on MDN.
+int representation.
+See [`Math.clz32`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  // 00000000000000000000000000000001
-  Math.Int.clz32(1) // 31
-  // 00000000000000000000000000000100
-  Math.Int.clz32(4) // 29
-  ```
+```rescript
+// 00000000000000000000000000000001
+Math.Int.clz32(1) // 31
+// 00000000000000000000000000000100
+Math.Int.clz32(4) // 29
+```
 
 ### let RescriptCore.Math.Int.imul
 
 > let imul: (. int, int) => int
 
 `imul(a, b)` returns 32-bit integer multiplication. Use this only when you
-  need to optimize performance of multiplication of numbers stored as 32-bit
-  integers.
-  See [`Math.imul`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul) on MDN.
+need to optimize performance of multiplication of numbers stored as 32-bit
+integers.
+See [`Math.imul`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.imul(3, 4) // 12
-  Math.Int.imul(-5, 12) // 60
-  ```
+```rescript
+Math.Int.imul(3, 4) // 12
+Math.Int.imul(-5, 12) // 60
+```
 
 ### let RescriptCore.Math.Int.min
 
 > let min: (. int, int) => int
 
 `min(a, b)` returns the minimum of its two integer arguments.
-  See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
+See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.min(1, 2) // 1
-  Math.Int.min(-1, -2) // -2
-  ```
+```rescript
+Math.Int.min(1, 2) // 1
+Math.Int.min(-1, -2) // -2
+```
 
 ### let RescriptCore.Math.Int.minMany
 
 > let minMany: (. array<int>) => int
 
 `minMany(arr)` returns the minimum of the integers in the given array `arr`.
-  Returns `Infinity` if `arr` is empty.
-  See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
+Returns `Infinity` if `arr` is empty.
+See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.minMany([1, 2]) // 1
-  Math.Int.minMany([-1, -2]) // -2
-  Math.Int.minMany([])->Float.isFinite // false
-  ```
+```rescript
+Math.Int.minMany([1, 2]) // 1
+Math.Int.minMany([-1, -2]) // -2
+Math.Int.minMany([])->Float.isFinite // false
+```
 
 ### let RescriptCore.Math.Int.max
 
 > let max: (. int, int) => int
 
 `max(a, b)` returns the maximum of its two integer arguments.
-  See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
+See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.max(1, 2) // 2
-  Math.Int.max(-1, -2) // -1
-  ```
+```rescript
+Math.Int.max(1, 2) // 2
+Math.Int.max(-1, -2) // -1
+```
 
 ### let RescriptCore.Math.Int.maxMany
 
 > let maxMany: (. array<int>) => int
 
 `maxMany(arr)` returns the maximum of the integers in the given array `arr`.
-  Returns `Infinity` if `arr` is empty.
-  See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
+Returns `Infinity` if `arr` is empty.
+See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.maxMany([1, 2]) // 2
-  Math.Int.maxMany([-1, -2]) // -1
-  Math.Int.maxMany([])->Float.isFinite // false
-  ```
+```rescript
+Math.Int.maxMany([1, 2]) // 2
+Math.Int.maxMany([-1, -2]) // -1
+Math.Int.maxMany([])->Float.isFinite // false
+```
 
 ### let RescriptCore.Math.Int.pow
 
 > let pow: (. int, ~exp: int) => int
 
 `pow(a, ~exp)` raises the given base `a` to the given exponent `exp`.
-  See [`Math.pow`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) on MDN.
+See [`Math.pow`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.pow(2, ~exp=4) // 16
-  Math.Int.pow(3, ~exp=4) // 81
-  ```
+```rescript
+Math.Int.pow(2, ~exp=4) // 16
+Math.Int.pow(3, ~exp=4) // 81
+```
 
 ### let RescriptCore.Math.Int.sign
 
 > let sign: (. int) => int
 
 `sign(v)` returns the sign of its integer argument: `-1` if negative, `0` if
-  zero, `1` if positive.
-  See [`Math.sign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign) on MDN.
+zero, `1` if positive.
+See [`Math.sign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign) on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.sign(3) // 1
-  Math.Int.sign(-3) // 1
-  Math.Int.sign(0) // 0
-  ```
+```rescript
+Math.Int.sign(3) // 1
+Math.Int.sign(-3) // 1
+Math.Int.sign(0) // 0
+```
 
 ### let RescriptCore.Math.Int.floor
 
 > let floor: (. float) => int
 
 floor(v) returns the largest `int` less than or equal to the argument; 
-  the result is pinned to the range of the `int` data type: -2147483648 to 2147483647. 
-  See [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
-  on MDN.
+the result is pinned to the range of the `int` data type: -2147483648 to 2147483647. 
+See [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.floor(3.7) == 3
-  Math.Int.floor(3.0) == 3
-  Math.Int.floor(-3.1) == -4
-  Math.Int.floor(-1.0e15) == -2147483648
-  Math.Int.floor(1.0e15) == 2147483647
-  ```
+```rescript
+Math.Int.floor(3.7) == 3
+Math.Int.floor(3.0) == 3
+Math.Int.floor(-3.1) == -4
+Math.Int.floor(-1.0e15) == -2147483648
+Math.Int.floor(1.0e15) == 2147483647
+```
 
 ### let RescriptCore.Math.Int.random
 
 > let random: (. int, int) => int
 
 `random(minVal, maxVal)` returns a random integer number in the half-closed interval [minVal, maxVal).
-   See [`Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-  on MDN.
+See [`Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+on MDN.
 
-  ## Examples
+#### Examples
 
-  ```rescript
-  Math.Int.random(2, 5) == 4
-  Math.Int.random(505, 2000) == 1276
-  Math.Int.random(-7, -2) == -4
-  ```
+```rescript
+Math.Int.random(2, 5) == 4
+Math.Int.random(505, 2000) == 1276
+Math.Int.random(-7, -2) == -4
+```
 
 ### let RescriptCore.Math.abs
 
@@ -4909,7 +4909,7 @@ floor(v) returns the largest `int` less than or equal to the argument;
 `abs(v)` returns absolute value of `v`.
 See [`Math.abs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.abs(-2.0) // 2.0
@@ -4924,7 +4924,7 @@ Math.abs(3.0) // 3.0
 argument is outside the range [-1.0, 1.0].
 See [`Math.acos`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acos) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.acos(-1) // 3.141592653589793
@@ -4939,7 +4939,7 @@ Math.acos(-3)->Float.isNaN // true
 returns `NaN` if the argument is less than `1.0`.
 See [`Math.acosh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.acosh(1) // 0.0
@@ -4954,7 +4954,7 @@ Math.acosh(0.5)->Float.isNaN // true
 if the argument `v` is outside the range [-1.0, 1.0].
 See [`Math.asin`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asin) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.asin(-1.0) // -1.5707963267948966
@@ -4968,7 +4968,7 @@ Math.asin(-2.0)->Float.isNaN // true
 `asinh(v)` returns the inverse hyperbolic sine of argument `v`.
 See [`Math.asinh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.asinh(-1) // -0.881373587019543
@@ -4982,7 +4982,7 @@ Math.asinh(-0) // -0.0
 `atan(v)` returns the inverse tangent (in radians) of argument `v`.
 See [`Math.atan`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.atan(-0.0) // -0.0
@@ -4999,7 +4999,7 @@ if the argument `v` is is outside the range [-1.0, 1.0] and `Infinity` if `v`
 is `-1.0` or `1.0`.
 See [`Math.atanh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.atanh(-2.0)->Float.isNaN // true
@@ -5017,7 +5017,7 @@ Math.atanh(0.5) // 0.5493061443340548
 also the angle between the *x*-axis and point (*x*, *y*).
 See [`Math.atan2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.atan2(~y=0.0, ~x=10.0) == 0.0
@@ -5033,7 +5033,7 @@ Math.atan2(~x=15.0, ~y=90.0) // 0.16514867741462683
 `cbrt(v)` returns the cube root of argument `v`.
 See [`Math.cbrt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cbrt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.cbrt(-1.0) // -1.0
@@ -5050,7 +5050,7 @@ argument `v`. The result is a `float` and is not restricted to the `int` data
 type range.
 See [`Math.ceil`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.ceil(3.1) == 4.0
@@ -5066,7 +5066,7 @@ Math.ceil(2_150_000_000.3) == 2_150_000_001.0
 `cos(v)` returns the cosine of argument `v`, which must be specified in radians.
 See [`Math.cos`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cos) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.cos(-0.0) // 1.0
@@ -5082,7 +5082,7 @@ Math.cos(1.0) // 0.5403023058681398
 in radians.
 See [`Math.cosh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.cosh(-1.0) // 1.5430806348152437
@@ -5098,7 +5098,7 @@ Math.cosh(0.0) // 1.0
 to the power of the given argument `v`.
 See [`Math.exp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/exp) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.exp(-1.0) // 0.36787944117144233
@@ -5113,7 +5113,7 @@ Math.exp(0.0) // 1.0
 argument `v` minus 1.
 See [`Math.expm1`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/expm1) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.expm1(-1.0) // -0.6321205588285577
@@ -5128,7 +5128,7 @@ Math.expm1(-0.0) // -0
 `v`. The result is a `float` and is not restricted to the `int` data type range.
 See [`Math.floor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.floor(-45.95) // -46.0
@@ -5143,7 +5143,7 @@ Math.floor(-0.0) // -0.0
 `fround(v)` returns the nearest single precision float.
 See [`Math.fround`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/fround) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.fround(5.5) == 5.5
@@ -5158,7 +5158,7 @@ Math.fround(5.05) == 5.050000190734863
 (the Pythagorean formula).
 See [`Math.hypot`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.hypot(3.0, 4.0) // 5.0
@@ -5174,7 +5174,7 @@ the array argument (generalized Pythagorean equation). Using an array allows you
 to have more than two items. If `arr` is an empty array then returns `0.0`.
 See [`Math.hypot`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/hypot) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.hypot([3.0, 4.0, 5.0]) // 7.0710678118654755
@@ -5190,7 +5190,7 @@ such that `e^x` equals the argument. Returns `NaN` for negative arguments and
 `Infinity` for `0.0` or `-0.0`.
 See [`Math.log`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.log(-1.0)->Float.isNaN // true
@@ -5207,7 +5207,7 @@ Math.log(1.0) // 0
 Returns `NaN` for arguments less than `-1` and `Infinity` if `v` is `-1.0`.
 See [`Math.log1p`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log1p) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.log1p(-2.0)->Float.isNaN // true
@@ -5223,7 +5223,7 @@ Math.log1p(-0.0) // -0
 negative `v`. If `v` is `-0.0` or `0.0` returns `Infinity`.
 See [`Math.log10`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log10) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.log10(-2.0)->Float.isNaN // true
@@ -5240,7 +5240,7 @@ Math.log10(1.0) // 0
 negative `v` and `Infinity` if `v` is `-0.0` or `0.0`.
 See [`Math.log2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log2) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.log2(-2.0)->Float.isNaN // true
@@ -5256,7 +5256,7 @@ Math.log2(1.0) // 0.0
 `min(a, b)` returns the minimum of its two float arguments.
 See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.min(1.0, 2.0) // 1.0
@@ -5271,7 +5271,7 @@ Math.min(-1.0, -2.0) // -2.0
 Returns `Infinity` if `arr` is empty.
 See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.minMany([1.0, 2.0]) // 1.0
@@ -5286,7 +5286,7 @@ Math.minMany([])->Float.isFinite // false
 `max(a, b)` returns the maximum of its two float arguments.
 See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.max(1.0, 2.0) // 2.0
@@ -5301,7 +5301,7 @@ Math.max(-1.0, -2.0) // -1.0
 Returns `Infinity` if `arr` is empty.
 See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.maxMany([1.0, 2.0]) // 2.0
@@ -5316,7 +5316,7 @@ Math.maxMany([])->Float.isFinite // false
 `pow(a, ~exp)` raises the given base `a` to the given exponent `exp`.
 See [`Math.pow`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.pow(2.0, ~exp=4.0) // 16.0
@@ -5330,7 +5330,7 @@ Math.pow(3.0, ~exp=4.0) // 81.0
 `random()` returns a random number in the half-closed interval [0,1].
 See [`Math.random`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.random()
@@ -5346,7 +5346,7 @@ than `0.5`, the argument `v` is rounded to the float with the next higher
 absolute value.
 See [`Math.round`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.round(-20.5) // -20.0
@@ -5363,7 +5363,7 @@ Math.round(-0.0) // -0.0
 zero, `1` if positive.
 See [`Math.sign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.sign(3.0) // 1.0
@@ -5378,7 +5378,7 @@ Math.sign(0.0) // 0.0
 `sin(v)` returns the sine of argument `v`, which must be specified in radians.
 See [`Math.sin`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sin) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.sin(-0.0) // -0.0
@@ -5394,7 +5394,7 @@ Math.sin(1.0) // 0.8414709848078965
 in radians.
 See [`Math.sinh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.sinh(-0.0) // -0.0
@@ -5409,7 +5409,7 @@ Math.sinh(1.0) // 1.1752011936438014
 `sqrt(v)` returns the square root of `v`. If `v` is negative returns `NaN`.
 See [`Math.sqrt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.sqrt(-1.0)->Float.isNaN // true
@@ -5427,7 +5427,7 @@ Math.sqrt(9.0) // 3.0
 radians. Returns `NaN` if `v` is positive `Infinity` or negative `Infinity`.
 See [`Math.tan`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tan) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.tan(-0.0) // -0.0
@@ -5443,7 +5443,7 @@ Math.tan(1.0) // 1.5574077246549023
 specified in radians.
 See [`Math.tanh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.tanh(-0.0) // -0.0
@@ -5458,7 +5458,7 @@ Math.tanh(1.0) // 0.7615941559557649
 `trunc(v)` truncates the argument `v`, i.e., removes fractional digits.
 See [`Math.trunc`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 Math.trunc(0.123) // 0.0
@@ -5481,7 +5481,7 @@ A type representing a value that can be either `'a` or `null`.
 
 Converts a `Null.t` into a `Nullable.t`.
 
-## Examples
+#### Examples
 ```rescript
 let nullValue = Null.make("Hello")
 let asNullable = nullValue->Null.asNullable // Nullable.t<string>
@@ -5495,7 +5495,7 @@ The value `null`.
 
 See [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(null) // Logs `null` to the console.
 ```
@@ -5507,7 +5507,7 @@ Console.log(null) // Logs `null` to the console.
 Creates a new `Null.t` from the provided value.
 This means the compiler will enforce null checks for the new value.
 
-## Examples
+#### Examples
 ```rescript
 let myStr = "Hello"
 let asNullValue = myStr->Null.make // The compiler now thinks this can be `string` or `null`.
@@ -5528,7 +5528,7 @@ let asNullValue = myStr->Null.make // The compiler now thinks this can be `strin
 Converts a nullable value into an option, so it can be pattern matched on.
 Will convert `null` to `None`, and a present value to `Some(value)`.
 
-## Examples
+#### Examples
 ```rescript
 let nullStr = Null.make("Hello")
 
@@ -5544,7 +5544,7 @@ switch nullStr->Null.toOption {
 
 Turns an `option` into a `Null.t`. `None` will be converted to `null`.
 
-## Examples
+#### Examples
 ```rescript
 let optString: option<string> = None
 let asNull = optString->Null.fromOption // Null.t<string>
@@ -5558,14 +5558,14 @@ Console.log(asNull == null) // Logs `true` to the console.
 `getOr(value, default)` returns `value` if not `null`, otherwise return
 `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 Null.getOr(null, "Banana") // Banana
 Null.getOr(Nulalble.make("Apple"), "Banana") // Apple
 
 let greet = (firstName: option<string>) =>
-  "Greetings " ++ firstName->Null.getOr("Anonymous")
+"Greetings " ++ firstName->Null.getOr("Anonymous")
 
 Null.make("Jane")->greet // "Greetings Jane"
 null->greet // "Greetings Anonymous"
@@ -5588,7 +5588,7 @@ Null.getExn(Null.make(3)) // 3
 Null.getExn(null) /* Raises an Error */
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises `Invalid_argument` if `value` is `null`,
 
@@ -5598,14 +5598,14 @@ Null.getExn(null) /* Raises an Error */
 
 `getUnsafe(value)` returns `value`.
 
-## Examples
+#### Examples
 
 ```rescript
 Null.getUnsafe(Null.make(3)) == 3
 Null.getUnsafe(null) // Raises an error
 ```
 
-## Important
+#### Important
 
 - This is an unsafe operation, it assumes `value` is not `null`.
 
@@ -5616,7 +5616,7 @@ Null.getUnsafe(null) // Raises an error
 `forEach(value, f)` call `f` on `value`. if `value` is not `null`, then if calls
 `f`, otherwise returns `unit`.
 
-## Examples
+#### Examples
 
 ```rescript
 Null.forEach(Null.make("thing"), x => Console.log(x)) // logs "thing"
@@ -5630,7 +5630,7 @@ Null.forEach(null, x => Console.log(x)) // returns ()
 `map(value, f)` returns `f(value)` if `value` is not `null`, otherwise returns
 `value` unchanged.
 
-## Examples
+#### Examples
 
 ```rescript
 Null.map(Null.make(3), x => x * x) // Null.make(9)
@@ -5644,7 +5644,7 @@ Null.map(null, x => x * x) // null
 `mapOr(value, default, f)` returns `f(value)` if `value` is not `null`,
 otherwise returns `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 let someValue = Null.make(3)
@@ -5667,15 +5667,15 @@ noneValue->Null.mapOr(0, x => x + 5) // 0
 `flatMap(value, f)` returns `f(value)` if `value` is not `null`, otherwise
 returns `value` unchanged.
 
-## Examples
+#### Examples
 
 ```rescript
 let addIfAboveOne = value =>
-  if (value > 1) {
-    Null.make(value + 1)
-  } else {
-    null
-  }
+if (value > 1) {
+Null.make(value + 1)
+} else {
+null
+}
 
 Null.flatMap(Null.make(2), addIfAboveOne) // Null.make(3)
 Null.flatMap(Null.make(-4), addIfAboveOne) // null
@@ -5699,7 +5699,7 @@ The value `null`.
 
 See [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(Nullable.null) // Logs `null` to the console.
 ```
@@ -5712,7 +5712,7 @@ The value `undefined`.
 
 See [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/undefined) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(undefined) // Logs `undefined` to the console.
 ```
@@ -5724,7 +5724,7 @@ Console.log(undefined) // Logs `undefined` to the console.
 Creates a new nullable value from the provided value.
 This means the compiler will enforce null checks for the new value.
 
-## Examples
+#### Examples
 ```rescript
 let myStr = "Hello"
 let asNullable = myStr->Nullable.make
@@ -5754,7 +5754,7 @@ switch asNullable->Nullable.toOption {
 Converts a nullable value into an option, so it can be pattern matched on.
 Will convert both `null` and `undefined` to `None`, and a present value to `Some(value)`.
 
-## Examples
+#### Examples
 ```rescript
 let nullableString = Nullable.make("Hello")
 
@@ -5770,7 +5770,7 @@ switch nullableString->Nullable.toOption {
 
 Turns an `option` into a `Nullable.t`.
 
-## Examples
+#### Examples
 ```rescript
 let optString = Some("Hello")
 let asNullable = optString->Nullable.fromOption // Nullable.t<string>
@@ -5783,14 +5783,14 @@ let asNullable = optString->Nullable.fromOption // Nullable.t<string>
 `getOr(value, default)` returns `value` if not `null` or `undefined`,
 otherwise return `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 Nullable.getOr(Nullable.null, "Banana") // Banana
 Nullable.getOr(Nulalble.make("Apple"), "Banana") // Apple
 
 let greet = (firstName: option<string>) =>
-  "Greetings " ++ firstName->Nullable.getOr("Anonymous")
+"Greetings " ++ firstName->Nullable.getOr("Anonymous")
 
 Nullable.make("Jane")->greet // "Greetings Jane"
 Nullable.null->greet // "Greetings Anonymous"
@@ -5813,7 +5813,7 @@ Nullable.getExn(Nullable.make(3)) // 3
 Nullable.getExn(Nullable.null) /* Raises an Error */
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises `Invalid_argument` if `value` is `null` or `undefined`
 
@@ -5823,14 +5823,14 @@ Nullable.getExn(Nullable.null) /* Raises an Error */
 
 `getUnsafe(value)` returns `value`.
 
-## Examples
+#### Examples
 
 ```rescript
 Nullable.getUnsafe(Nullable.make(3)) == 3
 Nullable.getUnsafe(Nullable.null) // Raises an error
 ```
 
-## Important
+#### Important
 
 - This is an unsafe operation, it assumes `value` is not `null` or `undefined`.
 
@@ -5841,7 +5841,7 @@ Nullable.getUnsafe(Nullable.null) // Raises an error
 `forEach(value, f)` call `f` on `value`. if `value` is not `null` or `undefined`, 
 then if calls `f`, otherwise returns `unit`.
 
-## Examples
+#### Examples
 
 ```rescript
 Nullable.forEach(Nullable.make("thing"), x => Console.log(x)) // logs "thing"
@@ -5856,7 +5856,7 @@ Nullable.forEach(undefined, x => Console.log(x)) // returns ()
 `map(value, f)` returns `f(value)` if `value` is not `null` or `undefined`,
 otherwise returns `value` unchanged.
 
-## Examples
+#### Examples
 
 ```rescript
 Nullable.map(Nullable.make(3), x => x * x) // Nullable.make(9)
@@ -5870,7 +5870,7 @@ Nullable.map(undefined, x => x * x) // undefined
 `mapOr(value, default, f)` returns `f(value)` if `value` is not `null`
 or `undefined`, otherwise returns `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 let someValue = Nullable.make(3)
@@ -5893,15 +5893,15 @@ noneValue->Nullable.mapOr(0, x => x + 5) // 0
 `flatMap(value, f)` returns `f(value)` if `value` is not `null` or `undefined`,
 otherwise returns `value` unchanged.
 
-## Examples
+#### Examples
 
 ```rescript
 let addIfAboveOne = value =>
-  if (value > 1) {
-    Nullable.make(value + 1)
-  } else {
-    Nullable.null
-  }
+if (value > 1) {
+Nullable.make(value + 1)
+} else {
+Nullable.null
+}
 
 Nullable.flatMap(Nullable.make(2), addIfAboveOne) // Nullable.make(3)
 Nullable.flatMap(Nullable.make(-4), addIfAboveOne) // undefined
@@ -5916,7 +5916,7 @@ Nullable.flatMap(Nullable.null, addIfAboveOne) // undefined
 
 `empty` create a new object that inherits the properties and methods from the standard built-in Object, such as `toString`. See [Object on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
-## Examples
+#### Examples
 
 ```rescript
 let x = Object.empty()
@@ -5932,7 +5932,7 @@ x->Object.get("toString")->Option.isSome // true
 
 In most scenarios use `==` or `===` or the custom `equals` function (if provided) for the type.
 
-## Examples
+#### Examples
 
 ```rescript
 Object.is(25, 13) // false
@@ -5961,7 +5961,7 @@ fruit === {"name": "Apple" } // false
 
 **Note:** ReScript provides [first-class support for immutable objects](https://rescript-lang.org/docs/manual/latest/object) and [records](https://rescript-lang.org/docs/manual/latest/record). This is often safer and more convenient than using `create` and other functions in this module.
 
-## Examples
+#### Examples
 
 ```rescript
 let x = {"fruit": "banana"}
@@ -5991,7 +5991,7 @@ y->Object.get("fruit") // Some("banana")
 
 See [Object.assign on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) or [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.assign).
 
-## Examples
+#### Examples
 
 ```rescript
 Object.assign({"a": 1}, {"a": 2}) // {"a": 2}
@@ -6019,7 +6019,7 @@ See [Object.assign on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScri
 
 `get` gets the value of a property by name. Returns `None` if the property does not exist or has the value `undefined`. Otherwise returns `Some`, including if the value is `null`.
 
-## Examples
+#### Examples
 
 ```rescript
 {"a": 1}->Object.get("a") // Some(1)
@@ -6035,7 +6035,7 @@ See [Object.assign on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScri
 
 `getSymbol` gets the value of a property by symbol. Returns `None` if the property does not exist or has the value `undefined`. Otherwise returns `Some`, including if the value is `null`.
 
-## Examples
+#### Examples
 
 ```rescript
 let fruit = Symbol.make("fruit")
@@ -6054,7 +6054,7 @@ x->Object.getSymbol(fruit) // Some("banana")
 
 `set(name, value)` assigns a value to the named object property, overwriting the previous value if any. See [Working with Objects on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties)
 
-## Examples
+#### Examples
 
 ```rescript
 {"a": 1}->Object.set("a", 2) // {"a": 2}
@@ -6073,7 +6073,7 @@ x->Object.getSymbol(fruit) // Some("banana")
 `keysToArray` returns an array of an object's own enumerable string-keyed property names. See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.keys) 
 or [Object.keys on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys).
 
-## Examples
+#### Examples
 
 ```rescript
 {"a": 1, "b": 2}->Object.keysToArray // ["a", "b"]
@@ -6087,7 +6087,7 @@ Object.empty()->Object.keysToArray // []
 
 `hasOwnProperty` determines whether the object has the specified property as its **own** property, as opposed to inheriting it. See [hasOwnProperty on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 
-## Examples
+#### Examples
 
 ```rescript
 let point = {"x": 1, "y": 2}
@@ -6106,7 +6106,7 @@ let point = {"x": 1, "y": 2}
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.seal) and [Object.seal on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal)
 
-## Examples
+#### Examples
 
 ```rescript
 let point = {"x": 1, "y": 2}
@@ -6124,7 +6124,7 @@ point->Object.set("x", 13) // succeeds
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.preventextensions) and [Object.preventExtensions on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)
 
-## Examples
+#### Examples
 
 ```rescript
 let obj = {"a": 1}
@@ -6143,9 +6143,9 @@ obj->Object.set("c", 3) // fails
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.isfrozen) and [Object.isFrozen on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen).
 
-## Examples
+#### Examples
 
- ```rescript
+```rescript
 let obj = {"a": 1}
 obj->Object.set("a", 2) // succeeds
 obj->Object.freeze->ignore
@@ -6160,14 +6160,14 @@ obj->Object.set("a", 3) // fails
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.issealed) and [Object.isSealed on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed)
 
-## Examples
+#### Examples
 
 ```rescript
 let point = {"x": 1, "y": 3}->Object.seal
 let pointIsSealed = point->Object.isSealed // true
 let fruit = {"name": "Apple" }
 let fruitIsSealed = fruit->Object.isSealed // false
- ```
+```
 
 ### let RescriptCore.Object.isFrozen
 
@@ -6177,14 +6177,14 @@ let fruitIsSealed = fruit->Object.isSealed // false
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.isfrozen) and [Object.isFrozen on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen).
 
-## Examples
+#### Examples
 
 ```rescript
 let point = {"x": 1, "y": 3}->Object.freeze
 let pointIsFrozen = point->Object.isFrozen // true
 let fruit = {"name": "Apple" }
 let fruitIsFrozen = fruit->Object.isFrozen // false
- ```
+```
 
 ### let RescriptCore.Object.isExtensible
 
@@ -6194,7 +6194,7 @@ let fruitIsFrozen = fruit->Object.isFrozen // false
 
 See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.isextensible) and [Object.isExtensible on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible)
 
-## Examples
+#### Examples
 
 ```rescript
 let obj = {"a": 1}
@@ -6254,7 +6254,7 @@ obj->Object.isExtensible // false
 `resolve(value)` creates a resolved Promise with a given `value`.
 See [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 let p = Promise.resolve(5) // promise<int>
@@ -6267,7 +6267,7 @@ let p = Promise.resolve(5) // promise<int>
 `reject(exn)` reject a Promise.
 See [`Promise.reject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 exception TestError(string)
@@ -6282,26 +6282,26 @@ let p = Promise.reject(TestError("some rejected value"))
 `make(callback)` creates a new Promise based on a `callback` that receives two
 uncurried functions `resolve` and `reject` for defining the Promise's result.
 
-## Examples
+#### Examples
 
 ```rescript
 open Promise
 
 let n = 4
 Promise.make((resolve, reject) => {
-  if(n < 5) {
-    resolve(. "success")
-  }
-  else {
-    reject(. "failed")
-  }
+if(n < 5) {
+resolve(. "success")
+}
+else {
+reject(. "failed")
+}
 })
 ->then(str => {
-  Console.log(str)->resolve
+Console.log(str)->resolve
 })
 ->catch(e => {
-  Console.log("Error occurred")
-  resolve()
+Console.log("Error occurred")
+resolve()
 })
 ->ignore
 ```
@@ -6315,7 +6315,7 @@ The `errorCallback` receives an `exn` value that can later be refined into a JS
 error or ReScript error. The `errorCallback` needs to return a promise with the
 same type as the consumed promise. See [`Promise.catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 open Promise
@@ -6324,26 +6324,26 @@ exception SomeError(string)
 
 reject(SomeError("this is an error"))
 ->then(_ => {
-  Ok("This result will never be returned")->resolve
+Ok("This result will never be returned")->resolve
 })
 ->catch(e => {
-  let msg = switch(e) {
-    | SomeError(msg) => "ReScript error occurred: " ++ msg
-    | Exn.Error(obj) =>
-      switch Exn.message(obj) {
-        | Some(msg) => "JS exception occurred: " ++ msg
-        | None => "Some other JS value has been thrown"
-      }
-    | _ => "Unexpected error occurred"
-  }
+let msg = switch(e) {
+| SomeError(msg) => "ReScript error occurred: " ++ msg
+| Exn.Error(obj) =>
+switch Exn.message(obj) {
+| Some(msg) => "JS exception occurred: " ++ msg
+| None => "Some other JS value has been thrown"
+}
+| _ => "Unexpected error occurred"
+}
 
-  Error(msg)->resolve
+Error(msg)->resolve
 })
 ->then(result => {
-  switch result {
-  | Ok(r) => Console.log2("Operation successful: ", r)
-  | Error(msg) => Console.log2("Operation failed: ", msg)
-  }->resolve
+switch result {
+| Ok(r) => Console.log2("Operation successful: ", r)
+| Error(msg) => Console.log2("Operation failed: ", msg)
+}->resolve
 })
 ->ignore // Ignore needed for side-effects
 ```
@@ -6359,16 +6359,16 @@ In case you want to return another promise in your `callback`, consider using
 value. The `callback` needs to explicitly return a new promise via `resolve`.
 It is **not allowed** to resolve a nested promise (like `resolve(resolve(1))`).
 See [`Promise.then`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) on MDN.
-## Examples
+#### Examples
 
 ```rescript
 Promise.resolve(5)
 ->then(num => {
-  resolve(num + 5)
+resolve(num + 5)
 })
 ->then(num => {
-  Console.log2("Your lucky number is: ", num)
-  resolve()
+Console.log2("Your lucky number is: ", num)
+resolve()
 })
 ->ignore
 ```
@@ -6381,15 +6381,15 @@ Promise.resolve(5)
 into another promise wrapped value. It is **not allowed** to return a promise
 within the provided callback (e.g. `thenResolve(value => resolve(value))`).
 
-## Examples
+#### Examples
 
 ```rescript
 resolve("Anna")
 ->thenResolve(str => {
-  "Hello " ++ str
+"Hello " ++ str
 })
 ->thenResolve(str => {
-  Console.log(str)
+Console.log(str)
 })
 ->ignore // Ignore needed for side-effects
 ```
@@ -6405,7 +6405,7 @@ In case you want to return another promise in your `callback`, consider using
 matter if a promise was resolved or rejected. It will return the same `promise`
 it originally received. See [`Promise.finally`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 exception SomeError(string)
@@ -6413,23 +6413,23 @@ let isDone = ref(false)
 
 resolve(5)
 ->then(_ => {
-  reject(TestError("test"))
+reject(TestError("test"))
 })
 ->then(v => {
-  Console.log2("final result", v)
-  resolve()
+Console.log2("final result", v)
+resolve()
 })
 ->catch(_ => {
-  Console.log("Error handled")
-  resolve()
+Console.log("Error handled")
+resolve()
 })
 ->finally(() => {
-  Console.log("finally")
-  isDone := true
+Console.log("finally")
+isDone := true
 })
 ->then(() => {
-  Console.log2("isDone:", isDone.contents)
-  resolve()
+Console.log2("isDone:", isDone.contents)
+resolve()
 })
 ->ignore
 ```
@@ -6440,23 +6440,23 @@ resolve(5)
 
 `race(arr)` combining `array` of promises. See [`Promise.race`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 open Promise
 let racer = (ms, name) => {
-  Promise.make((resolve, _) => {
-    Global.setTimeout(() => {
-      resolve(. name)
-    }, ms)->ignore
-  })
+Promise.make((resolve, _) => {
+Global.setTimeout(() => {
+resolve(. name)
+}, ms)->ignore
+})
 }
 
 let promises = [racer(1000, "Turtle"), racer(500, "Hare"), racer(100, "Eagle")]
 
 race(promises)->then(winner => {
-  Console.log("The winner is " ++ winner)
-  resolve()
+Console.log("The winner is " ++ winner)
+resolve()
 })
 ```
 
@@ -6473,11 +6473,11 @@ let promises = [resolve(1), resolve(2), resolve(3)]
 
 all(promises)
 ->then((results) => {
-  results->Array.forEach(num => {
-    Console.log2("Number: ", num)
-  })
+results->Array.forEach(num => {
+Console.log2("Number: ", num)
+})
 
-  resolve()
+resolve()
 })
 ->ignore
 ```
@@ -6542,16 +6542,16 @@ Type representing the result of a `RegExp` execution.
 
 `fullMatch(regExpResult)` returns the full string that matched in this result.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints the full string that matched, "ReScript is"
-  }
-  ```
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints the full string that matched, "ReScript is"
+}
+```
 
 ### let RescriptCore.RegExp.Result.matches
 
@@ -6559,20 +6559,20 @@ Type representing the result of a `RegExp` execution.
 
 `matches(regExpResult)` returns all matches for `regExpResult`.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  // This below will log "ReScript" and "is" to the console.
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => switch result->RegExp.Result.matches {
-    | [firstWord, secondWord] => Console.log2(firstWord, secondWord)
-    | _ => Console.log("Didn't find exactly two words...")
-    }
-  }
-  ```
+// This below will log "ReScript" and "is" to the console.
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => switch result->RegExp.Result.matches {
+| [firstWord, secondWord] => Console.log2(firstWord, secondWord)
+| _ => Console.log("Didn't find exactly two words...")
+}
+}
+```
 
 ### let RescriptCore.RegExp.Result.index
 
@@ -6584,17 +6584,17 @@ Type representing the result of a `RegExp` execution.
 
 `input(regExpResult)` returns the full input string that was passed to what produced the `RegExp.Result.t`.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  // This below will log the full input string "ReScript is pretty cool, right?" to the console.
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => Console.log(result->RegExp.Result.input)
-  }
-  ```
+// This below will log the full input string "ReScript is pretty cool, right?" to the console.
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.input)
+}
+```
 
 ### let RescriptCore.RegExp.fromString
 
@@ -6604,7 +6604,7 @@ Type representing the result of a `RegExp` execution.
 
 See [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -6623,7 +6623,7 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp parameters`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#parameters) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
@@ -6642,13 +6642,13 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp.test`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
 if regexp->RegExp.test("ReScript is cool!") {
-  Console.log("Yay, there's a word in there.")
+Console.log("Yay, there's a word in there.")
 }
 ```
 
@@ -6660,7 +6660,7 @@ if regexp->RegExp.test("ReScript is cool!") {
 
 See [`RegExp.exec`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -6679,7 +6679,7 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp.lastIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -6700,7 +6700,7 @@ Console.log(regexp->RegExp.lastIndex) // Logs `4` to the console
 
 See [`RegExp.ignoreCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.ignoreCase) // Logs `false`, since `i` is not set
@@ -6717,7 +6717,7 @@ Console.log(regexp2->RegExp.ignoreCase) // Logs `true`, since `i` is set
 
 See [`RegExp.global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.global) // Logs `true`, since `g` is set
@@ -6734,7 +6734,7 @@ Console.log(regexp2->RegExp.global) // Logs `false`, since `g` is not set
 
 See [`RegExp.multiline`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.multiline) // Logs `false`, since `m` is not set
@@ -6751,7 +6751,7 @@ Console.log(regexp2->RegExp.multiline) // Logs `true`, since `m` is set
 
 See [`RegExp.source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp`
@@ -6765,7 +6765,7 @@ Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp
 
 See [`RegExp.sticky`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.unicode) // Logs `false`, since `y` is not set
@@ -6782,7 +6782,7 @@ Console.log(regexp2->RegExp.unicode) // Logs `true`, since `y` is set
 
 See [`RegExp.unicode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.unicode) // Logs `false`, since `u` is not set
@@ -6799,7 +6799,7 @@ Console.log(regexp2->RegExp.unicode) // Logs `true`, since `u` is set
 
 `make(value)` converts the given value to a `string`.
 
-## Examples
+#### Examples
 
 ```rescript
 String.make(3.5) == "3.5"
@@ -6816,7 +6816,7 @@ the value are used. Thus, `fromCharCode(0x1F63A)` gives the same result as
 `fromCharCode(0xF63A)`.
 See [`String.fromCharCode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.fromCharCode(65) == "A"
@@ -6833,7 +6833,7 @@ String.fromCharCode(-64568) == `ψ`
 corresponding to the given numbers, using the same rules as `fromCharCode`.
 See [`String.fromCharCode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.fromCharCodeMany([189, 43, 190, 61]) == "½+¾="
@@ -6848,7 +6848,7 @@ String.fromCharCode([65, 66, 67]) == "ABC"
 that numeric code point.
 See [`String.fromCodePoint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.fromCodePoint(65) == "A"
@@ -6857,7 +6857,7 @@ String.fromCodePoint(0xd55c) == `한`
 String.fromCodePoint(0x1f63a) == `😺`
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If the number is not a valid code point, like `fromCharCode(-5)`.
 
@@ -6870,13 +6870,13 @@ corresponding to the given code point numbers, using the same rules as
 `fromCodePoint`.
 See [`String.fromCodePoint`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.fromCodePointMany([0xd55c, 0xae00, 0x1f63a]) == `한글😺`
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: If one of the number is not a valid code point, like
 `fromCharCode([1, -5])`.
@@ -6896,7 +6896,7 @@ String.fromCodePointMany([0xd55c, 0xae00, 0x1f63a]) == `한글😺`
 `length(str)` returns the length of the given `string`.
 See [`String.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.length("abcd") == 4
@@ -6909,7 +6909,7 @@ String.length("abcd") == 4
 `get(str, index)` returns an `option<string>` at the given `index` number. If
 `index` is out of range, this function returns `None`.
 
-## Examples
+#### Examples
 
 ```rescript
 String.get("ReScript", 0) == Some("R")
@@ -6927,7 +6927,7 @@ string. If the string contains characters outside the range \u0000-\uffff, it
 will return the first 16-bit value at that position in the string.
 See [`String.charAt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.charAt("ReScript", 0) == "R"
@@ -6946,7 +6946,7 @@ to 0x10000. The return type is `float` because this function returns NaN if
 `index` is less than zero or greater than the length of the string.
 See [`String.charCodeAt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.charCodeAt(`😺`, 0) == 0xd83d->Int.toFloat
@@ -6963,7 +6963,7 @@ than or equal to 0x10000. If there is no code point at the given position, the
 function returns `None`.
 See [`String.codePointAt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.codePointAt(`¿😺?`, 1) == Some(0x1f63a)
@@ -6978,7 +6978,7 @@ String.codePointAt("abc", 5) == None
 `original`.
 See [`String.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.concat("cow", "bell") == "cowbell"
@@ -6993,7 +6993,7 @@ String.concat("Re", "Script") == "ReScript"
 array of strings added to the `original` string.
 See [`String.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.concatMany("1st", ["2nd", "3rd", "4th"]) == "1st2nd3rd4th"
@@ -7007,7 +7007,7 @@ String.concatMany("1st", ["2nd", "3rd", "4th"]) == "1st2nd3rd4th"
 otherwise.
 See [`String.endsWith`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.endsWith("BuckleScript", "Script") == true
@@ -7023,7 +7023,7 @@ String.endsWith("BuckleShoes", "Script") == false
 to the length of `str`, then it works like `endsWith`.
 See [`String.endsWith`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.endsWithFrom("abcd", "cd", 4) == true
@@ -7040,7 +7040,7 @@ String.endsWithFrom("example.dat", "ple", 7) == true
 within `str`, `false` otherwise.
 See [`String.includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.includes("programmer", "gram") == true
@@ -7058,7 +7058,7 @@ anywhere within `str` starting at character number `start` (where 0 is the
 first character), `false` otherwise.
 See [`String.includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.includesFrom("programmer", "gram", 1) == true
@@ -7074,7 +7074,7 @@ String.includesFrom(`대한민국`, `한`, 1) == true
 first found within `str`, or `-1` if `searchValue` is not in `str`.
 See [`String.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.indexOf("bookseller", "ok") == 2
@@ -7089,7 +7089,7 @@ String.indexOf("bookseller", "xyz") == -1
 
 `indexOfOpt(str, searchValue)`. Like `indexOf`, but return an `option<int>`.
 
-## Examples
+#### Examples
 
 ```rescript
 String.indexOf("bookseller", "ok") == Some(2)
@@ -7107,7 +7107,7 @@ relative to the beginning of the string, no matter where the search started
 from.
 See [`String.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.indexOfFrom("bookseller", "ok", 1) == 2
@@ -7125,7 +7125,7 @@ Returns `-1` if `searchValue` is not in `str`. The return value is always
 relative to the beginning of the string.
 See [`String.lastIndexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.lastIndexOf("bookseller", "ok") == 2
@@ -7140,7 +7140,7 @@ String.lastIndexOf("abcdefg", "xyz") == -1
 `lastIndexOfOpt(str, searchValue)`. Like `lastIndexOfOpt`, but return an
 `option<int>`.
 
-## Examples
+#### Examples
 
 ```rescript
 String.lastIndexOf("bookseller", "ok") == Some(2)
@@ -7158,7 +7158,7 @@ start position. Returns `-1` if `searchValue` is not in `str`. The return value
 is always relative to the beginning of the string.
 See [`String.lastIndexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.lastIndexOfFrom("bookseller", "ok", 6) == 2
@@ -7180,13 +7180,13 @@ For regular expressions with the g modifier, a matched expression returns
 `Some(array)` with all the matched substrings and no capture groups.
 See [`String.match`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.match("The better bats", %re("/b[aeiou]t/")) == Some(["bet"])
 String.match("The better bats", %re("/b[aeiou]t/g")) == Some(["bet", "bat"])
 String.match("Today is 2018-04-05.", %re("/(\d+)-(\d+)-(\d+)/")) ==
-  Some(["2018-04-05", "2018", "04", "05"])
+Some(["2018-04-05", "2018", "04", "05"])
 String.match("The large container.", %re("/b[aeiou]g/")) == None
 ```
 
@@ -7202,7 +7202,7 @@ stored in an equivalent binary representation.
 See [`String.normalize`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize) on MDN.
 See also [Unicode technical report #15](https://unicode.org/reports/tr15/) for details.
 
-## Examples
+#### Examples
 
 ```rescript
 let string1 = "\uFB00"
@@ -7228,7 +7228,7 @@ See [`String.normalize`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 See also [Unicode technical report #15](https://unicode.org/reports/tr15/) for
 details.
 
-## Examples
+#### Examples
 
 ```rescript
 let string1 = "\uFB00"
@@ -7251,14 +7251,14 @@ Console.log(normalizeString1 == normalizeString2) // true
 `repeat(str, n)` returns a `string` that consists of `n` repetitions of `str`.
 See [`String.repeat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.repeat("ha", 3) == "hahaha"
 String.repeat("empty", 0) == ""
 ```
 
-## Exceptions
+#### Exceptions
 
 - `RangeError`: if `n` is negative.
 
@@ -7272,7 +7272,7 @@ by `newSubstr`. `substr` is treated as a verbatim string to match, not a
 regular expression.
 See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.replace("old string", "old", "new") == "new string"
@@ -7287,7 +7287,7 @@ String.replace("the cat and the dog", "the", "this") == "this cat and the dog"
 occurrences matching regex have been replaced by `replacement`.
 See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.replaceRegExp("vowels be gone", %re("/[aeiou]/g"), "x") == "vxwxls bx gxnx"
@@ -7305,7 +7305,7 @@ matched string, the offset at which the match begins, and the whole string being
 matched.
 See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 let str = "beautiful vowels"
@@ -7322,13 +7322,13 @@ String.unsafeReplaceRegExpBy0(str, re, matchFn) == "bEAUtIfUl vOwEls"
 has `group1` parameter.
 See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 let str = "Jony is 40"
 let re = %re("/(Jony is )\d+/g")
 let matchFn = (_match, part1, _offset, _wholeString) => {
-  part1 ++ "41"
+part1 ++ "41"
 }
 String.unsafeReplaceRegExpBy1(str, re, matchFn) == "Jony is 41"
 ```
@@ -7341,16 +7341,16 @@ String.unsafeReplaceRegExpBy1(str, re, matchFn) == "Jony is 41"
 has two group parameters.
 See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 let str = "7 times 6"
 let re = %re("/(\d+) times (\d+)/")
 let matchFn = (_match, p1, p2, _offset, _wholeString) => {
-  switch (Int.fromString(p1), Int.fromString(p2)) {
-  | (Some(x), Some(y)) => Int.toString(x * y)
-  | _ => "???"
-  }
+switch (Int.fromString(p1), Int.fromString(p2)) {
+| (Some(x), Some(y)) => Int.toString(x * y)
+| _ => "???"
+}
 }
 String.unsafeReplaceRegExpBy2(str, re, matchFn) == "42"
 ```
@@ -7371,7 +7371,7 @@ See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 `regexp` in the given `str`, or -1 if there is no match.
 See [`String.search`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.search("testing 1 2 3", %re("/\d+/")) == 8
@@ -7384,7 +7384,7 @@ String.search("no numbers", %re("/\d+/")) == -1
 
 `searchOpt(str, regexp)`. Like `search`, but return an `option<int>`.
 
-## Examples
+#### Examples
 
 ```rescript
 String.search("testing 1 2 3", %re("/\d+/")) == Some(8)
@@ -7404,7 +7404,7 @@ character `start` up to but not including `end`.
 - If `start` is greater than `end`, slice returns the empty string.
 See [`String.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.slice("abcdefg", ~start=2, ~end=5) == "cde"
@@ -7423,7 +7423,7 @@ String.slice("abcdefg", ~start=5, ~end=1) == ""
 - If `start` is greater than the length of `str`, then sliceToEnd returns the empty string.
 See [`String.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.sliceToEnd("abcdefg", ~start=4) == "efg"
@@ -7439,7 +7439,7 @@ String.sliceToEnd("abcdefg", ~start=7) == ""
 `delimiter` and returns an array of the resulting substrings.
 See [`String.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.split("2018-01-02", "-") == ["2018", "01", "02"]
@@ -7457,7 +7457,7 @@ occurrence of `delimiter` and returns an array of the first `limit` resulting
 substrings. If `limit` is negative or greater than the number of substrings,
 the array will contain all the substrings.
 
-## Examples
+#### Examples
 
 ```rescript
 String.splitAtMost("ant/bee/cat/dog/elk", "/", ~limit=3) = ["ant", "bee", "cat"]
@@ -7473,7 +7473,7 @@ String.splitAtMost("ant/bee/cat/dog/elk", "/", ~limit=9) = ["ant", "bee", "cat",
 `regexp` and returns an array of the resulting substrings.
 See [`String.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.splitByRegExp("Jan,Feb,Mar", %re("/,/")) == [Some("Jan"), Some("Feb"), Some("Mar")]
@@ -7489,13 +7489,13 @@ substrings. If `limit` is negative or greater than the number of substrings, the
 array will contain all the substrings.
 See [`String.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.splitByRegExpAtMost("Hello World. How are you doing?", %re("/ /"), ~limit=3) == [
-  Some("Hello"),
-  Some("World."),
-  Some("How"),
+Some("Hello"),
+Some("World."),
+Some("How"),
 ]
 ```
 
@@ -7507,7 +7507,7 @@ String.splitByRegExpAtMost("Hello World. How are you doing?", %re("/ /"), ~limit
 `false` otherwise.
 See [`String.startsWith`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.startsWith("BuckleScript", "Buckle") == true
@@ -7524,7 +7524,7 @@ with `substr` starting at position `n`, `false` otherwise. If `n` is negative,
 the search starts at the beginning of `str`.
 See [`String.startsWith`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.startsWithFrom("BuckleScript", "kle", 3) == true
@@ -7543,7 +7543,7 @@ including end from `str`.
 - If `start` is greater than `end`, the `start` and `end` points are swapped.
 See [`String.substring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.substring("playground", ~start=3, ~end=6) == "ygr"
@@ -7562,7 +7562,7 @@ String.substring("playground", ~start=4, ~end=12) == "ground"
 is returned.
 See [`String.substring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.substringToEnd("playground", ~start=4) == "ground"
@@ -7581,7 +7581,7 @@ letter sigma, which has two different lower case forms, one when it is the last
 character in a string and another when it is not.
 See [`String.toLowerCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.toLowerCase("ABC") == "abc"
@@ -7606,7 +7606,7 @@ expand the number of letters in the result, for example the German ß
 capitalizes to two Ses in a row.
 See [`String.toUpperCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.toUpperCase("abc") == "ABC"
@@ -7629,7 +7629,7 @@ See [`String.toLocaleUpperCase`](https://developer.mozilla.org/en-US/docs/Web/Ja
 ends. Internal whitespace is not removed.
 See [`String.trim`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.trim("   abc def   ") == "abc def"
@@ -7644,7 +7644,7 @@ String.trim("\n\r\t abc def \n\n\t\r ") == "abc def"
 the beginning of a string. Internal whitespace is not removed.
 See [`String.trimStart`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.trimStart("   Hello world!   ") == "Hello world!   "
@@ -7659,7 +7659,7 @@ String.trimStart("   Hello   world!   ") == "Hello   world!   "
 end of a string. Internal whitespace is not removed.
 See [`String.trimEnd`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.trimEnd("   Hello world!   ") == "   Hello world!"
@@ -7675,7 +7675,7 @@ String.trimEnd("   Hello   world!   ") == "   Hello   world!"
 length. The padding is applied from the start of the current string.
 See [`String.padStart`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.padStart("abc", 5, " ") == "  abc"
@@ -7691,7 +7691,7 @@ String.padStart("abc", 6, "123465") == "123abc"
 length. The padding is applied from the end of the current string.
 See [`String.padEnd`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.padEnd("Hello", 10, ".") == "Hello....."
@@ -7721,7 +7721,7 @@ the `referenceStr` occurs after `compareStr`, `0` if they are equivalent.
 Do not rely on exact return values of `-1` or `1`
 See [`String.localeCompare`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare) on MDN.
 
-## Examples
+#### Examples
 
 ```rescript
 String.localeCompare("a", "c") < 0.0 == true
@@ -7816,7 +7816,7 @@ Returns the underlying JavaScript type of any runtime value.
 
 See [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 Console.log(Type.typeof("Hello")) // Logs "string" to the console.
 
@@ -7836,7 +7836,7 @@ switch someVariable->Type.typeof {
 
 An abstract type representing a JavaScript function.
 
-  See [`function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) on MDN.
+See [`function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) on MDN.
 
 ### type RescriptCore.Type.Classify.object
 
@@ -7844,7 +7844,7 @@ An abstract type representing a JavaScript function.
 
 An abstract type representing a JavaScript object.
 
-  See [`object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) on MDN.
+See [`object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) on MDN.
 
 ### type RescriptCore.Type.Classify.t
 
@@ -7859,7 +7859,7 @@ The type representing a classified JavaScript value.
 `classify(anyValue)`
 Classifies a JavaScript value.
 
-## Examples
+#### Examples
 ```rescript
 switch %raw(`null`)->Type.Classify.classify {
 | Null => Console.log("Yup, that's null.")
@@ -7884,20 +7884,20 @@ A type representing a JSON object.
 Parses a JSON string or throws a JavaScript exception (SyntaxError), if the string isn't valid.
 It returns a JSON type.
 
-## Examples
+#### Examples
 ```rescript
 try {
-  let _ = JSON.parseExn(`{"foo":"bar","hello":"world"}`)
-  // { foo: 'bar', hello: 'world' }
+let _ = JSON.parseExn(`{"foo":"bar","hello":"world"}`)
+// { foo: 'bar', hello: 'world' }
 
-  let _ = JSON.parseExn("")
-  // error
+let _ = JSON.parseExn("")
+// error
 } catch {
 | Exn.Error(obj) => Console.log("error")
 }
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a SyntaxError (Exn.t) if the string isn't valid JSON.
 
@@ -7911,32 +7911,32 @@ Parses a JSON string or throws a JavaScript exception (SyntaxError), if the stri
 The reviver describes how the value should be transformed. It is a function which receives a key and a value.
 It returns a JSON type.
 
-## Examples
+#### Examples
 ```rescript
 let reviver = (key, value) => {
-  let valueType = JSON.Classify.classify(value)
+let valueType = JSON.Classify.classify(value)
 
-  switch valueType {
-  | String(string) => string->String.toUpperCase->JSON.Encode.string
-  | Number(number) => (number *. 2.0)->JSON.Encode.float
-  | _ => value
-  }
+switch valueType {
+| String(string) => string->String.toUpperCase->JSON.Encode.string
+| Number(number) => (number *. 2.0)->JSON.Encode.float
+| _ => value
+}
 }
 
 let jsonString = `{"hello":"world","someNumber":21}`
 
 try {
-  JSON.parseExnWithReviver(jsonString, reviver)->Console.log
-  // { hello: 'WORLD', someNumber: 42 }
+JSON.parseExnWithReviver(jsonString, reviver)->Console.log
+// { hello: 'WORLD', someNumber: 42 }
 
-  JSON.parseExnWithReviver("", reviver)->Console.log
-  // error
+JSON.parseExnWithReviver("", reviver)->Console.log
+// error
 } catch {
 | Exn.Error(_) => Console.log("error")
 }
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a SyntaxError if the string isn't valid JSON.
 
@@ -7949,14 +7949,14 @@ try {
 Converts a JSON object to a JSON string.
 If you want to stringify any type, use `JSON.stringifyAny` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 JSON.stringify(json)
 // {"foo":"bar","hello":"world","someNumber":42}
@@ -7971,14 +7971,14 @@ JSON.stringify(json)
 Converts a JSON object to a JSON string. The output will be indented.
 If you want to stringify any type, use `JSON.stringifyAnyWithIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 JSON.stringifyWithIndent(json, 2)
 // {
@@ -7998,22 +7998,22 @@ Converts a JSON object to a JSON string.
 The replacer describes how the value should be transformed. It is a function which receives a key and a value.
 If you want to stringify any type, use `JSON.stringifyAnyWithReplacer` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 let replacer = (key, value) => {
-  let decodedValue = value->JSON.Decode.string
+let decodedValue = value->JSON.Decode.string
 
-  switch decodedValue {
-  | Some(string) => string->String.toUpperCase->JSON.Encode.string
-  | None => value
-  }
+switch decodedValue {
+| Some(string) => string->String.toUpperCase->JSON.Encode.string
+| None => value
+}
 }
 
 JSON.stringifyWithReplacer(json, replacer)
@@ -8030,29 +8030,29 @@ Converts a JSON object to a JSON string. The output will be indented.
 The replacer describes how the value should be transformed. It is a function which receives a key and a value.
 If you want to stringify any type, use `JSON.stringifyAnyWithReplacerAndIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 let replacer = (key, value) => {
-  let decodedValue = value->JSON.Decode.string
+let decodedValue = value->JSON.Decode.string
 
-  switch decodedValue {
-  | Some(string) => string->String.toUpperCase->JSON.Encode.string
-  | None => value
-  }
+switch decodedValue {
+| Some(string) => string->String.toUpperCase->JSON.Encode.string
+| None => value
+}
 }
 
 JSON.stringifyWithReplacerAndIndent(json, replacer, 2)
 // {
-  "foo": "BAR",
-  "hello": "WORLD",
-  "someNumber": 42
+"foo": "BAR",
+"hello": "WORLD",
+"someNumber": 42
 }
 ```
 
@@ -8066,14 +8066,14 @@ Converts a JSON object to a JSON string.
 The filter is an array of keys, which should be included in the output.
 If you want to stringify any type, use `JSON.stringifyAnyWithFilter` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 JSON.stringifyWithFilter(json, ["foo", "someNumber"])
 // {"foo":"bar","someNumber":42}
@@ -8089,14 +8089,14 @@ Converts a JSON object to a JSON string. The output will be indented.
 The filter is an array of keys, which should be included in the output.
 If you want to stringify any type, use `JSON.stringifyAnyWithFilterAndIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let json =
-  Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-    ("someNumber", JSON.Encode.int(42)),
-  ])->JSON.Encode.object
+Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
+])->JSON.Encode.object
 
 JSON.stringifyWithFilterAndIndent(json, ["foo", "someNumber"], 2)
 // {
@@ -8116,12 +8116,12 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringify` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 JSON.stringifyAny(dict)
@@ -8134,7 +8134,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8150,12 +8150,12 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringifyWithIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 JSON.stringifyAnyWithIndent(dict, 2)
@@ -8172,7 +8172,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8189,21 +8189,21 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringifyWithReplacer` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 let replacer = (key, value) => {
-  let decodedValue = value->JSON.Decode.string
+let decodedValue = value->JSON.Decode.string
 
-  switch decodedValue {
-  | Some(string) => string->String.toUpperCase->JSON.Encode.string
-  | None => value
-  }
+switch decodedValue {
+| Some(string) => string->String.toUpperCase->JSON.Encode.string
+| None => value
+}
 }
 
 JSON.stringifyAnyWithReplacer(dict, replacer)
@@ -8216,7 +8216,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8233,21 +8233,21 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringifyWithReplacerAndIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 let replacer = (key, value) => {
-  let decodedValue = value->JSON.Decode.string
+let decodedValue = value->JSON.Decode.string
 
-  switch decodedValue {
-  | Some(string) => string->String.toUpperCase->JSON.Encode.string
-  | None => value
-  }
+switch decodedValue {
+| Some(string) => string->String.toUpperCase->JSON.Encode.string
+| None => value
+}
 }
 
 JSON.stringifyAnyWithReplacerAndIndent(dict, replacer, 2)
@@ -8264,7 +8264,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8281,12 +8281,12 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringifyWithFilter` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 JSON.stringifyAnyWithFilter(dict, ["foo", "someNumber"])
@@ -8299,7 +8299,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8316,12 +8316,12 @@ Stringifying a function or `undefined` will return `None`.
 If the value contains circular references or `BigInt`s, the function will throw a JavaScript exception (TypeError).
 If you want to stringify a JSON object, use `JSON.stringifyWithFilterAndIndent` instead.
 
-## Examples
+#### Examples
 ```rescript
 let dict = Dict.fromArray([
-  ("foo", JSON.Encode.string("bar")),
-  ("hello", JSON.Encode.string("world")),
-  ("someNumber", JSON.Encode.int(42)),
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+("someNumber", JSON.Encode.int(42)),
 ])
 
 JSON.stringifyAnyWithFilterAndIndent(dict, ["foo", "someNumber"], 2)
@@ -8337,7 +8337,7 @@ BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
-## Exceptions 
+#### Exceptions 
 
 - Raises a TypeError if the value contains circular references.
 - Raises a TypeError if the value contains `BigInt`s.
@@ -8356,14 +8356,14 @@ A type representing a JavaScript type.
 
 Returns the JSON type of any value.
 
-  ## Examples
-  ```rescript
-  JSON.Classify.classify("hello world")
-  // String("hello world")
+#### Examples
+```rescript
+JSON.Classify.classify("hello world")
+// String("hello world")
 
-  JSON.Classify.classify(42)
-  // Number(42)
-  ```
+JSON.Classify.classify(42)
+// Number(42)
+```
 
 ## module RescriptCore.JSON.Encode
 
@@ -8373,10 +8373,10 @@ Returns the JSON type of any value.
 
 Returns a boolean as a JSON object.
 
-  ## Examples
-  ```rescript
-  JSON.Encode.bool(true)
-  ```
+#### Examples
+```rescript
+JSON.Encode.bool(true)
+```
 
 ### let RescriptCore.JSON.Encode.null
 
@@ -8384,10 +8384,10 @@ Returns a boolean as a JSON object.
 
 Returns null as a JSON object.
 
-  ## Examples
-  ```rescript
-  JSON.Encode.null
-  ```
+#### Examples
+```rescript
+JSON.Encode.null
+```
 
 ### let RescriptCore.JSON.Encode.string
 
@@ -8395,10 +8395,10 @@ Returns null as a JSON object.
 
 Returns a string as a JSON object.
 
-  ## Examples
-  ```rescript
-  JSON.Encode.string("hello world")
-  ```
+#### Examples
+```rescript
+JSON.Encode.string("hello world")
+```
 
 ### let RescriptCore.JSON.Encode.int
 
@@ -8406,10 +8406,10 @@ Returns a string as a JSON object.
 
 Returns an int as a JSON object.
 
-  ## Examples
-  ```rescript
-  JSON.Encode.int(42)
-  ```
+#### Examples
+```rescript
+JSON.Encode.int(42)
+```
 
 ### let RescriptCore.JSON.Encode.float
 
@@ -8417,10 +8417,10 @@ Returns an int as a JSON object.
 
 Returns a float as a JSON object.
 
-  ## Examples
-  ```rescript
-  JSON.Encode.float(42.0)
-  ```
+#### Examples
+```rescript
+JSON.Encode.float(42.0)
+```
 
 ### let RescriptCore.JSON.Encode.object
 
@@ -8428,15 +8428,15 @@ Returns a float as a JSON object.
 
 Returns a dict as a JSON object.
 
-  ## Examples
-  ```rescript
-  let dict = Dict.fromArray([
-    ("foo", JSON.Encode.string("bar")),
-    ("hello", JSON.Encode.string("world")),
-  ])
+#### Examples
+```rescript
+let dict = Dict.fromArray([
+("foo", JSON.Encode.string("bar")),
+("hello", JSON.Encode.string("world")),
+])
 
-  JSON.Encode.object(dict)
-  ```
+JSON.Encode.object(dict)
+```
 
 ### let RescriptCore.JSON.Encode.array
 
@@ -8444,12 +8444,12 @@ Returns a dict as a JSON object.
 
 Returns an array as a JSON object.
 
-  ## Examples
-  ```rescript
-  let array = [JSON.Encode.string("hello world"), JSON.Encode.int(42)]
+#### Examples
+```rescript
+let array = [JSON.Encode.string("hello world"), JSON.Encode.int(42)]
 
-  JSON.Encode.array(array)
-  ```
+JSON.Encode.array(array)
+```
 
 ## module RescriptCore.JSON.Decode
 
@@ -8459,14 +8459,14 @@ Returns an array as a JSON object.
 
 Decodes a single JSON value. If the value is a bool, it will return `Some(bool)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`true`)->JSON.Decode.bool
-  // Some(true)
+#### Examples
+```rescript
+JSON.parseExn(`true`)->JSON.Decode.bool
+// Some(true)
 
-  JSON.parseExn(`"hello world"`)->JSON.Decode.bool
-  // None
-  ```
+JSON.parseExn(`"hello world"`)->JSON.Decode.bool
+// None
+```
 
 ### let RescriptCore.JSON.Decode.null
 
@@ -8474,14 +8474,14 @@ Decodes a single JSON value. If the value is a bool, it will return `Some(bool)`
 
 Decodes a single JSON value. If the value is null, it will return `Some(Null.t)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`null`)->JSON.Decode.null
-  // Some(null)
+#### Examples
+```rescript
+JSON.parseExn(`null`)->JSON.Decode.null
+// Some(null)
 
-  JSON.parseExn(`"hello world"`)->JSON.Decode.null
-  // None
-  ```
+JSON.parseExn(`"hello world"`)->JSON.Decode.null
+// None
+```
 
 ### let RescriptCore.JSON.Decode.string
 
@@ -8489,14 +8489,14 @@ Decodes a single JSON value. If the value is null, it will return `Some(Null.t)`
 
 Decodes a single JSON value. If the value is a string, it will return `Some(string)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`"hello world"`)->JSON.Decode.string
-  // Some("hello world")
+#### Examples
+```rescript
+JSON.parseExn(`"hello world"`)->JSON.Decode.string
+// Some("hello world")
 
-  JSON.parseExn(`42`)->JSON.Decode.string
-  // None 
-  ```
+JSON.parseExn(`42`)->JSON.Decode.string
+// None 
+```
 
 ### let RescriptCore.JSON.Decode.float
 
@@ -8504,14 +8504,14 @@ Decodes a single JSON value. If the value is a string, it will return `Some(stri
 
 Decodes a single JSON value. If the value is a float, it will return `Some(float)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`42.0`)->JSON.Decode.float
-  // Some(42.0)
+#### Examples
+```rescript
+JSON.parseExn(`42.0`)->JSON.Decode.float
+// Some(42.0)
 
-  JSON.parseExn(`"hello world"`)->JSON.Decode.float
-  // None
-  ```
+JSON.parseExn(`"hello world"`)->JSON.Decode.float
+// None
+```
 
 ### let RescriptCore.JSON.Decode.object
 
@@ -8519,14 +8519,14 @@ Decodes a single JSON value. If the value is a float, it will return `Some(float
 
 Decodes a single JSON value. If the value is an object, it will return `Some(Dict.t)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`{"foo":"bar"}`)->JSON.Decode.object
-  // Some({ foo: 'bar' })
+#### Examples
+```rescript
+JSON.parseExn(`{"foo":"bar"}`)->JSON.Decode.object
+// Some({ foo: 'bar' })
 
-  JSON.parseExn(`"hello world"`)->JSON.Decode.object
-  // None
-  ```
+JSON.parseExn(`"hello world"`)->JSON.Decode.object
+// None
+```
 
 ### let RescriptCore.JSON.Decode.array
 
@@ -8534,14 +8534,14 @@ Decodes a single JSON value. If the value is an object, it will return `Some(Dic
 
 Decodes a single JSON value. If the value is an array, it will return `Some(array)` - otherwise it will return `None`.
 
-  ## Examples
-  ```rescript
-  JSON.parseExn(`["foo", "bar"]`)->JSON.Decode.array
-  // Some([ 'foo', 'bar' ])
+#### Examples
+```rescript
+JSON.parseExn(`["foo", "bar"]`)->JSON.Decode.array
+// Some([ 'foo', 'bar' ])
 
-  JSON.parseExn(`"hello world"`)->JSON.Decode.array
-  // None
-  ```
+JSON.parseExn(`"hello world"`)->JSON.Decode.array
+// None
+```
 
 ## module RescriptCore.Iterator `alias`
 
@@ -8565,7 +8565,7 @@ Returns the next value of the iterator, if any.
 
 See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Pulls out the next value of the iterator
 let {done, value} = someIterator->Iterator.next
@@ -8580,7 +8580,7 @@ Remember that each invocation of `next` of an iterator consumes a value. `Iterat
 
 See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8601,7 +8601,7 @@ Remember that each invocation of `next` of an iterator consumes a value. `Iterat
 
 See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8609,8 +8609,8 @@ map->Map.set("someKey2", "someValue2")
 
 // `Map.keys` returns all keys of the map as an iterator.
 let mapKeysAsArray = map
-  ->Map.keys
-  ->Iterator.toArrayWithMapper(key => key->String.length)
+->Map.keys
+->Iterator.toArrayWithMapper(key => key->String.length)
 
 Console.log(mapKeysAsArray) // Logs [7, 8] to the console.
 ```
@@ -8637,7 +8637,7 @@ Returns the next value of the iterator, if any.
 
 See [async iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) on MDN.
 
-## Examples
+#### Examples
 - A simple example, getting the next value:
 ```rescript
 let {done, value} = await someAsyncIterator->AsyncIterator.next
@@ -8650,19 +8650,19 @@ let {done, value} = await someAsyncIterator->AsyncIterator.next
 
 
 let processMyAsyncIterator = async () => {
-  // ReScript doesn't have `for ... of` loops, but it's easy to mimic using a while loop.
-  let break = ref(false)
+// ReScript doesn't have `for ... of` loops, but it's easy to mimic using a while loop.
+let break = ref(false)
 
-  while !break.contents {
-    // Await the next iterator value
-    let {value, done} = await asyncIterator->AsyncIterator.next
+while !break.contents {
+// Await the next iterator value
+let {value, done} = await asyncIterator->AsyncIterator.next
 
-    // Exit the while loop if the iterator says it's done
-    break := done
+// Exit the while loop if the iterator says it's done
+break := done
 
-    // This will log the (int) value of the current async iteration, if a value was returned.
-    Console.log(value)
-  }
+// This will log the (int) value of the current async iteration, if a value was returned.
+Console.log(value)
+}
 }
 ```
 
@@ -8684,7 +8684,7 @@ See [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl
 
 
 
-## Examples
+#### Examples
 ```rescript
 `make()`
 // You can annotate the type of your map if you want to
@@ -8695,7 +8695,7 @@ let map = Map.make()
 map->Map.set("lang", "ReScript") // Inferred as Map.t<string, string>
 ```
 
-## Alternatives
+#### Alternatives
 A JavaScript `Map` is mutable. If you're looking for an immutable alternative, check out`Belt.Map`.
 
 ### let RescriptCore.Map.fromArray
@@ -8704,7 +8704,7 @@ A JavaScript `Map` is mutable. If you're looking for an immutable alternative, c
 
 Turns an array of key/value pairs into a Map.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | JavaScript | TypeScript
 let languageRank = [(ReScript, 1), (JavaScript, 2), (TypeScript, 3)]
@@ -8723,7 +8723,7 @@ switch map->Map.get(ReScript) {
 
 Turns an iterator in the shape of `('key, 'value)` into a `Map`.
 
-## Examples
+#### Examples
 ```rescript
 // Let's pretend we have an interator in the correct shape
 @val external someIterator: Iterator.t<(string, int)> = "someIterator"
@@ -8737,7 +8737,7 @@ let map = Map.fromIterator(someIterator) // Map.t<string, int>
 
 Returns the size, the number of key/value pairs, of the map.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 
@@ -8752,7 +8752,7 @@ let size = map->Map.size // 1
 
 Clears all entries in the map.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 
@@ -8771,14 +8771,14 @@ Iterates through all values of the map.
 
 > Please note that this is *without the keys*, just the values. If you need the key as well, use `Map.forEachWithKey`.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
 map->Map.set("someKey2", "someValue2")
 
 map->Map.forEach(value => {
-  Console.log(value)
+Console.log(value)
 })
 ```
 
@@ -8788,14 +8788,14 @@ map->Map.forEach(value => {
 
 Iterates through all values of the map, including the key for each value.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
 map->Map.set("someKey2", "someValue2")
 
 map->Map.forEachWithKey((value, key) => {
-  Console.log2(value, key)
+Console.log2(value, key)
 })
 ```
 
@@ -8805,7 +8805,7 @@ map->Map.forEachWithKey((value, key) => {
 
 Returns the value for a key, if a value exists at that key.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8822,7 +8822,7 @@ switch map->Map.get("someKey") {
 
 Checks whether the map has a specific key.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8839,7 +8839,7 @@ switch map->Map.has("someKey") {
 
 Sets the provided `value` to the provided `key`.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8851,7 +8851,7 @@ map->Map.set("someKey", "someValue")
 
 Deletes the provided `key` and its value from the map. Returns a `bool` for whether the key existed, and was deleted.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8868,7 +8868,7 @@ Console.log(didDeleteKey) // Logs `false` to the console, becuase the key did no
 
 Returns an iterator that holds all keys of the map.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8890,7 +8890,7 @@ Console.log(map->Map.keys->Iterator.toArray)
 
 Returns an iterator that holds all values of the map.
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8913,7 +8913,7 @@ Console.log(map->Map.values->Iterator.toArray)
 Returns an iterator that holds all entries of the map.
 An entry is represented as a tuple of `('key, 'value)`,
 
-## Examples
+#### Examples
 ```rescript
 let map = Map.make()
 map->Map.set("someKey", "someValue")
@@ -8973,7 +8973,7 @@ See [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl
 
 
 
-## Examples
+#### Examples
 ```rescript
 // You can annotate the type of your set if you want to
 let mySet: Set.t<string> = Set.make()
@@ -8983,7 +8983,7 @@ let set = Set.make()
 set->Set.add("Fine name") // Inferred as Set.t<string>
 ```
 
-## Alternatives
+#### Alternatives
 A JavaScript `Set` is mutable. If you're looking for an immutable alternative, check out `Belt.Set`.
 
 ### let RescriptCore.Set.fromArray
@@ -8992,7 +8992,7 @@ A JavaScript `Set` is mutable. If you're looking for an immutable alternative, c
 
 Turns an array of values into a Set. Meaning only unique values are preserved.
 
-## Examples
+#### Examples
 ```rescript
 type languages = ReScript | JavaScript | TypeScript
 let languageRank = [ReScript, JavaScript, TypeScript]
@@ -9011,7 +9011,7 @@ switch set->Set.has(ReScript) {
 
 Turns an iterator into a `Set`.
 
-## Examples
+#### Examples
 ```rescript
 // Let's pretend we have an interator
 @val external someIterator: Iterator.t<int> = "someIterator"
@@ -9025,7 +9025,7 @@ let set = Set.fromIterator(someIterator) // Set.t<int>
 
 Returns the size, the number of unique values, of the set.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 
@@ -9042,7 +9042,7 @@ let size = set->Set.size // 2
 
 Clears all entries in the set.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 
@@ -9059,7 +9059,7 @@ let size = set->Set.size // 0
 
 Adds a new value to the set.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 set->Set.add("someValue")
@@ -9071,7 +9071,7 @@ set->Set.add("someValue")
 
 Deletes the provided `value` from the set. Returns a `bool` for whether the value existed, and was deleted.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 set->Set.add("someValue")
@@ -9088,7 +9088,7 @@ Console.log(didDeleteValue) // Logs `false` to the console, becuase the value di
 
 Checks whether the set has a specific value.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 set->Set.add("someValue")
@@ -9105,14 +9105,14 @@ switch set->Set.has("someValue") {
 
 Iterates through all values of the set.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 set->Set.add("someValue")
 set->Set.add("someValue2")
 
 set->Set.forEach(value => {
-  Console.log(value)
+Console.log(value)
 })
 ```
 
@@ -9122,7 +9122,7 @@ set->Set.forEach(value => {
 
 Returns an iterator that holds all values of the set.
 
-## Examples
+#### Examples
 ```rescript
 let set = Set.make()
 set->Set.add("someValue")
@@ -10514,16 +10514,16 @@ Type representing the result of a `RegExp` execution.
 
 `fullMatch(regExpResult)` returns the full string that matched in this result.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints the full string that matched, "ReScript is"
-  }
-  ```
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints the full string that matched, "ReScript is"
+}
+```
 
 ### let RescriptCore.Re.Result.matches
 
@@ -10531,20 +10531,20 @@ Type representing the result of a `RegExp` execution.
 
 `matches(regExpResult)` returns all matches for `regExpResult`.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  // This below will log "ReScript" and "is" to the console.
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => switch result->RegExp.Result.matches {
-    | [firstWord, secondWord] => Console.log2(firstWord, secondWord)
-    | _ => Console.log("Didn't find exactly two words...")
-    }
-  }
-  ```
+// This below will log "ReScript" and "is" to the console.
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => switch result->RegExp.Result.matches {
+| [firstWord, secondWord] => Console.log2(firstWord, secondWord)
+| _ => Console.log("Didn't find exactly two words...")
+}
+}
+```
 
 ### let RescriptCore.Re.Result.index
 
@@ -10556,17 +10556,17 @@ Type representing the result of a `RegExp` execution.
 
 `input(regExpResult)` returns the full input string that was passed to what produced the `RegExp.Result.t`.
 
-  ## Examples
-  ```rescript
-  // Match the first two words separated by a space
-  let regexp = RegExp.fromString("(\\w+) (\\w+)")
+#### Examples
+```rescript
+// Match the first two words separated by a space
+let regexp = RegExp.fromString("(\\w+) (\\w+)")
 
-  // This below will log the full input string "ReScript is pretty cool, right?" to the console.
-  switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
-  | None => Console.log("Nope, no match...")
-  | Some(result) => Console.log(result->RegExp.Result.input)
-  }
-  ```
+// This below will log the full input string "ReScript is pretty cool, right?" to the console.
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.input)
+}
+```
 
 ### let RescriptCore.Re.fromString
 
@@ -10576,7 +10576,7 @@ Type representing the result of a `RegExp` execution.
 
 See [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -10595,7 +10595,7 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp parameters`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#parameters) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
@@ -10614,13 +10614,13 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp.test`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
 if regexp->RegExp.test("ReScript is cool!") {
-  Console.log("Yay, there's a word in there.")
+Console.log("Yay, there's a word in there.")
 }
 ```
 
@@ -10632,7 +10632,7 @@ if regexp->RegExp.test("ReScript is cool!") {
 
 See [`RegExp.exec`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -10651,7 +10651,7 @@ switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
 
 See [`RegExp.lastIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
@@ -10672,7 +10672,7 @@ Console.log(regexp->RegExp.lastIndex) // Logs `4` to the console
 
 See [`RegExp.ignoreCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.ignoreCase) // Logs `false`, since `i` is not set
@@ -10689,7 +10689,7 @@ Console.log(regexp2->RegExp.ignoreCase) // Logs `true`, since `i` is set
 
 See [`RegExp.global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.global) // Logs `true`, since `g` is set
@@ -10706,7 +10706,7 @@ Console.log(regexp2->RegExp.global) // Logs `false`, since `g` is not set
 
 See [`RegExp.multiline`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.multiline) // Logs `false`, since `m` is not set
@@ -10723,7 +10723,7 @@ Console.log(regexp2->RegExp.multiline) // Logs `true`, since `m` is set
 
 See [`RegExp.source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp`
@@ -10737,7 +10737,7 @@ Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp
 
 See [`RegExp.sticky`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.unicode) // Logs `false`, since `y` is not set
@@ -10754,7 +10754,7 @@ Console.log(regexp2->RegExp.unicode) // Logs `true`, since `y` is set
 
 See [`RegExp.unicode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode) on MDN.
 
-## Examples
+#### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 Console.log(regexp1->RegExp.unicode) // Logs `false`, since `u` is not set
@@ -10773,7 +10773,7 @@ Console.log(regexp2->RegExp.unicode) // Logs `true`, since `u` is set
 
 `filter(opt, f)` applies `f` to `opt`, if `f` returns `true`, then it returns `Some(value)`, otherwise returns `None`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.filter(Some(10), x => x > 5) // Some(10)
@@ -10788,7 +10788,7 @@ Option.filter(None, x => x > 5) // None
 `forEach(opt, f)` call `f` on `opt`. if `opt` is `Some(value)`, then if calls
 `f`, otherwise returns `unit`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.forEach(Some("thing"), x => Console.log(x)) // logs "thing"
@@ -10806,7 +10806,7 @@ Option.getExn(Some(3)) // 3
 Option.getExn(None) /* Raises an Error */
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises an error if `opt` is `None`
 
@@ -10816,14 +10816,14 @@ Option.getExn(None) /* Raises an Error */
 
 `getUnsafe(opt)` returns `value` if `opt` is `Some(value)`, otherwise `undefined`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.getUnsafe(Some(3)) == 3
 Option.getUnsafe(None: option<int>) // Returns `undefined`, which is not a valid `int`
 ```
 
-## Notes
+#### Notes
 
 - This is an unsafe operation. It assumes `value` is not `None`, and may cause undefined behaviour if it is.
 
@@ -10833,7 +10833,7 @@ Option.getUnsafe(None: option<int>) // Returns `undefined`, which is not a valid
 
 `mapOr(opt, default, f)` returns `f(value)` if `opt` is `Some(value)`, otherwise `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 let someValue = Some(3)
@@ -10855,7 +10855,7 @@ noneValue->Option.mapOr(0, x => x + 5) // 0
 
 `map(opt, f)` returns `Some(f(value))` if `opt` is `Some(value)`, otherwise `None`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.map(Some(3), x => x * x) // Some(9)
@@ -10868,15 +10868,15 @@ Option.map(None, x => x * x) // None
 
 `flatMap(opt, f)` returns `f(value)` if `opt` is `Some(value)`, otherwise `None`.
 
-## Examples
+#### Examples
 
 ```rescript
 let addIfAboveOne = value =>
-  if (value > 1) {
-    Some(value + 1)
-  } else {
-    None
-  }
+if (value > 1) {
+Some(value + 1)
+} else {
+None
+}
 
 Option.flatMap(Some(2), addIfAboveOne) // Some(3)
 Option.flatMap(Some(-4), addIfAboveOne) // None
@@ -10889,14 +10889,14 @@ Option.flatMap(None, addIfAboveOne) // None
 
 `getOr(opt, default)` returns `value` if `opt` is `Some(value)`, otherwise `default`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.getOr(None, "Banana") // Banana
 Option.getOr(Some("Apple"), "Banana") // Apple
 
 let greet = (firstName: option<string>) =>
-  "Greetings " ++ firstName->Option.getOr("Anonymous")
+"Greetings " ++ firstName->Option.getOr("Anonymous")
 
 Some("Jane")->greet // "Greetings Jane"
 None->greet // "Greetings Anonymous"
@@ -10914,7 +10914,7 @@ None->greet // "Greetings Anonymous"
 
 `orElse(opt1, opt2)` returns `opt2` if `opt1` is `None`, otherwise `opt1`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.orElse(Some(1812), Some(1066)) == Some(1812)
@@ -10928,7 +10928,7 @@ Option.orElse(None, None) == None
 
 `isSome(opt)` returns `true` if `opt` is `Some(value)`, otherwise returns `false`.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.isSome(None) // false
@@ -10941,7 +10941,7 @@ Option.isSome(Some(1)) // true
 
 `isNone(opt)` returns `true` if `opt` is `None`, false otherwise.
 
-## Examples
+#### Examples
 
 ```rescript
 Option.isNone(None) // true
@@ -10958,7 +10958,7 @@ If one of the arguments is `Some(value)` and the other is `None`, returns
 If arguments are `Some(value1)` and `Some(value2)`, returns the result of
 `f(value1, value2)`, the predicate function `f` must return a bool.
 
-## Examples
+#### Examples
 
 ```rescript
 let clockEqual = (a, b) => mod(a, 12) == mod(b, 12)
@@ -10987,7 +10987,7 @@ If the arguments are `Some(value1)` and `Some(value2)`, returns the result of
 argument is less than the second, `0.` if the arguments are equal, and `1.` if
 the first argument is greater than the second.
 
-## Examples
+#### Examples
 
 ```rescript
 let clockCompare = (a, b) => compare(mod(a, 12), mod(b, 12))
@@ -11022,7 +11022,7 @@ Collection functions for manipulating the `list` data structures, a singly-linke
 
 `length(list)` returns the length of `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.length(list{1, 2, 3}) // 3
@@ -11034,7 +11034,7 @@ List.length(list{1, 2, 3}) // 3
 
 `size(list)`. See [`length`](#length)
 
-## Examples
+#### Examples
 
 ```rescript
 List.size(list{1, 2, 3}) // 3
@@ -11047,7 +11047,7 @@ List.size(list{1, 2, 3}) // 3
 `head(list)` returns `Some(value)` where `value` is the first element in the
 list, or `None` if `list` is an empty list.
 
-## Examples
+#### Examples
 
 ```rescript
 List.head(list{}) // None
@@ -11060,7 +11060,7 @@ List.head(list{1, 2, 3}) // Some(1)
 
 `headExn(list)` same as [`head`](#head).
 
-## Examples
+#### Examples
 
 ```rescript
 List.headExn(list{1, 2, 3}) // 1
@@ -11068,7 +11068,7 @@ List.headExn(list{1, 2, 3}) // 1
 List.headExn(list{}) // Raises an Error
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises an Error if list is empty.
 
@@ -11079,7 +11079,7 @@ List.headExn(list{}) // Raises an Error
 `tail(list)` returns `None` if `list` is empty, otherwise it returns `Some(tail)`
 where `tail` is everything except the first element of `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.tail(list{1, 2, 3}) // Some(list{2, 3})
@@ -11093,7 +11093,7 @@ List.tail(list{}) // None
 
 `tailExn(list)` same as [`tail`](#tail).
 
-## Examples
+#### Examples
 
 ```rescript
 List.tailExn(list{1, 2, 3}) // list{2, 3}
@@ -11101,7 +11101,7 @@ List.tailExn(list{1, 2, 3}) // list{2, 3}
 List.tailExn(list{}) // Raises an Error
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises an Error if list is empty.
 
@@ -11111,7 +11111,7 @@ List.tailExn(list{}) // Raises an Error
 
 `add(list, value)` adds a `value` to the beginning of list `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.add(list{2, 3}, 1) // list{1, 2, 3}
@@ -11126,7 +11126,7 @@ List.add(list{"World", "!"}, "Hello") // list{"Hello", "World", "!"}
 `get(list, index)` return the `index` element in `list`, or `None` if `index`
 is larger than the length of list `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 let abc = list{"A", "B", "C"}
@@ -11142,7 +11142,7 @@ abc->List.get(4) // None
 
 `getExn(list, index)` same as [`get`](#get).
 
-## Examples
+#### Examples
 
 ```rescript
 let abc = list{"A", "B", "C"}
@@ -11152,7 +11152,7 @@ abc->List.getExn(1) // "B"
 abc->List.getExn(4) // Raises an Error
 ```
 
-## Exceptions
+#### Exceptions
 
 - Raises an Error if `index` is larger than the length of list.
 
@@ -11163,7 +11163,7 @@ abc->List.getExn(4) // Raises an Error
 `make(length, value)` returns a list of length `length` with each element filled
 with `value`. Returns an empty list if `value` is negative.
 
-## Examples
+#### Examples
 
 ```rescript
 List.make(3, 1) // list{1, 1, 1}
@@ -11176,7 +11176,7 @@ List.make(3, 1) // list{1, 1, 1}
 `makeBy(length, f)` return a list of length `length` with element initialized
 with `f`. Returns an empty list if `length` is negative.
 
-## Examples
+#### Examples
 
 ```rescript
 List.makeBy(5, i => i) // list{0, 1, 2, 3, 4}
@@ -11190,7 +11190,7 @@ List.makeBy(5, i => i * i) // list{0, 1, 4, 9, 16}
 
 `toShuffled(list)` returns a new list in random order.
 
-## Examples
+#### Examples
 
 ```rescript
 List.toShuffled(list{1, 2, 3}) // list{2, 1, 3}
@@ -11203,7 +11203,7 @@ List.toShuffled(list{1, 2, 3}) // list{2, 1, 3}
 `drop(list, value)` return a new list, dropping the first `value` element.
 Returns `None` if `list` has fewer than `value` elements.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3}->List.drop(2) // Some(list{3})
@@ -11220,7 +11220,7 @@ list{1, 2, 3}->List.drop(4) // None
 `take(list, value)` returns a list with the first `value` elements from `list`,
 or `None` if `list` has fewer than `value` elements.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3}->List.take(1) // Some(list{1})
@@ -11237,7 +11237,7 @@ list{1, 2, 3}->List.take(4) // None
 `splitAt(list, n)` split the list `list` at `n`. Returns `None` when the length
 of `list` is less than `n`.
 
-## Examples
+#### Examples
 
 ```rescript
 list{"Hello", "World"}->List.splitAt(1) // Some((list{"Hello"}, list{"World"}))
@@ -11251,7 +11251,7 @@ list{0, 1, 2, 3, 4}->List.splitAt(2) // Some((list{0, 1}, list{2, 3, 4}))
 
 `concat(list1, list2)` returns the list obtained by adding `list1` after `list2`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.concat(list{1, 2, 3}, list{4, 5}) // list{1, 2, 3, 4, 5}
@@ -11264,7 +11264,7 @@ List.concat(list{1, 2, 3}, list{4, 5}) // list{1, 2, 3, 4, 5}
 `concatMany(arr)` returns the list obtained by concatenating all the lists in
 array `arr`, in order.
 
-## Examples
+#### Examples
 
 ```rescript
 List.concatMany([list{1, 2, 3}, list{}, list{3}]) // list{1, 2, 3, 3}
@@ -11276,7 +11276,7 @@ List.concatMany([list{1, 2, 3}, list{}, list{3}]) // list{1, 2, 3, 3}
 
 `reverseConcat(list1, list2)` is equivalent to writing: `concat(reverse(list1, list2)`
 
-## Examples
+#### Examples
 
 ```rescript
 List.reverseConcat(list{1, 2}, list{3, 4}) // list{2, 1, 3, 4}
@@ -11289,7 +11289,7 @@ List.reverseConcat(list{1, 2}, list{3, 4}) // list{2, 1, 3, 4}
 `flatten(list)` return the list obtained by concatenating all the lists in
 `list`, in order.
 
-## Examples
+#### Examples
 
 ```rescript
 List.flatten(list{list{1, 2, 3}, list{}, list{3}}) // list{1, 2, 3, 3}
@@ -11301,7 +11301,7 @@ List.flatten(list{list{1, 2, 3}, list{}, list{3}}) // list{1, 2, 3, 3}
 
 `map(list, f)` returns a new list with `f` applied to each element of `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2}->List.map(x => x + 1) // list{3, 4}
@@ -11314,7 +11314,7 @@ list{1, 2}->List.map(x => x + 1) // list{3, 4}
 `zip(list1, list2)` returns a list of pairs from the two lists with the length
 of the shorter list.
 
-## Examples
+#### Examples
 
 ```rescript
 List.zip(list{1, 2}, list{3, 4, 5}) // list{(1, 3), (2, 4)}
@@ -11326,7 +11326,7 @@ List.zip(list{1, 2}, list{3, 4, 5}) // list{(1, 3), (2, 4)}
 
 `zipBy(list1, list2, f)`. See [`zip`](#zip)
 
-## Examples
+#### Examples
 
 ```rescript
 List.zipBy(list{1, 2, 3}, list{4, 5}, (a, b) => 2 * a + b) // list{6, 9}
@@ -11340,7 +11340,7 @@ List.zipBy(list{1, 2, 3}, list{4, 5}, (a, b) => 2 * a + b) // list{6, 9}
 takes two arguments: the index starting from 0 and the element from `list`, in
 that order.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3}->List.mapWithIndex((index, x) => index + x) // list{1, 3, 5}
@@ -11352,7 +11352,7 @@ list{1, 2, 3}->List.mapWithIndex((index, x) => index + x) // list{1, 3, 5}
 
 `fromArray(arr)` converts the given array `arr` to a list.
 
-## Examples
+#### Examples
 
 ```rescript
 List.fromArray([1, 2, 3]) // list{1, 2, 3}
@@ -11364,7 +11364,7 @@ List.fromArray([1, 2, 3]) // list{1, 2, 3}
 
 `toArray(list)` converts the given list `list` to an array.
 
-## Examples
+#### Examples
 
 ```rescript
 List.toArray(list{1, 2, 3}) // [1, 2, 3]
@@ -11377,7 +11377,7 @@ List.toArray(list{1, 2, 3}) // [1, 2, 3]
 `reverse(list)` returns a new list whose elements are those of `list` in
 reversed order.
 
-## Examples
+#### Examples
 
 ```rescript
 List.reverse(list{1, 2, 3}) // list{3, 2, 1}
@@ -11389,7 +11389,7 @@ List.reverse(list{1, 2, 3}) // list{3, 2, 1}
 
 `mapReverse(list, f)` is equivalent to `map` function.
 
-## Examples
+#### Examples
 
 ```rescript
 let f = x => x * x
@@ -11409,15 +11409,15 @@ Console.log(withMap == withMapReverse) // true
 `f` returns `unit`, so no new array is created. Use `forEach` when you are primarily
 concerned with repetitively creating side effects.
 
-## Examples
+#### Examples
 
 ```rescript
 List.forEach(list{"a", "b", "c"}, x => Console.log("Item: " ++ x))
 /*
-  prints:
-  Item: a
-  Item: b
-  Item: c
+prints:
+Item: a
+Item: b
+Item: c
 */
 ```
 
@@ -11429,17 +11429,17 @@ List.forEach(list{"a", "b", "c"}, x => Console.log("Item: " ++ x))
 to end. Function `f` takes two arguments: the `index` starting from 0 and the
 element from `list`. `f` returns `unit`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.forEachWithIndex(list{"a", "b", "c"}, (index, x) => {
-  Console.log("Item " ++ Int.toString(index) ++ " is " ++ x)
+Console.log("Item " ++ Int.toString(index) ++ " is " ++ x)
 })
 /*
-  prints:
-  Item 0 is a
-  Item 1 is b
-  Item 2 is cc
+prints:
+Item 0 is a
+Item 1 is b
+Item 2 is cc
 */
 ```
 
@@ -11452,7 +11452,7 @@ beginning to end. Function `f` has two parameters: the item from the list and
 an "accumulator", which starts with a value of `initialValue`. `reduce` returns
 the final value of the accumulator.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3, 4}->List.reduce(0, (a, b) => a + b) // 10
@@ -11471,7 +11471,7 @@ from beginning to end. Function `f` has three parameters: the item from the list
 and an "accumulator", which starts with a value of `initialValue` and the index
 of each element. `reduceWithIndex` returns the final value of the accumulator.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3, 4}->List.reduceWithIndex(0, (acc, item, index) => acc + item + index) // 16
@@ -11484,7 +11484,7 @@ list{1, 2, 3, 4}->List.reduceWithIndex(0, (acc, item, index) => acc + item + ind
 `reduceReverse(list, initialValue, f)` works like `reduce`, except that
 function `f` is applied to each item of `list` from the last back to the first.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3, 4}->List.reduceReverse(0, (a, b) => a + b) // 10
@@ -11500,7 +11500,7 @@ list{1, 2, 3, 4}->List.reduceReverse(list{}, List.add) // list{1, 2, 3, 4}
 
 `mapReverse2(list1, list2, f)` is equivalent to `List.zipBy(list1, list2, f)->List.reverse`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.mapReverse2(list{1, 2, 3}, list{1, 2}, (a, b) => a + b) // list{4, 2}
@@ -11513,15 +11513,15 @@ List.mapReverse2(list{1, 2, 3}, list{1, 2}, (a, b) => a + b) // list{4, 2}
 `forEach2(list1, list2, f)` is similar to `forEach`, but accepts two lists and
 stops at the length of the shorter list.
 
-## Examples
+#### Examples
 
 ```rescript
 List.forEach2(list{"Z", "Y"}, list{"A", "B", "C"}, (x, y) => Console.log2(x, y))
 
 /*
-  prints:
-  "Z" "A"
-  "Y" "B"
+prints:
+"Z" "A"
+"Y" "B"
 */
 ```
 
@@ -11535,7 +11535,7 @@ three parameters: an accumulator which starts with a value of `initialValue`, an
 item from `l1`, and an item from `l2`. `reduce2` returns the final value of the
 accumulator.
 
-## Examples
+#### Examples
 
 ```rescript
 List.reduce2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y) // 0 + (1 * 1 + 4) + (2 * 2 + 5)
@@ -11551,7 +11551,7 @@ List.reduce2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y) // 0 
 `initialValue`, an item from `l1`, and an item from `l2`. `reduce2` returns the
 final value of the accumulator.
 
-## Examples
+#### Examples
 
 ```rescript
 List.reduceReverse2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y) //  + (1 * 1 + 4) + (2 * 2 + 5)
@@ -11564,7 +11564,7 @@ List.reduceReverse2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y
 `every(list, f)` returns `true` if all elements in `list` satisfy `f`, where `f`
 is a predicate: a function taking an element and returning a bool.
 
-## Examples
+#### Examples
 
 ```rescript
 let isBelow10 = value => value < 10
@@ -11582,7 +11582,7 @@ list{1, 99, 8, 2}->List.every(isBelow10) // false
 satisfies `f`, where `f` is a predicate: a function taking an element and
 returning a bool.
 
-## Examples
+#### Examples
 
 ```rescript
 let isAbove100 = value => value > 100
@@ -11599,7 +11599,7 @@ list{1, 2, 3, 4}->List.some(isAbove100) // false
 `every2(list1, list2, f)` returns `true` if predicate `f` is `true` for all
 pairs of elements up to the shorter length (i.e. `min(length(list1), length(list2))`)
 
-## Examples
+#### Examples
 
 ```rescript
 List.every2(list{1, 2, 3}, list{0, 1}, (a, b) => a > b) // true
@@ -11618,7 +11618,7 @@ List.every2(list{0, 1}, list{5, 0}, (a, b) => a > b) // false
 `some2(list1, list2, f)` returns `true` if predicate `f` is `true` for any pair
 of elements up to the shorter length (i.e. `min(length(list1), length(list2))`)
 
-## Examples
+#### Examples
 
 ```rescript
 List.some2(list{1, 2, 3}, list{0, 1}, (a, b) => a > b) // true
@@ -11638,7 +11638,7 @@ List.some2(list{0, 1}, list{5, 0}, (a, b) => a > b) // true
 `length(list1)` is less than `length(list2)`, `0.` if `length(list1)` equals
 `length(list2)`, and `1.` if `length(list1)` is greater than `length(list2)`.
 
-## Examples
+#### Examples
 
 ```rescript
 List.compareLength(list{1, 2}, list{3, 4, 5, 6}) // -1.
@@ -11662,7 +11662,7 @@ zero for all `list1` and `list2`.
 - If all items have compared equal, but `list1` is exhausted first, return `-1.`. (`list1` is shorter).
 - If all items have compared equal, but `list2` is exhausted first, return `1.` (`list1` is longer).
 
-## Examples
+#### Examples
 
 ```rescript
 List.compare(list{3}, list{3, 7}, (a, b) => compare(a, b)) /* (-1.) */
@@ -11689,7 +11689,7 @@ equality on elements, where `f` is a function that returns `true` if items `x` a
 `y` meet some criterion for equality, `false` otherwise. equal `false` if length
 of `list1` and `list2` are not the same.
 
-## Examples
+#### Examples
 
 ```rescript
 List.equal(list{1, 2, 3}, list{1, 2}, (a, b) => a == b) // false
@@ -11706,7 +11706,7 @@ List.equal(list{1, 2, 3}, list{(-1), (-2), (-3)}, (a, b) => abs(a) == abs(b)) //
 `has(list, element, f)` returns `true` if the list contains at least one
 `element` for which `f` returns `true'.
 
-## Examples
+#### Examples
 
 ```rescript
 list{1, 2, 3}->List.has(2, (a, b) => a == b) // true
@@ -11724,7 +11724,7 @@ list{(-1), (-2), (-3)}->List.has(2, (a, b) => abs(a) == abs(b)) // true
 satisfies the predicate function `f`. Returns `None` if no element satisfies
 the function.
 
-## Examples
+#### Examples
 
 ```rescript
 List.getBy(list{1, 4, 3, 2}, x => x > 3) // Some(4)
@@ -11739,7 +11739,7 @@ List.getBy(list{1, 4, 3, 2}, x => x > 4) // None
 `filter(list, f)` returns a list of all elements in `list` which satisfy the
 predicate function `f`.
 
-## Examples
+#### Examples
 
 ```rescript
 let isEven = x => mod(x, 2) == 0
@@ -11756,7 +11756,7 @@ List.filter(list{None, Some(2), Some(3), None}, Option.isSome) // list{Some(2), 
 `filterWithIndex(list, f)` returns a list of all elements in `list` which
 satisfy the predicate function `f`.
 
-## Examples
+#### Examples
 
 ```rescript
 let isEven = x => mod(x, 2) == 0
@@ -11772,19 +11772,19 @@ List.filterWithIndex(list{1, 2, 3, 4}, (_x, index) => isEven(index)) // list{1, 
 `Some(value)`, then `value` is _kept_ in the resulting list. If `f` returns
 `None`, the element is _not_ retained in the result.
 
-## Examples
+#### Examples
 
 ```rescript
 let isEven = x => mod(x, 2) == 0
 
 list{1, 2, 3, 4}
 ->List.filterMap(x =>
-    if (isEven(x)) {
-      Some(x)
-    } else {
-      None
-    }
-  ) // list{2, 4}
+if (isEven(x)) {
+Some(x)
+} else {
+None
+}
+) // list{2, 4}
 
 list{Some(1), Some(2), None}->List.filterMap(x => x) // list{1, 2}
 ```
@@ -11797,7 +11797,7 @@ list{Some(1), Some(2), None}->List.filterMap(x => x) // list{1, 2}
 elements of `list` that satisfy the predicate function `f`, the second list
 consists of all elements of `list` that _do not_ satisfy `f`.
 
-## Examples
+#### Examples
 
 ```rescript
 // (elementsThatSatisfies, elementsThatDoesNotSatisfy)
@@ -11813,7 +11813,7 @@ List.partition(list{1, 2, 3, 4}, x => x > 2) // (list{3, 4}, list{1, 2})
 contains all the first items of the pairs, the second list contains all the
 second items.
 
-## Examples
+#### Examples
 
 ```rescript
 List.unzip(list{(1, 2), (3, 4)}) // (list{1, 3}, list{2, 4})
@@ -11830,7 +11830,7 @@ List.unzip(list{("H", "W"), ("e", "o"), ("l", "r"), ("l", "l"), ("o", "d"), (" "
 the first element equals `k` as per the predicate function `f`, or `None` if
 not found.
 
-## Examples
+#### Examples
 
 ```rescript
 list{(1, "a"), (2, "b"), (3, "c")}->List.getAssoc(3, (a, b) => a == b) // Some("c")
@@ -11847,7 +11847,7 @@ list{(9, "morning"), (15, "afternoon"), (22, "night")}
 `hasAssoc(list, k, f)` returns `true` if there is a pair in `list` where the
 first element equals `k` as per the predicate function `f`.
 
-## Examples
+#### Examples
 
 ```rescript
 list{(1, "a"), (2, "b"), (3, "c")}->List.hasAssoc(1, (a, b) => a == b) // true
@@ -11864,7 +11864,7 @@ list{(9, "morning"), (15, "afternoon"), (22, "night")}
 first value is `k` per the equality predicate `f`, if not found, return a new
 list identical to `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 list{(1, "a"), (2, "b"), (3, "c")}->List.removeAssoc(1, (a, b) => a == b) // list{(2, "b"), (3, "c")}
@@ -11883,7 +11883,7 @@ predicate, return a new list with the key and value replaced by the new `k` and
 `v`, otherwise, return a new list with the pair `k`, `v` added to the head of
 `list`.
 
-## Examples
+#### Examples
 
 ```rescript
 list{(1, "a"), (2, "b"), (3, "c")}->List.setAssoc(2, "x", (a, b) => a == b) // list{(1, "a"), (2, "x"), (3, "c")}
@@ -11904,7 +11904,7 @@ the key _and_ the value are replaced in the list.
 
 `sort(list, f)` returns a sorted list.
 
-## Examples
+#### Examples
 
 ```rescript
 List.sort(list{5, 4, 9, 3, 7}, Int.compare) // list{3, 4, 5, 7, 9}
@@ -11917,9 +11917,9 @@ List.sort(list{5, 4, 9, 3, 7}, Int.compare) // list{3, 4, 5, 7, 9}
 > type t<'a, 'b> = result<'a, 'b> = Ok('a) | Error('b)
 
 Result types are really useful to describe the result of a certain operation
-  without relying on exceptions or `option` types.
+without relying on exceptions or `option` types.
 
-  This module gives you useful utilities to create and combine `Result` data.
+This module gives you useful utilities to create and combine `Result` data.
 
 ### let RescriptCore.Result.getExn
 
@@ -11927,26 +11927,26 @@ Result types are really useful to describe the result of a certain operation
 
 `getExn(res)`: when `res` is `Ok(n)`, returns `n` when `res` is `Error(m)`, raise an exception
 
-  ```res example
-  Result.getExn(Result.Ok(42)) == 42
+```res example
+Result.getExn(Result.Ok(42)) == 42
 
-  Result.getExn(Result.Error("Invalid data")) /* raises exception */
-  ```
+Result.getExn(Result.Error("Invalid data")) /* raises exception */
+```
 
 ### let RescriptCore.Result.mapOr
 
 > let mapOr: (. t<'a, 'c>, 'b, (. 'a) => 'b) => 'b
 
 `mapOr(res, default, f)`: When res is `Ok(n)`, returns `f(n)`,
-  otherwise `default`.
+otherwise `default`.
 
-  ```res example
-  let ok = Result.Ok(42)
-  Result.mapOr(ok, 0, (x) => x / 2) == 21
+```res example
+let ok = Result.Ok(42)
+Result.mapOr(ok, 0, (x) => x / 2) == 21
 
-  let error = Result.Error("Invalid data")
-  Result.mapOr(error, 0, (x) => x / 2) == 0
-  ```
+let error = Result.Error("Invalid data")
+Result.mapOr(error, 0, (x) => x / 2) == 0
+```
 
 ### let RescriptCore.Result.mapWithDefault
 
@@ -11959,52 +11959,52 @@ Result types are really useful to describe the result of a certain operation
 > let map: (. t<'a, 'c>, (. 'a) => 'b) => t<'b, 'c>
 
 `map(res, f)`: When res is `Ok(n)`, returns `Ok(f(n))`. Otherwise returns res
-  unchanged. Function `f` takes a value of the same type as `n` and returns an
-  ordinary value.
+unchanged. Function `f` takes a value of the same type as `n` and returns an
+ordinary value.
 
-  ```res example
-  let f = (x) => sqrt(Int.toFloat(x))
+```res example
+let f = (x) => sqrt(Int.toFloat(x))
 
-  Result.map(Ok(64), f) == Ok(8.0)
+Result.map(Ok(64), f) == Ok(8.0)
 
-  Result.map(Error("Invalid data"), f) == Error("Invalid data")
-  ```
+Result.map(Error("Invalid data"), f) == Error("Invalid data")
+```
 
 ### let RescriptCore.Result.flatMap
 
 > let flatMap: (. t<'a, 'c>, (. 'a) => t<'b, 'c>) => t<'b, 'c>
 
 `flatMap(res, f)`: When res is `Ok(n)`, returns `f(n)`. Otherwise, returns res
-  unchanged. Function `f` takes a value of the same type as `n` and returns a
-  `Result`.
+unchanged. Function `f` takes a value of the same type as `n` and returns a
+`Result`.
 
-  ```res example
-  let recip = (x) =>
-    if (x !== 0.0) {
-      Result.Ok(1.0 /. x)
-    } else {
-      Result.Error("Divide by zero")
-    }
+```res example
+let recip = (x) =>
+if (x !== 0.0) {
+Result.Ok(1.0 /. x)
+} else {
+Result.Error("Divide by zero")
+}
 
-  Result.flatMap(Ok(2.0), recip) == Ok(0.5)
+Result.flatMap(Ok(2.0), recip) == Ok(0.5)
 
-  Result.flatMap(Ok(0.0), recip) == Error("Divide by zero")
+Result.flatMap(Ok(0.0), recip) == Error("Divide by zero")
 
-  Result.flatMap(Error("Already bad"), recip) == Error("Already bad")
-  ```
+Result.flatMap(Error("Already bad"), recip) == Error("Already bad")
+```
 
 ### let RescriptCore.Result.getOr
 
 > let getOr: (. t<'a, 'b>, 'a) => 'a
 
 `getOr(res, defaultValue)`: If `res` is `Ok(n)`, returns `n`,
-  otherwise `default`
+otherwise `default`
 
-  ```res example
-  Result.getOr(Ok(42), 0) == 42
+```res example
+Result.getOr(Ok(42), 0) == 42
 
-  Result.getOr(Error("Invalid Data"), 0) == 0
-  ```
+Result.getOr(Error("Invalid Data"), 0) == 0
+```
 
 ### let RescriptCore.Result.getWithDefault
 
@@ -12017,81 +12017,81 @@ Result types are really useful to describe the result of a certain operation
 > let isOk: (. t<'a, 'b>) => bool
 
 `isOk(res)`: Returns `true` if `res` is of the form `Ok(n)`, `false` if it is
-  the `Error(e)` variant.
+the `Error(e)` variant.
 
 ### let RescriptCore.Result.isError
 
 > let isError: (. t<'a, 'b>) => bool
 
 `isError(res)`: Returns `true` if `res` is of the form `Error(e)`, `false` if
-  it is the `Ok(n)` variant.
+it is the `Ok(n)` variant.
 
 ### let RescriptCore.Result.equal
 
 > let equal: (. t<'a, 'c>, t<'b, 'd>, (. 'a, 'b) => bool) => bool
 
 `equal(res1, res2, f)`: Determine if two `Result` variables are equal with
-  respect to an equality function. If `res1` and `res2` are of the form `Ok(n)`
-  and `Ok(m)`, return the result of `f(n, m)`. If one of `res1` and `res2` are of
-  the form `Error(e)`, return false If both `res1` and `res2` are of the form
-  `Error(e)`, return true
+respect to an equality function. If `res1` and `res2` are of the form `Ok(n)`
+and `Ok(m)`, return the result of `f(n, m)`. If one of `res1` and `res2` are of
+the form `Error(e)`, return false If both `res1` and `res2` are of the form
+`Error(e)`, return true
 
-  ```res example
-  let good1 = Result.Ok(42)
+```res example
+let good1 = Result.Ok(42)
 
-  let good2 = Result.Ok(32)
+let good2 = Result.Ok(32)
 
-  let bad1 = Result.Error("invalid")
+let bad1 = Result.Error("invalid")
 
-  let bad2 = Result.Error("really invalid")
+let bad2 = Result.Error("really invalid")
 
-  let mod10equal = (a, b) => mod(a, 10) === mod(b, 10)
+let mod10equal = (a, b) => mod(a, 10) === mod(b, 10)
 
-  Result.equal(good1, good2, mod10equal) == true
+Result.equal(good1, good2, mod10equal) == true
 
-  Result.equal(good1, bad1, mod10equal) == false
+Result.equal(good1, bad1, mod10equal) == false
 
-  Result.equal(bad2, good2, mod10equal) == false
+Result.equal(bad2, good2, mod10equal) == false
 
-  Result.equal(bad1, bad2, mod10equal) == true
-  ```
+Result.equal(bad1, bad2, mod10equal) == true
+```
 
 ### let RescriptCore.Result.compare
 
 > let compare: (.\n  t<'a, 'c>,\n  t<'b, 'd>,\n  (. 'a, 'b) => Core__Ordering.t,\n) => Core__Ordering.t
 
 `compare(res1, res2, f)`: Compare two `Result` variables with respect to a
-  comparison function. The comparison function returns -1. if the first variable
-  is "less than" the second, 0. if the two variables are equal, and 1. if the first
-  is "greater than" the second.
+comparison function. The comparison function returns -1. if the first variable
+is "less than" the second, 0. if the two variables are equal, and 1. if the first
+is "greater than" the second.
 
-  If `res1` and `res2` are of the form `Ok(n)` and `Ok(m)`, return the result of
-  `f(n, m)`. If `res1` is of the form `Error(e)` and `res2` of the form `Ok(n)`,
-  return -1. (nothing is less than something) If `res1` is of the form `Ok(n)` and
-  `res2` of the form `Error(e)`, return 1. (something is greater than nothing) If
-  both `res1` and `res2` are of the form `Error(e)`, return 0. (equal)
+If `res1` and `res2` are of the form `Ok(n)` and `Ok(m)`, return the result of
+`f(n, m)`. If `res1` is of the form `Error(e)` and `res2` of the form `Ok(n)`,
+return -1. (nothing is less than something) If `res1` is of the form `Ok(n)` and
+`res2` of the form `Error(e)`, return 1. (something is greater than nothing) If
+both `res1` and `res2` are of the form `Error(e)`, return 0. (equal)
 
-  ```res example
-  let good1 = Result.Ok(59)
+```res example
+let good1 = Result.Ok(59)
 
-  let good2 = Result.Ok(37)
+let good2 = Result.Ok(37)
 
-  let bad1 = Result.Error("invalid")
+let bad1 = Result.Error("invalid")
 
-  let bad2 = Result.Error("really invalid")
+let bad2 = Result.Error("really invalid")
 
-  let mod10cmp = (a, b) => Pervasives.compare(mod(a, 10), mod(b, 10))
+let mod10cmp = (a, b) => Pervasives.compare(mod(a, 10), mod(b, 10))
 
-  Result.compare(Ok(39), Ok(57), mod10cmp) == 1.
+Result.compare(Ok(39), Ok(57), mod10cmp) == 1.
 
-  Result.compare(Ok(57), Ok(39), mod10cmp) == (-1.)
+Result.compare(Ok(57), Ok(39), mod10cmp) == (-1.)
 
-  Result.compare(Ok(39), Error("y"), mod10cmp) == 1.
+Result.compare(Ok(39), Error("y"), mod10cmp) == 1.
 
-  Result.compare(Error("x"), Ok(57), mod10cmp) == (-1.)
+Result.compare(Error("x"), Ok(57), mod10cmp) == (-1.)
 
-  Result.compare(Error("x"), Error("y"), mod10cmp) == 0.
-  ```
+Result.compare(Error("x"), Error("y"), mod10cmp) == 0.
+```
 
 ### let RescriptCore.Result.forEach
 
@@ -12099,7 +12099,7 @@ Result types are really useful to describe the result of a certain operation
 
 `forEach(res, f)` runs the provided function `f` on the `Ok` value. If `res` is `Error`, nothing happens.
 
-## Examples
+#### Examples
 
 ```rescript
 Result.forEach(Ok(3), Console.log) // Logs "3", returns ()
@@ -12112,7 +12112,7 @@ Result.forEach(Error("x"), Console.log) // Does nothing, returns ()
 
 `mapError(r, f)` generates a new `result` by applying the function `f` to the `Error` value. If the source is `Ok`, return it as-is.
 
-## Examples
+#### Examples
 
 ```rescript
 let format = n => `Error code: ${n->Int.toString}`
