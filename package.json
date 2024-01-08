@@ -6,8 +6,11 @@
     "clean": "rescript clean",
     "dev": "rescript build -w",
     "makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
+    "makeCustomTestJson": "rescript-tools doc ./test/ExampleModule.res > ./test/ExampleDoc.json",
     "test": "node ./test/Test.res.js",
-    "testToFile": "npm run test > ./test/result.md"
+    "customTest": "node ./test/CustomTest.res.js",
+    "testToFile": "npm run test > ./test/result.md",
+    "customTestToFile": "npm run customTest > ./test/customResult.md"
   },
   "keywords": [
     "rescript"
