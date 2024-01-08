@@ -1,6 +1,8 @@
 type t = string
 
-external make: string => t = "%identity"
+let make = txt => txt->String.replaceAll("<", "\\<")->String.replaceAll(">", "\\>")
+let makeUnescaped = txt => txt
+
 external toString: t => string = "%identity"
 
 let append = (a, b) =>
@@ -14,11 +16,14 @@ let appendO = (a, b) => b->Belt.Option.mapWithDefault(a, b => append(a, b))
 let empty = () => ""
 
 let br = "\n"
-let line: t => t = line => line ++ br
+let line = line => line ++ br
+let forceLine = line => line ++ "  " ++ br
 
 let bold = txt => `**${txt}**`
+let emph = txt => `*${txt}*`
 let p = txt => txt->line->line
 let quote = txt => txt->String.split("\n")->Array.map(line => `> ${line}`)->Array.joinWith("\n")->p
+let inlineCode = txt => "`" ++ txt ++ "`"
 
 let h1 = txt => `# ${txt}`->p
 let h2 = txt => `## ${txt}`->p

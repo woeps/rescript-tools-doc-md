@@ -2,12 +2,13 @@
 'use strict';
 
 var Markdown = require("./Markdown.res.js");
+var Caml_option = require("rescript/lib/js/caml_option.js");
 var Core__Array = require("@rescript/core/src/Core__Array.res.js");
 var Core__Option = require("@rescript/core/src/Core__Option.res.js");
 
 function title(txt, levelOpt) {
   var level = levelOpt !== undefined ? levelOpt : 1;
-  return Markdown.heading(level)(txt);
+  return Markdown.heading(level)(Markdown.make(txt));
 }
 
 function renderId(stripRootOpt, txt) {
@@ -21,7 +22,7 @@ function renderId(stripRootOpt, txt) {
 
 function deprecationWarning(md, deprecated) {
   return Markdown.append(md, Core__Option.mapOr(deprecated, Markdown.empty(), (function (deprecated) {
-                    return Markdown.line(Markdown.line(Markdown.bold("DEPRECATED: " + deprecated)));
+                    return Markdown.forceLine(Markdown.append(Markdown.emph(Markdown.make("DEPRECATED:")), Markdown.make(" " + deprecated)));
                   })));
 }
 
@@ -39,14 +40,26 @@ function corretDocStringHeadingLevel(levelOpt, txt) {
 function moduleDocs(md, levelOpt, docs) {
   var level = levelOpt !== undefined ? levelOpt : 0;
   return Markdown.append(md, Core__Array.reduce(docs, Markdown.empty(), (function (md, txt) {
-                    return Markdown.append(md, Markdown.p(corretDocStringHeadingLevel(level, txt)));
+                    return Markdown.append(md, Markdown.p(Markdown.make(corretDocStringHeadingLevel(level, txt))));
                   })));
 }
 
-function renderItem(param, name, level, docstrings, deprecated, param$1, signature, _unit) {
-  return moduleDocs(Markdown.appendO(deprecationWarning(title(name, level), deprecated), Core__Option.map(signature, (function (s) {
-                        return Markdown.quote(s);
-                      }))), level, docstrings);
+function renderItem(param, name, level, docstrings, deprecated, detail, signature, _unit) {
+  return Markdown.appendO(moduleDocs(Markdown.appendO(deprecationWarning(title(name, level), deprecated), Core__Option.map(signature, (function (s) {
+                            return Markdown.quote(Markdown.make(s));
+                          }))), level, docstrings), Core__Option.map(detail, (function (d) {
+                    if (d.kind === "record") {
+                      var fields = d.items;
+                      return Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
+                                    return Markdown.append(md, moduleDocs(deprecationWarning(Markdown.appendO(Markdown.quote(Markdown.make(param.name + ": " + param.signature)), param.optional ? Caml_option.some(Markdown.append(Markdown.make(" "), Markdown.forceLine(Markdown.emph(Markdown.make("optional"))))) : undefined), param.deprecated), 4, param.docstrings));
+                                  }));
+                    } else {
+                      var constructors = d.items;
+                      return Core__Array.reduce(constructors, Markdown.empty(), (function (md, param) {
+                                    return Markdown.append(md, moduleDocs(deprecationWarning(Markdown.quote(Markdown.make(param.signature)), param.deprecated), 4, param.docstrings));
+                                  }));
+                    }
+                  })));
 }
 
 function itemDoc(item) {

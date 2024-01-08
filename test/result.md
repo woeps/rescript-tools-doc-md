@@ -2138,6 +2138,39 @@ Note: There are some properties missing:
 
 See full spec at https://tc39.es/ecma402/#datetimeformat-objects
 
+> dateStyle: option<[#full | #long | #medium | #short]>
+
+ *optional*
+> timeStyle: option<[#full | #long | #medium | #short]>
+
+ *optional*
+> weekday: option<[#long | #narrow | #short]>
+
+ *optional*
+> era: option<[#long | #narrow | #short]>
+
+ *optional*
+> year: option<[#"2-digit" | #numeric]>
+
+ *optional*
+> month: option<[#"2-digit" | #long | #narrow | #numeric | #short]>
+
+ *optional*
+> day: option<[#"2-digit" | #numeric]>
+
+ *optional*
+> hour: option<[#"2-digit" | #numeric]>
+
+ *optional*
+> minute: option<[#"2-digit" | #numeric]>
+
+ *optional*
+> second: option<[#"2-digit" | #numeric]>
+
+ *optional*
+> timeZoneName: option<[#long | #short]>
+
+ *optional*
 ### let RescriptCore.Date.make
 
 > let make: (. unit) => t
@@ -4467,6 +4500,12 @@ Int.range(3, 1) == [3, 2]
 
 The options for `rangeWithOptions`.
 
+> step: option<int>
+
+ *optional*
+> inclusive: option<bool>
+
+ *optional*
 ### let RescriptCore.Int.rangeWithOptions
 
 > let rangeWithOptions: (. int, int, rangeOptions) => array<int>
@@ -5475,6 +5514,10 @@ Math.trunc(42.84) // 42.0
 
 A type representing a value that can be either `'a` or `null`.
 
+> Value('a)
+
+> Null
+
 ### let RescriptCore.Null.asNullable
 
 > let asNullable: (. t<'a>) => Core__Nullable.t<'a>
@@ -5690,6 +5733,12 @@ Null.flatMap(null, addIfAboveOne) // null
 
 Type representing a nullable value.
 A nullable value can be the value `'a`, `null` or `undefined`.
+
+> Value('a)
+
+> Null
+
+> Undefined
 
 ### let RescriptCore.Nullable.null
 
@@ -7852,6 +7901,24 @@ See [`object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 The type representing a classified JavaScript value.
 
+> Bool(bool)
+
+> Null
+
+> Undefined
+
+> String(string)
+
+> Number(float)
+
+> Object(object)
+
+> Function(function)
+
+> Symbol(Core__Symbol.t)
+
+> BigInt(Core__BigInt.t)
+
 ### let RescriptCore.Type.Classify.classify
 
 > let classify: (. 'a) => t
@@ -7874,6 +7941,18 @@ switch %raw(`null`)->Type.Classify.classify {
 > type t = Js.Json.t
 
 A type representing a JSON object.
+
+> Boolean(bool)
+
+> Null
+
+> String(string)
+
+> Number(float)
+
+> Object(Js.Dict.t<t>)
+
+> Array(array<t>)
 
 ### let RescriptCore.JSON.parseExn
 
@@ -8350,6 +8429,18 @@ BigInt.fromInt(0)->JSON.stringifyAny
 
 A type representing a JavaScript type.
 
+> Bool(bool)
+
+> Null
+
+> String(string)
+
+> Number(float)
+
+> Object(Core__Dict.t<t>)
+
+> Array(array<t>)
+
 ### let RescriptCore.JSON.Classify.classify
 
 > let classify: (. 'a) => t
@@ -8557,6 +8648,14 @@ The type representing an iterator.
 
 The current value of an iterator.
 
+> done: bool
+
+Whether there are more values to iterate on before the iterator is done.
+
+> value: option<'a>
+
+The value of this iteration, if any.
+
 ### let RescriptCore.Iterator.next
 
 > let next: (. t<'a>) => value<'a>
@@ -8626,6 +8725,14 @@ The type representing an async iterator.
 ### type RescriptCore.AsyncIterator.value
 
 > type value<'a> = {done: bool, value: option<'a>}
+
+> done: bool
+
+Whether there are more values to iterate on before the iterator is done.
+
+> value: option<'a>
+
+The value of this iteration, if any.
 
 ### let RescriptCore.AsyncIterator.next
 
@@ -11921,6 +12028,10 @@ without relying on exceptions or `option` types.
 
 This module gives you useful utilities to create and combine `Result` data.
 
+> Ok('a)
+
+> Error('b)
+
 ### let RescriptCore.Result.getExn
 
 > let getExn: (. t<'a, 'b>) => 'a
@@ -12124,6 +12235,10 @@ mapError(Ok("abc"), format) // Ok("abc")
 
 > type null<'a> = Js.null<'a>
 
+> Value('a)
+
+> Null
+
 ### type RescriptCore.undefined
 
 > type undefined<'a> = Js.undefined<'a>
@@ -12131,6 +12246,12 @@ mapError(Ok("abc"), format) // Ok("abc")
 ### type RescriptCore.nullable
 
 > type nullable<'a> = Js.nullable<'a>
+
+> Value('a)
+
+> Null
+
+> Undefined
 
 ### let RescriptCore.panic
 

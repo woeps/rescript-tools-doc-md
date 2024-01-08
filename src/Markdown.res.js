@@ -3,6 +3,14 @@
 
 var Belt_Option = require("rescript/lib/js/belt_Option.js");
 
+function make(txt) {
+  return txt.replaceAll("<", "\\<").replaceAll(">", "\\>");
+}
+
+function makeUnescaped(txt) {
+  return txt;
+}
+
 function append(a, b) {
   if (a === "") {
     return b;
@@ -23,12 +31,22 @@ function empty() {
   return "";
 }
 
+var br = "\n";
+
 function line(line$1) {
-  return line$1 + "\n";
+  return line$1 + br;
+}
+
+function forceLine(line) {
+  return line + "  " + br;
 }
 
 function bold(txt) {
   return "**" + txt + "**";
+}
+
+function emph(txt) {
+  return "*" + txt + "*";
 }
 
 function p(txt) {
@@ -39,6 +57,10 @@ function quote(txt) {
   return p(txt.split("\n").map(function (line) {
                     return "> " + line;
                   }).join("\n"));
+}
+
+function inlineCode(txt) {
+  return "`" + txt + "`";
 }
 
 function h1(txt) {
@@ -103,14 +125,19 @@ function headingLevel(txt) {
 
 var mdHeadingLevel = headingLevel;
 
+exports.make = make;
+exports.makeUnescaped = makeUnescaped;
 exports.append = append;
 exports.appendO = appendO;
 exports.empty = empty;
 exports.line = line;
+exports.forceLine = forceLine;
 exports.heading = heading;
 exports.headingLevel = headingLevel;
 exports.mdHeadingLevel = mdHeadingLevel;
 exports.bold = bold;
+exports.emph = emph;
 exports.p = p;
 exports.quote = quote;
+exports.inlineCode = inlineCode;
 /* No side effect */

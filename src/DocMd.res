@@ -5,7 +5,8 @@ module Lang = {
 }
 
 let title: (string, ~level: int=?) => Markdown.t = (txt, ~level=1) => {
-  Markdown.heading(level)(txt)
+  open Markdown
+  heading(level)(txt->make)
 }
 
 let renderId: (~stripRoot: bool=?, string) => string = (~stripRoot=false, txt) => {
@@ -16,7 +17,7 @@ let deprecationWarning: (Markdown.t, option<string>) => Markdown.t = (md, deprec
   open Markdown
   md->append(
     deprecated->Option.mapOr(empty(), deprecated =>
-      `${Lang.deprecated}: ${deprecated}`->bold->line->line
+      `${Lang.deprecated}:`->make->emph->append(` ${deprecated}`->make)->forceLine
     ),
   )
 }
@@ -43,9 +44,45 @@ let moduleDocs: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (md, 
   md->append(
     // NOTE: has Core.Array.reduce wrong docs??? f / init switched?
     docs->Array.reduce(empty(), (md, txt) =>
-      md->append(txt->corretDocStringHeadingLevel(~level)->p)
+      md->append(txt->corretDocStringHeadingLevel(~level)->make->p)
     ),
   )
+}
+
+let renderRecordFields: array<RescriptTools.Docgen.field> => Markdown.t = fields => {
+  open Markdown
+  fields->Array.reduce(empty(), (md, {name, docstrings, signature, optional, ?deprecated}) => {
+    md->append(
+      `${name}: ${signature}`
+      ->make
+      ->quote
+      ->appendO(optional ? " "->make->append("optional"->make->emph->forceLine)->Some : None)
+      ->deprecationWarning(deprecated)
+      ->moduleDocs(~level=4, docstrings),
+    )
+  })
+}
+
+let renderVariantConstructors: array<
+  RescriptTools.Docgen.constructor,
+> => Markdown.t = constructors => {
+  open Markdown
+  constructors->Array.reduce(empty(), (md, {name, docstrings, signature, ?deprecated}) => {
+    md->append(
+      signature
+      ->make
+      ->quote
+      ->deprecationWarning(deprecated)
+      ->moduleDocs(~level=4, docstrings),
+    )
+  })
+}
+
+let renderDetails: RescriptTools.Docgen.detail => Markdown.t = details => {
+  switch details {
+  | Record({items}) => items->renderRecordFields
+  | Variant({items}) => items->renderVariantConstructors
+  }
 }
 
 let renderItem: (
@@ -63,7 +100,7 @@ let renderItem: (
   ~level,
   ~docstrings,
   ~deprecated=?,
-  ~detail as _=?,
+  ~detail=?,
   ~signature=?,
   _unit,
 ) => {
@@ -71,8 +108,9 @@ let renderItem: (
 
   title(name, ~level)
   ->deprecationWarning(deprecated)
-  ->appendO(signature->Option.map(s => s->quote))
+  ->appendO(signature->Option.map(s => s->make->quote))
   ->moduleDocs(docstrings, ~level)
+  ->appendO(detail->Option.map(d => d->renderDetails))
   // TODO: fully implement
 }
 

@@ -15,7 +15,7 @@
   "author": "Christoph Porod-Wanasek",
   "license": "MIT",
   "dependencies": {
-    "@rescript/core": "^0.6.0",
+    "@rescript/core": "git@github.com:rescript-association/rescript-core.git",
     "rescript": "^11.0.0-rc.8"
   },
   "devDependencies": {
