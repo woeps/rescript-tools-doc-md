@@ -8,8 +8,8 @@
     "dev": "rescript build -w",
     "makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
     "makeCustomTestJson": "rescript-tools doc ./test/ExampleModule.res > ./test/ExampleDoc.json",
-    "test": "node ./test/Test.res.js",
-    "customTest": "node ./test/CustomTest.res.js",
+    "test": "node ./test/Test.bs.js",
+    "customTest": "node ./test/CustomTest.bs.js",
     "testToFile": "npm run test > ./test/result.md",
     "customTestToFile": "npm run customTest > ./test/customResult.md"
   },
