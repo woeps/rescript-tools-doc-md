@@ -2,6 +2,7 @@
   "name": "rescript-tools-doc-md",
   "version": "0.0.0",
   "scripts": {
+    "link:tools": "npm link @rescript/tools",
     "build": "rescript",
     "clean": "rescript clean",
     "dev": "rescript build -w",
