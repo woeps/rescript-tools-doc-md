@@ -23,6 +23,7 @@ There are several milestones to my vision of a basic general purpose rescript co
    - (optionally) parse any needed config
    - parse `rescript.json` for source-dirs
    - read any of those rescript files into a docgen json
+   - modify docs to split it up into several chunks - if more & smaller md files are desired
    - use the library to get a markdown string from the json representation
    - write the generated markdown to disk
 3. potentially integrate above into `@rescript/tools` cli, if everything fits
