@@ -1,5 +1,14 @@
 # rescript-tools-doc-md [WIP]
 
+## WARNING
+
+I currently use a locally linked version of `@rescript/tools` to access unmerged (into master) PRs.  
+Therefore, your success to compile this project may vary.
+
+This will change as soon as the api sattles and the upstream fixes are published.
+
+## Description
+
 Library to convert an extracted docs json into markdown. This work explores the possibilities of generating easily usable documentation basd on rescript files.
 
 Inspired by a [rescript forum post announcing `@rescript/tools`](https://forum.rescript-lang.org/t/ann-rescript-language-server-and-rescript-tools-released/4819?u=woeps) by `zth` I started tinkering with the idea for this project.  
