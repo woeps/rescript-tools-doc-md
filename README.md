@@ -63,12 +63,12 @@ npm run testToFile
   - [x] render docstrings
   - [x] render depecated
   - [x] render signature
-- [ ] render _type_ `doc.items`
+- [x] render _type_ `doc.items`
   - [x] render name / id
   - [x] render deprecated
   - [x] render docstrings
   - [x] render signature
-  - [ ] render detail
+  - [x] render detail
 - [x] render _module_ `doc.items`
   - [x] render name / id
   - [x] render deprecated
@@ -80,3 +80,4 @@ npm run testToFile
   - [x] render items
 - [x] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
 - [ ] meaningfull overall structure of md
+- [ ] replace `\n` in signatures with md forced line breaks
