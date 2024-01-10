@@ -7,6 +7,8 @@ Therefore, your success to compile this project may vary.
 
 This will change as soon as the api sattles and the upstream fixes are published.
 
+`let SomeConstant\\ = 12`
+
 ## Description
 
 Library to convert an extracted docs json into markdown. This work explores the possibilities of generating easily usable documentation basd on rescript files.
@@ -88,5 +90,5 @@ npm run testToFile
   - [x] render docstrings
   - [x] render items
 - [x] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
+- [x] unescaped `\n`
 - [ ] meaningfull overall structure of md
-- [ ] replace `\n` in signatures with md forced line breaks

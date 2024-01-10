@@ -8,7 +8,7 @@ var Core__Option = require("@rescript/core/src/Core__Option.bs.js");
 
 function title(txt, levelOpt) {
   var level = levelOpt !== undefined ? levelOpt : 1;
-  return Markdown.heading(level)(Markdown.make(txt));
+  return Markdown.heading(level)(Markdown.make(undefined, txt));
 }
 
 function renderId(stripRootOpt, txt) {
@@ -20,9 +20,9 @@ function renderId(stripRootOpt, txt) {
   }
 }
 
-function deprecationWarning(md, deprecated) {
+function renderDeprecationWarning(md, deprecated) {
   return Markdown.append(md, Core__Option.mapOr(deprecated, Markdown.empty(), (function (deprecated) {
-                    return Markdown.forceLine(Markdown.append(Markdown.emph(Markdown.make("DEPRECATED:")), Markdown.make(" " + deprecated)));
+                    return Markdown.forceLine(Markdown.append(Markdown.emph(Markdown.make(undefined, "DEPRECATED:")), Markdown.make(undefined, " " + deprecated)));
                   })));
 }
 
@@ -37,31 +37,33 @@ function corretDocStringHeadingLevel(levelOpt, txt) {
               }).join("\n");
 }
 
-function moduleDocs(md, levelOpt, docs) {
+function renderModuleDocs(md, levelOpt, docs) {
   var level = levelOpt !== undefined ? levelOpt : 0;
   return Markdown.append(md, Core__Array.reduce(docs, Markdown.empty(), (function (md, txt) {
-                    return Markdown.append(md, Markdown.p(Markdown.make(corretDocStringHeadingLevel(level, txt))));
+                    return Markdown.append(md, Markdown.p(Markdown.make(undefined, corretDocStringHeadingLevel(level, txt))));
                   })));
 }
 
+function renderSignature(sig) {
+  return Markdown.codeBlock("rescript", Markdown.make(false, sig));
+}
+
 function renderRecordFields(fields) {
-  return Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
-                return Markdown.append(md, moduleDocs(deprecationWarning(Markdown.appendO(Markdown.quote(Markdown.make(param.name + ": " + param.signature)), param.optional ? Caml_option.some(Markdown.append(Markdown.make(" "), Markdown.forceLine(Markdown.emph(Markdown.make("optional"))))) : undefined), param.deprecated), 4, param.docstrings));
-              }));
+  return Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Record Fields:"))), Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
+                    return Markdown.append(md, renderModuleDocs(renderDeprecationWarning(Markdown.appendO(renderSignature(param.name + ": " + param.signature), param.optional ? Caml_option.some(Markdown.append(Markdown.make(undefined, " "), Markdown.forceLine(Markdown.emph(Markdown.make(undefined, "optional"))))) : undefined), param.deprecated), 4, param.docstrings));
+                  })));
 }
 
 function renderItem(param, name, level, docstrings, deprecated, detail, signature, _unit) {
-  return Markdown.appendO(moduleDocs(Markdown.appendO(deprecationWarning(title(name, level), deprecated), Core__Option.map(signature, (function (s) {
-                            return Markdown.quote(Markdown.make(s));
-                          }))), level, docstrings), Core__Option.map(detail, (function (d) {
+  return Markdown.appendO(renderModuleDocs(Markdown.appendO(renderDeprecationWarning(title(name, level), deprecated), Core__Option.map(signature, renderSignature)), level, docstrings), Core__Option.map(detail, (function (d) {
                     if (d.kind === "record") {
                       return renderRecordFields(d.items);
                     } else {
                       var constructors = d.items;
                       return Core__Array.reduce(constructors, Markdown.empty(), (function (md, param) {
-                                    return Markdown.append(md, Markdown.appendO(moduleDocs(deprecationWarning(Markdown.quote(Markdown.make(param.signature)), param.deprecated), 4, param.docstrings), Core__Option.map(param.inlineRecordFields, (function (fields) {
-                                                          return renderRecordFields(fields);
-                                                        }))));
+                                    return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Variant Constructor:"))), Markdown.appendO(renderModuleDocs(renderDeprecationWarning(renderSignature(param.signature), param.deprecated), 4, param.docstrings), Core__Option.map(param.items, (function (payload) {
+                                                              return renderRecordFields(payload.fields);
+                                                            })))));
                                   }));
                     }
                   })));
@@ -92,7 +94,7 @@ function itemDocs(md, items) {
 }
 
 function render(param) {
-  return itemDocs(moduleDocs(deprecationWarning(title(param.name, undefined), param.deprecated), undefined, param.docstrings), param.items);
+  return itemDocs(renderModuleDocs(renderDeprecationWarning(title(param.name, undefined), param.deprecated), undefined, param.docstrings), param.items);
 }
 
 exports.render = render;

@@ -1,6 +1,14 @@
 type t = string
 
-let make = txt => txt->String.replaceAll("<", "\\<")->String.replaceAll(">", "\\>")
+let make = (~escape=true, txt) => {
+  let escaped = escape
+    ? txt
+      ->String.replaceAll("<", "\\<")
+      ->String.replaceAll(">", "\\>")
+    : txt
+  escaped->String.replaceAll("\\n", "\n")
+}
+
 let makeUnescaped = txt => txt
 
 external toString: t => string = "%identity"
@@ -24,6 +32,7 @@ let emph = txt => `*${txt}*`
 let p = txt => txt->line->line
 let quote = txt => txt->String.split("\n")->Array.map(line => `> ${line}`)->Array.joinWith("\n")->p
 let inlineCode = txt => "`" ++ txt ++ "`"
+let codeBlock = (~syntax=?, txt) => "```" ++ syntax->Option.getOr("") ++ "\n" ++ txt ++ "\n```"->p
 
 let h1 = txt => `# ${txt}`->p
 let h2 = txt => `## ${txt}`->p

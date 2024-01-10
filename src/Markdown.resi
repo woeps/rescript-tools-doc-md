@@ -1,6 +1,6 @@
 type t
 
-let make: string => t
+let make: (~escape: bool=?, string) => t
 let makeUnescaped: string => t
 external toString: t => string = "%identity"
 
@@ -21,3 +21,4 @@ let emph: t => t
 let p: t => t
 let quote: t => t
 let inlineCode: t => t
+let codeBlock: (~syntax: string=?, t) => t

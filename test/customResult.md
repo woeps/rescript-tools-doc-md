@@ -12,35 +12,59 @@ module of variants
 
 ### type ExampleModule.Variants.t
 
-> type t =
->   | First
->   | Second(int)
->   | Third({hello: string, goodbye: bool})
->   | Fourth(bool, string, int)
+```rescript
+type t =
+  | First
+  | Second(int)
+  | Third({hello: string, goodbye: bool})
+  | Fourth(bool, string, int)
+```
 
 represents the variant
 
-> First
+**Variant Constructor:**
+
+```rescript
+First
+```
 
 first variant constructor without payload
 
-> Second(int)
+**Variant Constructor:**
+
+```rescript
+Second(int)
+```
 
 second variant with int payload
 
-> Third({hello: string, goodbye: bool})
+**Variant Constructor:**
+
+```rescript
+Third({hello: string, goodbye: bool})
+```
 
 third constructor with inline record
 
-> hello: string
+**Record Fields:**
+
+```rescript
+hello: string
+```
 
 hello prop
 
-> goodbye: bool
+```rescript
+goodbye: bool
+```
 
 goddbye prop
 
-> Fourth(bool, string, int)
+**Variant Constructor:**
+
+```rescript
+Fourth(bool, string, int)
+```
 
 with several payload arguments
 
@@ -50,40 +74,58 @@ module to test record docs
 
 ### type ExampleModule.Record.sub
 
-> type sub = {x: bool}
+```rescript
+type sub = {x: bool}
+```
 
 this is a record
 
-> x: bool
+**Record Fields:**
+
+```rescript
+x: bool
+```
 
 representing a bool value
 
 ### type ExampleModule.Record.t
 
-> type t = {
->   a: string,
->   b: int,
->   optRecord?: sub,
->   optStr?: string,
-> }
+```rescript
+type t = {
+  a: string,
+  b: int,
+  optRecord?: sub,
+  optStr?: string,
+}
+```
 
 this is another record
 
-> a: string
+**Record Fields:**
+
+```rescript
+a: string
+```
 
 prop a
 
-> b: int
+```rescript
+b: int
+```
 
 *DEPRECATED:* use sub instead  
 deprecated prop
 
-> optRecord: option\<sub\>
+```rescript
+optRecord: option<sub>
+```
 
  *optional*  
 this is an optional field of another record
 
-> optStr: option\<string\>
+```rescript
+optStr: option<string>
+```
 
  *optional*  
 this is an optional string
@@ -92,9 +134,15 @@ this is an optional string
 
 ### type ExampleModule.Minimal_OptionalRecord.t
 
-> type t = {optStr?: string}
+```rescript
+type t = {optStr?: string}
+```
 
-> optStr: option\<string\>
+**Record Fields:**
+
+```rescript
+optStr: option<string>
+```
 
  *optional*  
 

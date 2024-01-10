@@ -13,7 +13,7 @@ let renderId: (~stripRoot: bool=?, string) => string = (~stripRoot=false, txt) =
   stripRoot ? txt->String.substringToEnd(~start=txt->String.indexOf(".") + 1) : txt
 }
 
-let deprecationWarning: (Markdown.t, option<string>) => Markdown.t = (md, deprecated) => {
+let renderDeprecationWarning: (Markdown.t, option<string>) => Markdown.t = (md, deprecated) => {
   open Markdown
   md->append(
     deprecated->Option.mapOr(empty(), deprecated =>
@@ -38,7 +38,11 @@ let corretDocStringHeadingLevel: (~level: int=?, string) => string = (~level=0, 
   ->Array.joinWith("\n")
 }
 
-let moduleDocs: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (md, ~level=0, docs) => {
+let renderModuleDocs: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (
+  md,
+  ~level=0,
+  docs,
+) => {
   open Markdown
 
   md->append(
@@ -49,35 +53,59 @@ let moduleDocs: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (md, 
   )
 }
 
+let renderSignature: string => Markdown.t = sig => {
+  open Markdown
+  sig
+  ->make(~escape=false)
+  //->String.split("\n")
+  //->Array.map(line => line->make->forceLine)
+  //->Array.reduce(empty(), append)
+  ->codeBlock(~syntax="rescript")
+}
+
 let renderRecordFields: array<RescriptTools.Docgen.field> => Markdown.t = fields => {
   open Markdown
-  fields->Array.reduce(empty(), (md, {name, docstrings, signature, optional, ?deprecated}) => {
-    md->append(
-      `${name}: ${signature}`
-      ->make
-      ->quote
-      ->appendO(optional ? " "->make->append("optional"->make->emph->forceLine)->Some : None)
-      ->deprecationWarning(deprecated)
-      ->moduleDocs(~level=4, docstrings),
-    )
-  })
+  "Record Fields:"
+  ->make
+  ->bold
+  ->p
+  ->append(
+    fields->Array.reduce(empty(), (md, {name, docstrings, signature, optional, ?deprecated}) => {
+      md->append(
+        renderSignature(`${name}: ${signature}`)
+        ->appendO(optional ? " "->make->append("optional"->make->emph->forceLine)->Some : None)
+        ->renderDeprecationWarning(deprecated)
+        ->renderModuleDocs(~level=4, docstrings),
+      )
+    }),
+  )
+}
+
+let renderVariantConstructorPayload: RescriptTools.Docgen.constructorPayload => Markdown.t = payload => {
+  switch payload {
+  | InlineRecord({fields}) => fields->renderRecordFields
+  }
 }
 
 let renderVariantConstructors: array<
   RescriptTools.Docgen.constructor,
 > => Markdown.t = constructors => {
   open Markdown
-  constructors->Array.reduce(empty(), (
-    md,
-    {name: _, docstrings, signature, ?deprecated, ?inlineRecordFields},
-  ) => {
+
+  constructors->Array.reduce(empty(), (md,
+  /* NOTE: items field may be renamed in future tools versions */
+  {name: _, docstrings, signature, ?deprecated, ?items}) => {
     md->append(
-      signature
+      "Variant Constructor:"
       ->make
-      ->quote
-      ->deprecationWarning(deprecated)
-      ->moduleDocs(~level=4, docstrings)
-      ->appendO(inlineRecordFields->Option.map(fields => fields->renderRecordFields)),
+      ->bold
+      ->p
+      ->append(
+        renderSignature(signature)
+        ->renderDeprecationWarning(deprecated)
+        ->renderModuleDocs(~level=4, docstrings)
+        ->appendO(items->Option.map(payload => payload->renderVariantConstructorPayload)),
+      ),
     )
   })
 }
@@ -111,9 +139,9 @@ let renderItem: (
   open Markdown
 
   title(name, ~level)
-  ->deprecationWarning(deprecated)
-  ->appendO(signature->Option.map(s => s->make->quote))
-  ->moduleDocs(docstrings, ~level)
+  ->renderDeprecationWarning(deprecated)
+  ->appendO(signature->Option.map(renderSignature))
+  ->renderModuleDocs(docstrings, ~level)
   ->appendO(detail->Option.map(d => d->renderDetails))
   // TODO: fully implement
 }
@@ -162,7 +190,7 @@ and itemDocs: (Markdown.t, array<RescriptTools.Docgen.item>) => Markdown.t = (md
 
 let render = ({RescriptTools.Docgen.name: name, deprecated, docstrings, items}) => {
   title(name)
-  ->deprecationWarning(deprecated)
-  ->moduleDocs(docstrings)
+  ->renderDeprecationWarning(deprecated)
+  ->renderModuleDocs(docstrings)
   ->itemDocs(items)
 }

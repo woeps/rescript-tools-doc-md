@@ -13,7 +13,7 @@
       "id": "ExampleModule.Variants.t",
       "kind": "type",
       "name": "t",
-      "signature": "type t =\n  | First\n  | Second(int)\n  | Third({hello: string, goodbye: bool})\n  | Fourth(bool, string, int)",
+      "signature": "type t =\\n  | First\\n  | Second(int)\\n  | Third({hello: string, goodbye: bool})\\n  | Fourth(bool, string, int)",
       "docstrings": ["represents the variant"],
       "detail": 
       {
@@ -33,17 +33,20 @@
           "name": "Third",
           "docstrings": ["third constructor with inline record"],
           "signature": "Third({hello: string, goodbye: bool})",
-          "inlineRecordFields": [{
-            "name": "hello",
-            "optional": false,
-            "docstrings": ["hello prop"],
-            "signature": "string"
-          }, {
-            "name": "goodbye",
-            "optional": false,
-            "docstrings": ["goddbye prop"],
-            "signature": "bool"
-          }]
+          "items": {
+            "kind": "inlineRecord",
+            "fields": [{
+              "name": "hello",
+              "optional": false,
+              "docstrings": ["hello prop"],
+              "signature": "string"
+            }, {
+              "name": "goodbye",
+              "optional": false,
+              "docstrings": ["goddbye prop"],
+              "signature": "bool"
+            }]
+          }
         }, 
         {
           "name": "Fourth",
@@ -80,7 +83,7 @@
       "id": "ExampleModule.Record.t",
       "kind": "type",
       "name": "t",
-      "signature": "type t = {\n  a: string,\n  b: int,\n  optRecord?: sub,\n  optStr?: string,\n}",
+      "signature": "type t = {\\n  a: string,\\n  b: int,\\n  optRecord?: sub,\\n  optStr?: string,\\n}",
       "docstrings": ["this is another record"],
       "detail": 
       {

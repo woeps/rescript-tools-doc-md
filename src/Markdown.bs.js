@@ -2,9 +2,12 @@
 'use strict';
 
 var Belt_Option = require("rescript/lib/js/belt_Option.js");
+var Core__Option = require("@rescript/core/src/Core__Option.bs.js");
 
-function make(txt) {
-  return txt.replaceAll("<", "\\<").replaceAll(">", "\\>");
+function make(escapeOpt, txt) {
+  var $$escape = escapeOpt !== undefined ? escapeOpt : true;
+  var escaped = $$escape ? txt.replaceAll("<", "\\<").replaceAll(">", "\\>") : txt;
+  return escaped.replaceAll("\\n", "\n");
 }
 
 function makeUnescaped(txt) {
@@ -61,6 +64,10 @@ function quote(txt) {
 
 function inlineCode(txt) {
   return "`" + txt + "`";
+}
+
+function codeBlock(syntax, txt) {
+  return "```" + Core__Option.getOr(syntax, "") + "\n" + txt + p("\n```");
 }
 
 function h1(txt) {
@@ -140,4 +147,5 @@ exports.emph = emph;
 exports.p = p;
 exports.quote = quote;
 exports.inlineCode = inlineCode;
+exports.codeBlock = codeBlock;
 /* No side effect */
