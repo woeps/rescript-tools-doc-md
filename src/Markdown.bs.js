@@ -6,7 +6,24 @@ var Core__Option = require("@rescript/core/src/Core__Option.bs.js");
 
 function make(escapeOpt, txt) {
   var $$escape = escapeOpt !== undefined ? escapeOpt : true;
-  var escaped = $$escape ? txt.replaceAll("<", "\\<").replaceAll(">", "\\>") : txt;
+  var escaped;
+  if ($$escape) {
+    var inCodeBlock = {
+      contents: false
+    };
+    escaped = txt.split("\n").map(function (line) {
+            if (line.startsWith("```")) {
+              inCodeBlock.contents = !inCodeBlock.contents;
+            }
+            if (inCodeBlock.contents) {
+              return line;
+            } else {
+              return line.replaceAll("<", "\\<").replaceAll(">", "\\>");
+            }
+          }).join("\n");
+  } else {
+    escaped = txt;
+  }
   return escaped.replaceAll("\\n", "\n");
 }
 

@@ -2,11 +2,23 @@ type t = string
 
 let make = (~escape=true, txt) => {
   // TODO: don't escape inside of md codeblocks
-  let escaped = escape
-    ? txt
-      ->String.replaceAll("<", "\\<")
-      ->String.replaceAll(">", "\\>")
-    : txt
+  let escaped = if escape {
+    let inCodeBlock = ref(false)
+
+    txt
+    ->String.split("\n")
+    ->Array.map(line => {
+      line->String.startsWith("```") ? inCodeBlock := !inCodeBlock.contents : ()
+      inCodeBlock.contents
+        ? line
+        : line
+          ->String.replaceAll("<", "\\<")
+          ->String.replaceAll(">", "\\>")
+    })
+    ->Array.joinWith("\n")
+  } else {
+    txt
+  }
   escaped->String.replaceAll("\\n", "\n")
 }
 

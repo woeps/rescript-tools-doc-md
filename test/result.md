@@ -27,7 +27,7 @@ See [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) 
 #### Examples
 ```rescript
 // Log to the console after 2 seconds (2000 milliseconds).
-let timeoutId = setTimeout(() =\> {
+let timeoutId = setTimeout(() => {
   Console.log("This prints in 2 seconds.")
 }, 2000)
 ```
@@ -47,7 +47,7 @@ See [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) 
 #### Examples
 ```rescript
 // Log to the console after 2 seconds (2000 milliseconds).
-let timeoutId = setTimeoutFloat(() =\> {
+let timeoutId = setTimeoutFloat(() => {
   Console.log("This prints in 2 seconds.")
 }, 2000.)
 ```
@@ -64,7 +64,7 @@ See [`clearTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeo
 
 #### Examples
 ```rescript
-let timeoutId = setTimeout(() =\> {
+let timeoutId = setTimeout(() => {
   Console.log("This prints in 2 seconds.")
 }, 2000)
 
@@ -95,7 +95,7 @@ See [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval
 #### Examples
 ```rescript
 // Log to the console ever 2 seconds (2000 milliseconds).
-let intervalId = setInterval(() =\> {
+let intervalId = setInterval(() => {
   Console.log("This prints every 2 seconds.")
 }, 2000)
 ```
@@ -115,7 +115,7 @@ See [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval
 #### Examples
 ```rescript
 // Log to the console ever 2 seconds (2000 milliseconds).
-let intervalId = setIntervalFloat(() =\> {
+let intervalId = setIntervalFloat(() => {
   Console.log("This prints every 2 seconds.")
 }, 2000.)
 ```
@@ -132,12 +132,12 @@ See [`clearInterval`](https://developer.mozilla.org/en-US/docs/Web/API/clearInte
 
 #### Examples
 ```rescript
-let intervalId = setInterval(() =\> {
+let intervalId = setInterval(() => {
   Console.log("This prints in 2 seconds.")
 }, 2000)
 
 // Stop the interval after 10 seconds
-let timeoutId = setTimeout(() =\> {
+let timeoutId = setTimeout(() => {
   clearInterval(intervalId)
 }, 10000)
 ```
@@ -306,7 +306,7 @@ See [`Array.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 ```rescript
 let someArray = ["hi", "hello"]
 
-Console.log(someArray-\>Array.length) // 2
+Console.log(someArray->Array.length) // 2
 ```
 
 ### let RescriptCore.Array.copyAllWithin
@@ -347,7 +347,7 @@ See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
-myArray-\>Array.fillAll(9)
+myArray->Array.fillAll(9)
 
 Console.log(myArray) // [9, 9, 9, 9]
 ```
@@ -367,7 +367,7 @@ See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
-myArray-\>Array.fillToEnd(9, ~start=1)
+myArray->Array.fillToEnd(9, ~start=1)
 
 Console.log(myArray) // [1, 9, 9, 9]
 ```
@@ -387,7 +387,7 @@ See [`Array.fill`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let myArray = [1, 2, 3, 4]
-myArray-\>Array.fill(9, ~start=1, ~end=2)
+myArray->Array.fill(9, ~start=1, ~end=2)
 
 Console.log(myArray) // [1, 9, 9, 4]
 ```
@@ -407,7 +407,7 @@ See [`Array.pop`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-let lastItem = someArray-\>Array.pop // "hello"
+let lastItem = someArray->Array.pop // "hello"
 
 Console.log(someArray) // ["hi"]. Notice last item is gone.
 ```
@@ -427,7 +427,7 @@ See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-someArray-\>Array.push("yay")
+someArray->Array.push("yay")
 
 Console.log(someArray) // ["hi", "hello", "yay"]
 ```
@@ -447,7 +447,7 @@ See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-someArray-\>Array.pushMany(["yay", "wehoo"])
+someArray->Array.pushMany(["yay", "wehoo"])
 
 Console.log(someArray) // ["hi", "hello", "yay", "wehoo"]
 ```
@@ -467,7 +467,7 @@ See [`Array.reverse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-someArray-\>Array.reverse
+someArray->Array.reverse
 
 Console.log(someArray) // ["hello", "h1"]
 ```
@@ -487,7 +487,7 @@ See [`Array.shift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-let lastItem = someArray-\>Array.shift // "hi"
+let lastItem = someArray->Array.shift // "hi"
 
 Console.log(someArray) // ["hello"]. Notice first item is gone.
 ```
@@ -505,7 +505,7 @@ See [`Array.toSorted`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 #### Examples
 ```rescript
 let someArray = [3, 2, 1]
-let sorted = someArray-\>Array.toSorted(Int.compare)
+let sorted = someArray->Array.toSorted(Int.compare)
 
 Console.log(sorted) // [1, 2, 3]
 Console.log(someArray) // [3, 2, 1]. Original unchanged
@@ -526,7 +526,7 @@ See [`Array.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let someArray = [3, 2, 1]
-someArray-\>Array.sort((a, b) =\> float(a - b))
+someArray->Array.sort((a, b) => float(a - b))
 
 Console.log(someArray) // [1, 2, 3]
 ```
@@ -574,7 +574,7 @@ See [`Array.unshift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-someArray-\>Array.unshift("yay")
+someArray->Array.unshift("yay")
 
 Console.log(someArray) // ["yay", "hi", "hello"]
 ```
@@ -594,7 +594,7 @@ See [`Array.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-someArray-\>Array.unshiftMany(["yay", "wehoo"])
+someArray->Array.unshiftMany(["yay", "wehoo"])
 
 Console.log(someArray) // ["yay", "wehoo", "hi", "hello"]
 ```
@@ -614,7 +614,7 @@ See [`Array.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 let array1 = ["hi", "hello"]
 let array2 = ["yay", "wehoo"]
 
-let someArray = array1-\>Array.concat(array2)
+let someArray = array1->Array.concat(array2)
 
 Console.log(someArray) // ["hi", "hello", "yay", "wehoo"]
 ```
@@ -635,7 +635,7 @@ let array1 = ["hi", "hello"]
 let array2 = ["yay"]
 let array3 = ["wehoo"]
 
-let someArray = array1-\>Array.concatMany([array2, array3])
+let someArray = array1->Array.concatMany([array2, array3])
 
 Console.log(someArray) // ["hi", "hello", "yay", "wehoo"]
 ```
@@ -652,7 +652,7 @@ See [`Array.flat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 #### Examples
 ```rescript
-Console.log([[1], [2], [3, 4]]-\>Array.flat) // [1, 2, 3, 4]
+Console.log([[1], [2], [3, 4]]->Array.flat) // [1, 2, 3, 4]
 ```
 
 ### let RescriptCore.Array.includes
@@ -667,9 +667,9 @@ See [`Array.includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 #### Examples
 ```rescript
-Console.log([1, 2]-\>Array.includes(1)) // true
-Console.log([1, 2]-\>Array.includes(3)) // false
-Console.log([{"language": "ReScript"}]-\>Array.includes({"language": "ReScript"})) // false, because of strict equality
+Console.log([1, 2]->Array.includes(1)) // true
+Console.log([1, 2]->Array.includes(3)) // false
+Console.log([{"language": "ReScript"}]->Array.includes({"language": "ReScript"})) // false, because of strict equality
 ```
 
 ### let RescriptCore.Array.indexOf
@@ -686,9 +686,9 @@ See [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 
 #### Examples
 ```rescript
-Console.log([1, 2]-\>Array.indexOf(2)) // 1
-Console.log([1, 2]-\>Array.indexOf(3)) // -1
-Console.log([{"language": "ReScript"}]-\>Array.indexOf({"language": "ReScript"})) // -1, because of strict equality
+Console.log([1, 2]->Array.indexOf(2)) // 1
+Console.log([1, 2]->Array.indexOf(3)) // -1
+Console.log([{"language": "ReScript"}]->Array.indexOf({"language": "ReScript"})) // -1, because of strict equality
 ```
 
 ### let RescriptCore.Array.indexOfOpt
@@ -703,9 +703,9 @@ See [`Array.indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 
 #### Examples
 ```rescript
-Console.log([1, 2]-\>Array.indexOfOpt(2)) // Some(1)
-Console.log([1, 2]-\>Array.indexOfOpt(3)) // None
-Console.log([{"language": "ReScript"}]-\>Array.indexOfOpt({"language": "ReScript"})) // None, because of strict equality
+Console.log([1, 2]->Array.indexOfOpt(2)) // Some(1)
+Console.log([1, 2]->Array.indexOfOpt(3)) // None
+Console.log([{"language": "ReScript"}]->Array.indexOfOpt({"language": "ReScript"})) // None, because of strict equality
 ```
 
 ### let RescriptCore.Array.indexOfFrom
@@ -726,7 +726,7 @@ let joinWith: (. array<string>, string) => string
 ```rescript
 let array = ["One", "Two", "Three"]
 
-Console.log(array-\>Array.joinWith(" -- ")) // One -- Two -- Three
+Console.log(array->Array.joinWith(" -- ")) // One -- Two -- Three
 ```
 
 ### let RescriptCore.Array.joinWithUnsafe
@@ -741,7 +741,7 @@ let joinWithUnsafe: (. array<'a>, string) => string
 ```rescript
 let array = [1, 2, 3]
 
-Console.log(array-\>Array.joinWithUnsafe(" -- ")) // 1 -- 2 -- 3
+Console.log(array->Array.joinWithUnsafe(" -- ")) // 1 -- 2 -- 3
 ```
 
 ### let RescriptCore.Array.lastIndexOf
@@ -776,7 +776,7 @@ See [`Array.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 ```rescript
 let myArray = [1, 2, 3, 4]
 
-Console.log(myArray-\>Array.slice(~start=1, ~end=3)) // [2, 3]
+Console.log(myArray->Array.slice(~start=1, ~end=3)) // [2, 3]
 ```
 
 ### let RescriptCore.Array.sliceToEnd
@@ -793,7 +793,7 @@ See [`Array.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 ```rescript
 let myArray = [1, 2, 3, 4]
 
-Console.log(myArray-\>Array.sliceToEnd(~start=1)) // [2, 3, 4]
+Console.log(myArray->Array.sliceToEnd(~start=1)) // [2, 3, 4]
 ```
 
 ### let RescriptCore.Array.copy
@@ -807,7 +807,7 @@ let copy: (. array<'a>) => array<'a>
 #### Examples
 ```rescript
 let myArray = [1, 2, 3]
-let copyOfMyArray = myArray-\>Array.copy
+let copyOfMyArray = myArray->Array.copy
 
 Console.log(copyOfMyArray) // [1, 2, 3]
 Console.log(myArray === copyOfMyArray) // false
@@ -827,7 +827,7 @@ See [`Array.toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 ```rescript
 let array = [1, 2, 3, 4]
 
-Console.log(array-\>Array.toString) // "1,2,3,4"
+Console.log(array->Array.toString) // "1,2,3,4"
 ```
 
 ### let RescriptCore.Array.toLocaleString
@@ -850,8 +850,8 @@ See [`Array.every`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 ```rescript
 let array = [1, 2, 3, 4]
 
-Console.log(array-\>Array.every(num =\> num \> 4)) // true
-Console.log(array-\>Array.every(num =\> num === 1)) // false
+Console.log(array->Array.every(num => num > 4)) // true
+Console.log(array->Array.every(num => num === 1)) // false
 ```
 
 ### let RescriptCore.Array.everyWithIndex
@@ -868,8 +868,8 @@ See [`Array.every`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 ```rescript
 let array = [1, 2, 3, 4]
 
-Console.log(array-\>Array.everyWithIndex((num, index) =\> index \< 2 && num \<= 2)) // true
-Console.log(array-\>Array.everyWithIndex((num, index) =\> index \< 2 && num \>= 2)) // false
+Console.log(array->Array.everyWithIndex((num, index) => index < 2 && num <= 2)) // true
+Console.log(array->Array.everyWithIndex((num, index) => index < 2 && num >= 2)) // false
 ```
 
 ### let RescriptCore.Array.filter
@@ -886,7 +886,7 @@ See [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 ```rescript
 let array = [1, 2, 3, 4]
 
-Console.log(array-\>Array.filter(num =\> num \> 2)) // [3, 4]
+Console.log(array->Array.filter(num => num > 2)) // [3, 4]
 ```
 
 ### let RescriptCore.Array.filterWithIndex
@@ -903,7 +903,7 @@ See [`Array.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 ```rescript
 let array = [1, 2, 3, 4]
 
-Console.log(array-\>Array.filterWithIndex((num, index) =\> index === 0 || num === 2)) // [1, 2]
+Console.log(array->Array.filterWithIndex((num, index) => index === 0 || num === 2)) // [1, 2]
 ```
 
 ### let RescriptCore.Array.find
@@ -922,9 +922,9 @@ type languages = ReScript | TypeScript | JavaScript
 
 let array = [ReScript, TypeScript, JavaScript]
 
-switch array-\>Array.find(item =\> item == ReScript) {
-| None =\> Console.log("No item...")
-| Some(_) =\> Console.log("Yay, ReScript!")
+switch array->Array.find(item => item == ReScript) {
+| None => Console.log("No item...")
+| Some(_) => Console.log("Yay, ReScript!")
 }
 ```
 
@@ -944,9 +944,9 @@ type languages = ReScript | TypeScript | JavaScript
 
 let array = [TypeScript, JavaScript, ReScript]
 
-switch array-\>Array.findWithIndex((item, index) =\> index \> 1 && item == ReScript) {
-| None =\> Console.log("No item...")
-| Some(_) =\> Console.log("Yay, ReScript exists in a later position!")
+switch array->Array.findWithIndex((item, index) => index > 1 && item == ReScript) {
+| None => Console.log("No item...")
+| Some(_) => Console.log("Yay, ReScript exists in a later position!")
 }
 ```
 
@@ -968,8 +968,8 @@ type languages = ReScript | TypeScript | JavaScript
 
 let array = [ReScript, JavaScript]
 
-Console.log(array-\>Array.findIndex(item =\> item == ReScript)) // 0
-Console.log(array-\>Array.findIndex(item =\> item == TypeScript)) // -1
+Console.log(array->Array.findIndex(item => item == ReScript)) // 0
+Console.log(array->Array.findIndex(item => item == TypeScript)) // -1
 ```
 
 ### let RescriptCore.Array.findIndexWithIndex
@@ -990,8 +990,8 @@ type languages = ReScript | TypeScript | JavaScript
 
 let array = [ReScript, JavaScript]
 
-Console.log(array-\>Array.findIndexWithIndex((item, index) =\> index === 0 && item == ReScript)) // 0
-Console.log(array-\>Array.findIndex((item, index) =\> index === 0 && item == TypeScript)) // -1
+Console.log(array->Array.findIndexWithIndex((item, index) => index === 0 && item == ReScript)) // 0
+Console.log(array->Array.findIndex((item, index) => index === 0 && item == TypeScript)) // -1
 ```
 
 ### let RescriptCore.Array.forEach
@@ -1008,7 +1008,7 @@ See [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-array-\>Array.forEach(item =\> {
+array->Array.forEach(item => {
   Console.log(item)
 })
 ```
@@ -1027,7 +1027,7 @@ See [`Array.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-array-\>Array.forEachWithIndex((item, index) =\> {
+array->Array.forEachWithIndex((item, index) => {
   Console.log("At item " ++ Int.toString(index) ++ ": " ++ item)
 })
 ```
@@ -1045,7 +1045,7 @@ See [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 #### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
-let mappedArray = array-\>Array.map(greeting =\> greeting ++ " to you")
+let mappedArray = array->Array.map(greeting => greeting ++ " to you")
 
 Console.log(mappedArray) // ["Hello to you", "Hi to you", "Good bye to you"]
 ```
@@ -1064,7 +1064,7 @@ See [`Array.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 let mappedArray =
-  array-\>Array.mapWithIndex((greeting, index) =\>
+  array->Array.mapWithIndex((greeting, index) =>
     greeting ++ " at position " ++ Int.toString(index)
   )
 
@@ -1143,7 +1143,7 @@ See [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-Console.log(array-\>Array.some(greeting =\> greeting === "Hello")) // true
+Console.log(array->Array.some(greeting => greeting === "Hello")) // true
 ```
 
 ### let RescriptCore.Array.someWithIndex
@@ -1160,7 +1160,7 @@ See [`Array.some`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-Console.log(array-\>Array.someWithIndex((greeting, index) =\> greeting === "Hello" && index === 0)) // true
+Console.log(array->Array.someWithIndex((greeting, index) => greeting === "Hello" && index === 0)) // true
 ```
 
 ### let RescriptCore.Array.get
@@ -1177,8 +1177,8 @@ Returns `None` if the index does not exist in the array. Equivalent to doing `ar
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-array-\>Array.get(0) == Some("Hello") // true
-array-\>Array.get(3) == None // true
+array->Array.get(0) == Some("Hello") // true
+array->Array.get(3) == None // true
 ```
 
 ### let RescriptCore.Array.set
@@ -1194,7 +1194,7 @@ Beware this will *mutate* the array.
 #### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
-array-\>Array.set(1, "Hello")
+array->Array.set(1, "Hello")
 
 Console.log(array[1]) // "Hello"
 ```
@@ -1231,8 +1231,8 @@ Use `Array.getUnsafe` only when you are sure the `index` exists (i.e. when using
 
 #### Examples
 ```rescript
-for index in 0 to array-\>Array.length - 1 {
-  let value = array-\>Array.getUnsafe(index)
+for index in 0 to array->Array.length - 1 {
+  let value = array->Array.getUnsafe(index)
   Console.log(value)
 }
 ```
@@ -1250,7 +1250,7 @@ Beware this will *mutate* the array, and is *unsafe*.
 #### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
-array-\>Array.setUnsafe(1, "Hello")
+array->Array.setUnsafe(1, "Hello")
 
 Console.log(array[1]) // "Hello"
 ```
@@ -1273,9 +1273,9 @@ type languages = ReScript | TypeScript | JavaScript
 
 let array = [ReScript, TypeScript, JavaScript]
 
-switch array-\>Array.findIndexOpt(item =\> item == ReScript) {
-| None =\> Console.log("Ahh, no ReScript...")
-| Some(index) =\> Console.log("Yay, ReScript at index " ++ Int.toString(index))
+switch array->Array.findIndexOpt(item => item == ReScript) {
+| None => Console.log("Ahh, no ReScript...")
+| Some(index) => Console.log("Yay, ReScript at index " ++ Int.toString(index))
 }
 ```
 
@@ -1292,7 +1292,7 @@ See [`Array.toReversed`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 let someArray = ["hi", "hello"]
-let reversed = someArray-\>Array.toReversed
+let reversed = someArray->Array.toReversed
 
 Console.log(reversed) // ["hello", "h1"]
 Console.log(someArray) // ["h1", "hello"]. Original unchanged
@@ -1313,10 +1313,10 @@ Calls `fn` for each element and returns a new array containing results of the `f
 let array = ["Hello", "Hi", "Good bye"]
 
 Console.log(
-  array-\>Array.filterMap(item =\>
+  array->Array.filterMap(item =>
     switch item {
-    | "Hello" =\> Some(item-\>String.length)
-    | _ =\> None
+    | "Hello" => Some(item->String.length)
+    | _ => None
     }
   ),
 ) // [5]
@@ -1348,7 +1348,7 @@ let toShuffled: (. array<'a>) => array<'a>
 #### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
-let shuffledArray = array-\>Array.toShuffled
+let shuffledArray = array->Array.toShuffled
 
 Console.log(shuffledArray)
 ```
@@ -1366,7 +1366,7 @@ Beware this will *mutate* the array.
 #### Examples
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
-array-\>Array.shuffle
+array->Array.shuffle
 
 Console.log(array)
 ```
@@ -1386,11 +1386,11 @@ type language = ReScript | TypeScript | JavaScript
 let array = [ReScript, TypeScript, JavaScript]
 
 Console.log(
-  array-\>Array.flatMap(item =\>
+  array->Array.flatMap(item =>
     switch item {
-    | ReScript =\> [1, 2, 3]
-    | TypeScript =\> [4, 5, 6]
-    | JavaScript =\> [7, 8, 9]
+    | ReScript => [1, 2, 3]
+    | TypeScript => [4, 5, 6]
+    | JavaScript => [7, 8, 9]
     }
   ),
 )
@@ -1446,8 +1446,8 @@ Returns `None` if the array is empty.
 ```rescript
 let array = ["Hello", "Hi", "Good bye"]
 
-array-\>Array.last == Some("Good bye") // true
-[]-\>Array.last == None // true
+array->Array.last == Some("Good bye") // true
+[]->Array.last == None // true
 ```
 
 ## module RescriptCore.Console `alias`
@@ -2220,13 +2220,13 @@ on MDN.
 #### Examples
 
 ```rescript
-let main = () =\> {
+let main = () => {
   Console.trace()
 }
 main()
 // In the console, the following trace will be displayed:
 // main
-// \<anonymous\>
+// <anonymous>
 ```
 
 ### let RescriptCore.Console.warn
@@ -2681,7 +2681,7 @@ Date.fromString("2023-02-20T16:40:00.00Z")
 Date.fromString("")
 // Invalid Date
 
-Date.fromString("")-\>getTime
+Date.fromString("")->getTime
 // NaN
 ```
 
@@ -3095,7 +3095,7 @@ Dates before epoch will return negative numbers.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20")-\>Date.getTime
+Date.fromString("2023-02-20")->Date.getTime
 // 1676851200000
 ```
 
@@ -3112,10 +3112,10 @@ The timezone of the given date doesn't matter.
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01")-\>Date.getTimezoneOffset
+Date.fromString("2023-01-01")->Date.getTimezoneOffset
 // -60 with local time zone = Europe/Berlin
 
-Date.fromString("2023-06-01")-\>Date.getTimezoneOffset
+Date.fromString("2023-06-01")->Date.getTimezoneOffset
 // -120 with local time zone = Europe/Berlin
 ```
 
@@ -3131,7 +3131,7 @@ Returns the year of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20")-\>Date.getFullYear
+Date.fromString("2023-02-20")->Date.getFullYear
 // 2023
 ```
 
@@ -3147,7 +3147,7 @@ Returns the month (0-indexed) of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01")-\>Date.getMonth
+Date.fromString("2023-01-01")->Date.getMonth
 // 0
 ```
 
@@ -3163,7 +3163,7 @@ Returns the date (day of month) of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getDate
+Date.fromString("2023-02-20T16:40:00.00")->Date.getDate
 // 20
 ```
 
@@ -3179,7 +3179,7 @@ Returns the hours of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getHours
+Date.fromString("2023-02-20T16:40:00.00")->Date.getHours
 // 16
 ```
 
@@ -3195,7 +3195,7 @@ Returns the minutes of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getMinutes
+Date.fromString("2023-02-20T16:40:00.00")->Date.getMinutes
 // 40
 ```
 
@@ -3211,7 +3211,7 @@ Returns the seconds of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getSeconds
+Date.fromString("2023-02-20T16:40:00.00")->Date.getSeconds
 // 0
 ```
 
@@ -3227,7 +3227,7 @@ Returns the milliseconds of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getMilliseconds
+Date.fromString("2023-02-20T16:40:00.00")->Date.getMilliseconds
 // 0
 ```
 
@@ -3244,7 +3244,7 @@ Returns the day of week of a given date (according to local time).
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.getDay
+Date.fromString("2023-02-20T16:40:00.00")->Date.getDay
 // 1
 ```
 
@@ -3261,7 +3261,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setFullYear(2024)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYear(2024)
 ```
 
 ### let RescriptCore.Date.setFullYearM
@@ -3277,7 +3277,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setFullYearM(~year=2024, ~month=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearM(~year=2024, ~month=0)
 ```
 
 ### let RescriptCore.Date.setFullYearMD
@@ -3293,7 +3293,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setFullYearMD(~year=2024, ~month=0, ~date=1)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setFullYearMD(~year=2024, ~month=0, ~date=1)
 ```
 
 ### let RescriptCore.Date.setMonth
@@ -3309,7 +3309,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setMonth(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setMonth(0)
 ```
 
 ### let RescriptCore.Date.setDate
@@ -3325,7 +3325,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setDate(1)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setDate(1)
 ```
 
 ### let RescriptCore.Date.setHours
@@ -3341,7 +3341,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setHours(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setHours(0)
 ```
 
 ### let RescriptCore.Date.setHoursM
@@ -3357,7 +3357,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setHoursM(~hours=0, ~minutes=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursM(~hours=0, ~minutes=0)
 ```
 
 ### let RescriptCore.Date.setHoursMS
@@ -3373,7 +3373,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setHoursMS(~hours=0, ~minutes=0, ~seconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMS(~hours=0, ~minutes=0, ~seconds=0)
 ```
 
 ### let RescriptCore.Date.setHoursMSMs
@@ -3395,7 +3395,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setMinutes
@@ -3411,7 +3411,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setMinutes(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutes(0)
 ```
 
 ### let RescriptCore.Date.setMinutesS
@@ -3427,7 +3427,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setMinutesS(~minutes=0, ~seconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesS(~minutes=0, ~seconds=0)
 ```
 
 ### let RescriptCore.Date.setMinutesSMs
@@ -3448,7 +3448,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setSeconds
@@ -3464,7 +3464,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setSeconds(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setSeconds(0)
 ```
 
 ### let RescriptCore.Date.setSecondsMs
@@ -3480,7 +3480,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setSecondsMs(~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setSecondsMs(~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setMilliseconds
@@ -3496,7 +3496,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setMilliseconds(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setMilliseconds(0)
 ```
 
 ### let RescriptCore.Date.getUTCFullYear
@@ -3641,7 +3641,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCFullYear(2024)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYear(2024)
 ```
 
 ### let RescriptCore.Date.setUTCFullYearM
@@ -3657,7 +3657,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCFullYearM(~year=2024, ~month=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearM(~year=2024, ~month=0)
 ```
 
 ### let RescriptCore.Date.setUTCFullYearMD
@@ -3673,7 +3673,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCFullYearMD(~year=2024, ~month=0, ~date=1)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCFullYearMD(~year=2024, ~month=0, ~date=1)
 ```
 
 ### let RescriptCore.Date.setUTCMonth
@@ -3689,7 +3689,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCMonth(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMonth(0)
 ```
 
 ### let RescriptCore.Date.setUTCDate
@@ -3705,7 +3705,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCDate(1)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCDate(1)
 ```
 
 ### let RescriptCore.Date.setUTCHours
@@ -3721,7 +3721,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCHours(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHours(0)
 ```
 
 ### let RescriptCore.Date.setUTCHoursM
@@ -3737,7 +3737,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCHoursM(~hours=0, ~minutes=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursM(~hours=0, ~minutes=0)
 ```
 
 ### let RescriptCore.Date.setUTCHoursMS
@@ -3753,7 +3753,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCHoursMS(~hours=0, ~minutes=0, ~seconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMS(~hours=0, ~minutes=0, ~seconds=0)
 ```
 
 ### let RescriptCore.Date.setUTCHoursMSMs
@@ -3775,7 +3775,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCHoursMSMs(~hours=0, ~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setUTCMinutes
@@ -3791,7 +3791,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCMinutes(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutes(0)
 ```
 
 ### let RescriptCore.Date.setUTCMinutesS
@@ -3807,7 +3807,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCMinutesS(~minutes=0, ~seconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesS(~minutes=0, ~seconds=0)
 ```
 
 ### let RescriptCore.Date.setUTCMinutesSMs
@@ -3828,7 +3828,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMinutesSMs(~minutes=0, ~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setUTCSeconds
@@ -3844,7 +3844,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCSeconds(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSeconds(0)
 ```
 
 ### let RescriptCore.Date.setUTCSecondsMs
@@ -3860,7 +3860,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCSecondsMs(~seconds=0, ~milliseconds=0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCSecondsMs(~seconds=0, ~milliseconds=0)
 ```
 
 ### let RescriptCore.Date.setUTCMilliseconds
@@ -3876,7 +3876,7 @@ Beware this will *mutate* the date.
 
 #### Examples
 ```rescript
-Date.fromString("2023-02-20T16:40:00.00")-\>Date.setUTCMilliseconds(0)
+Date.fromString("2023-02-20T16:40:00.00")->Date.setUTCMilliseconds(0)
 ```
 
 ### let RescriptCore.Date.toDateString
@@ -3892,10 +3892,10 @@ If you want to convert it to a localized string, use `Date.toLocaleDateString` i
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+01:00")-\>Date.toDateString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toDateString->Console.log
 // Sun Jan 01 2023
 
-Date.fromString("2023-01-01T00:00:00.00+08:00")-\>Date.toDateString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toDateString->Console.log
 // Sat Dec 31 2022
 ```
 
@@ -3912,10 +3912,10 @@ If you want to convert it to a localized string, use `Date.toLocaleString` inste
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+01:00")-\>Date.toString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toString->Console.log
 // Sun Jan 01 2023 00:00:00 GMT+0100 (Central European Standard Time)
 
-Date.fromString("2023-06-01T00:00:00.00+01:00")-\>Date.toString-\>Console.log
+Date.fromString("2023-06-01T00:00:00.00+01:00")->Date.toString->Console.log
 // Thu Jun 01 2023 01:00:00 GMT+0200 (Central European Summer Time)
 ```
 
@@ -3932,10 +3932,10 @@ If you want to convert it to a localized string, use `Date.toLocaleStimeString` 
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+01:00")-\>Date.toTimeString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+01:00")->Date.toTimeString->Console.log
 // 00:00:00 GMT+0100 (Central European Standard Time)
 
-Date.fromString("2023-01-01T00:00:00.00+08:00")-\>Date.toTimeString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toTimeString->Console.log
 // 17:00:00 GMT+0100 (Central European Standard Time)
 ```
 
@@ -3951,7 +3951,7 @@ Converts a JavaScript date to a localized date string. It will use the current l
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleDateString-\>Console.log
+Date.make()->Date.toLocaleDateString->Console.log
 // 2/19/2023
 ```
 
@@ -3967,7 +3967,7 @@ Converts a JavaScript date to a localized date string. It will use the specified
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleDateStringWithLocale("en-US")-\>Console.log
+Date.make()->Date.toLocaleDateStringWithLocale("en-US")->Console.log
 // 2/19/2023
 ```
 
@@ -3983,13 +3983,13 @@ Converts a JavaScript date to a localized date string. It will use the specified
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleDateStringWithLocaleAndOptions("en-US", { dateStyle: #long })-\>Console.log
+Date.make()->Date.toLocaleDateStringWithLocaleAndOptions("en-US", { dateStyle: #long })->Console.log
 // February 19, 2023
 
-Date.make()-\>Date.toLocaleDateStringWithLocaleAndOptions("de", { hour: #"2-digit", minute: #"2-digit" })-\>Console.log
+Date.make()->Date.toLocaleDateStringWithLocaleAndOptions("de", { hour: #"2-digit", minute: #"2-digit" })->Console.log
 // 19.2.2023, 15:40
 
-Date.make()-\>Date.toLocaleDateStringWithLocaleAndOptions("de", { year: #numeric })-\>Console.log
+Date.make()->Date.toLocaleDateStringWithLocaleAndOptions("de", { year: #numeric })->Console.log
 // 2023
 ```
 
@@ -4005,7 +4005,7 @@ Converts a JavaScript date to a localized date-time string. It will use the curr
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleString-\>Console.log
+Date.make()->Date.toLocaleString->Console.log
 // 2/19/2023, 3:40:00 PM
 ```
 
@@ -4021,7 +4021,7 @@ Converts a JavaScript date to a localized date-time string. It will use the spec
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleStringWithLocale("en-US")-\>Console.log
+Date.make()->Date.toLocaleStringWithLocale("en-US")->Console.log
 // 2/19/2023, 3:40:00 PM
 ```
 
@@ -4037,10 +4037,10 @@ Converts a JavaScript date to a localized date-time string. It will use the spec
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleStringWithLocaleAndOptions("en", { dateStyle: #short, timeStyle: #short })-\>Console.log
+Date.make()->Date.toLocaleStringWithLocaleAndOptions("en", { dateStyle: #short, timeStyle: #short })->Console.log
 // 2/19/23, 3:40 PM
 
-Date.make()-\>Date.toLocaleStringWithLocaleAndOptions("en", { era: #long, year: #numeric, month: #"2-digit", day: #"2-digit", hour: #numeric, timeZoneName: #short })-\>Console.log
+Date.make()->Date.toLocaleStringWithLocaleAndOptions("en", { era: #long, year: #numeric, month: #"2-digit", day: #"2-digit", hour: #numeric, timeZoneName: #short })->Console.log
 // 02/19/2023 Anno Domini, 3 PM GMT+1
 ```
 
@@ -4056,7 +4056,7 @@ Converts a JavaScript date to a localized time string. It will use the current l
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleTimeString-\>Console.log
+Date.make()->Date.toLocaleTimeString->Console.log
 // 3:40:00 PM
 ```
 
@@ -4072,7 +4072,7 @@ Converts a JavaScript date to a localized time string. It will use the specified
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleTimeStringWithLocale("en-US")-\>Console.log
+Date.make()->Date.toLocaleTimeStringWithLocale("en-US")->Console.log
 // 3:40:00 PM
 ```
 
@@ -4088,10 +4088,10 @@ Converts a JavaScript date to a localized time string. It will use the specified
 
 #### Examples
 ```rescript
-Date.make()-\>Date.toLocaleTimeStringWithLocaleAndOptions("en-US", { timeStyle: #long })-\>Console.log
+Date.make()->Date.toLocaleTimeStringWithLocaleAndOptions("en-US", { timeStyle: #long })->Console.log
 // 3:40:00 PM GMT+1
 
-Date.make()-\>Date.toLocaleTimeStringWithLocaleAndOptions("de", { hour: #"2-digit", minute: #"2-digit" })-\>Console.log
+Date.make()->Date.toLocaleTimeStringWithLocaleAndOptions("de", { hour: #"2-digit", minute: #"2-digit" })->Console.log
 // 15:40
 ```
 
@@ -4107,10 +4107,10 @@ Converts a JavaScript date to a ISO 8601 string (YYYY-MM-DDTHH:mm:ss.sssZ). The 
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+00:00")-\>Date.toISOString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toISOString->Console.log
 // 2023-01-01T00:00:00.000Z
 
-Date.fromString("2023-01-01T00:00:00.00+08:00")-\>Date.toISOString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toISOString->Console.log
 // 2022-12-31T16:00:00.000Z
 ```
 
@@ -4126,10 +4126,10 @@ Converts a JavaScript date to date time string. The date will be mapped to the U
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+00:00")-\>Date.toUTCString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toUTCString->Console.log
 // Sun, 01 Jan 2023 00:00:00 GMT
 
-Date.fromString("2023-01-01T00:00:00.00+08:00")-\>Date.toUTCString-\>Console.log
+Date.fromString("2023-01-01T00:00:00.00+08:00")->Date.toUTCString->Console.log
 // Sat, 31 Dec 2022 16:00:00 GMT
 ```
 
@@ -4147,10 +4147,10 @@ Invalid dates will return `None`.
 
 #### Examples
 ```rescript
-Date.fromString("2023-01-01T00:00:00.00+00:00")-\>Date.toJSON
+Date.fromString("2023-01-01T00:00:00.00+00:00")->Date.toJSON
 // Some("2023-01-01T00:00:00.000Z")
 
-Date.fromString("")-\>Date.toJSON
+Date.fromString("")->Date.toJSON
 // None
 ```
 
@@ -4182,9 +4182,9 @@ Use `Dict.getUnsafe` only when you are sure the key exists (i.e. when iterating 
 
 #### Examples
 ```rescript
-let keys = dict-\>Dict.keys
-keys-\>Array.forEach(key =\> {
-  let value = dict-\>Dict.getUnsafe(key)
+let keys = dict->Dict.keys
+keys->Array.forEach(key => {
+  let value = dict->Dict.getUnsafe(key)
   Console.log(value)
 })
 ```
@@ -4201,9 +4201,9 @@ Returns the value at the provided key, if it exists. Returns an option.
 ```rescript
 let dict = Dict.fromArray([("someKey", "someValue")])
 
-switch dict-\>Dict.get("someKey") {
-| None =\> Console.log("Nope, didn't have the key.")
-| Some(value) =\> Console.log(value)
+switch dict->Dict.get("someKey") {
+| None => Console.log("Nope, didn't have the key.")
+| Some(value) => Console.log(value)
 }
 ```
 
@@ -4219,7 +4219,7 @@ let set: (. t<'a>, string, 'a) => unit
 ```rescript
 let dict = Dict.make()
 
-dict-\>Dict.set("someKey", "someValue")
+dict->Dict.set("someKey", "someValue")
 ```
 
 ### let RescriptCore.Dict.delete
@@ -4234,7 +4234,7 @@ let delete: (. t<'a>, string) => unit
 ```rescript
 let dict = Dict.fromArray([("someKey", "someValue")])
 
-dict-\>Dict.delete("someKey")
+dict->Dict.delete("someKey")
 ```
 
 ### let RescriptCore.Dict.make
@@ -4247,10 +4247,10 @@ let make: (. unit) => t<'a>
 
 #### Examples
 ```rescript
-let dict1: Dict.t\<int\> = Dict.make() // You can annotate the type of the values of your dict yourself if you want
+let dict1: Dict.t<int> = Dict.make() // You can annotate the type of the values of your dict yourself if you want
 
 let dict2 = Dict.make() // Or you can let ReScript infer it via usage.
-dict2-\>Dict.set("someKey", 12)
+dict2->Dict.set("someKey", 12)
 ```
 
 ### let RescriptCore.Dict.fromArray
@@ -4277,9 +4277,9 @@ let fromIterator: (. Core__Iterator.t<(string, 'a)>) => t<'a>
 #### Examples
 ```rescript
 // Pretend we have an iterator of the correct shape
-@val external someIterator: Iterator.t\<(string, int)\> = "someIterator"
+@val external someIterator: Iterator.t<(string, int)> = "someIterator"
 
-let dict = Dict.fromIterator(someIterator) // Dict.t\<int\>
+let dict = Dict.fromIterator(someIterator) // Dict.t<int>
 ```
 
 ### let RescriptCore.Dict.toArray
@@ -4293,9 +4293,9 @@ let toArray: (. t<'a>) => array<(string, 'a)>
 #### Examples
 ```rescript
 let dict = Dict.make()
-dict-\>Dict.set("someKey", 1)
-dict-\>Dict.set("someKey2", 2)
-let asArray = dict-\>Dict.toArray
+dict->Dict.set("someKey", 1)
+dict->Dict.set("someKey2", 2)
+let asArray = dict->Dict.toArray
 Console.log(asArray) // Logs `[["someKey", 1], ["someKey2", 2]]` to the console
 ```
 
@@ -4310,9 +4310,9 @@ let keysToArray: (. t<'a>) => array<string>
 #### Examples
 ```rescript
 let dict = Dict.make()
-dict-\>Dict.set("someKey", 1)
-dict-\>Dict.set("someKey2", 2)
-let keys = dict-\>Dict.keysToArray
+dict->Dict.set("someKey", 1)
+dict->Dict.set("someKey2", 2)
+let keys = dict->Dict.keysToArray
 Console.log(keys) // Logs `["someKey", "someKey2"]` to the console
 ```
 
@@ -4327,9 +4327,9 @@ let valuesToArray: (. t<'a>) => array<'a>
 #### Examples
 ```rescript
 let dict = Dict.make()
-dict-\>Dict.set("someKey", 1)
-dict-\>Dict.set("someKey2", 2)
-let values = dict-\>Dict.valuesToArray
+dict->Dict.set("someKey", 1)
+dict->Dict.set("someKey2", 2)
+let values = dict->Dict.valuesToArray
 Console.log(values) // Logs `[1, 2]` to the console
 ```
 
@@ -4346,16 +4346,16 @@ Beware this will *mutate* dictionary1. If you're looking for a way to copy a dic
 #### Examples
 ```rescript
 let dict1 = Dict.make()
-dict1-\>Dict.set("firstKey", 1)
-Console.log(dict1-\>Dict.keysToArray) // Logs `["firstKey"]`
+dict1->Dict.set("firstKey", 1)
+Console.log(dict1->Dict.keysToArray) // Logs `["firstKey"]`
 
 let dict2 = Dict.make()
-dict2-\>Dict.set("someKey", 2)
-dict2-\>Dict.set("someKey2", 3)
+dict2->Dict.set("someKey", 2)
+dict2->Dict.set("someKey2", 3)
 
-let dict1 = dict1-\>Dict.assign(dict2)
+let dict1 = dict1->Dict.assign(dict2)
 
-Console.log(dict1-\>Dict.keysToArray) // Logs `["firstKey", "someKey", "someKey2"]`
+Console.log(dict1->Dict.keysToArray) // Logs `["firstKey", "someKey", "someKey2"]`
 
 ```
 
@@ -4370,10 +4370,10 @@ let copy: (. t<'a>) => t<'a>
 #### Examples
 ```rescript
 let dict = Dict.fromArray([("key1", "value1"), ("key2", "value2")])
-let dict2 = dict-\>Dict.copy
+let dict2 = dict->Dict.copy
 
 // Both log `["key1", "key2"]` here.
-Console.log2(dict-\>Dict.keysToArray, dict2-\>Dict.keysToArray)
+Console.log2(dict->Dict.keysToArray, dict2->Dict.keysToArray)
 ```
 
 ## module RescriptCore.Error `alias`
@@ -4408,7 +4408,7 @@ Turns an `Error.t` into an `exn`.
 ```rescript
 let error = Error.make("Something went wrong.")
 
-let asExn = error-\>Error.toException // `asExn` is now type `exn`
+let asExn = error->Error.toException // `asExn` is now type `exn`
 ```
 
 ### let RescriptCore.Error.stack
@@ -4423,7 +4423,7 @@ See [`Error.prototype.stack`](https://developer.mozilla.org/en-US/docs/Web/JavaS
 
 #### Example
 ```rescript
-Console.log(someError-\>Error.stack) // Logs `stack` if it exists on `someError`
+Console.log(someError->Error.stack) // Logs `stack` if it exists on `someError`
 ```
 
 ### let RescriptCore.Error.message
@@ -4439,7 +4439,7 @@ See [`Error.prototype.message`](https://developer.mozilla.org/en-US/docs/Web/Jav
 #### Example
 ```rescript
 let error = Error.SyntaxError.make("Some message here")
-Console.log(error-\>Error.message) // Logs "Some message here" to the console
+Console.log(error->Error.message) // Logs "Some message here" to the console
 ```
 
 ### let RescriptCore.Error.name
@@ -4455,7 +4455,7 @@ See [`Error.prototype.name`](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 #### Example
 ```rescript
 let error = Error.SyntaxError.make("Some message here")
-Console.log(error-\>Error.name) // Logs "SyntaxError" to the console
+Console.log(error->Error.name) // Logs "SyntaxError" to the console
 ```
 
 ### let RescriptCore.Error.fileName
@@ -4481,8 +4481,8 @@ See [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
 #### Example
 ```rescript
 let error = Error.make("Some message here")
-Console.log(error-\>Error.message) // Logs "Some message here" to the console
-Console.log(error-\>Error.name) // Logs "Error" to the console, because this is a regular error
+Console.log(error->Error.message) // Logs "Some message here" to the console
+Console.log(error->Error.name) // Logs "Error" to the console, because this is a regular error
 ```
 
 ## module RescriptCore.Error.EvalError
@@ -4569,8 +4569,8 @@ Raises (throws in JavaScript language) the provided `Error.t`, which will stop e
 ```rescript
 let error = Error.make("Everything is upside down.")
 
-if 5 \> 10 {
-  error-\>Error.raise
+if 5 > 10 {
+  error->Error.raise
 } else {
   Console.log("Phew, sanity still rules.")
 }
@@ -4752,7 +4752,7 @@ Float.parseFloat("1.0") // 1.0
 Float.parseFloat("  3.14   ") // 3.14
 Float.parseFloat(3.0) // 3.0
 Float.parseFloat("3.14some non-digit characters") // 3.14
-Float.parseFloat("error")-\>Float.isNaN // true
+Float.parseFloat("error")->Float.isNaN // true
 ```
 
 ### let RescriptCore.Float.parseInt
@@ -4772,7 +4772,7 @@ Float.parseInt("1.0") // 1.0
 Float.parseInt("  3.14   ") // 3.0
 Float.parseInt(3) // 3.0
 Float.parseInt("3.14some non-digit characters") // 3.0
-Float.parseInt("error")-\>Float.isNaN // true
+Float.parseInt("error")->Float.isNaN // true
 ```
 
 ### let RescriptCore.Float.parseIntWithRadix
@@ -4794,7 +4794,7 @@ See [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 Float.parseInt("10.0", ~radix=2) // 2.0
 Float.parseInt("15 * 3", ~radix=10) // 15.0
 Float.parseInt("12", ~radix=13) // 15.0
-Float.parseInt("17", ~radix=40)-\>Float.isNaN // true
+Float.parseInt("17", ~radix=40)->Float.isNaN // true
 ```
 
 ### let RescriptCore.Float.toExponential
@@ -5956,7 +5956,7 @@ See [`Math.acos`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 ```rescript
 Math.acos(-1) // 3.141592653589793
-Math.acos(-3)-\>Float.isNaN // true
+Math.acos(-3)->Float.isNaN // true
 ```
 
 ### let RescriptCore.Math.acosh
@@ -5973,7 +5973,7 @@ See [`Math.acosh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ```rescript
 Math.acosh(1) // 0.0
-Math.acosh(0.5)-\>Float.isNaN // true
+Math.acosh(0.5)->Float.isNaN // true
 ```
 
 ### let RescriptCore.Math.asin
@@ -5990,7 +5990,7 @@ See [`Math.asin`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 ```rescript
 Math.asin(-1.0) // -1.5707963267948966
-Math.asin(-2.0)-\>Float.isNaN // true
+Math.asin(-2.0)->Float.isNaN // true
 ```
 
 ### let RescriptCore.Math.asinh
@@ -6040,8 +6040,8 @@ See [`Math.atanh`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 
 ```rescript
-Math.atanh(-2.0)-\>Float.isNaN // true
-Math.atanh(-1.0)-\>Float.isFinite // false
+Math.atanh(-2.0)->Float.isNaN // true
+Math.atanh(-1.0)->Float.isFinite // false
 Math.atanh(-0.0) // -0.0
 Math.atanh(0.0) // 0.0
 Math.atanh(0.5) // 0.5493061443340548
@@ -6255,9 +6255,9 @@ See [`Math.log`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 #### Examples
 
 ```rescript
-Math.log(-1.0)-\>Float.isNaN // true
-Math.log(-0.0)-\>Float.isFinite // false
-Math.log(0.0)-\>Float.isFinite // false
+Math.log(-1.0)->Float.isNaN // true
+Math.log(-0.0)->Float.isFinite // false
+Math.log(0.0)->Float.isFinite // false
 Math.log(1.0) // 0
 ```
 
@@ -6274,8 +6274,8 @@ See [`Math.log1p`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 
 ```rescript
-Math.log1p(-2.0)-\>Float.isNaN // true
-Math.log1p(-1.0)-\>Float.isFinite // false
+Math.log1p(-2.0)->Float.isNaN // true
+Math.log1p(-1.0)->Float.isFinite // false
 Math.log1p(-0.0) // -0
 ```
 
@@ -6292,9 +6292,9 @@ See [`Math.log10`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 #### Examples
 
 ```rescript
-Math.log10(-2.0)-\>Float.isNaN // true
-Math.log10(-0.0)-\>Float.isFinite // false
-Math.log10(0.0)-\>Float.isFinite // false
+Math.log10(-2.0)->Float.isNaN // true
+Math.log10(-0.0)->Float.isFinite // false
+Math.log10(0.0)->Float.isFinite // false
 Math.log10(1.0) // 0
 ```
 
@@ -6311,9 +6311,9 @@ See [`Math.log2`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 #### Examples
 
 ```rescript
-Math.log2(-2.0)-\>Float.isNaN // true
-Math.log2(-0.0)-\>Float.isFinite // false
-Math.log2(0.0)-\>Float.isFinite // false
+Math.log2(-2.0)->Float.isNaN // true
+Math.log2(-0.0)->Float.isFinite // false
+Math.log2(0.0)->Float.isFinite // false
 Math.log2(1.0) // 0.0
 ```
 
@@ -6348,7 +6348,7 @@ See [`Math.min`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 ```rescript
 Math.minMany([1.0, 2.0]) // 1.0
 Math.minMany([-1.0, -2.0]) // -2.0
-Math.minMany([])-\>Float.isFinite // false
+Math.minMany([])->Float.isFinite // false
 ```
 
 ### let RescriptCore.Math.max
@@ -6382,7 +6382,7 @@ See [`Math.max`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 ```rescript
 Math.maxMany([1.0, 2.0]) // 2.0
 Math.maxMany([-1.0, -2.0]) // -1.0
-Math.maxMany([])-\>Float.isFinite // false
+Math.maxMany([])->Float.isFinite // false
 ```
 
 ### let RescriptCore.Math.pow
@@ -6502,7 +6502,7 @@ See [`Math.sqrt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 #### Examples
 
 ```rescript
-Math.sqrt(-1.0)-\>Float.isNaN // true
+Math.sqrt(-1.0)->Float.isNaN // true
 Math.sqrt(-0.0) // -0.0
 Math.sqrt(0.0) // 0.0
 Math.sqrt(1.0) // 1.0
@@ -6600,7 +6600,7 @@ Converts a `Null.t` into a `Nullable.t`.
 #### Examples
 ```rescript
 let nullValue = Null.make("Hello")
-let asNullable = nullValue-\>Null.asNullable // Nullable.t\<string\>
+let asNullable = nullValue->Null.asNullable // Nullable.t<string>
 ```
 
 ### let RescriptCore.Null.null
@@ -6630,7 +6630,7 @@ This means the compiler will enforce null checks for the new value.
 #### Examples
 ```rescript
 let myStr = "Hello"
-let asNullValue = myStr-\>Null.make // The compiler now thinks this can be `string` or `null`.
+let asNullValue = myStr->Null.make // The compiler now thinks this can be `string` or `null`.
 ```
 
 ### let RescriptCore.Null.equal
@@ -6662,9 +6662,9 @@ Will convert `null` to `None`, and a present value to `Some(value)`.
 ```rescript
 let nullStr = Null.make("Hello")
 
-switch nullStr-\>Null.toOption {
-| Some(str) =\> Console.log2("Got string:", str)
-| None =\> Console.log("Didn't have a value.")
+switch nullStr->Null.toOption {
+| Some(str) => Console.log2("Got string:", str)
+| None => Console.log("Didn't have a value.")
 }
 ```
 
@@ -6678,8 +6678,8 @@ Turns an `option` into a `Null.t`. `None` will be converted to `null`.
 
 #### Examples
 ```rescript
-let optString: option\<string\> = None
-let asNull = optString-\>Null.fromOption // Null.t\<string\>
+let optString: option<string> = None
+let asNull = optString->Null.fromOption // Null.t<string>
 Console.log(asNull == null) // Logs `true` to the console.
 ```
 
@@ -6698,11 +6698,11 @@ let getOr: (. t<'a>, 'a) => 'a
 Null.getOr(null, "Banana") // Banana
 Null.getOr(Nulalble.make("Apple"), "Banana") // Apple
 
-let greet = (firstName: option\<string\>) =\>
-  "Greetings " ++ firstName-\>Null.getOr("Anonymous")
+let greet = (firstName: option<string>) =>
+  "Greetings " ++ firstName->Null.getOr("Anonymous")
 
-Null.make("Jane")-\>greet // "Greetings Jane"
-null-\>greet // "Greetings Anonymous"
+Null.make("Jane")->greet // "Greetings Jane"
+null->greet // "Greetings Anonymous"
 ```
 
 ### let RescriptCore.Null.getWithDefault
@@ -6760,8 +6760,8 @@ let forEach: (. t<'a>, (. 'a) => unit) => unit
 #### Examples
 
 ```rescript
-Null.forEach(Null.make("thing"), x =\> Console.log(x)) // logs "thing"
-Null.forEach(null, x =\> Console.log(x)) // returns ()
+Null.forEach(Null.make("thing"), x => Console.log(x)) // logs "thing"
+Null.forEach(null, x => Console.log(x)) // returns ()
 ```
 
 ### let RescriptCore.Null.map
@@ -6776,8 +6776,8 @@ let map: (. t<'a>, (. 'a) => 'b) => t<'b>
 #### Examples
 
 ```rescript
-Null.map(Null.make(3), x =\> x * x) // Null.make(9)
-Null.map(null, x =\> x * x) // null
+Null.map(Null.make(3), x => x * x) // Null.make(9)
+Null.map(null, x => x * x) // null
 ```
 
 ### let RescriptCore.Null.mapOr
@@ -6793,10 +6793,10 @@ otherwise returns `default`.
 
 ```rescript
 let someValue = Null.make(3)
-someValue-\>Null.mapOr(0, x =\> x + 5) // 8
+someValue->Null.mapOr(0, x => x + 5) // 8
 
 let noneValue = null
-noneValue-\>Null.mapOr(0, x =\> x + 5) // 0
+noneValue->Null.mapOr(0, x => x + 5) // 0
 ```
 
 ### let RescriptCore.Null.mapWithDefault
@@ -6818,8 +6818,8 @@ returns `value` unchanged.
 #### Examples
 
 ```rescript
-let addIfAboveOne = value =\>
-  if (value \> 1) {
+let addIfAboveOne = value =>
+  if (value > 1) {
     Null.make(value + 1)
   } else {
     null
@@ -6905,15 +6905,15 @@ This means the compiler will enforce null checks for the new value.
 #### Examples
 ```rescript
 let myStr = "Hello"
-let asNullable = myStr-\>Nullable.make
+let asNullable = myStr->Nullable.make
 
 // Can't do the below because we're now forced to check for nullability
 // myStr == asNullable
 
 // Need to do this
-switch asNullable-\>Nullable.toOption {
-| Some(value) if value == myStr =\> Console.log("Yay, values matched!")
-| _ =\> Console.log("Values did not match.")
+switch asNullable->Nullable.toOption {
+| Some(value) if value == myStr => Console.log("Yay, values matched!")
+| _ => Console.log("Values did not match.")
 }
 ```
 
@@ -6946,9 +6946,9 @@ Will convert both `null` and `undefined` to `None`, and a present value to `Some
 ```rescript
 let nullableString = Nullable.make("Hello")
 
-switch nullableString-\>Nullable.toOption {
-| Some(str) =\> Console.log2("Got string:", str)
-| None =\> Console.log("Didn't have a value.")
+switch nullableString->Nullable.toOption {
+| Some(str) => Console.log2("Got string:", str)
+| None => Console.log("Didn't have a value.")
 }
 ```
 
@@ -6963,7 +6963,7 @@ Turns an `option` into a `Nullable.t`.
 #### Examples
 ```rescript
 let optString = Some("Hello")
-let asNullable = optString-\>Nullable.fromOption // Nullable.t\<string\>
+let asNullable = optString->Nullable.fromOption // Nullable.t<string>
 ```
 
 ### let RescriptCore.Nullable.getOr
@@ -6981,11 +6981,11 @@ otherwise return `default`.
 Nullable.getOr(Nullable.null, "Banana") // Banana
 Nullable.getOr(Nulalble.make("Apple"), "Banana") // Apple
 
-let greet = (firstName: option\<string\>) =\>
-  "Greetings " ++ firstName-\>Nullable.getOr("Anonymous")
+let greet = (firstName: option<string>) =>
+  "Greetings " ++ firstName->Nullable.getOr("Anonymous")
 
-Nullable.make("Jane")-\>greet // "Greetings Jane"
-Nullable.null-\>greet // "Greetings Anonymous"
+Nullable.make("Jane")->greet // "Greetings Jane"
+Nullable.null->greet // "Greetings Anonymous"
 ```
 
 ### let RescriptCore.Nullable.getWithDefault
@@ -7043,9 +7043,9 @@ then if calls `f`, otherwise returns `unit`.
 #### Examples
 
 ```rescript
-Nullable.forEach(Nullable.make("thing"), x =\> Console.log(x)) // logs "thing"
-Nullable.forEach(Nullable.null, x =\> Console.log(x)) // returns ()
-Nullable.forEach(undefined, x =\> Console.log(x)) // returns ()
+Nullable.forEach(Nullable.make("thing"), x => Console.log(x)) // logs "thing"
+Nullable.forEach(Nullable.null, x => Console.log(x)) // returns ()
+Nullable.forEach(undefined, x => Console.log(x)) // returns ()
 ```
 
 ### let RescriptCore.Nullable.map
@@ -7060,8 +7060,8 @@ otherwise returns `value` unchanged.
 #### Examples
 
 ```rescript
-Nullable.map(Nullable.make(3), x =\> x * x) // Nullable.make(9)
-Nullable.map(undefined, x =\> x * x) // undefined
+Nullable.map(Nullable.make(3), x => x * x) // Nullable.make(9)
+Nullable.map(undefined, x => x * x) // undefined
 ```
 
 ### let RescriptCore.Nullable.mapOr
@@ -7077,10 +7077,10 @@ or `undefined`, otherwise returns `default`.
 
 ```rescript
 let someValue = Nullable.make(3)
-someValue-\>Nullable.mapOr(0, x =\> x + 5) // 8
+someValue->Nullable.mapOr(0, x => x + 5) // 8
 
 let noneValue = Nullable.null
-noneValue-\>Nullable.mapOr(0, x =\> x + 5) // 0
+noneValue->Nullable.mapOr(0, x => x + 5) // 0
 ```
 
 ### let RescriptCore.Nullable.mapWithDefault
@@ -7102,8 +7102,8 @@ otherwise returns `value` unchanged.
 #### Examples
 
 ```rescript
-let addIfAboveOne = value =\>
-  if (value \> 1) {
+let addIfAboveOne = value =>
+  if (value > 1) {
     Nullable.make(value + 1)
   } else {
     Nullable.null
@@ -7128,8 +7128,8 @@ let empty: (. unit) => {..}
 
 ```rescript
 let x = Object.empty()
-x-\>Object.keysToArray-\>Array.length // 0
-x-\>Object.get("toString")-\>Option.isSome // true
+x->Object.keysToArray->Array.length // 0
+x->Object.get("toString")->Option.isSome // true
 ```
 
 ### let RescriptCore.Object.is
@@ -7178,7 +7178,7 @@ let create: (. {..}) => {..}
 ```rescript
 let x = {"fruit": "banana"}
 let y = Object.create(x)
-y-\>Object.get("fruit") // Some("banana")
+y->Object.get("fruit") // Some("banana")
 ```
 
 ### let RescriptCore.Object.createWithProperties
@@ -7248,11 +7248,11 @@ let get: (. {..}, string) => option<'a>
 #### Examples
 
 ```rescript
-{"a": 1}-\>Object.get("a") // Some(1)
-{"a": 1}-\>Object.get("b") // None
-{"a": undefined}-\>Object.get("a") // None
-{"a": null}-\>Object.get("a") // Some(null)
-{"a": 1}-\>Object.get("toString")-\>Option.isSome // true
+{"a": 1}->Object.get("a") // Some(1)
+{"a": 1}->Object.get("b") // None
+{"a": undefined}->Object.get("a") // None
+{"a": null}->Object.get("a") // Some(null)
+{"a": 1}->Object.get("toString")->Option.isSome // true
 ```
 
 ### let RescriptCore.Object.getSymbol
@@ -7268,8 +7268,8 @@ let getSymbol: (. {..}, Core__Symbol.t) => option<'a>
 ```rescript
 let fruit = Symbol.make("fruit")
 let x = Object.empty()
-x-\>Object.setSymbol(fruit, "banana")
-x-\>Object.getSymbol(fruit) // Some("banana")
+x->Object.setSymbol(fruit, "banana")
+x->Object.getSymbol(fruit) // Some("banana")
 ```
 
 ### let RescriptCore.Object.getSymbolUnsafe
@@ -7289,9 +7289,9 @@ let set: (. {..}, string, 'a) => unit
 #### Examples
 
 ```rescript
-{"a": 1}-\>Object.set("a", 2) // {"a": 2}
-{"a": 1}-\>Object.set("a", None) // {"a": None}
-{"a": 1}-\>Object.set("b", 2) // {"a": 1, "b": 2}
+{"a": 1}->Object.set("a", 2) // {"a": 2}
+{"a": 1}->Object.set("a", None) // {"a": None}
+{"a": 1}->Object.set("b", 2) // {"a": 1, "b": 2}
 ```
 
 ### let RescriptCore.Object.setSymbol
@@ -7312,9 +7312,9 @@ or [Object.keys on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 #### Examples
 
 ```rescript
-{"a": 1, "b": 2}-\>Object.keysToArray // ["a", "b"]
-{"a": None}-\>Object.keysToArray // ["a"]
-Object.empty()-\>Object.keysToArray // []
+{"a": 1, "b": 2}->Object.keysToArray // ["a", "b"]
+{"a": None}->Object.keysToArray // ["a"]
+Object.empty()->Object.keysToArray // []
 ```
 
 ### let RescriptCore.Object.hasOwnProperty
@@ -7329,9 +7329,9 @@ let hasOwnProperty: (. {..}, string) => bool
 
 ```rescript
 let point = {"x": 1, "y": 2}
-{"a": 1}-\>hasOwnProperty("a") // true
-{"a": 1}-\>hasOwnProperty("b") // false
-{"a": 1}-\>hasOwnProperty("toString") // false
+{"a": 1}->hasOwnProperty("a") // true
+{"a": 1}->hasOwnProperty("b") // false
+{"a": 1}->hasOwnProperty("toString") // false
 ```
 
 ### let RescriptCore.Object.seal
@@ -7350,10 +7350,10 @@ See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundam
 
 ```rescript
 let point = {"x": 1, "y": 2}
-point-\>Object.set("x", -7) // succeeds
-point-\>Object.seal-\>ignore
-point-\>Object.set("z", 9) // fails
-point-\>Object.set("x", 13) // succeeds
+point->Object.set("x", -7) // succeeds
+point->Object.seal->ignore
+point->Object.set("z", 9) // fails
+point->Object.set("x", 13) // succeeds
 ```
 
 ### let RescriptCore.Object.preventExtensions
@@ -7370,9 +7370,9 @@ See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundam
 
 ```rescript
 let obj = {"a": 1}
-obj-\>Object.set("b", 2) // succeeds
-obj-\>Object.preventExtensions-\>ignore
-obj-\>Object.set("c", 3) // fails
+obj->Object.set("b", 2) // succeeds
+obj->Object.preventExtensions->ignore
+obj->Object.set("c", 3) // fails
 ```
 
 ### let RescriptCore.Object.freeze
@@ -7409,10 +7409,10 @@ See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundam
 #### Examples
 
 ```rescript
-let point = {"x": 1, "y": 3}-\>Object.seal
-let pointIsSealed = point-\>Object.isSealed // true
+let point = {"x": 1, "y": 3}->Object.seal
+let pointIsSealed = point->Object.isSealed // true
 let fruit = {"name": "Apple" }
-let fruitIsSealed = fruit-\>Object.isSealed // false
+let fruitIsSealed = fruit->Object.isSealed // false
  ```
 
 ### let RescriptCore.Object.isFrozen
@@ -7428,10 +7428,10 @@ See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundam
 #### Examples
 
 ```rescript
-let point = {"x": 1, "y": 3}-\>Object.freeze
-let pointIsFrozen = point-\>Object.isFrozen // true
+let point = {"x": 1, "y": 3}->Object.freeze
+let pointIsFrozen = point->Object.isFrozen // true
 let fruit = {"name": "Apple" }
-let fruitIsFrozen = fruit-\>Object.isFrozen // false
+let fruitIsFrozen = fruit->Object.isFrozen // false
  ```
 
 ### let RescriptCore.Object.isExtensible
@@ -7448,9 +7448,9 @@ See [ECMAScript Language Specification](https://tc39.es/ecma262/multipage/fundam
 
 ```rescript
 let obj = {"a": 1}
-obj-\>Object.isExtensible // true
-obj-\>Object.preventExtensions-\>ignore
-obj-\>Object.isExtensible // false
+obj->Object.isExtensible // true
+obj->Object.preventExtensions->ignore
+obj->Object.isExtensible // false
 ```
 
 ## module RescriptCore.Ordering `alias`
@@ -7532,7 +7532,7 @@ See [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 #### Examples
 
 ```rescript
-let p = Promise.resolve(5) // promise\<int\>
+let p = Promise.resolve(5) // promise<int>
 ```
 
 ### let RescriptCore.Promise.reject
@@ -7567,22 +7567,22 @@ uncurried functions `resolve` and `reject` for defining the Promise's result.
 open Promise
 
 let n = 4
-Promise.make((resolve, reject) =\> {
-  if(n \< 5) {
+Promise.make((resolve, reject) => {
+  if(n < 5) {
     resolve(. "success")
   }
   else {
     reject(. "failed")
   }
 })
--\>then(str =\> {
-  Console.log(str)-\>resolve
+->then(str => {
+  Console.log(str)->resolve
 })
--\>catch(e =\> {
+->catch(e => {
   Console.log("Error occurred")
   resolve()
 })
--\>ignore
+->ignore
 ```
 
 ### let RescriptCore.Promise.catch
@@ -7604,29 +7604,29 @@ open Promise
 exception SomeError(string)
 
 reject(SomeError("this is an error"))
--\>then(_ =\> {
-  Ok("This result will never be returned")-\>resolve
+->then(_ => {
+  Ok("This result will never be returned")->resolve
 })
--\>catch(e =\> {
+->catch(e => {
   let msg = switch(e) {
-    | SomeError(msg) =\> "ReScript error occurred: " ++ msg
-    | Exn.Error(obj) =\>
+    | SomeError(msg) => "ReScript error occurred: " ++ msg
+    | Exn.Error(obj) =>
       switch Exn.message(obj) {
-        | Some(msg) =\> "JS exception occurred: " ++ msg
-        | None =\> "Some other JS value has been thrown"
+        | Some(msg) => "JS exception occurred: " ++ msg
+        | None => "Some other JS value has been thrown"
       }
-    | _ =\> "Unexpected error occurred"
+    | _ => "Unexpected error occurred"
   }
 
-  Error(msg)-\>resolve
+  Error(msg)->resolve
 })
--\>then(result =\> {
+->then(result => {
   switch result {
-  | Ok(r) =\> Console.log2("Operation successful: ", r)
-  | Error(msg) =\> Console.log2("Operation failed: ", msg)
-  }-\>resolve
+  | Ok(r) => Console.log2("Operation successful: ", r)
+  | Error(msg) => Console.log2("Operation failed: ", msg)
+  }->resolve
 })
--\>ignore // Ignore needed for side-effects
+->ignore // Ignore needed for side-effects
 ```
 
 In case you want to return another promise in your `callback`, consider using
@@ -7646,14 +7646,14 @@ See [`Promise.then`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ```rescript
 Promise.resolve(5)
--\>then(num =\> {
+->then(num => {
   resolve(num + 5)
 })
--\>then(num =\> {
+->then(num => {
   Console.log2("Your lucky number is: ", num)
   resolve()
 })
--\>ignore
+->ignore
 ```
 
 ### let RescriptCore.Promise.thenResolve
@@ -7670,13 +7670,13 @@ within the provided callback (e.g. `thenResolve(value =\> resolve(value))`).
 
 ```rescript
 resolve("Anna")
--\>thenResolve(str =\> {
+->thenResolve(str => {
   "Hello " ++ str
 })
--\>thenResolve(str =\> {
+->thenResolve(str => {
   Console.log(str)
 })
--\>ignore // Ignore needed for side-effects
+->ignore // Ignore needed for side-effects
 ```
 
 In case you want to return another promise in your `callback`, consider using
@@ -7699,26 +7699,26 @@ exception SomeError(string)
 let isDone = ref(false)
 
 resolve(5)
--\>then(_ =\> {
+->then(_ => {
   reject(TestError("test"))
 })
--\>then(v =\> {
+->then(v => {
   Console.log2("final result", v)
   resolve()
 })
--\>catch(_ =\> {
+->catch(_ => {
   Console.log("Error handled")
   resolve()
 })
--\>finally(() =\> {
+->finally(() => {
   Console.log("finally")
   isDone := true
 })
--\>then(() =\> {
+->then(() => {
   Console.log2("isDone:", isDone.contents)
   resolve()
 })
--\>ignore
+->ignore
 ```
 
 ### let RescriptCore.Promise.race
@@ -7733,17 +7733,17 @@ let race: (. array<t<'a>>) => t<'a>
 
 ```rescript
 open Promise
-let racer = (ms, name) =\> {
-  Promise.make((resolve, _) =\> {
-    Global.setTimeout(() =\> {
+let racer = (ms, name) => {
+  Promise.make((resolve, _) => {
+    Global.setTimeout(() => {
       resolve(. name)
-    }, ms)-\>ignore
+    }, ms)->ignore
   })
 }
 
 let promises = [racer(1000, "Turtle"), racer(500, "Hare"), racer(100, "Eagle")]
 
-race(promises)-\>then(winner =\> {
+race(promises)->then(winner => {
   Console.log("The winner is " ++ winner)
   resolve()
 })
@@ -7763,14 +7763,14 @@ open Promise
 let promises = [resolve(1), resolve(2), resolve(3)]
 
 all(promises)
--\>then((results) =\> {
-  results-\>Array.forEach(num =\> {
+->then((results) => {
+  results->Array.forEach(num => {
     Console.log2("Number: ", num)
   })
 
   resolve()
 })
--\>ignore
+->ignore
 ```
 
 ### let RescriptCore.Promise.all2
@@ -7934,9 +7934,9 @@ See [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -7955,9 +7955,9 @@ See [`RegExp parameters`](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 // Match the first word in a sentence
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -7976,7 +7976,7 @@ See [`RegExp.test`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-if regexp-\>RegExp.test("ReScript is cool!") {
+if regexp->RegExp.test("ReScript is cool!") {
   Console.log("Yay, there's a word in there.")
 }
 ```
@@ -7996,9 +7996,9 @@ See [`RegExp.exec`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -8018,11 +8018,11 @@ See [`RegExp.lastIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 let regexp = RegExp.fromString("\\w+")
 let someStr = "Many words here."
 
-Console.log(regexp-\>RegExp.lastIndex) // Logs `0` to the console
+Console.log(regexp->RegExp.lastIndex) // Logs `0` to the console
 
-regexp-\>RegExp.exec(someStr)-\>ignore
+regexp->RegExp.exec(someStr)->ignore
 
-Console.log(regexp-\>RegExp.lastIndex) // Logs `4` to the console
+Console.log(regexp->RegExp.lastIndex) // Logs `4` to the console
 ```
 
 ### let RescriptCore.RegExp.ignoreCase
@@ -8038,10 +8038,10 @@ See [`RegExp.ignoreCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.ignoreCase) // Logs `false`, since `i` is not set
+Console.log(regexp1->RegExp.ignoreCase) // Logs `false`, since `i` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="i")
-Console.log(regexp2-\>RegExp.ignoreCase) // Logs `true`, since `i` is set
+Console.log(regexp2->RegExp.ignoreCase) // Logs `true`, since `i` is set
 ```
 
 ### let RescriptCore.RegExp.global
@@ -8057,10 +8057,10 @@ See [`RegExp.global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.global) // Logs `true`, since `g` is set
+Console.log(regexp1->RegExp.global) // Logs `true`, since `g` is set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="i")
-Console.log(regexp2-\>RegExp.global) // Logs `false`, since `g` is not set
+Console.log(regexp2->RegExp.global) // Logs `false`, since `g` is not set
 ```
 
 ### let RescriptCore.RegExp.multiline
@@ -8076,10 +8076,10 @@ See [`RegExp.multiline`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.multiline) // Logs `false`, since `m` is not set
+Console.log(regexp1->RegExp.multiline) // Logs `false`, since `m` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="mi")
-Console.log(regexp2-\>RegExp.multiline) // Logs `true`, since `m` is set
+Console.log(regexp2->RegExp.multiline) // Logs `true`, since `m` is set
 ```
 
 ### let RescriptCore.RegExp.source
@@ -8095,7 +8095,7 @@ See [`RegExp.source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp-\>RegExp.source) // Logs `\w+`, the source text of the `RegExp`
+Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp`
 ```
 
 ### let RescriptCore.RegExp.sticky
@@ -8111,10 +8111,10 @@ See [`RegExp.sticky`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.unicode) // Logs `false`, since `y` is not set
+Console.log(regexp1->RegExp.unicode) // Logs `false`, since `y` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="my")
-Console.log(regexp2-\>RegExp.unicode) // Logs `true`, since `y` is set
+Console.log(regexp2->RegExp.unicode) // Logs `true`, since `y` is set
 ```
 
 ### let RescriptCore.RegExp.unicode
@@ -8130,10 +8130,10 @@ See [`RegExp.unicode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.unicode) // Logs `false`, since `u` is not set
+Console.log(regexp1->RegExp.unicode) // Logs `false`, since `u` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="mu")
-Console.log(regexp2-\>RegExp.unicode) // Logs `true`, since `u` is set
+Console.log(regexp2->RegExp.unicode) // Logs `true`, since `u` is set
 ```
 
 ## module RescriptCore.String `alias`
@@ -8319,7 +8319,7 @@ See [`String.charCodeAt`](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 #### Examples
 
 ```rescript
-String.charCodeAt(`😺`, 0) == 0xd83d-\>Int.toFloat
+String.charCodeAt(`😺`, 0) == 0xd83d->Int.toFloat
 String.codePointAt(`😺`, 0) == Some(0x1f63a)
 ```
 
@@ -8767,7 +8767,7 @@ See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 ```rescript
 let str = "beautiful vowels"
 let re = %re("/[aeiou]/g")
-let matchFn = (matchPart, _offset, _wholeString) =\> String.toUpperCase(matchPart)
+let matchFn = (matchPart, _offset, _wholeString) => String.toUpperCase(matchPart)
 String.unsafeReplaceRegExpBy0(str, re, matchFn) == "bEAUtIfUl vOwEls"
 ```
 
@@ -8795,7 +8795,7 @@ See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 ```rescript
 let str = "Jony is 40"
 let re = %re("/(Jony is )\d+/g")
-let matchFn = (_match, part1, _offset, _wholeString) =\> {
+let matchFn = (_match, part1, _offset, _wholeString) => {
   part1 ++ "41"
 }
 String.unsafeReplaceRegExpBy1(str, re, matchFn) == "Jony is 41"
@@ -8826,10 +8826,10 @@ See [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 ```rescript
 let str = "7 times 6"
 let re = %re("/(\d+) times (\d+)/")
-let matchFn = (_match, p1, p2, _offset, _wholeString) =\> {
+let matchFn = (_match, p1, p2, _offset, _wholeString) => {
   switch (Int.fromString(p1), Int.fromString(p2)) {
-  | (Some(x), Some(y)) =\> Int.toString(x * y)
-  | _ =\> "???"
+  | (Some(x), Some(y)) => Int.toString(x * y)
+  | _ => "???"
   }
 }
 String.unsafeReplaceRegExpBy2(str, re, matchFn) == "42"
@@ -9274,7 +9274,7 @@ See [`String.localeCompare`](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 #### Examples
 
 ```rescript
-String.localeCompare("a", "c") \< 0.0 == true
+String.localeCompare("a", "c") < 0.0 == true
 String.localeCompare("a", "a") == 0.0
 ```
 
@@ -9421,9 +9421,9 @@ Console.log(Type.typeof("Hello")) // Logs "string" to the console.
 
 let someVariable = true
 
-switch someVariable-\>Type.typeof {
-| #boolean =\> Console.log("This is a bool, yay!")
-| _ =\> Console.log("Oh, not a bool sadly...")
+switch someVariable->Type.typeof {
+| #boolean => Console.log("This is a bool, yay!")
+| _ => Console.log("Oh, not a bool sadly...")
 }
 ```
 
@@ -9531,9 +9531,9 @@ Classifies a JavaScript value.
 
 #### Examples
 ```rescript
-switch %raw(`null`)-\>Type.Classify.classify {
-| Null =\> Console.log("Yup, that's null.")
-| _ =\> Console.log("This doesn't actually appear to be null...")
+switch %raw(`null`)->Type.Classify.classify {
+| Null => Console.log("Yup, that's null.")
+| _ => Console.log("This doesn't actually appear to be null...")
 }
 ```
 
@@ -9605,7 +9605,7 @@ try {
   let _ = JSON.parseExn("")
   // error
 } catch {
-| Exn.Error(obj) =\> Console.log("error")
+| Exn.Error(obj) => Console.log("error")
 }
 ```
 
@@ -9627,26 +9627,26 @@ It returns a JSON type.
 
 #### Examples
 ```rescript
-let reviver = (key, value) =\> {
+let reviver = (key, value) => {
   let valueType = JSON.Classify.classify(value)
 
   switch valueType {
-  | String(string) =\> string-\>String.toUpperCase-\>JSON.Encode.string
-  | Number(number) =\> (number *. 2.0)-\>JSON.Encode.float
-  | _ =\> value
+  | String(string) => string->String.toUpperCase->JSON.Encode.string
+  | Number(number) => (number *. 2.0)->JSON.Encode.float
+  | _ => value
   }
 }
 
 let jsonString = `{"hello":"world","someNumber":21}`
 
 try {
-  JSON.parseExnWithReviver(jsonString, reviver)-\>Console.log
+  JSON.parseExnWithReviver(jsonString, reviver)->Console.log
   // { hello: 'WORLD', someNumber: 42 }
 
-  JSON.parseExnWithReviver("", reviver)-\>Console.log
+  JSON.parseExnWithReviver("", reviver)->Console.log
   // error
 } catch {
-| Exn.Error(_) =\> Console.log("error")
+| Exn.Error(_) => Console.log("error")
 }
 ```
 
@@ -9672,7 +9672,7 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
 JSON.stringify(json)
 // {"foo":"bar","hello":"world","someNumber":42}
@@ -9696,7 +9696,7 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
 JSON.stringifyWithIndent(json, 2)
 // {
@@ -9725,14 +9725,14 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
-let replacer = (key, value) =\> {
-  let decodedValue = value-\>JSON.Decode.string
+let replacer = (key, value) => {
+  let decodedValue = value->JSON.Decode.string
 
   switch decodedValue {
-  | Some(string) =\> string-\>String.toUpperCase-\>JSON.Encode.string
-  | None =\> value
+  | Some(string) => string->String.toUpperCase->JSON.Encode.string
+  | None => value
   }
 }
 
@@ -9759,14 +9759,14 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
-let replacer = (key, value) =\> {
-  let decodedValue = value-\>JSON.Decode.string
+let replacer = (key, value) => {
+  let decodedValue = value->JSON.Decode.string
 
   switch decodedValue {
-  | Some(string) =\> string-\>String.toUpperCase-\>JSON.Encode.string
-  | None =\> value
+  | Some(string) => string->String.toUpperCase->JSON.Encode.string
+  | None => value
   }
 }
 
@@ -9797,7 +9797,7 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
 JSON.stringifyWithFilter(json, ["foo", "someNumber"])
 // {"foo":"bar","someNumber":42}
@@ -9822,7 +9822,7 @@ let json =
     ("foo", JSON.Encode.string("bar")),
     ("hello", JSON.Encode.string("world")),
     ("someNumber", JSON.Encode.int(42)),
-  ])-\>JSON.Encode.object
+  ])->JSON.Encode.object
 
 JSON.stringifyWithFilterAndIndent(json, ["foo", "someNumber"], 2)
 // {
@@ -9855,10 +9855,10 @@ let dict = Dict.fromArray([
 JSON.stringifyAny(dict)
 // {"foo":"bar","hello":"world","someNumber":42}
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -9895,10 +9895,10 @@ JSON.stringifyAnyWithIndent(dict, 2)
 //   "someNumber": 42
 // }
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -9929,22 +9929,22 @@ let dict = Dict.fromArray([
   ("someNumber", JSON.Encode.int(42)),
 ])
 
-let replacer = (key, value) =\> {
-  let decodedValue = value-\>JSON.Decode.string
+let replacer = (key, value) => {
+  let decodedValue = value->JSON.Decode.string
 
   switch decodedValue {
-  | Some(string) =\> string-\>String.toUpperCase-\>JSON.Encode.string
-  | None =\> value
+  | Some(string) => string->String.toUpperCase->JSON.Encode.string
+  | None => value
   }
 }
 
 JSON.stringifyAnyWithReplacer(dict, replacer)
 // {"foo":"BAR","hello":"WORLD","someNumber":42}
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -9975,12 +9975,12 @@ let dict = Dict.fromArray([
   ("someNumber", JSON.Encode.int(42)),
 ])
 
-let replacer = (key, value) =\> {
-  let decodedValue = value-\>JSON.Decode.string
+let replacer = (key, value) => {
+  let decodedValue = value->JSON.Decode.string
 
   switch decodedValue {
-  | Some(string) =\> string-\>String.toUpperCase-\>JSON.Encode.string
-  | None =\> value
+  | Some(string) => string->String.toUpperCase->JSON.Encode.string
+  | None => value
   }
 }
 
@@ -9991,10 +9991,10 @@ JSON.stringifyAnyWithReplacerAndIndent(dict, replacer, 2)
 //   "someNumber": 42
 // }
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -10028,10 +10028,10 @@ let dict = Dict.fromArray([
 JSON.stringifyAnyWithFilter(dict, ["foo", "someNumber"])
 // {"foo": "bar","someNumber": 42}
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -10068,10 +10068,10 @@ JSON.stringifyAnyWithFilterAndIndent(dict, ["foo", "someNumber"], 2)
 //   "someNumber": 42
 // }
 
-JSON.stringifyAny(() =\> "hello world")
+JSON.stringifyAny(() => "hello world")
 // None
 
-BigInt.fromInt(0)-\>JSON.stringifyAny
+BigInt.fromInt(0)->JSON.stringifyAny
 // exception
 ```
 
@@ -10404,7 +10404,7 @@ See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 // Pulls out the next value of the iterator
-let {done, value} = someIterator-\>Iterator.next
+let {done, value} = someIterator->Iterator.next
 ```
 
 ### let RescriptCore.Iterator.toArray
@@ -10421,11 +10421,11 @@ See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("someKey2", "someValue2")
+map->Map.set("someKey", "someValue")
+map->Map.set("someKey2", "someValue2")
 
 // `Map.keys` returns all keys of the map as an iterator.
-let mapKeysAsArray = map-\>Map.keys-\>Iterator.toArray
+let mapKeysAsArray = map->Map.keys->Iterator.toArray
 
 Console.log(mapKeysAsArray) // Logs ["someKey", "someKey2"] to the console.
 ```
@@ -10444,13 +10444,13 @@ See [iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("someKey2", "someValue2")
+map->Map.set("someKey", "someValue")
+map->Map.set("someKey2", "someValue2")
 
 // `Map.keys` returns all keys of the map as an iterator.
 let mapKeysAsArray = map
-  -\>Map.keys
-  -\>Iterator.toArrayWithMapper(key =\> key-\>String.length)
+  ->Map.keys
+  ->Iterator.toArrayWithMapper(key => key->String.length)
 
 Console.log(mapKeysAsArray) // Logs [7, 8] to the console.
 ```
@@ -10506,22 +10506,22 @@ See [async iterator protocols](https://developer.mozilla.org/en-US/docs/Web/Java
 #### Examples
 - A simple example, getting the next value:
 ```rescript
-let {done, value} = await someAsyncIterator-\>AsyncIterator.next
+let {done, value} = await someAsyncIterator->AsyncIterator.next
 ```
 
 - Complete example, including looping over all values:
 ```rescript
 // Let's pretend we get an async iterator returning ints from somewhere.
-@val external asyncIterator: AsyncIterator.t\<int\> = "someAsyncIterator"
+@val external asyncIterator: AsyncIterator.t<int> = "someAsyncIterator"
 
 
-let processMyAsyncIterator = async () =\> {
+let processMyAsyncIterator = async () => {
   // ReScript doesn't have `for ... of` loops, but it's easy to mimic using a while loop.
   let break = ref(false)
 
   while !break.contents {
     // Await the next iterator value
-    let {value, done} = await asyncIterator-\>AsyncIterator.next
+    let {value, done} = await asyncIterator->AsyncIterator.next
 
     // Exit the while loop if the iterator says it's done
     break := done
@@ -10562,11 +10562,11 @@ See [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl
 ```rescript
 `make()`
 // You can annotate the type of your map if you want to
-let myMap: Map.t\<string, int\> = Map.make()
+let myMap: Map.t<string, int> = Map.make()
 
 // Or you can let ReScript infer what's in your map
 let map = Map.make()
-map-\>Map.set("lang", "ReScript") // Inferred as Map.t\<string, string\>
+map->Map.set("lang", "ReScript") // Inferred as Map.t<string, string>
 ```
 
 #### Alternatives
@@ -10585,11 +10585,11 @@ Turns an array of key/value pairs into a Map.
 type languages = ReScript | JavaScript | TypeScript
 let languageRank = [(ReScript, 1), (JavaScript, 2), (TypeScript, 3)]
 
-let map = Map.fromArray(languageRank) // Map.t\<languages, int\>
+let map = Map.fromArray(languageRank) // Map.t<languages, int>
 
-switch map-\>Map.get(ReScript) {
-| Some(1) =\> Console.log("Yay, ReScript is #1!")
-| _ =\> Console.log("Uh-oh, something is _terribly_ wrong with this program... abort.")
+switch map->Map.get(ReScript) {
+| Some(1) => Console.log("Yay, ReScript is #1!")
+| _ => Console.log("Uh-oh, something is _terribly_ wrong with this program... abort.")
 }
 ```
 
@@ -10604,9 +10604,9 @@ Turns an iterator in the shape of `('key, 'value)` into a `Map`.
 #### Examples
 ```rescript
 // Let's pretend we have an interator in the correct shape
-@val external someIterator: Iterator.t\<(string, int)\> = "someIterator"
+@val external someIterator: Iterator.t<(string, int)> = "someIterator"
 
-let map = Map.fromIterator(someIterator) // Map.t\<string, int\>
+let map = Map.fromIterator(someIterator) // Map.t<string, int>
 ```
 
 ### let RescriptCore.Map.size
@@ -10621,9 +10621,9 @@ Returns the size, the number of key/value pairs, of the map.
 ```rescript
 let map = Map.make()
 
-map-\>Map.set("someKey", "someValue")
+map->Map.set("someKey", "someValue")
 
-let size = map-\>Map.size // 1
+let size = map->Map.size // 1
 ```
 
 ### let RescriptCore.Map.clear
@@ -10638,11 +10638,11 @@ Clears all entries in the map.
 ```rescript
 let map = Map.make()
 
-map-\>Map.set("someKey", "someValue")
-let size = map-\>Map.size // 1
+map->Map.set("someKey", "someValue")
+let size = map->Map.size // 1
 
-map-\>Map.clear
-let size = map-\>Map.size // 0
+map->Map.clear
+let size = map->Map.size // 0
 ```
 
 ### let RescriptCore.Map.forEach
@@ -10658,10 +10658,10 @@ Iterates through all values of the map.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("someKey2", "someValue2")
+map->Map.set("someKey", "someValue")
+map->Map.set("someKey2", "someValue2")
 
-map-\>Map.forEach(value =\> {
+map->Map.forEach(value => {
   Console.log(value)
 })
 ```
@@ -10677,10 +10677,10 @@ Iterates through all values of the map, including the key for each value.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("someKey2", "someValue2")
+map->Map.set("someKey", "someValue")
+map->Map.set("someKey2", "someValue2")
 
-map-\>Map.forEachWithKey((value, key) =\> {
+map->Map.forEachWithKey((value, key) => {
   Console.log2(value, key)
 })
 ```
@@ -10696,11 +10696,11 @@ Returns the value for a key, if a value exists at that key.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
+map->Map.set("someKey", "someValue")
 
-switch map-\>Map.get("someKey") {
-| None =\> Console.log("Nope, didn't have it.")
-| Some(value) =\> Console.log2("Yay, had the value, and it's:", value)
+switch map->Map.get("someKey") {
+| None => Console.log("Nope, didn't have it.")
+| Some(value) => Console.log2("Yay, had the value, and it's:", value)
 }
 ```
 
@@ -10715,11 +10715,11 @@ Checks whether the map has a specific key.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
+map->Map.set("someKey", "someValue")
 
-switch map-\>Map.has("someKey") {
-| false =\> Console.log("Nope, didn't have it.")
-| true =\> Console.log("Yay, we have the value!")
+switch map->Map.has("someKey") {
+| false => Console.log("Nope, didn't have it.")
+| true => Console.log("Yay, we have the value!")
 }
 ```
 
@@ -10734,7 +10734,7 @@ Sets the provided `value` to the provided `key`.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
+map->Map.set("someKey", "someValue")
 ```
 
 ### let RescriptCore.Map.delete
@@ -10748,11 +10748,11 @@ Deletes the provided `key` and its value from the map. Returns a `bool` for whet
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-let didDeleteKey = map-\>Map.delete("someKey")
+map->Map.set("someKey", "someValue")
+let didDeleteKey = map->Map.delete("someKey")
 Console.log(didDeleteKey) // Logs `true` to the console, becuase the map had the key, so it was successfully deleted
 
-let didDeleteKey = map-\>Map.delete("someNonExistantKey")
+let didDeleteKey = map->Map.delete("someNonExistantKey")
 Console.log(didDeleteKey) // Logs `false` to the console, becuase the key did not exist
 ```
 
@@ -10767,17 +10767,17 @@ Returns an iterator that holds all keys of the map.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("anotherKey", "anotherValue")
+map->Map.set("someKey", "someValue")
+map->Map.set("anotherKey", "anotherValue")
 
-let keys = map-\>Map.keys
+let keys = map->Map.keys
 
 // Logs the first key
 Console.log(Iterator.next(keys).value)
 
 // You can also turn the iterator into an array.
 // Remember that an iterator consumes values. We'll need a fresh keys iterator to get an array of all keys, since we consumed a value via `next` above already.
-Console.log(map-\>Map.keys-\>Iterator.toArray)
+Console.log(map->Map.keys->Iterator.toArray)
 ```
 
 ### let RescriptCore.Map.values
@@ -10791,17 +10791,17 @@ Returns an iterator that holds all values of the map.
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("anotherKey", "anotherValue")
+map->Map.set("someKey", "someValue")
+map->Map.set("anotherKey", "anotherValue")
 
-let values = map-\>Map.values
+let values = map->Map.values
 
 // Logs the first value
 Console.log(Iterator.next(values).value)
 
 // You can also turn the iterator into an array.
 // Remember that an iterator consumes values. We'll need a fresh values iterator to get an array of all values, since we consumed a value via `next` above already.
-Console.log(map-\>Map.values-\>Iterator.toArray)
+Console.log(map->Map.values->Iterator.toArray)
 ```
 
 ### let RescriptCore.Map.entries
@@ -10816,17 +10816,17 @@ An entry is represented as a tuple of `('key, 'value)`,
 #### Examples
 ```rescript
 let map = Map.make()
-map-\>Map.set("someKey", "someValue")
-map-\>Map.set("anotherKey", "anotherValue")
+map->Map.set("someKey", "someValue")
+map->Map.set("anotherKey", "anotherValue")
 
-let entries = map-\>Map.entries
+let entries = map->Map.entries
 
 // Logs the first value
 Console.log(Iterator.next(entries).value)
 
 // You can also turn the iterator into an array.
 // Remember that an iterator consumes entries. We'll need a fresh entries iterator to get an array of all entries, since we consumed a value via `next` above already.
-Console.log(map-\>Map.entries-\>Iterator.toArray)
+Console.log(map->Map.entries->Iterator.toArray)
 ```
 
 ## module RescriptCore.WeakMap `alias`
@@ -10896,11 +10896,11 @@ See [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl
 #### Examples
 ```rescript
 // You can annotate the type of your set if you want to
-let mySet: Set.t\<string\> = Set.make()
+let mySet: Set.t<string> = Set.make()
 
 // Or you can let ReScript infer what's in your Set
 let set = Set.make()
-set-\>Set.add("Fine name") // Inferred as Set.t\<string\>
+set->Set.add("Fine name") // Inferred as Set.t<string>
 ```
 
 #### Alternatives
@@ -10919,11 +10919,11 @@ Turns an array of values into a Set. Meaning only unique values are preserved.
 type languages = ReScript | JavaScript | TypeScript
 let languageRank = [ReScript, JavaScript, TypeScript]
 
-let set = Set.fromArray(languageRank) // Set.t\<languages\>
+let set = Set.fromArray(languageRank) // Set.t<languages>
 
-switch set-\>Set.has(ReScript) {
-| true =\> Console.log("Yay, ReScript is in there!")
-| false =\> Console.log("Uh-oh, something is _terribly_ wrong with this program... abort.")
+switch set->Set.has(ReScript) {
+| true => Console.log("Yay, ReScript is in there!")
+| false => Console.log("Uh-oh, something is _terribly_ wrong with this program... abort.")
 }
 ```
 
@@ -10938,9 +10938,9 @@ Turns an iterator into a `Set`.
 #### Examples
 ```rescript
 // Let's pretend we have an interator
-@val external someIterator: Iterator.t\<int\> = "someIterator"
+@val external someIterator: Iterator.t<int> = "someIterator"
 
-let set = Set.fromIterator(someIterator) // Set.t\<int\>
+let set = Set.fromIterator(someIterator) // Set.t<int>
 ```
 
 ### let RescriptCore.Set.size
@@ -10955,11 +10955,11 @@ Returns the size, the number of unique values, of the set.
 ```rescript
 let set = Set.make()
 
-set-\>Set.add("someValue")
-set-\>Set.add("someValue")
-set-\>Set.add("someValue2")
+set->Set.add("someValue")
+set->Set.add("someValue")
+set->Set.add("someValue2")
 
-let size = set-\>Set.size // 2
+let size = set->Set.size // 2
 ```
 
 ### let RescriptCore.Set.clear
@@ -10974,11 +10974,11 @@ Clears all entries in the set.
 ```rescript
 let set = Set.make()
 
-set-\>Set.add("someKey")
-let size = set-\>Set.size // 1
+set->Set.add("someKey")
+let size = set->Set.size // 1
 
-set-\>Set.clear
-let size = set-\>Set.size // 0
+set->Set.clear
+let size = set->Set.size // 0
 ```
 
 ### let RescriptCore.Set.add
@@ -10992,7 +10992,7 @@ Adds a new value to the set.
 #### Examples
 ```rescript
 let set = Set.make()
-set-\>Set.add("someValue")
+set->Set.add("someValue")
 ```
 
 ### let RescriptCore.Set.delete
@@ -11006,11 +11006,11 @@ Deletes the provided `value` from the set. Returns a `bool` for whether the valu
 #### Examples
 ```rescript
 let set = Set.make()
-set-\>Set.add("someValue")
-let didDeleteValue = set-\>Set.delete("someValue")
+set->Set.add("someValue")
+let didDeleteValue = set->Set.delete("someValue")
 Console.log(didDeleteValue) // Logs `true` to the console, becuase the set had the value, so it was successfully deleted
 
-let didDeleteValue = set-\>Set.delete("someNonExistantKey")
+let didDeleteValue = set->Set.delete("someNonExistantKey")
 Console.log(didDeleteValue) // Logs `false` to the console, becuase the value did not exist in the set
 ```
 
@@ -11025,11 +11025,11 @@ Checks whether the set has a specific value.
 #### Examples
 ```rescript
 let set = Set.make()
-set-\>Set.add("someValue")
+set->Set.add("someValue")
 
-switch set-\>Set.has("someValue") {
-| false =\> Console.log("Nope, didn't have it.")
-| true =\> Console.log("Yay, we have the value!")
+switch set->Set.has("someValue") {
+| false => Console.log("Nope, didn't have it.")
+| true => Console.log("Yay, we have the value!")
 }
 ```
 
@@ -11044,10 +11044,10 @@ Iterates through all values of the set.
 #### Examples
 ```rescript
 let set = Set.make()
-set-\>Set.add("someValue")
-set-\>Set.add("someValue2")
+set->Set.add("someValue")
+set->Set.add("someValue2")
 
-set-\>Set.forEach(value =\> {
+set->Set.forEach(value => {
   Console.log(value)
 })
 ```
@@ -11063,17 +11063,17 @@ Returns an iterator that holds all values of the set.
 #### Examples
 ```rescript
 let set = Set.make()
-set-\>Set.add("someValue")
-set-\>Set.add("anotherValue")
+set->Set.add("someValue")
+set->Set.add("anotherValue")
 
-let values = set-\>Set.values
+let values = set->Set.values
 
 // Logs the first value
 Console.log(Iterator.next(values).value)
 
 // You can also turn the iterator into an array.
 // Remember that an iterator consumes values. We'll need a fresh values iterator to get an array of all values, since we consumed a value via `next` above already.
-Console.log(set-\>Set.values-\>Iterator.toArray)
+Console.log(set->Set.values->Iterator.toArray)
 ```
 
 ## module RescriptCore.WeakSet `alias`
@@ -13069,9 +13069,9 @@ See [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -13090,9 +13090,9 @@ See [`RegExp parameters`](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 // Match the first word in a sentence
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -13111,7 +13111,7 @@ See [`RegExp.test`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-if regexp-\>RegExp.test("ReScript is cool!") {
+if regexp->RegExp.test("ReScript is cool!") {
   Console.log("Yay, there's a word in there.")
 }
 ```
@@ -13131,9 +13131,9 @@ See [`RegExp.exec`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 // Match the first word in a sentence
 let regexp = RegExp.fromString("\\w+")
 
-switch regexp-\>RegExp.exec("ReScript is pretty cool, right?") {
-| None =\> Console.log("Nope, no match...")
-| Some(result) =\> Console.log(result-\>RegExp.Result.fullMatch) // Prints "ReScript"
+switch regexp->RegExp.exec("ReScript is pretty cool, right?") {
+| None => Console.log("Nope, no match...")
+| Some(result) => Console.log(result->RegExp.Result.fullMatch) // Prints "ReScript"
 }
 ```
 
@@ -13153,11 +13153,11 @@ See [`RegExp.lastIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 let regexp = RegExp.fromString("\\w+")
 let someStr = "Many words here."
 
-Console.log(regexp-\>RegExp.lastIndex) // Logs `0` to the console
+Console.log(regexp->RegExp.lastIndex) // Logs `0` to the console
 
-regexp-\>RegExp.exec(someStr)-\>ignore
+regexp->RegExp.exec(someStr)->ignore
 
-Console.log(regexp-\>RegExp.lastIndex) // Logs `4` to the console
+Console.log(regexp->RegExp.lastIndex) // Logs `4` to the console
 ```
 
 ### let RescriptCore.Re.ignoreCase
@@ -13173,10 +13173,10 @@ See [`RegExp.ignoreCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.ignoreCase) // Logs `false`, since `i` is not set
+Console.log(regexp1->RegExp.ignoreCase) // Logs `false`, since `i` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="i")
-Console.log(regexp2-\>RegExp.ignoreCase) // Logs `true`, since `i` is set
+Console.log(regexp2->RegExp.ignoreCase) // Logs `true`, since `i` is set
 ```
 
 ### let RescriptCore.Re.global
@@ -13192,10 +13192,10 @@ See [`RegExp.global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.global) // Logs `true`, since `g` is set
+Console.log(regexp1->RegExp.global) // Logs `true`, since `g` is set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="i")
-Console.log(regexp2-\>RegExp.global) // Logs `false`, since `g` is not set
+Console.log(regexp2->RegExp.global) // Logs `false`, since `g` is not set
 ```
 
 ### let RescriptCore.Re.multiline
@@ -13211,10 +13211,10 @@ See [`RegExp.multiline`](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.multiline) // Logs `false`, since `m` is not set
+Console.log(regexp1->RegExp.multiline) // Logs `false`, since `m` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="mi")
-Console.log(regexp2-\>RegExp.multiline) // Logs `true`, since `m` is set
+Console.log(regexp2->RegExp.multiline) // Logs `true`, since `m` is set
 ```
 
 ### let RescriptCore.Re.source
@@ -13230,7 +13230,7 @@ See [`RegExp.source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp-\>RegExp.source) // Logs `\w+`, the source text of the `RegExp`
+Console.log(regexp->RegExp.source) // Logs `\w+`, the source text of the `RegExp`
 ```
 
 ### let RescriptCore.Re.sticky
@@ -13246,10 +13246,10 @@ See [`RegExp.sticky`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.unicode) // Logs `false`, since `y` is not set
+Console.log(regexp1->RegExp.unicode) // Logs `false`, since `y` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="my")
-Console.log(regexp2-\>RegExp.unicode) // Logs `true`, since `y` is set
+Console.log(regexp2->RegExp.unicode) // Logs `true`, since `y` is set
 ```
 
 ### let RescriptCore.Re.unicode
@@ -13265,10 +13265,10 @@ See [`RegExp.unicode`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 #### Examples
 ```rescript
 let regexp1 = RegExp.fromStringWithFlags("\\w+", ~flags="g")
-Console.log(regexp1-\>RegExp.unicode) // Logs `false`, since `u` is not set
+Console.log(regexp1->RegExp.unicode) // Logs `false`, since `u` is not set
 
 let regexp2 = RegExp.fromStringWithFlags("\\w+", ~flags="mu")
-Console.log(regexp2-\>RegExp.unicode) // Logs `true`, since `u` is set
+Console.log(regexp2->RegExp.unicode) // Logs `true`, since `u` is set
 ```
 
 ## module RescriptCore.Exn `alias`
@@ -13283,11 +13283,11 @@ The `option` type is a part of the ReScript standard library which is defined
 like this:
 
 ```rescript
-type option\<'a\> = None | Some('a)
+type option<'a> = None | Some('a)
 ```
 
 ```rescript
-let someString: option\<string\> = Some("hello")
+let someString: option<string> = Some("hello")
 ```
 
 ### let RescriptCore.Option.filter
@@ -13301,9 +13301,9 @@ let filter: (. option<'a>, (. 'a) => bool) => option<'a>
 #### Examples
 
 ```rescript
-Option.filter(Some(10), x =\> x \> 5) // Some(10)
-Option.filter(Some(4), x =\> x \> 5) // None
-Option.filter(None, x =\> x \> 5) // None
+Option.filter(Some(10), x => x > 5) // Some(10)
+Option.filter(Some(4), x => x > 5) // None
+Option.filter(None, x => x > 5) // None
 ```
 
 ### let RescriptCore.Option.forEach
@@ -13318,8 +13318,8 @@ let forEach: (. option<'a>, (. 'a) => unit) => unit
 #### Examples
 
 ```rescript
-Option.forEach(Some("thing"), x =\> Console.log(x)) // logs "thing"
-Option.forEach(None, x =\> Console.log(x)) // returns ()
+Option.forEach(Some("thing"), x => Console.log(x)) // logs "thing"
+Option.forEach(None, x => Console.log(x)) // returns ()
 ```
 
 ### let RescriptCore.Option.getExn
@@ -13351,7 +13351,7 @@ let getUnsafe: (. option<'a>) => 'a
 
 ```rescript
 Option.getUnsafe(Some(3)) == 3
-Option.getUnsafe(None: option\<int\>) // Returns `undefined`, which is not a valid `int`
+Option.getUnsafe(None: option<int>) // Returns `undefined`, which is not a valid `int`
 ```
 
 #### Notes
@@ -13370,10 +13370,10 @@ let mapOr: (. option<'a>, 'b, (. 'a) => 'b) => 'b
 
 ```rescript
 let someValue = Some(3)
-someValue-\>Option.mapOr(0, x =\> x + 5) // 8
+someValue->Option.mapOr(0, x => x + 5) // 8
 
 let noneValue = None
-noneValue-\>Option.mapOr(0, x =\> x + 5) // 0
+noneValue->Option.mapOr(0, x => x + 5) // 0
 ```
 
 ### let RescriptCore.Option.mapWithDefault
@@ -13394,8 +13394,8 @@ let map: (. option<'a>, (. 'a) => 'b) => option<'b>
 #### Examples
 
 ```rescript
-Option.map(Some(3), x =\> x * x) // Some(9)
-Option.map(None, x =\> x * x) // None
+Option.map(Some(3), x => x * x) // Some(9)
+Option.map(None, x => x * x) // None
 ```
 
 ### let RescriptCore.Option.flatMap
@@ -13409,8 +13409,8 @@ let flatMap: (. option<'a>, (. 'a) => option<'b>) => option<'b>
 #### Examples
 
 ```rescript
-let addIfAboveOne = value =\>
-  if (value \> 1) {
+let addIfAboveOne = value =>
+  if (value > 1) {
     Some(value + 1)
   } else {
     None
@@ -13435,11 +13435,11 @@ let getOr: (. option<'a>, 'a) => 'a
 Option.getOr(None, "Banana") // Banana
 Option.getOr(Some("Apple"), "Banana") // Apple
 
-let greet = (firstName: option\<string\>) =\>
-  "Greetings " ++ firstName-\>Option.getOr("Anonymous")
+let greet = (firstName: option<string>) =>
+  "Greetings " ++ firstName->Option.getOr("Anonymous")
 
-Some("Jane")-\>greet // "Greetings Jane"
-None-\>greet // "Greetings Anonymous"
+Some("Jane")->greet // "Greetings Jane"
+None->greet // "Greetings Anonymous"
 ```
 
 ### let RescriptCore.Option.getWithDefault
@@ -13510,7 +13510,7 @@ If arguments are `Some(value1)` and `Some(value2)`, returns the result of
 #### Examples
 
 ```rescript
-let clockEqual = (a, b) =\> mod(a, 12) == mod(b, 12)
+let clockEqual = (a, b) => mod(a, 12) == mod(b, 12)
 
 open Option
 
@@ -13545,7 +13545,7 @@ the first argument is greater than the second.
 #### Examples
 
 ```rescript
-let clockCompare = (a, b) =\> compare(mod(a, 12), mod(b, 12))
+let clockCompare = (a, b) => compare(mod(a, 12), mod(b, 12))
 
 open Option
 
@@ -13704,9 +13704,9 @@ is larger than the length of list `list`.
 ```rescript
 let abc = list{"A", "B", "C"}
 
-abc-\>List.get(1) // Some("B")
+abc->List.get(1) // Some("B")
 
-abc-\>List.get(4) // None
+abc->List.get(4) // None
 ```
 
 ### let RescriptCore.List.getExn
@@ -13722,9 +13722,9 @@ let getExn: (. t<'a>, int) => 'a
 ```rescript
 let abc = list{"A", "B", "C"}
 
-abc-\>List.getExn(1) // "B"
+abc->List.getExn(1) // "B"
 
-abc-\>List.getExn(4) // Raises an Error
+abc->List.getExn(4) // Raises an Error
 ```
 
 #### Exceptions
@@ -13758,9 +13758,9 @@ with `f`. Returns an empty list if `length` is negative.
 #### Examples
 
 ```rescript
-List.makeBy(5, i =\> i) // list{0, 1, 2, 3, 4}
+List.makeBy(5, i => i) // list{0, 1, 2, 3, 4}
 
-List.makeBy(5, i =\> i * i) // list{0, 1, 4, 9, 16}
+List.makeBy(5, i => i * i) // list{0, 1, 4, 9, 16}
 ```
 
 ### let RescriptCore.List.toShuffled
@@ -13789,11 +13789,11 @@ Returns `None` if `list` has fewer than `value` elements.
 #### Examples
 
 ```rescript
-list{1, 2, 3}-\>List.drop(2) // Some(list{3})
+list{1, 2, 3}->List.drop(2) // Some(list{3})
 
-list{1, 2, 3}-\>List.drop(3) // Some(list{})
+list{1, 2, 3}->List.drop(3) // Some(list{})
 
-list{1, 2, 3}-\>List.drop(4) // None
+list{1, 2, 3}->List.drop(4) // None
 ```
 
 ### let RescriptCore.List.take
@@ -13808,11 +13808,11 @@ or `None` if `list` has fewer than `value` elements.
 #### Examples
 
 ```rescript
-list{1, 2, 3}-\>List.take(1) // Some(list{1})
+list{1, 2, 3}->List.take(1) // Some(list{1})
 
-list{1, 2, 3}-\>List.take(2) // Some(list{1, 2})
+list{1, 2, 3}->List.take(2) // Some(list{1, 2})
 
-list{1, 2, 3}-\>List.take(4) // None
+list{1, 2, 3}->List.take(4) // None
 ```
 
 ### let RescriptCore.List.splitAt
@@ -13827,9 +13827,9 @@ of `list` is less than `n`.
 #### Examples
 
 ```rescript
-list{"Hello", "World"}-\>List.splitAt(1) // Some((list{"Hello"}, list{"World"}))
+list{"Hello", "World"}->List.splitAt(1) // Some((list{"Hello"}, list{"World"}))
 
-list{0, 1, 2, 3, 4}-\>List.splitAt(2) // Some((list{0, 1}, list{2, 3, 4}))
+list{0, 1, 2, 3, 4}->List.splitAt(2) // Some((list{0, 1}, list{2, 3, 4}))
 ```
 
 ### let RescriptCore.List.concat
@@ -13901,7 +13901,7 @@ let map: (. t<'a>, (. 'a) => 'b) => t<'b>
 #### Examples
 
 ```rescript
-list{1, 2}-\>List.map(x =\> x + 1) // list{3, 4}
+list{1, 2}->List.map(x => x + 1) // list{3, 4}
 ```
 
 ### let RescriptCore.List.zip
@@ -13930,7 +13930,7 @@ let zipBy: (. t<'a>, t<'b>, (. 'a, 'b) => 'c) => t<'c>
 #### Examples
 
 ```rescript
-List.zipBy(list{1, 2, 3}, list{4, 5}, (a, b) =\> 2 * a + b) // list{6, 9}
+List.zipBy(list{1, 2, 3}, list{4, 5}, (a, b) => 2 * a + b) // list{6, 9}
 ```
 
 ### let RescriptCore.List.mapWithIndex
@@ -13946,7 +13946,7 @@ that order.
 #### Examples
 
 ```rescript
-list{1, 2, 3}-\>List.mapWithIndex((index, x) =\> index + x) // list{1, 3, 5}
+list{1, 2, 3}->List.mapWithIndex((index, x) => index + x) // list{1, 3, 5}
 ```
 
 ### let RescriptCore.List.fromArray
@@ -14003,11 +14003,11 @@ let mapReverse: (. t<'a>, (. 'a) => 'b) => t<'b>
 #### Examples
 
 ```rescript
-let f = x =\> x * x
+let f = x => x * x
 let l = list{3, 4, 5}
 
-let withMap = List.map(l, f)-\>List.reverse
-let withMapReverse = l-\>List.mapReverse(f)
+let withMap = List.map(l, f)->List.reverse
+let withMapReverse = l->List.mapReverse(f)
 
 Console.log(withMap == withMapReverse) // true
 ```
@@ -14025,7 +14025,7 @@ concerned with repetitively creating side effects.
 #### Examples
 
 ```rescript
-List.forEach(list{"a", "b", "c"}, x =\> Console.log("Item: " ++ x))
+List.forEach(list{"a", "b", "c"}, x => Console.log("Item: " ++ x))
 /*
   prints:
   Item: a
@@ -14047,7 +14047,7 @@ element from `list`. `f` returns `unit`.
 #### Examples
 
 ```rescript
-List.forEachWithIndex(list{"a", "b", "c"}, (index, x) =\> {
+List.forEachWithIndex(list{"a", "b", "c"}, (index, x) => {
   Console.log("Item " ++ Int.toString(index) ++ " is " ++ x)
 })
 /*
@@ -14072,11 +14072,11 @@ the final value of the accumulator.
 #### Examples
 
 ```rescript
-list{1, 2, 3, 4}-\>List.reduce(0, (a, b) =\> a + b) // 10
+list{1, 2, 3, 4}->List.reduce(0, (a, b) => a + b) // 10
 
 // same as
 
-list{1, 2, 3, 4}-\>List.reduce(0, (acc, item) =\> acc + item) // 10
+list{1, 2, 3, 4}->List.reduce(0, (acc, item) => acc + item) // 10
 ```
 
 ### let RescriptCore.List.reduceWithIndex
@@ -14093,7 +14093,7 @@ of each element. `reduceWithIndex` returns the final value of the accumulator.
 #### Examples
 
 ```rescript
-list{1, 2, 3, 4}-\>List.reduceWithIndex(0, (acc, item, index) =\> acc + item + index) // 16
+list{1, 2, 3, 4}->List.reduceWithIndex(0, (acc, item, index) => acc + item + index) // 16
 ```
 
 ### let RescriptCore.List.reduceReverse
@@ -14108,11 +14108,11 @@ function `f` is applied to each item of `list` from the last back to the first.
 #### Examples
 
 ```rescript
-list{1, 2, 3, 4}-\>List.reduceReverse(0, (a, b) =\> a + b) // 10
+list{1, 2, 3, 4}->List.reduceReverse(0, (a, b) => a + b) // 10
 
-list{1, 2, 3, 4}-\>List.reduceReverse(10, (a, b) =\> a - b) // 0
+list{1, 2, 3, 4}->List.reduceReverse(10, (a, b) => a - b) // 0
 
-list{1, 2, 3, 4}-\>List.reduceReverse(list{}, List.add) // list{1, 2, 3, 4}
+list{1, 2, 3, 4}->List.reduceReverse(list{}, List.add) // list{1, 2, 3, 4}
 ```
 
 ### let RescriptCore.List.mapReverse2
@@ -14126,7 +14126,7 @@ let mapReverse2: (. t<'a>, t<'b>, (. 'a, 'b) => 'c) => t<'c>
 #### Examples
 
 ```rescript
-List.mapReverse2(list{1, 2, 3}, list{1, 2}, (a, b) =\> a + b) // list{4, 2}
+List.mapReverse2(list{1, 2, 3}, list{1, 2}, (a, b) => a + b) // list{4, 2}
 ```
 
 ### let RescriptCore.List.forEach2
@@ -14141,7 +14141,7 @@ stops at the length of the shorter list.
 #### Examples
 
 ```rescript
-List.forEach2(list{"Z", "Y"}, list{"A", "B", "C"}, (x, y) =\> Console.log2(x, y))
+List.forEach2(list{"Z", "Y"}, list{"A", "B", "C"}, (x, y) => Console.log2(x, y))
 
 /*
   prints:
@@ -14165,7 +14165,7 @@ accumulator.
 #### Examples
 
 ```rescript
-List.reduce2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) =\> acc + x * x + y) // 0 + (1 * 1 + 4) + (2 * 2 + 5)
+List.reduce2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y) // 0 + (1 * 1 + 4) + (2 * 2 + 5)
 ```
 
 ### let RescriptCore.List.reduceReverse2
@@ -14183,7 +14183,7 @@ final value of the accumulator.
 #### Examples
 
 ```rescript
-List.reduceReverse2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) =\> acc + x * x + y) //  + (1 * 1 + 4) + (2 * 2 + 5)
+List.reduceReverse2(list{1, 2, 3}, list{4, 5}, 0, (acc, x, y) => acc + x * x + y) //  + (1 * 1 + 4) + (2 * 2 + 5)
 ```
 
 ### let RescriptCore.List.every
@@ -14198,11 +14198,11 @@ is a predicate: a function taking an element and returning a bool.
 #### Examples
 
 ```rescript
-let isBelow10 = value =\> value \< 10
+let isBelow10 = value => value < 10
 
-list{1, 9, 8, 2}-\>List.every(isBelow10) // true
+list{1, 9, 8, 2}->List.every(isBelow10) // true
 
-list{1, 99, 8, 2}-\>List.every(isBelow10) // false
+list{1, 99, 8, 2}->List.every(isBelow10) // false
 ```
 
 ### let RescriptCore.List.some
@@ -14218,11 +14218,11 @@ returning a bool.
 #### Examples
 
 ```rescript
-let isAbove100 = value =\> value \> 100
+let isAbove100 = value => value > 100
 
-list{101, 1, 2, 3}-\>List.some(isAbove100) // true
+list{101, 1, 2, 3}->List.some(isAbove100) // true
 
-list{1, 2, 3, 4}-\>List.some(isAbove100) // false
+list{1, 2, 3, 4}->List.some(isAbove100) // false
 ```
 
 ### let RescriptCore.List.every2
@@ -14237,13 +14237,13 @@ pairs of elements up to the shorter length (i.e. `min(length(list1), length(list
 #### Examples
 
 ```rescript
-List.every2(list{1, 2, 3}, list{0, 1}, (a, b) =\> a \> b) // true
+List.every2(list{1, 2, 3}, list{0, 1}, (a, b) => a > b) // true
 
-List.every2(list{}, list{1}, (a, b) =\> a \> b) // true
+List.every2(list{}, list{1}, (a, b) => a > b) // true
 
-List.every2(list{2, 3}, list{1}, (a, b) =\> a \> b) // true
+List.every2(list{2, 3}, list{1}, (a, b) => a > b) // true
 
-List.every2(list{0, 1}, list{5, 0}, (a, b) =\> a \> b) // false
+List.every2(list{0, 1}, list{5, 0}, (a, b) => a > b) // false
 ```
 
 ### let RescriptCore.List.some2
@@ -14258,13 +14258,13 @@ of elements up to the shorter length (i.e. `min(length(list1), length(list2))`)
 #### Examples
 
 ```rescript
-List.some2(list{1, 2, 3}, list{0, 1}, (a, b) =\> a \> b) // true
+List.some2(list{1, 2, 3}, list{0, 1}, (a, b) => a > b) // true
 
-List.some2(list{}, list{1}, (a, b) =\> a \> b) // false
+List.some2(list{}, list{1}, (a, b) => a > b) // false
 
-List.some2(list{2, 3}, list{1}, (a, b) =\> a \> b) // true
+List.some2(list{2, 3}, list{1}, (a, b) => a > b) // true
 
-List.some2(list{0, 1}, list{5, 0}, (a, b) =\> a \> b) // true
+List.some2(list{0, 1}, list{5, 0}, (a, b) => a > b) // true
 ```
 
 ### let RescriptCore.List.compareLength
@@ -14310,15 +14310,15 @@ zero for all `list1` and `list2`.
 #### Examples
 
 ```rescript
-List.compare(list{3}, list{3, 7}, (a, b) =\> compare(a, b)) /* (-1.) */
+List.compare(list{3}, list{3, 7}, (a, b) => compare(a, b)) /* (-1.) */
 
-List.compare(list{5, 3}, list{5}, (a, b) =\> compare(a, b)) /* 1. */
+List.compare(list{5, 3}, list{5}, (a, b) => compare(a, b)) /* 1. */
 
-List.compare(list{1, 3, 5}, list{1, 4, 2}, (a, b) =\> compare(a, b)) /* (-1.) */
+List.compare(list{1, 3, 5}, list{1, 4, 2}, (a, b) => compare(a, b)) /* (-1.) */
 
-List.compare(list{1, 3, 5}, list{1, 2, 3}, (a, b) =\> compare(a, b)) /* 1. */
+List.compare(list{1, 3, 5}, list{1, 2, 3}, (a, b) => compare(a, b)) /* 1. */
 
-List.compare(list{1, 3, 5}, list{1, 3, 5}, (a, b) =\> compare(a, b)) /* 0. */
+List.compare(list{1, 3, 5}, list{1, 3, 5}, (a, b) => compare(a, b)) /* 0. */
 ```
 
 **Please note:** The total ordering of List is different from Array,
@@ -14339,11 +14339,11 @@ of `list1` and `list2` are not the same.
 #### Examples
 
 ```rescript
-List.equal(list{1, 2, 3}, list{1, 2}, (a, b) =\> a == b) // false
+List.equal(list{1, 2, 3}, list{1, 2}, (a, b) => a == b) // false
 
-List.equal(list{1, 2}, list{1, 2}, (a, b) =\> a == b) // true
+List.equal(list{1, 2}, list{1, 2}, (a, b) => a == b) // true
 
-List.equal(list{1, 2, 3}, list{(-1), (-2), (-3)}, (a, b) =\> abs(a) == abs(b)) // true
+List.equal(list{1, 2, 3}, list{(-1), (-2), (-3)}, (a, b) => abs(a) == abs(b)) // true
 ```
 
 ### let RescriptCore.List.has
@@ -14358,11 +14358,11 @@ let has: (. t<'a>, 'b, (. 'a, 'b) => bool) => bool
 #### Examples
 
 ```rescript
-list{1, 2, 3}-\>List.has(2, (a, b) =\> a == b) // true
+list{1, 2, 3}->List.has(2, (a, b) => a == b) // true
 
-list{1, 2, 3}-\>List.has(4, (a, b) =\> a == b) // false
+list{1, 2, 3}->List.has(4, (a, b) => a == b) // false
 
-list{(-1), (-2), (-3)}-\>List.has(2, (a, b) =\> abs(a) == abs(b)) // true
+list{(-1), (-2), (-3)}->List.has(2, (a, b) => abs(a) == abs(b)) // true
 ```
 
 ### let RescriptCore.List.getBy
@@ -14378,9 +14378,9 @@ the function.
 #### Examples
 
 ```rescript
-List.getBy(list{1, 4, 3, 2}, x =\> x \> 3) // Some(4)
+List.getBy(list{1, 4, 3, 2}, x => x > 3) // Some(4)
 
-List.getBy(list{1, 4, 3, 2}, x =\> x \> 4) // None
+List.getBy(list{1, 4, 3, 2}, x => x > 4) // None
 ```
 
 ### let RescriptCore.List.filter
@@ -14395,7 +14395,7 @@ predicate function `f`.
 #### Examples
 
 ```rescript
-let isEven = x =\> mod(x, 2) == 0
+let isEven = x => mod(x, 2) == 0
 
 List.filter(list{1, 2, 3, 4}, isEven) // list{2, 4}
 
@@ -14414,9 +14414,9 @@ satisfy the predicate function `f`.
 #### Examples
 
 ```rescript
-let isEven = x =\> mod(x, 2) == 0
+let isEven = x => mod(x, 2) == 0
 
-List.filterWithIndex(list{1, 2, 3, 4}, (_x, index) =\> isEven(index)) // list{1, 3}
+List.filterWithIndex(list{1, 2, 3, 4}, (_x, index) => isEven(index)) // list{1, 3}
 ```
 
 ### let RescriptCore.List.filterMap
@@ -14432,10 +14432,10 @@ let filterMap: (. t<'a>, (. 'a) => option<'b>) => t<'b>
 #### Examples
 
 ```rescript
-let isEven = x =\> mod(x, 2) == 0
+let isEven = x => mod(x, 2) == 0
 
 list{1, 2, 3, 4}
--\>List.filterMap(x =\>
+->List.filterMap(x =>
     if (isEven(x)) {
       Some(x)
     } else {
@@ -14443,7 +14443,7 @@ list{1, 2, 3, 4}
     }
   ) // list{2, 4}
 
-list{Some(1), Some(2), None}-\>List.filterMap(x =\> x) // list{1, 2}
+list{Some(1), Some(2), None}->List.filterMap(x => x) // list{1, 2}
 ```
 
 ### let RescriptCore.List.partition
@@ -14461,7 +14461,7 @@ consists of all elements of `list` that _do not_ satisfy `f`.
 ```rescript
 // (elementsThatSatisfies, elementsThatDoesNotSatisfy)
 
-List.partition(list{1, 2, 3, 4}, x =\> x \> 2) // (list{3, 4}, list{1, 2})
+List.partition(list{1, 2, 3, 4}, x => x > 2) // (list{3, 4}, list{1, 2})
 ```
 
 ### let RescriptCore.List.unzip
@@ -14496,10 +14496,10 @@ not found.
 #### Examples
 
 ```rescript
-list{(1, "a"), (2, "b"), (3, "c")}-\>List.getAssoc(3, (a, b) =\> a == b) // Some("c")
+list{(1, "a"), (2, "b"), (3, "c")}->List.getAssoc(3, (a, b) => a == b) // Some("c")
 
 list{(9, "morning"), (15, "afternoon"), (22, "night")}
--\>List.getAssoc(15, (k, item) =\> k /* 15 */ == item /* 9, 5, 22 */)
+->List.getAssoc(15, (k, item) => k /* 15 */ == item /* 9, 5, 22 */)
 // Some("afternoon")
 ```
 
@@ -14515,10 +14515,10 @@ first element equals `k` as per the predicate function `f`.
 #### Examples
 
 ```rescript
-list{(1, "a"), (2, "b"), (3, "c")}-\>List.hasAssoc(1, (a, b) =\> a == b) // true
+list{(1, "a"), (2, "b"), (3, "c")}->List.hasAssoc(1, (a, b) => a == b) // true
 
 list{(9, "morning"), (15, "afternoon"), (22, "night")}
--\>List.hasAssoc(25, (k, item) =\> k /* 25 */ == item /* 9, 5, 22 */) // false
+->List.hasAssoc(25, (k, item) => k /* 25 */ == item /* 9, 5, 22 */) // false
 ```
 
 ### let RescriptCore.List.removeAssoc
@@ -14534,10 +14534,10 @@ list identical to `list`.
 #### Examples
 
 ```rescript
-list{(1, "a"), (2, "b"), (3, "c")}-\>List.removeAssoc(1, (a, b) =\> a == b) // list{(2, "b"), (3, "c")}
+list{(1, "a"), (2, "b"), (3, "c")}->List.removeAssoc(1, (a, b) => a == b) // list{(2, "b"), (3, "c")}
 
 list{(9, "morning"), (15, "afternoon"), (22, "night")}
--\>List.removeAssoc(9, (k, item) =\> k /* 9 */ == item /* 9, 5, 22 */)
+->List.removeAssoc(9, (k, item) => k /* 9 */ == item /* 9, 5, 22 */)
 // list{(15, "afternoon"), (22, "night")}
 ```
 
@@ -14555,12 +14555,12 @@ predicate, return a new list with the key and value replaced by the new `k` and
 #### Examples
 
 ```rescript
-list{(1, "a"), (2, "b"), (3, "c")}-\>List.setAssoc(2, "x", (a, b) =\> a == b) // list{(1, "a"), (2, "x"), (3, "c")}
+list{(1, "a"), (2, "b"), (3, "c")}->List.setAssoc(2, "x", (a, b) => a == b) // list{(1, "a"), (2, "x"), (3, "c")}
 
-list{(1, "a"), (3, "c")}-\>List.setAssoc(2, "b", (a, b) =\> a == b) // list{(2, "b"), (1, "a"), (3, "c")}
+list{(1, "a"), (3, "c")}->List.setAssoc(2, "b", (a, b) => a == b) // list{(2, "b"), (1, "a"), (3, "c")}
 
 list{(9, "morning"), (3, "morning?!"), (22, "night")}
--\>List.setAssoc(15, "afternoon", (a, b) =\> mod(a, 12) == mod(b, 12))
+->List.setAssoc(15, "afternoon", (a, b) => mod(a, 12) == mod(b, 12))
 // list{(9, "morning"), (15, "afternoon"), (22, "night")}
 ```
 
@@ -14828,7 +14828,7 @@ let mapError: (. result<'a, 'b>, (. 'b) => 'c) => result<'a, 'c>
 #### Examples
 
 ```rescript
-let format = n =\> `Error code: ${n-\>Int.toString}`
+let format = n => `Error code: ${n->Int.toString}`
 mapError(Error(14), format) // Error("Error code: 14")
 mapError(Ok("abc"), format) // Ok("abc")
 ```
