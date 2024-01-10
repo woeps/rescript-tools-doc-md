@@ -11,7 +11,8 @@
     "test": "node ./test/Test.bs.js",
     "customTest": "node ./test/CustomTest.bs.js",
     "testToFile": "npm run test > ./test/result.md",
-    "customTestToFile": "npm run customTest > ./test/customResult.md"
+    "customTestToFile": "npm run customTest > ./test/customResult.md",
+    "allTests": "npm run makeTestJson && npm run testToFile && npm run makeCustomTestJson && npm run customTestToFile"
   },
   "keywords": [
     "rescript"
