@@ -29,15 +29,14 @@ function renderDeprecationWarning(md, deprecated) {
 function corretDocStringHeadingLevel(levelOpt, txt) {
   var level = levelOpt !== undefined ? levelOpt : 0;
   return txt.split("\n").map(function (line) {
-                var trimmedLine = line.trimStart();
-                var headingLevel = Markdown.headingLevel(trimmedLine);
+                var headingLevel = Markdown.headingLevel(line);
                 var diff = (level - headingLevel | 0) + 1 | 0;
                 var missingLevels = headingLevel <= 0 || diff < 0 ? 0 : diff;
-                return "#".repeat(missingLevels) + trimmedLine;
+                return "#".repeat(missingLevels) + line;
               }).join("\n");
 }
 
-function renderModuleDocs(md, levelOpt, docs) {
+function renderDocStrings(md, levelOpt, docs) {
   var level = levelOpt !== undefined ? levelOpt : 0;
   return Markdown.append(md, Core__Array.reduce(docs, Markdown.empty(), (function (md, txt) {
                     return Markdown.append(md, Markdown.p(Markdown.make(undefined, corretDocStringHeadingLevel(level, txt))));
@@ -50,18 +49,18 @@ function renderSignature(sig) {
 
 function renderRecordFields(fields) {
   return Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Record Fields:"))), Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
-                    return Markdown.append(md, renderModuleDocs(renderDeprecationWarning(Markdown.appendO(renderSignature(param.name + ": " + param.signature), param.optional ? Caml_option.some(Markdown.append(Markdown.make(undefined, " "), Markdown.forceLine(Markdown.emph(Markdown.make(undefined, "optional"))))) : undefined), param.deprecated), 4, param.docstrings));
+                    return Markdown.append(md, renderDocStrings(renderDeprecationWarning(Markdown.appendO(renderSignature(param.name + ": " + param.signature), param.optional ? Caml_option.some(Markdown.append(Markdown.make(undefined, " "), Markdown.forceLine(Markdown.emph(Markdown.make(undefined, "optional"))))) : undefined), param.deprecated), 4, param.docstrings));
                   })));
 }
 
 function renderItem(param, name, level, docstrings, deprecated, detail, signature, _unit) {
-  return Markdown.appendO(renderModuleDocs(Markdown.appendO(renderDeprecationWarning(title(name, level), deprecated), Core__Option.map(signature, renderSignature)), level, docstrings), Core__Option.map(detail, (function (d) {
+  return Markdown.appendO(renderDocStrings(Markdown.appendO(renderDeprecationWarning(title(name, level), deprecated), Core__Option.map(signature, renderSignature)), level, docstrings), Core__Option.map(detail, (function (d) {
                     if (d.kind === "record") {
                       return renderRecordFields(d.items);
                     } else {
                       var constructors = d.items;
                       return Core__Array.reduce(constructors, Markdown.empty(), (function (md, param) {
-                                    return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Variant Constructor:"))), Markdown.appendO(renderModuleDocs(renderDeprecationWarning(renderSignature(param.signature), param.deprecated), 4, param.docstrings), Core__Option.map(param.items, (function (payload) {
+                                    return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Variant Constructor:"))), Markdown.appendO(renderDocStrings(renderDeprecationWarning(renderSignature(param.signature), param.deprecated), 4, param.docstrings), Core__Option.map(param.items, (function (payload) {
                                                               return renderRecordFields(payload.fields);
                                                             })))));
                                   }));
@@ -94,7 +93,7 @@ function itemDocs(md, items) {
 }
 
 function render(param) {
-  return itemDocs(renderModuleDocs(renderDeprecationWarning(title(param.name, undefined), param.deprecated), undefined, param.docstrings), param.items);
+  return itemDocs(renderDocStrings(renderDeprecationWarning(title(param.name, undefined), param.deprecated), undefined, param.docstrings), param.items);
 }
 
 exports.render = render;

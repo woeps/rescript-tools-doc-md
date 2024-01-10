@@ -26,19 +26,18 @@ let corretDocStringHeadingLevel: (~level: int=?, string) => string = (~level=0, 
   txt
   ->String.split("\n")
   ->Array.map(line => {
-    let trimmedLine = line->String.trimStart
-    let headingLevel = trimmedLine->Markdown.headingLevel
+    let headingLevel = line->Markdown.headingLevel
     let missingLevels = {
       let diff = level - headingLevel + 1
       headingLevel <= 0 || diff < 0 ? 0 : diff
     }
 
-    String.repeat("#", missingLevels) ++ trimmedLine
+    String.repeat("#", missingLevels) ++ line
   })
   ->Array.joinWith("\n")
 }
 
-let renderModuleDocs: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (
+let renderDocStrings: (Markdown.t, ~level: int=?, array<string>) => Markdown.t = (
   md,
   ~level=0,
   docs,
@@ -75,7 +74,7 @@ let renderRecordFields: array<RescriptTools.Docgen.field> => Markdown.t = fields
         renderSignature(`${name}: ${signature}`)
         ->appendO(optional ? " "->make->append("optional"->make->emph->forceLine)->Some : None)
         ->renderDeprecationWarning(deprecated)
-        ->renderModuleDocs(~level=4, docstrings),
+        ->renderDocStrings(~level=4, docstrings),
       )
     }),
   )
@@ -103,7 +102,7 @@ let renderVariantConstructors: array<
       ->append(
         renderSignature(signature)
         ->renderDeprecationWarning(deprecated)
-        ->renderModuleDocs(~level=4, docstrings)
+        ->renderDocStrings(~level=4, docstrings)
         ->appendO(items->Option.map(payload => payload->renderVariantConstructorPayload)),
       ),
     )
@@ -141,7 +140,7 @@ let renderItem: (
   title(name, ~level)
   ->renderDeprecationWarning(deprecated)
   ->appendO(signature->Option.map(renderSignature))
-  ->renderModuleDocs(docstrings, ~level)
+  ->renderDocStrings(docstrings, ~level)
   ->appendO(detail->Option.map(d => d->renderDetails))
   // TODO: fully implement
 }
@@ -191,6 +190,6 @@ and itemDocs: (Markdown.t, array<RescriptTools.Docgen.item>) => Markdown.t = (md
 let render = ({RescriptTools.Docgen.name: name, deprecated, docstrings, items}) => {
   title(name)
   ->renderDeprecationWarning(deprecated)
-  ->renderModuleDocs(docstrings)
+  ->renderDocStrings(docstrings)
   ->itemDocs(items)
 }

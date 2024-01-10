@@ -1,6 +1,7 @@
 type t = string
 
 let make = (~escape=true, txt) => {
+  // TODO: don't escape inside of md codeblocks
   let escaped = escape
     ? txt
       ->String.replaceAll("<", "\\<")
