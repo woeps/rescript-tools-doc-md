@@ -67,13 +67,17 @@ let renderVariantConstructors: array<
   RescriptTools.Docgen.constructor,
 > => Markdown.t = constructors => {
   open Markdown
-  constructors->Array.reduce(empty(), (md, {name, docstrings, signature, ?deprecated}) => {
+  constructors->Array.reduce(empty(), (
+    md,
+    {name: _, docstrings, signature, ?deprecated, ?inlineRecordFields},
+  ) => {
     md->append(
       signature
       ->make
       ->quote
       ->deprecationWarning(deprecated)
-      ->moduleDocs(~level=4, docstrings),
+      ->moduleDocs(~level=4, docstrings)
+      ->appendO(inlineRecordFields->Option.map(fields => fields->renderRecordFields)),
     )
   })
 }

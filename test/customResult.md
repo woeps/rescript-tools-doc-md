@@ -1,6 +1,6 @@
 
 > rescript-tools-doc-md@0.0.0 customTest
-> node ./test/CustomTest.res.js
+> node ./test/CustomTest.bs.js
 
 # ExampleModule
 
@@ -8,9 +8,15 @@ This is an example module.
 
 ## module ExampleModule.Variants
 
+module of variants
+
 ### type ExampleModule.Variants.t
 
-> type t =\n  | First\n  | Second(int)\n  | Third({hello: string, goodbye: bool})\n  | Fourth(bool, string, int)
+> type t =
+>   | First
+>   | Second(int)
+>   | Third({hello: string, goodbye: bool})
+>   | Fourth(bool, string, int)
 
 represents the variant
 
@@ -22,15 +28,25 @@ first variant constructor without payload
 
 second variant with int payload
 
-> Third
+> Third({hello: string, goodbye: bool})
 
 third constructor with inline record
+
+> hello: string
+
+hello prop
+
+> goodbye: bool
+
+goddbye prop
 
 > Fourth(bool, string, int)
 
 with several payload arguments
 
 ## module ExampleModule.Record
+
+module to test record docs
 
 ### type ExampleModule.Record.sub
 
@@ -44,7 +60,12 @@ representing a bool value
 
 ### type ExampleModule.Record.t
 
-> type t = {\n  a: string,\n  b: int,\n  optRecord?: sub,\n  optStr?: string,\n}
+> type t = {
+>   a: string,
+>   b: int,
+>   optRecord?: sub,
+>   optStr?: string,
+> }
 
 this is another record
 

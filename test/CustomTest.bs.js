@@ -3,10 +3,10 @@
 
 var Fs = require("fs");
 var Path = require("path");
-var DocMd = require("../src/DocMd.res.js");
-var Tools_Docgen = require("@rescript/tools/src/Tools_Docgen.res.js");
+var DocMd = require("../src/DocMd.bs.js");
+var Tools_Docgen = require("@rescript/tools/src/Tools_Docgen.bs.js");
 
-var path = Path.join(__dirname, "./CoreDoc.json");
+var path = Path.join(__dirname, "./ExampleDoc.json");
 
 var doc = DocMd.render(Tools_Docgen.decodeFromJson(JSON.parse(Fs.readFileSync(path, "utf8"))));
 

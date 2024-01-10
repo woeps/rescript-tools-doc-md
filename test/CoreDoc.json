@@ -94,6 +94,13 @@
     "docstrings": [],
     "items": [
     {
+      "id": "RescriptCore.Array.fromIterator",
+      "kind": "value",
+      "name": "fromIterator",
+      "signature": "let fromIterator: (. Core__Iterator.t<'a>) => array<'a>",
+      "docstrings": ["`fromIterator(iterator)`\n\n  Creates an array from the provided `iterator`\n\n  ```res example\n  let map = Map.fromArray([(\"foo\", 1), (\"bar\", 2)])\n\n  Array.fromIterator(map->Map.values) // [1, 2]\n  ```"]
+    }, 
+    {
       "id": "RescriptCore.Array.fromArrayLike",
       "kind": "value",
       "name": "fromArrayLike",
@@ -483,21 +490,21 @@
       "kind": "value",
       "name": "reduce",
       "signature": "let reduce: (. array<'a>, 'b, (. 'b, 'a) => 'b) => 'b",
-      "docstrings": ["`reduce(xs, f, init)`\n\n  Applies `f` to each element of `xs` from beginning to end. Function `f` has two parameters: the item from the list and an “accumulator”; which starts with a value of `init`. `reduce` returns the final value of the accumulator.\n\n  ```res example\n  Array.reduce([2, 3, 4], (a, b) => a + b, 1) == 10\n\n  Array.reduce([\"a\", \"b\", \"c\", \"d\"], (a, b) => a ++ b, \"\") == \"abcd\"\n  ```"]
+      "docstrings": ["`reduce(xs, fn, init)`\n\n  Applies `fn` to each element of `xs` from beginning to end. Function `fn` has two parameters: the item from the list and an “accumulator”; which starts with a value of `init`. `reduce` returns the final value of the accumulator.\n\n  ```res example\n  Array.reduce([2, 3, 4], (a, b) => a + b, 1) == 10\n\n  Array.reduce([\"a\", \"b\", \"c\", \"d\"], (a, b) => a ++ b, \"\") == \"abcd\"\n  ```"]
     }, 
     {
       "id": "RescriptCore.Array.reduceWithIndex",
       "kind": "value",
       "name": "reduceWithIndex",
       "signature": "let reduceWithIndex: (. array<'a>, 'b, (. 'b, 'a, int) => 'b) => 'b",
-      "docstrings": ["`reduceWithIndex(xs, f, init)`\n\n  Applies `f` to each element of `xs` from beginning to end. Function `f` has three parameters: the item from the array and an “accumulator”, which starts with a value of `init` and the index of each element. `reduceWithIndex` returns the final value of the accumulator.\n\n  ```res example\n  Array.reduceWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16\n  ```"]
+      "docstrings": ["`reduceWithIndex(xs, fn, init)`\n\n  Applies `fn` to each element of `xs` from beginning to end. Function `fn` has three parameters: the item from the array and an “accumulator”, which starts with a value of `init` and the index of each element. `reduceWithIndex` returns the final value of the accumulator.\n\n  ```res example\n  Array.reduceWithIndex([1, 2, 3, 4], (acc, x, i) => acc + x + i, 0) == 16\n  ```"]
     }, 
     {
       "id": "RescriptCore.Array.reduceRight",
       "kind": "value",
       "name": "reduceRight",
       "signature": "let reduceRight: (. array<'a>, 'b, (. 'b, 'a) => 'b) => 'b",
-      "docstrings": ["`reduceRight(xs, f, init)`\n\n  Works like `Array.reduce`; except that function `f` is applied to each item of `xs` from the last back to the first.\n\n  ```res example\n  Array.reduceRight([\"a\", \"b\", \"c\", \"d\"], (a, b) => a ++ b, \"\") == \"dcba\"\n  ```"]
+      "docstrings": ["`reduceRight(xs, fn, init)`\n\n  Works like `Array.reduce`; except that function `fn` is applied to each item of `xs` from the last back to the first.\n\n  ```res example\n  Array.reduceRight([\"a\", \"b\", \"c\", \"d\"], (a, b) => a ++ b, \"\") == \"dcba\"\n  ```"]
     }, 
     {
       "id": "RescriptCore.Array.reduceRightWithIndex",
@@ -525,7 +532,7 @@
       "kind": "value",
       "name": "get",
       "signature": "let get: (. array<'a>, int) => option<'a>",
-      "docstrings": ["`get(array, index)` returns the element at `index` of `array`.\n\nReturns `None` if the index does not exist in the array. Equivalent to doing `array[index]` in JavaScript.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\narray->Array.get(0) == Some(\"Hello\") // true\n```"]
+      "docstrings": ["`get(array, index)` returns the element at `index` of `array`.\n\nReturns `None` if the index does not exist in the array. Equivalent to doing `array[index]` in JavaScript.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\narray->Array.get(0) == Some(\"Hello\") // true\narray->Array.get(3) == None // true\n```"]
     }, 
     {
       "id": "RescriptCore.Array.set",
@@ -560,7 +567,7 @@
       "kind": "value",
       "name": "getUnsafe",
       "signature": "let getUnsafe: (. array<'a>, int) => 'a",
-      "docstrings": ["`getUnsafe(array, index)` returns the element at `index` of `array`.\n\nThis is _unsafe_, meaning it will fail with an exception if `index` does not exist in `array`.\n\n## Exceptions\n\n- `Not_found`: If the provided `index` does not exist in `array`.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\nConsole.log(array->Array.getUnsafe(0)) // \"Hello\"\nConsole.log(array->Array.getUnsafe(3)) // Fails and raises exception\n```"]
+      "docstrings": ["`getUnsafe(array, index)` returns the element at `index` of `array`.\n\nThis is _unsafe_, meaning it will return `undefined` value if `index` does not exist in `array`.\n\nUse `Array.getUnsafe` only when you are sure the `index` exists (i.e. when using for-loop).\n\n## Examples\n```rescript\nfor index in 0 to array->Array.length - 1 {\n  let value = array->Array.getUnsafe(index)\n  Console.log(value)\n}\n```"]
     }, 
     {
       "id": "RescriptCore.Array.setUnsafe",
@@ -588,7 +595,7 @@
       "kind": "value",
       "name": "filterMap",
       "signature": "let filterMap: (. array<'a>, (. 'a) => option<'b>) => array<'b>",
-      "docstrings": ["`get(array, index)` returns the element at `index` of `array`.\n\nReturns `None` if the index does not exist in the array. Equivalent to doing `array[index]` in JavaScript.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\nConsole.log(\n  array->Array.filterMap(item =>\n    switch item {\n    | \"Hello\" => Some(item->String.length)\n    | _ => None\n    }\n  ),\n)\n// [5]\n```"]
+      "docstrings": ["`filterMap(array, fn)`\n\nCalls `fn` for each element and returns a new array containing results of the `fn` calls which are not `None`.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\nConsole.log(\n  array->Array.filterMap(item =>\n    switch item {\n    | \"Hello\" => Some(item->String.length)\n    | _ => None\n    }\n  ),\n) // [5]\n```"]
     }, 
     {
       "id": "RescriptCore.Array.keepSome",
@@ -623,7 +630,7 @@
       "kind": "value",
       "name": "findMap",
       "signature": "let findMap: (. array<'a>, (. 'a) => option<'b>) => option<'b>",
-      "docstrings": ["`findMap(arr, f)`\n\n  Calls `f` for each element and returns the first value from `f` that is `Some(_)`.\n  Otherwise returns `None`\n\n  ```res example\n  Array.findMap([1, 2, 3], n => mod(n, 2) ? Some(n - 2) : None) == 0\n  ```"]
+      "docstrings": ["`findMap(arr, fn)`\n\n  Calls `fn` for each element and returns the first value from `fn` that is `Some(_)`.\n  Otherwise returns `None`\n\n  ```res example\n  Array.findMap([1, 2, 3], n => mod(n, 2) ? Some(n - 2) : None) == 0\n  ```"]
     }, 
     {
       "id": "RescriptCore.Array.at",
@@ -631,13 +638,20 @@
       "name": "at",
       "signature": "let at: (. array<'a>, int) => option<'a>",
       "docstrings": ["`at(array, index)`\n\n  Get an element by its index. Negative indices count backwards from the last item.\n\n  ## Examples\n  ```rescript\n  [\"a\", \"b\", \"c\"]->Array.at(0) // Some(\"a\")\n  [\"a\", \"b\", \"c\"]->Array.at(2) // Some(\"c\")\n  [\"a\", \"b\", \"c\"]->Array.at(3) // None\n  [\"a\", \"b\", \"c\"]->Array.at(-1) // Some(\"c\")\n  [\"a\", \"b\", \"c\"]->Array.at(-3) // Some(\"a\")\n  [\"a\", \"b\", \"c\"]->Array.at(-4) // None\n  ```"]
+    }, 
+    {
+      "id": "RescriptCore.Array.last",
+      "kind": "value",
+      "name": "last",
+      "signature": "let last: (. array<'a>) => option<'a>",
+      "docstrings": ["`last(array)` returns the last element of `array`.\n\nReturns `None` if the array is empty.\n\n## Examples\n```rescript\nlet array = [\"Hello\", \"Hi\", \"Good bye\"]\n\narray->Array.last == Some(\"Good bye\") // true\n[]->Array.last == None // true\n```"]
     }]
   }, 
   {
     "id": "RescriptCore.Console",
     "kind": "moduleAlias",
     "name": "Console",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript console.\n\nSee: [`console`](https://developer.mozilla.org/en-US/docs/Web/API/Console)."],
     "items": [
     {
       "id": "RescriptCore.Console.assert_",
@@ -1225,7 +1239,7 @@
     "id": "RescriptCore.Date",
     "kind": "moduleAlias",
     "name": "Date",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript Dates."],
     "items": [
     {
       "id": "RescriptCore.Date.t",
@@ -1375,6 +1389,7 @@
       "id": "RescriptCore.Date.UTC",
       "name": "UTC",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Date.UTC.makeWithYM",
@@ -1886,7 +1901,7 @@
     "id": "RescriptCore.Dict",
     "kind": "moduleAlias",
     "name": "Dict",
-    "docstrings": [],
+    "docstrings": ["A mutable dictionary with string keys.\n\nCompiles to a regular JavaScript object."],
     "items": [
     {
       "id": "RescriptCore.Dict.t",
@@ -1894,6 +1909,13 @@
       "name": "t",
       "signature": "type t<'a> = Js.Dict.t<'a>",
       "docstrings": ["Type representing a dictionary of value `'a`."]
+    }, 
+    {
+      "id": "RescriptCore.Dict.getUnsafe",
+      "kind": "value",
+      "name": "getUnsafe",
+      "signature": "let getUnsafe: (. t<'a>, string) => 'a",
+      "docstrings": ["`getUnsafe(dict, key)` Returns the `value` at the provided `key`.\n\nThis is _unsafe_, meaning it will return `undefined` value if `key` does not exist in `dict`.\n\nUse `Dict.getUnsafe` only when you are sure the key exists (i.e. when iterating `Dict.keys` result).\n\n## Examples\n```rescript\nlet keys = dict->Dict.keys\nkeys->Array.forEach(key => {\n  let value = dict->Dict.getUnsafe(key)\n  Console.log(value)\n})\n```"]
     }, 
     {
       "id": "RescriptCore.Dict.get",
@@ -1977,7 +1999,7 @@
     "id": "RescriptCore.Error",
     "kind": "moduleAlias",
     "name": "Error",
-    "docstrings": [],
+    "docstrings": ["Functions for working with JavaScript exceptions.\n\nSee [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) on MDN."],
     "items": [
     {
       "id": "RescriptCore.Error.t",
@@ -2039,6 +2061,7 @@
       "id": "RescriptCore.Error.EvalError",
       "name": "EvalError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.EvalError.make",
@@ -2052,6 +2075,7 @@
       "id": "RescriptCore.Error.RangeError",
       "name": "RangeError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.RangeError.make",
@@ -2065,6 +2089,7 @@
       "id": "RescriptCore.Error.ReferenceError",
       "name": "ReferenceError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.ReferenceError.make",
@@ -2078,6 +2103,7 @@
       "id": "RescriptCore.Error.SyntaxError",
       "name": "SyntaxError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.SyntaxError.make",
@@ -2091,6 +2117,7 @@
       "id": "RescriptCore.Error.TypeError",
       "name": "TypeError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.TypeError.make",
@@ -2104,6 +2131,7 @@
       "id": "RescriptCore.Error.URIError",
       "name": "URIError",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Error.URIError.make",
@@ -2132,12 +2160,13 @@
     "id": "RescriptCore.Float",
     "kind": "moduleAlias",
     "name": "Float",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with float."],
     "items": [
     {
       "id": "RescriptCore.Float.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Float.Constants.nan",
@@ -2334,12 +2363,13 @@
     "id": "RescriptCore.Int",
     "kind": "moduleAlias",
     "name": "Int",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript Number.\nSee: [`Number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)."],
     "items": [
     {
       "id": "RescriptCore.Int.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Int.Constants.minValue",
@@ -2698,12 +2728,13 @@
     "id": "RescriptCore.Math",
     "kind": "moduleAlias",
     "name": "Math",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript Math.\nSee: [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)."],
     "items": [
     {
       "id": "RescriptCore.Math.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Math.Constants.e",
@@ -2766,6 +2797,7 @@
       "id": "RescriptCore.Math.Int",
       "name": "Int",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Math.Int.abs",
@@ -3102,7 +3134,7 @@
     "id": "RescriptCore.Null",
     "kind": "moduleAlias",
     "name": "Null",
-    "docstrings": [],
+    "docstrings": ["Functions for handling values that could be `null`.\n\nIf you also need to cover `undefined`, check out `Nullable` instead."],
     "items": [
     {
       "id": "RescriptCore.Null.t",
@@ -3245,7 +3277,7 @@
     "id": "RescriptCore.Nullable",
     "kind": "moduleAlias",
     "name": "Nullable",
-    "docstrings": [],
+    "docstrings": ["Functions for handling nullable values.\n\nPrimarily useful when interoping with JavaScript when you don't know whether you'll get a value, `null` or `undefined`."],
     "items": [
     {
       "id": "RescriptCore.Nullable.t",
@@ -3624,7 +3656,7 @@
     "id": "RescriptCore.Promise",
     "kind": "moduleAlias",
     "name": "Promise",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript Promise.\nSee: [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)."],
     "items": [
     {
       "id": "RescriptCore.Promise.t",
@@ -3743,7 +3775,7 @@
     "id": "RescriptCore.RegExp",
     "kind": "moduleAlias",
     "name": "RegExp",
-    "docstrings": [],
+    "docstrings": ["Functions for handling RegExp's in ReScript.\n\nSee [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) on MDN."],
     "items": [
     {
       "id": "RescriptCore.RegExp.t",
@@ -3756,6 +3788,7 @@
       "id": "RescriptCore.RegExp.Result",
       "name": "Result",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.RegExp.Result.t",
@@ -3875,7 +3908,7 @@
     "id": "RescriptCore.String",
     "kind": "moduleAlias",
     "name": "String",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JavaScript strings.\nSee: [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)."],
     "items": [
     {
       "id": "RescriptCore.String.make",
@@ -4093,6 +4126,20 @@
       "name": "replaceRegExp",
       "signature": "let replaceRegExp: (. string, Core__RegExp.t, string) => string",
       "docstrings": ["`replaceRegExp(str, regex, replacement)` returns a new `string` where\noccurrences matching regex have been replaced by `replacement`.\nSee [`String.replace`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) on MDN.\n\n## Examples\n\n```rescript\nString.replaceRegExp(\"vowels be gone\", %re(\"/[aeiou]/g\"), \"x\") == \"vxwxls bx gxnx\"\nString.replaceRegExp(\"Juan Fulano\", %re(\"/(\\w+) (\\w+)/\"), \"$2, $1\") == \"Fulano, Juan\"\n```"]
+    }, 
+    {
+      "id": "RescriptCore.String.replaceAll",
+      "kind": "value",
+      "name": "replaceAll",
+      "signature": "let replaceAll: (. string, string, string) => string",
+      "docstrings": ["`replaceAll(str, substr, newSubstr)` returns a new `string` which is\nidentical to `str` except with all matching instances of `substr` replaced\nby `newSubstr`. `substr` is treated as a verbatim string to match, not a\nregular expression.\nSee [`String.replaceAll`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) on MDN.\n\n## Examples\n\n```rescript\nString.replaceAll(\"old old string\", \"old\", \"new\") == \"new new string\"\nString.replaceAll(\"the cat and the dog\", \"the\", \"this\") == \"this cat and this dog\"\n```"]
+    }, 
+    {
+      "id": "RescriptCore.String.replaceAllRegExp",
+      "kind": "value",
+      "name": "replaceAllRegExp",
+      "signature": "let replaceAllRegExp: (. string, Core__RegExp.t, string) => string",
+      "docstrings": ["`replaceAllRegExp(str, regex, replacement)` returns a new `string` where\nall occurrences matching regex have been replaced by `replacement`.\nThe pattern must include the global (`g`) flag or a runtime TypeError will be thrown.\nSee [`String.replaceAll`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) on MDN.\n\n## Examples\n\n```rescript\nString.replaceAllRegExp(\"vowels be gone\", %re(\"/[aeiou]/g\"), \"x\") == \"vxwxls bx gxnx\"\nString.replaceAllRegExp(\"aabbcc\", %re(\"/b/g\"), \".\") == \"aa..cc\"\n```"]
     }, 
     {
       "id": "RescriptCore.String.unsafeReplaceRegExpBy0",
@@ -4428,7 +4475,7 @@
     "id": "RescriptCore.Type",
     "kind": "moduleAlias",
     "name": "Type",
-    "docstrings": [],
+    "docstrings": ["Utilities for classifying the type of JavaScript values at runtime."],
     "items": [
     {
       "id": "RescriptCore.Type.t",
@@ -4448,6 +4495,7 @@
       "id": "RescriptCore.Type.Classify",
       "name": "Classify",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Type.Classify.function",
@@ -4533,7 +4581,7 @@
     "id": "RescriptCore.JSON",
     "kind": "moduleAlias",
     "name": "JSON",
-    "docstrings": [],
+    "docstrings": ["Functions for interacting with JSON."],
     "items": [
     {
       "id": "RescriptCore.JSON.t",
@@ -4679,6 +4727,7 @@
       "id": "RescriptCore.JSON.Classify",
       "name": "Classify",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.JSON.Classify.t",
@@ -4734,6 +4783,7 @@
       "id": "RescriptCore.JSON.Encode",
       "name": "Encode",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.JSON.Encode.bool",
@@ -4789,6 +4839,7 @@
       "id": "RescriptCore.JSON.Decode",
       "name": "Decode",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.JSON.Decode.bool",
@@ -4838,7 +4889,7 @@
     "id": "RescriptCore.Iterator",
     "kind": "moduleAlias",
     "name": "Iterator",
-    "docstrings": [],
+    "docstrings": ["Bindings to JavaScript iterators.\n\nSee [`iterator protocols`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) on MDN."],
     "items": [
     {
       "id": "RescriptCore.Iterator.t",
@@ -4895,7 +4946,7 @@
     "id": "RescriptCore.AsyncIterator",
     "kind": "moduleAlias",
     "name": "AsyncIterator",
-    "docstrings": [],
+    "docstrings": ["Bindings to async iterators, a way to do async iteration in JavaScript.\n\nSee [async iterator protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) on MDN."],
     "items": [
     {
       "id": "RescriptCore.AsyncIterator.t",
@@ -4938,7 +4989,7 @@
     "id": "RescriptCore.Map",
     "kind": "moduleAlias",
     "name": "Map",
-    "docstrings": [],
+    "docstrings": ["Bindings to the mutable JavaScript `Map`.\n\nSee [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) on MDN."],
     "items": [
     {
       "id": "RescriptCore.Map.t",
@@ -5099,7 +5150,7 @@
     "id": "RescriptCore.Set",
     "kind": "moduleAlias",
     "name": "Set",
-    "docstrings": [],
+    "docstrings": ["Bindings to the mutable JavaScript `Set`.\n\nSee [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) on MDN."],
     "items": [
     {
       "id": "RescriptCore.Set.t",
@@ -5644,6 +5695,7 @@
       "id": "RescriptCore.Float32Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Float32Array.Constants.bytesPerElement",
@@ -5720,6 +5772,7 @@
       "id": "RescriptCore.Float64Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Float64Array.Constants.bytesPerElement",
@@ -5796,6 +5849,7 @@
       "id": "RescriptCore.Int8Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Int8Array.Constants.bytesPerElement",
@@ -5872,6 +5926,7 @@
       "id": "RescriptCore.Int16Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Int16Array.Constants.bytesPerElement",
@@ -5948,6 +6003,7 @@
       "id": "RescriptCore.Int32Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Int32Array.Constants.bytesPerElement",
@@ -6024,6 +6080,7 @@
       "id": "RescriptCore.Uint8Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Uint8Array.Constants.bytesPerElement",
@@ -6100,6 +6157,7 @@
       "id": "RescriptCore.Uint16Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Uint16Array.Constants.bytesPerElement",
@@ -6176,6 +6234,7 @@
       "id": "RescriptCore.Uint32Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Uint32Array.Constants.bytesPerElement",
@@ -6252,6 +6311,7 @@
       "id": "RescriptCore.Uint8ClampedArray.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Uint8ClampedArray.Constants.bytesPerElement",
@@ -6328,6 +6388,7 @@
       "id": "RescriptCore.BigInt64Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.BigInt64Array.Constants.bytesPerElement",
@@ -6404,6 +6465,7 @@
       "id": "RescriptCore.BigUint64Array.Constants",
       "name": "Constants",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.BigUint64Array.Constants.bytesPerElement",
@@ -7160,7 +7222,7 @@
     "id": "RescriptCore.Re",
     "kind": "moduleAlias",
     "name": "Re",
-    "docstrings": [],
+    "docstrings": ["Functions for handling RegExp's in ReScript.\n\nSee [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) on MDN."],
     "items": [
     {
       "id": "RescriptCore.Re.t",
@@ -7173,6 +7235,7 @@
       "id": "RescriptCore.Re.Result",
       "name": "Result",
       "kind": "module",
+      "docstrings": [],
       "items": [
       {
         "id": "RescriptCore.Re.Result.t",
@@ -7299,7 +7362,7 @@
     "id": "RescriptCore.Option",
     "kind": "moduleAlias",
     "name": "Option",
-    "docstrings": [],
+    "docstrings": ["We represent the existence and nonexistence of a value by wrapping it with\nthe `option` type. In order to make it a bit more convenient to work with\noption-types, we provide utility-functions for it.\n\nThe `option` type is a part of the ReScript standard library which is defined\nlike this:\n\n```rescript\ntype option<'a> = None | Some('a)\n```\n\n```rescript\nlet someString: option<string> = Some(\"hello\")\n```"],
     "items": [
     {
       "id": "RescriptCore.Option.filter",
