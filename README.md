@@ -7,8 +7,6 @@ Therefore, your success to compile this project may vary.
 
 This will change as soon as the api sattles and the upstream fixes are published.
 
-`let SomeConstant\\ = 12`
-
 ## Description
 
 Library to convert an extracted docs json into markdown. This work explores the possibilities of generating easily usable documentation basd on rescript files.
