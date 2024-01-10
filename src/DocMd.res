@@ -64,20 +64,20 @@ let renderSignature: string => Markdown.t = sig => {
 
 let renderRecordFields: array<RescriptTools.Docgen.field> => Markdown.t = fields => {
   open Markdown
-  "Record Fields:"
-  ->make
-  ->bold
-  ->p
-  ->append(
-    fields->Array.reduce(empty(), (md, {name, docstrings, signature, optional, ?deprecated}) => {
-      md->append(
+  fields->Array.reduce(empty(), (md, {name, docstrings, signature, optional, ?deprecated}) => {
+    md->append(
+      "Record Field:"
+      ->make
+      ->bold
+      ->p
+      ->append(
         renderSignature(`${name}: ${signature}`)
         ->appendO(optional ? " "->make->append("optional"->make->emph->forceLine)->Some : None)
         ->renderDeprecationWarning(deprecated)
         ->renderDocStrings(~level=4, docstrings),
-      )
-    }),
-  )
+      ),
+    )
+  })
 }
 
 let renderVariantConstructorPayload: RescriptTools.Docgen.constructorPayload => Markdown.t = payload => {

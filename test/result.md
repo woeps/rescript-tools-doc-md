@@ -2561,58 +2561,78 @@ Note: There are some properties missing:
 
 See full spec at https://tc39.es/ecma402/#datetimeformat-objects
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 dateStyle: option<[#full | #long | #medium | #short]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 timeStyle: option<[#full | #long | #medium | #short]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 weekday: option<[#long | #narrow | #short]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 era: option<[#long | #narrow | #short]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 year: option<[#"2-digit" | #numeric]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 month: option<[#"2-digit" | #long | #narrow | #numeric | #short]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 day: option<[#"2-digit" | #numeric]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 hour: option<[#"2-digit" | #numeric]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 minute: option<[#"2-digit" | #numeric]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 second: option<[#"2-digit" | #numeric]>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 timeZoneName: option<[#long | #short]>
 ```
@@ -5360,13 +5380,15 @@ type rangeOptions = {step?: int, inclusive?: bool}
 
 The options for `rangeWithOptions`.
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 step: option<int>
 ```
 
  *optional*  
+**Record Field:**
+
 ```rescript
 inclusive: option<bool>
 ```
@@ -10353,13 +10375,15 @@ type value<'a> = {done: bool, value: option<'a>}
 
 The current value of an iterator.
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 done: bool
 ```
 
 Whether there are more values to iterate on before the iterator is done.
+
+**Record Field:**
 
 ```rescript
 value: option<'a>
@@ -10451,13 +10475,15 @@ The type representing an async iterator.
 type value<'a> = {done: bool, value: option<'a>}
 ```
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 done: bool
 ```
 
 Whether there are more values to iterate on before the iterator is done.
+
+**Record Field:**
 
 ```rescript
 value: option<'a>

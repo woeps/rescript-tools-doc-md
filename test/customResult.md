@@ -46,13 +46,15 @@ Third({hello: string, goodbye: bool})
 
 third constructor with inline record
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 hello: string
 ```
 
 hello prop
+
+**Record Field:**
 
 ```rescript
 goodbye: bool
@@ -80,7 +82,7 @@ type sub = {x: bool}
 
 this is a record
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 x: bool
@@ -101,13 +103,15 @@ type t = {
 
 this is another record
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 a: string
 ```
 
 prop a
+
+**Record Field:**
 
 ```rescript
 b: int
@@ -116,12 +120,16 @@ b: int
 *DEPRECATED:* use sub instead  
 deprecated prop
 
+**Record Field:**
+
 ```rescript
 optRecord: option<sub>
 ```
 
  *optional*  
 this is an optional field of another record
+
+**Record Field:**
 
 ```rescript
 optStr: option<string>
@@ -138,7 +146,7 @@ this is an optional string
 type t = {optStr?: string}
 ```
 
-**Record Fields:**
+**Record Field:**
 
 ```rescript
 optStr: option<string>

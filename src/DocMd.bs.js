@@ -48,9 +48,9 @@ function renderSignature(sig) {
 }
 
 function renderRecordFields(fields) {
-  return Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Record Fields:"))), Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
-                    return Markdown.append(md, renderDocStrings(renderDeprecationWarning(Markdown.appendO(renderSignature(param.name + ": " + param.signature), param.optional ? Caml_option.some(Markdown.append(Markdown.make(undefined, " "), Markdown.forceLine(Markdown.emph(Markdown.make(undefined, "optional"))))) : undefined), param.deprecated), 4, param.docstrings));
-                  })));
+  return Core__Array.reduce(fields, Markdown.empty(), (function (md, param) {
+                return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Record Field:"))), renderDocStrings(renderDeprecationWarning(Markdown.appendO(renderSignature(param.name + ": " + param.signature), param.optional ? Caml_option.some(Markdown.append(Markdown.make(undefined, " "), Markdown.forceLine(Markdown.emph(Markdown.make(undefined, "optional"))))) : undefined), param.deprecated), 4, param.docstrings)));
+              }));
 }
 
 function renderItem(param, name, level, docstrings, deprecated, detail, signature, _unit) {
