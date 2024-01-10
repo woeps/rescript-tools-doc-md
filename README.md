@@ -91,4 +91,5 @@ npm run testToFile
   - [x] render items
 - [x] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
 - [x] unescaped `\n`
+- [ ] don't escape special chars (e.g. `>`) in codeblocks inside of docstrings
 - [ ] meaningfull overall structure of md
