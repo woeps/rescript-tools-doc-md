@@ -9,12 +9,11 @@
 		"test:core": "node ./test/DocGen.bs.js ./node_modules/@rescript/core/src/RescriptCore.res ./test/md/RescriptCore.md",
 		"test:example": "node ./test/DocGen.bs.js ./test/ExampleModule.res ./test/md/Example.md",
 		"test:functor": "node ./test/DocGen.bs.js ./test/Functor.res ./test/md/Functor.md",
-		"test": "npm run test:core && npm run test:example && npm run test:functor",
-    "test:watch": "nodemon --exec npm run test"
+		"test:module-type": "node ./test/DocGen.bs.js ./test/ModuleType.res ./test/md/ModuleType.md -json",
+		"test": "npm run test:core && npm run test:example && npm run test:functor && npm run test:module-type",
+		"test:watch": "nodemon --exec npm run test"
 	},
-	"keywords": [
-		"rescript"
-	],
+	"keywords": ["rescript"],
 	"author": "Christoph Porod-Wanasek",
 	"license": "MIT",
 	"dependencies": {
