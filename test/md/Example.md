@@ -1,7 +1,3 @@
-
-> rescript-tools-doc-md@0.0.0 customTest
-> node ./test/CustomTest.bs.js
-
 # ExampleModule
 
 This is an example module.
@@ -153,4 +149,3 @@ optStr: option<string>
 ```
 
  *optional*  
-

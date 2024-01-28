@@ -6,18 +6,15 @@
 		"build": "rescript",
 		"clean": "rescript clean",
 		"dev": "rescript build -w",
-		"makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
-		"makeCustomTestJson": "rescript-tools doc ./test/ExampleModule.res > ./test/ExampleDoc.json",
-		"makeFunctorTestJson": "rescript-tools doc ./test/Functor.res > ./test/FunctorDoc.json",
-		"test": "node ./test/Test.bs.js",
-		"customTest": "node ./test/CustomTest.bs.js",
-		"functorTest": "node ./test/FunctorTest.bs.js",
-		"testToFile": "npm run test > ./test/result.md",
-		"customTestToFile": "npm run customTest > ./test/customResult.md",
-		"functorTestToFile": "npm run functorTest > ./test/functorResult.md",
-		"allTests": "npm run makeTestJson && npm run testToFile && npm run makeCustomTestJson && npm run customTestToFile"
+		"test:core": "node ./test/DocGen.bs.js ./node_modules/@rescript/core/src/RescriptCore.res ./test/md/RescriptCore.md",
+		"test:example": "node ./test/DocGen.bs.js ./test/ExampleModule.res ./test/md/Example.md",
+		"test:functor": "node ./test/DocGen.bs.js ./test/Functor.res ./test/md/Functor.md",
+		"test": "npm run test:core && npm run test:example && npm run test:functor",
+    "test:watch": "nodemon --exec npm run test"
 	},
-	"keywords": ["rescript"],
+	"keywords": [
+		"rescript"
+	],
 	"author": "Christoph Porod-Wanasek",
 	"license": "MIT",
 	"dependencies": {
@@ -25,6 +22,7 @@
 		"rescript": "^11.0.1"
 	},
 	"devDependencies": {
-		"@rescript/tools": "^0.4.0"
+		"@rescript/tools": "^0.4.0",
+		"nodemon": "^3.0.3"
 	}
 }

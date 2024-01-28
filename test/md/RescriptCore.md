@@ -1,7 +1,3 @@
-
-> rescript-tools-doc-md@0.0.0 test
-> node ./test/Test.bs.js
-
 # RescriptCore
 
 ### type RescriptCore.timeoutId
@@ -14886,5 +14882,4 @@ Undefined
 ```rescript
 let panic: (. string) => 'a
 ```
-
 
