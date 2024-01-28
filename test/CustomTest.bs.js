@@ -4,7 +4,7 @@
 var Fs = require("fs");
 var Path = require("path");
 var DocMd = require("../src/DocMd.bs.js");
-var Tools_Docgen = require("@rescript/tools/src/Tools_Docgen.bs.js");
+var Tools_Docgen = require("@rescript/tools/npm/Tools_Docgen.bs.js");
 
 var path = Path.join(__dirname, "./ExampleDoc.json");
 

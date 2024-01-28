@@ -2530,18 +2530,18 @@ type localeOptions = {
   timeStyle?: [#full | #long | #medium | #short],
   weekday?: [#long | #narrow | #short],
   era?: [#long | #narrow | #short],
-  year?: [#\"2-digit\" | #numeric],
+  year?: [#"2-digit" | #numeric],
   month?: [
-    | #\"2-digit\"
+    | #"2-digit"
     | #long
     | #narrow
     | #numeric
     | #short
   ],
-  day?: [#\"2-digit\" | #numeric],
-  hour?: [#\"2-digit\" | #numeric],
-  minute?: [#\"2-digit\" | #numeric],
-  second?: [#\"2-digit\" | #numeric],
+  day?: [#"2-digit" | #numeric],
+  hour?: [#"2-digit" | #numeric],
+  minute?: [#"2-digit" | #numeric],
+  second?: [#"2-digit" | #numeric],
   timeZoneName?: [#long | #short],
 }
 ```
@@ -12516,7 +12516,7 @@ let format: (. t, Core__Date.t) => string
 let formatToParts: (.
   t,
   Core__Date.t,
-) => array<{\"type\": string, \"value\": string}>
+) => array<{"type": string, "value": string}>
 ```
 
 ### let RescriptCore.Intl.DateTimeFormat.formatRange
@@ -12537,7 +12537,7 @@ let formatRangeToParts: (.
   ~startDate: Core__Date.t,
   ~endDate: Core__Date.t,
 ) => array<
-  {\"source\": string, \"type\": string, \"value\": string},
+  {"source": string, "type": string, "value": string},
 >
 ```
 
@@ -12704,7 +12704,7 @@ let format: (. t, float) => string
 ### let RescriptCore.Intl.NumberFormat.formatToParts
 
 ```rescript
-let formatToParts: (. t, float) => array<{\"type\": string, \"value\": string}>
+let formatToParts: (. t, float) => array<{"type": string, "value": string}>
 ```
 
 ### let RescriptCore.Intl.NumberFormat.formatInt
@@ -12716,7 +12716,7 @@ let formatInt: (. t, int) => string
 ### let RescriptCore.Intl.NumberFormat.formatIntToParts
 
 ```rescript
-let formatIntToParts: (. t, int) => array<{\"type\": string, \"value\": string}>
+let formatIntToParts: (. t, int) => array<{"type": string, "value": string}>
 ```
 
 ### let RescriptCore.Intl.NumberFormat.formatBigInt
@@ -12731,7 +12731,7 @@ let formatBigInt: (. t, Core__BigInt.t) => string
 let formatBigIntToParts: (.
   t,
   Core__BigInt.t,
-) => array<{\"type\": string, \"value\": string}>
+) => array<{"type": string, "value": string}>
 ```
 
 ## module RescriptCore.Intl.PluralRules `alias`
@@ -12911,7 +12911,7 @@ let formatToParts: (.
   int,
   timeUnit,
 ) => array<
-  {\"type\": string, \"unit\": option<string>, \"value\": string},
+  {"type": string, "unit": option<string>, "value": string},
 >
 ```
 

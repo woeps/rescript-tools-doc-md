@@ -1,29 +1,30 @@
 {
-  "name": "rescript-tools-doc-md",
-  "version": "0.0.0",
-  "scripts": {
-    "link:tools": "npm link @rescript/tools",
-    "build": "rescript",
-    "clean": "rescript clean",
-    "dev": "rescript build -w",
-    "makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
-    "makeCustomTestJson": "rescript-tools doc ./test/ExampleModule.res > ./test/ExampleDoc.json",
-    "test": "node ./test/Test.bs.js",
-    "customTest": "node ./test/CustomTest.bs.js",
-    "testToFile": "npm run test > ./test/result.md",
-    "customTestToFile": "npm run customTest > ./test/customResult.md",
-    "allTests": "npm run makeTestJson && npm run testToFile && npm run makeCustomTestJson && npm run customTestToFile"
-  },
-  "keywords": [
-    "rescript"
-  ],
-  "author": "Christoph Porod-Wanasek",
-  "license": "MIT",
-  "dependencies": {
-    "@rescript/core": "git@github.com:rescript-association/rescript-core.git",
-    "rescript": "^11.0.0-rc.8"
-  },
-  "devDependencies": {
-    "@rescript/tools": "^0.3.0"
-  }
+	"name": "rescript-tools-doc-md",
+	"version": "0.0.0",
+	"scripts": {
+		"link:tools": "npm link @rescript/tools",
+		"build": "rescript",
+		"clean": "rescript clean",
+		"dev": "rescript build -w",
+		"makeTestJson": "rescript-tools doc ./node_modules/@rescript/core/src/RescriptCore.res > ./test/CoreDoc.json",
+		"makeCustomTestJson": "rescript-tools doc ./test/ExampleModule.res > ./test/ExampleDoc.json",
+		"makeFunctorTestJson": "rescript-tools doc ./test/Functor.res > ./test/FunctorDoc.json",
+		"test": "node ./test/Test.bs.js",
+		"customTest": "node ./test/CustomTest.bs.js",
+		"functorTest": "node ./test/FunctorTest.bs.js",
+		"testToFile": "npm run test > ./test/result.md",
+		"customTestToFile": "npm run customTest > ./test/customResult.md",
+		"functorTestToFile": "npm run functorTest > ./test/functorResult.md",
+		"allTests": "npm run makeTestJson && npm run testToFile && npm run makeCustomTestJson && npm run customTestToFile"
+	},
+	"keywords": ["rescript"],
+	"author": "Christoph Porod-Wanasek",
+	"license": "MIT",
+	"dependencies": {
+		"@rescript/core": "git@github.com:rescript-association/rescript-core.git",
+		"rescript": "^11.0.1"
+	},
+	"devDependencies": {
+		"@rescript/tools": "^0.4.0"
+	}
 }

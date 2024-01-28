@@ -60,7 +60,7 @@ function renderItem(param, name, level, docstrings, deprecated, detail, signatur
                     } else {
                       var constructors = d.items;
                       return Core__Array.reduce(constructors, Markdown.empty(), (function (md, param) {
-                                    return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Variant Constructor:"))), Markdown.appendO(renderDocStrings(renderDeprecationWarning(renderSignature(param.signature), param.deprecated), 4, param.docstrings), Core__Option.map(param.items, (function (payload) {
+                                    return Markdown.append(md, Markdown.append(Markdown.p(Markdown.bold(Markdown.make(undefined, "Variant Constructor:"))), Markdown.appendO(renderDocStrings(renderDeprecationWarning(renderSignature(param.signature), param.deprecated), 4, param.docstrings), Core__Option.map(param.payload, (function (payload) {
                                                               return renderRecordFields(payload.fields);
                                                             })))));
                                   }));

@@ -1,4 +1,7 @@
-// NOTE: how are aliases/references to different files handled?
+/*
+ * NOTE: how are aliases/references to different files handled?
+ * - see: https://github.com/rescript-lang/rescript-vscode/issues/886
+ */
 
 module Lang = {
   let deprecated = "DEPRECATED"
@@ -91,9 +94,10 @@ let renderVariantConstructors: array<
 > => Markdown.t = constructors => {
   open Markdown
 
-  constructors->Array.reduce(empty(), (md,
-  /* NOTE: items field may be renamed in future tools versions */
-  {name: _, docstrings, signature, ?deprecated, ?items}) => {
+  constructors->Array.reduce(empty(), (
+    md,
+    {name: _, docstrings, signature, ?deprecated, ?payload},
+  ) => {
     md->append(
       "Variant Constructor:"
       ->make
@@ -103,7 +107,7 @@ let renderVariantConstructors: array<
         renderSignature(signature)
         ->renderDeprecationWarning(deprecated)
         ->renderDocStrings(~level=4, docstrings)
-        ->appendO(items->Option.map(payload => payload->renderVariantConstructorPayload)),
+        ->appendO(payload->Option.map(payload => payload->renderVariantConstructorPayload)),
       ),
     )
   })
@@ -142,7 +146,6 @@ let renderItem: (
   ->appendO(signature->Option.map(renderSignature))
   ->renderDocStrings(docstrings, ~level)
   ->appendO(detail->Option.map(d => d->renderDetails))
-  // TODO: fully implement
 }
 
 let rec itemDoc: RescriptTools.Docgen.item => Markdown.t = item =>

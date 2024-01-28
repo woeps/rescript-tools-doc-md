@@ -1,7 +1,6 @@
 type t = string
 
 let make = (~escape=true, txt) => {
-  // TODO: don't escape inside of md codeblocks
   let escaped = if escape {
     let inCodeBlock = ref(false)
 
