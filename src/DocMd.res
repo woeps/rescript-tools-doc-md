@@ -48,7 +48,6 @@ let renderDocStrings: (Markdown.t, ~level: int=?, array<string>) => Markdown.t =
   open Markdown
 
   md->append(
-    // NOTE: has Core.Array.reduce wrong docs??? f / init switched?
     docs->Array.reduce(empty(), (md, txt) =>
       md->append(txt->corretDocStringHeadingLevel(~level)->make->p)
     ),
