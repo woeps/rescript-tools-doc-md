@@ -83,5 +83,8 @@ npm run testToFile
   - [x] render items
 - [x] docstrings may also include markdown (e.g. `## Examples`) -> this markdown syntax should be manipulatet to match the current heading level?
 - [x] unescaped `\n`
-- [x] don't escape special chars (e.g. `>`) in codeblocks inside of docstrings
+- [x] don't escape special chars (e.g. `>`) in codeblocks inside of docstringrequire'lspconfig'.ocamllsp.setup{}s
+- [ ] docgen for module types
+- [ ] docgen for functors
+- [ ] docgen for first class modules
 - [ ] meaningfull overall structure of md
